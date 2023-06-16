@@ -19,4 +19,7 @@ These pages present software prototypes which we have made publicly available.
 
 ## CosmoSim - the simulator
 
-+ [Source repository](https://github.com/CosmoAI-AES/CosmoSim)
+
++ Installation, see the README file in the
+  [Source repository](https://github.com/CosmoAI-AES/CosmoSim)
++ [User Tools](/docs/scripts/)
