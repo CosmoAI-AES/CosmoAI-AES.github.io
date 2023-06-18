@@ -14,3 +14,11 @@ permalink: /docs/model/
     + This can be set with `LensModel::setNu`.
 + `xi` ($\xi$) is the apparent position of the image in the lens plane.
     + This is updated by `LensModel::setNu`, as $\xi=\chi\nu$.
+    + RouletteModel also has a `setXi()` method to set $\xi$ to an arbitrary
+      position.
+
+# TODO
+
++ When are the roulette amplitudes calculated?
+
+##  LensModel flowchart
