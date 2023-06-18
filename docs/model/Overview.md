@@ -19,6 +19,8 @@ permalink: /docs/model/
 
 # TODO
 
+![Class diagram](lensmodel.svg)
+
 + When are the roulette amplitudes calculated?
 
 ##  LensModel flowchart
