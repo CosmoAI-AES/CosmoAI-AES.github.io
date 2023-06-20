@@ -61,6 +61,21 @@ The reference points are calculated in the following order
    In principle, any simulator model can compute this, but raytrace
    is most efficient and there is no reason not to use this.
 
+## Generate the Roulette Data Set
+
+1.  Normal image generation
+2.  Centre the image and record the image centre $\nu'$
+3.  Set $\nu:=\nu'$ in the simulator, and recompute $\xi'$
+    which serves as the reference point for roulette amplitudes
+4.  get $\eta'$ and/or $\Delta\eta$
+    - **TODO** how do we do this?
+4.  Recompute the roulette amplitudes
+4.  Export the roulette amplitudes
+5.  Write CSV
+    - original data
+    - $\Delta\eta$
+    - amplitudes
+
 # TODO
 
 + When are the roulette amplitudes calculated?
