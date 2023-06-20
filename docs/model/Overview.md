@@ -25,6 +25,22 @@ permalink: /docs/model/
 
 ![Class diagram](lensmodel.svg)
 
+The software aims to separate the simulation model (LensModel)
+and the actual lens (Lens), as is seen in the class diagram above.
+This is only partly implemented so far.  The two simulation models
+for point mass lenses as well as SphereModel integrate the lens 
+in simulation model.  The SphereModel is a legacy class, kept
+only for reference.  In practice it should be replaced with RouletteModel
+using SIS.  The two point mass models, in contrast, will take some
+work to decouple.
+
+Only one actual lens model has been implemented, namely SIS.
+However, it can be used either directly, or in a sampled version
+by wrapping it inside SampledModel.  The sampled model is really
+intended for lenses where an algebraic expression for the lens
+potential $\psi$ is not known, but the only case implemented is
+sampling an computable function.
+
 # Roulette Computation
 
 ![Class diagram](lensmodel.svg)
