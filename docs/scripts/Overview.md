@@ -37,7 +37,8 @@ roulette amplitudes.  This entails the following steps.
 1. Regular simulation, generating distorted images, and other images if desired.
 2. Centre the image, recording the centre point $\vec{c}$ in the distorted image,
    and an image file with a shifted version.
-3. Set $\vec{\xi}=\vec{c}$ in the simulator.
+3. Set $\vec{\xi}:=\chi\vec{c}$ in the simulator.
+    + **TODO** verify $\Delta\xi = \chi(\eta-\vec{c})$
 4. Get the roulette amplitudes from the simulator
     + These are not the roulette amplitudes that would have been used to produce
       the distorted image in a Roulette model.  
