@@ -76,6 +76,13 @@ The reference points are calculated in the following order
     - $\Delta\eta$
     - amplitudes
 
+## Simulation from Roulette Amplitudes 
+
+1. $\xi := 0$ (centre of distorted image)
+2. Consequently $\nu=0$
+2. $\eta := -\Delta\eta$ (source location, now relative to the distorted image)
+4. Lens position is irrelevant and unknown, and can thus not be used as origin
+
 # TODO
 
 + When are the roulette amplitudes calculated?
