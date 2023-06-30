@@ -41,6 +41,27 @@ intended for lenses where an algebraic expression for the lens
 potential $\psi$ is not known, but the only case implemented is
 sampling an computable function.
 
+## The Roulette Model
+
+1. Masking methods
+2. `setLens()`
+3. `getDistortedPos(r,theta)`
+4. The `distort()` function is inherited from LensModel.
+    + It uses `etaOffset` + `getDistortedPos(r,theta)` to find the source pixel
+5. `updateApparentAbs()`
+    + uses $\eta$ as stored in the model object itself, and requests a $\xi$ to be
+      calculated by the Lens object.
+    + then it calls `setNu()` which is inherited from LensModel
+    + this also sets `etaOffset = 0`
+6. `setXi(xi1)`
+    + set $\xi$ to the given value
+    + calculate $\eta'$ corresponding to $\xi$ using raytrace
+    + set $\Delta\eta=\eta'-\eta$
+
+Special for resimulation from roulette amplitudes:
+
++ `setXiEta()` **to be implemented**
+
 # Roulette Computation
 
 ![Class diagram](lensmodel.svg)
@@ -61,27 +82,35 @@ The reference points are calculated in the following order
    In principle, any simulator model can compute this, but raytrace
    is most efficient and there is no reason not to use this.
 
+
 ## Generate the Roulette Data Set
 
 1.  Normal image generation
 2.  Centre the image and record the image centre $\nu'$
-3.  Set $\nu:=\nu'$ in the simulator, and recompute $\xi'$
-    which serves as the reference point for roulette amplitudes
+3.  Find $\xi'=\chi\nu'$
+4.  The the roulette amplitudes in $\xi'$ using `getAlpha` and `getBeta`
 4.  get $\eta'$ and/or $\Delta\eta$
     - **TODO** how do we do this?
-4.  Recompute the roulette amplitudes
-4.  Export the roulette amplitudes
+    + Set $\nu:=\nu'$ in the simulator?
 5.  Write CSV
     - original data
     - $\Delta\eta$
     - amplitudes
 
-## Simulation from Roulette Amplitudes 
+## RouletteRegenerator: Simulation from Roulette Amplitudes 
+
+![Class diagram](relativeeta.svg)
 
 1. $\xi := 0$ (centre of distorted image)
 2. Consequently $\nu=0$
+2. **TODO** Calculate $\eta'$ using the `setCentre()` method
 2. $\eta := -\Delta\eta$ (source location, now relative to the distorted image)
 4. Lens position is irrelevant and unknown, and can thus not be used as origin
+
+This is somewhat different from the regular roulette simulation.
+Both $\xi$ and $\eta$ are set explicitly and the lens location is unknown.
+In theory the lens location could be inferred, but as a free variable it leaves
+$\xi$ and $\eta$ to be set independently.
 
 # TODO
 
