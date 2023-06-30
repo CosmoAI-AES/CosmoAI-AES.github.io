@@ -2,6 +2,7 @@
 title: CosmoSim Simulation Model
 theme: minima
 permalink: /docs/model/
+usemathjax: true
 ---
 
 + [Sketches of the Mathematical Model](Model)

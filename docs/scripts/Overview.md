@@ -2,6 +2,7 @@
 title: CosmoSim Scripts
 theme: minima
 permalink: /docs/scripts/
+usemathjax: true
 ---
 
 # Python Scripts
