@@ -118,11 +118,9 @@ points.
       without knowledge of $\xi$
     - $\eta'$ is computed from $\xi'$ using raytracing.
 4.  $\Delta\eta=\eta'-\eta$
-4.  $\eta''=\eta'-\xi'$ is the position of $\eta'$ in the co-ordinate system
-    centred at $\xi'$.
-    **TODO**
-    $\eta''=\eta-\xi'$ is the source position ($\eta$) in the co-ordinate system
-    centred at $\xi'$.
+4.  $\eta''=\eta-\xi'$ is the source position ($\eta$) in the co-ordinate system
+    centred at $\xi'$.  This is calculated by `LensModel::getRelativeEta(xi1)`
+    where `xi1` is $\xi'$.
 
 
 1. $\xi := 0$ (centre of distorted image)
