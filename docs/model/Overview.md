@@ -102,6 +102,29 @@ The reference points are calculated in the following order
 
 ![Class diagram](relativeeta.svg)
 
+To make the reconstruction work, we need the following geometrical 
+points.
+
+1.  $\xi$ is the apparent position and the reference point for the
+    roulette model in the original formulation.  Unfortunately
+    it cannot easily be recovered from a distorted image.
+2.  $\xi'$ is the centre of luminence in the distorted image, and
+    can be recovered from the image.
+    Thus this will be used as the reference point and the centre of the
+    image in the regeneration.
+3.  $\eta$ and $\eta'$ are the source position corresponding respectively
+    to $\xi$ and $\xi'$.
+    - $\eta$ is input to the original simulation, but it cannot be recovered
+      without knowledge of $\xi$
+    - $\eta'$ is computed from $\xi'$ using raytracing.
+4.  $\Delta\eta=\eta'-\eta$
+4.  $\eta''=\eta'-\xi'$ is the position of $\eta'$ in the co-ordinate system
+    centred at $\xi'$.
+    **TODO**
+    $\eta''=\eta-\xi'$ is the source position ($\eta$) in the co-ordinate system
+    centred at $\xi'$.
+
+
 1. $\xi := 0$ (centre of distorted image)
 2. Consequently $\nu=0$
 2. **TODO** Calculate $\eta'$ using the `setCentre()` method
