@@ -43,7 +43,7 @@ sampling an computable function.
 
 # Roulette Computation
 
-![Class diagram](lensmodel.svg)
+![Class diagram](points.svg)
 
 The reference points are calculated in the following order
 
