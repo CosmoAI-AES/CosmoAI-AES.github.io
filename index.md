@@ -23,4 +23,5 @@ These pages present software prototypes which we have made publicly available.
 + Installation, see the README file in the
   [Source repository](https://github.com/CosmoAI-AES/CosmoSim)
 + [User Tools](/docs/scripts/)
++ [Test Scripts](/docs/test/)
 + [Simulation Model](/docs/model/) - technical documentation
