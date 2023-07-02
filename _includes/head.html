@@ -1,0 +1,22 @@
+<html lang="en"><head>
+   <meta charset="utf-8">
+   <title>{{page.title}}</title>
+   <meta property="og:title" content="{{ page.title }}" />
+{% if page.usemathjax %}
+<script type="text/javascript" async 
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } 
+        },
+        tex2jax: {
+          inlineMath: [ ['$', '$'] ],
+          displayMath: [ ['$$', '$$'] ],
+          processEscapes: true,
+          }
+        });
+</script>
+{% endif %}
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="IDIAMath" />
+</head>
+

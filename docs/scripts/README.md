@@ -1,3 +1,7 @@
+---
+usemathjax: true
+---
+
 # Python 
 
 ## Scripts

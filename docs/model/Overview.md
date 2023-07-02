@@ -2,9 +2,11 @@
 title: CosmoSim Simulation Model
 theme: minima
 permalink: /docs/model/
+usemathjax: true
 ---
 
 + [Sketches of the Mathematical Model](Model)
++ [Roulette](Roulette Model)
 
 # Terminology
 
@@ -41,51 +43,9 @@ intended for lenses where an algebraic expression for the lens
 potential $\psi$ is not known, but the only case implemented is
 sampling an computable function.
 
-# Roulette Computation
-
-![Class diagram](lensmodel.svg)
-
-The reference points are calculated in the following order
-
-1. $\eta$ is the actual source position as given by the problem.
-1. $\xi$ is the apparent position in the lens plane.
-   This is calculated by inverting the ratrace equation.
-2. $\nu=\xi/\chi$ is the apparent position in the source plane.
-4. $\nu'$ is the centre of light in the distorted image.
-   This is calculated from the output image, and it serves as
-   an objective reference point which can be recalculated from the
-   image regardless of shifts and cropping.
-5. $\xi'=\chi\nu$ scales the centre point back to the lens plane.
-5. $\eta'$ is the source point corresponding to $\xi'$ according
-   to the raytrace equation.
-   In principle, any simulator model can compute this, but raytrace
-   is most efficient and there is no reason not to use this.
-
-## Generate the Roulette Data Set
-
-1.  Normal image generation
-2.  Centre the image and record the image centre $\nu'$
-3.  Set $\nu:=\nu'$ in the simulator, and recompute $\xi'$
-    which serves as the reference point for roulette amplitudes
-4.  get $\eta'$ and/or $\Delta\eta$
-    - **TODO** how do we do this?
-4.  Recompute the roulette amplitudes
-4.  Export the roulette amplitudes
-5.  Write CSV
-    - original data
-    - $\Delta\eta$
-    - amplitudes
-
-## Simulation from Roulette Amplitudes 
-
-1. $\xi := 0$ (centre of distorted image)
-2. Consequently $\nu=0$
-2. $\eta := -\Delta\eta$ (source location, now relative to the distorted image)
-4. Lens position is irrelevant and unknown, and can thus not be used as origin
 
 # TODO
 
-+ When are the roulette amplitudes calculated?
 + `getDistortedPos(r,theta)` calculates the source plane position $\eta'$
   in the local co-ordinate system centred at `eta`, given a polar
   co-ordinates $(r,\theta)$ centred on `\xi` in the lens plane.
