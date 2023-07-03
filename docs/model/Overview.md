@@ -6,6 +6,7 @@ usemathjax: true
 ---
 
 + [Sketches of the Mathematical Model](Model)
++ [Roulette](Roulette Model)
 
 # Terminology
 
@@ -42,101 +43,9 @@ intended for lenses where an algebraic expression for the lens
 potential $\psi$ is not known, but the only case implemented is
 sampling an computable function.
 
-## The Roulette Model
-
-1. Masking methods
-2. `setLens()`
-3. `getDistortedPos(r,theta)`
-4. The `distort()` function is inherited from LensModel.
-    + It uses `etaOffset` + `getDistortedPos(r,theta)` to find the source pixel
-5. `updateApparentAbs()`
-    + uses $\eta$ as stored in the model object itself, and requests a $\xi$ to be
-      calculated by the Lens object.
-    + then it calls `setNu()` which is inherited from LensModel
-    + this also sets `etaOffset = 0`
-6. `setXi(xi1)`
-    + set $\xi$ to the given value
-    + calculate $\eta'$ corresponding to $\xi$ using raytrace
-    + set $\Delta\eta=\eta'-\eta$
-
-Special for resimulation from roulette amplitudes:
-
-+ `setXiEta()` **to be implemented**
-
-# Roulette Computation
-
-![Class diagram](points.svg)
-
-The reference points are calculated in the following order
-
-1. $\eta$ is the actual source position as given by the problem.
-1. $\xi$ is the apparent position in the lens plane.
-   This is calculated by inverting the ratrace equation.
-2. $\nu=\xi/\chi$ is the apparent position in the source plane.
-4. $\nu'$ is the centre of light in the distorted image.
-   This is calculated from the output image, and it serves as
-   an objective reference point which can be recalculated from the
-   image regardless of shifts and cropping.
-5. $\xi'=\chi\nu$ scales the centre point back to the lens plane.
-5. $\eta'$ is the source point corresponding to $\xi'$ according
-   to the raytrace equation.
-   In principle, any simulator model can compute this, but raytrace
-   is most efficient and there is no reason not to use this.
-
-
-## Generate the Roulette Data Set
-
-1.  Normal image generation
-2.  Centre the image and record the image centre $\nu'$
-3.  Find $\xi'=\chi\nu'$
-4.  The the roulette amplitudes in $\xi'$ using `getAlpha` and `getBeta`
-4.  get $\eta'$ and/or $\Delta\eta$
-    - **TODO** how do we do this?
-    + Set $\nu:=\nu'$ in the simulator?
-5.  Write CSV
-    - original data
-    - $\Delta\eta$
-    - amplitudes
-
-## RouletteRegenerator: Simulation from Roulette Amplitudes 
-
-![Class diagram](relativeeta.svg)
-
-To make the reconstruction work, we need the following geometrical 
-points.
-
-1.  $\xi$ is the apparent position and the reference point for the
-    roulette model in the original formulation.  Unfortunately
-    it cannot easily be recovered from a distorted image.
-2.  $\xi'$ is the centre of luminence in the distorted image, and
-    can be recovered from the image.
-    Thus this will be used as the reference point and the centre of the
-    image in the regeneration.
-3.  $\eta$ and $\eta'$ are the source position corresponding respectively
-    to $\xi$ and $\xi'$.
-    - $\eta$ is input to the original simulation, but it cannot be recovered
-      without knowledge of $\xi$
-    - $\eta'$ is computed from $\xi'$ using raytracing.
-4.  $\Delta\eta=\eta'-\eta$
-4.  $\eta''=\eta-\xi'$ is the source position ($\eta$) in the co-ordinate system
-    centred at $\xi'$.  This is calculated by `LensModel::getRelativeEta(xi1)`
-    where `xi1` is $\xi'$.
-
-
-1. $\xi := 0$ (centre of distorted image)
-2. Consequently $\nu=0$
-2. **TODO** Calculate $\eta'$ using the `setCentre()` method
-2. $\eta := -\Delta\eta$ (source location, now relative to the distorted image)
-4. Lens position is irrelevant and unknown, and can thus not be used as origin
-
-This is somewhat different from the regular roulette simulation.
-Both $\xi$ and $\eta$ are set explicitly and the lens location is unknown.
-In theory the lens location could be inferred, but as a free variable it leaves
-$\xi$ and $\eta$ to be set independently.
 
 # TODO
 
-+ When are the roulette amplitudes calculated?
 + `getDistortedPos(r,theta)` calculates the source plane position $\eta'$
   in the local co-ordinate system centred at `eta`, given a polar
   co-ordinates $(r,\theta)$ centred on `\xi` in the lens plane.
