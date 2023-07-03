@@ -147,3 +147,96 @@ $\xi$ and $\eta$ to be set independently.
   `getDistortedPos(r,theta)` working on a different logic
 
 ##  LensModel flowchart
+
+# Technical Design
+
+## Components
+
+### C++ components
+
++ Lens Models
+    + `LensModel.cpp` is the abstract base class.
+    + `PointMassLens.cpp` simulates the point mass model
+      using the exact formulation
+    + `RoulettePMLens.cpp` simulates the point mass model using
+      the Roulette formalism
+    + `SphereLens.cpp` simulates the SIS model
++ Source Models
+    + `Source.cpp` is the abstract base class.
+    + `SphericalSource.cpp` is standard Guassian model
+    + `EllipsoidSource.cpp` is an ellipsoid Guassian model
+    + `TriangleSource.cpp` is a three colour triangle source,
+       intended for debugging
++ `simaux.cpp` is auxiliary functions
++ `CosmoSim.cpp` defines the `CosmoSimPy` class with python bindigs.
+  This class operates as a facade to the library, and does not 
+  expose the individual classes.
+
+### Python Components
+
++ `CosmoSim` is a wrapper around `CosmoSimPy` from `CosmoSim.cpp`,
+  defining the `CosmoSim` class.
++ `CosmoGUI` is a tkinter desktop application, providing a GUI to the
+  simulator
++ `CosmoSim.View` is a tkinter widget displaying the source and 
+  distorted image for `CosmoGUI`.
++ `CosmoSim.Controller` is a tkinter widget to interactively set
+  the simulator parameters for `CosmoGUI`.
++ `CosmoSim.Image` provides post-processing functions for the images.
++ `datagen.py` is a batch script to generate distorted images.
+
+
+## Lens Model Class
+
+### Virtual Functions
+
+The following virtual functions have to be overridden by most subclasses.
+They are called from the main update function and overriding them, the entire
+lens model changes.
+
++ `calculateAlphaBeta()`
+  pre-calculates $\alpha$ and $\beta$ in the distortion equation.
++ `getDistortedPos()`
+  calculates the distortion equation for a give pixel.
+
+The constructor typically has to be overridden as well, to load the formulæ for
+$\alpha$ and $\beta$.
+
+### Setters 
+
+Setters are provided for all of the control parameters.
+
++ `updateXY` to update the $(x,y)$ co-ordinates of the actual image, the
+  relative distance $\chi$ to the lens compared to the source, and the
+  Einstein radius $R_E$.
+  This has to update the apparent position which depends on all of these
+  variables.
++ `updateSize` to update the size or standard deviation of the source.
++ `updateNterms` to update the number of terms in the sum after truncation
++ `updateAll` to update all of the above
+
+### Getters
+
+Getters are provided for the three images.
+
++ `getActual()`
++ `getApparent()`
++ `getDistorted()`
+
+### Update
+
+The main routine of the `Simulator` is `update()` which recalculates the 
+three images: actual, apparent, and distorted.  This is called by the setters.
+
+In addition to the virtual functions mentioned above, it depends on
+
++ `parallelDistort()` and `distort()` which runs the main steps in parallel.
++ `drawParallel()` and `drawSource()` which draws the source image.
+
+## Auxiliaries 
+
+The `simaux.cpp` file provides the following:
+
++ `factorial_()`
++ `refLines()` to draw the axis cross
+
