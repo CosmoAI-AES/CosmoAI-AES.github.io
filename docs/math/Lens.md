@@ -25,7 +25,7 @@ Solving the Poisson equation, this gives, according to Kormann (1994) the follow
 \begin{equation}
   \psi_\textrm{SIE}(\phi,R,\theta) =
   \frac{\xi_0}{\chi_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\Bigg([\sin(\theta+\phi)]\arcsin\left(\frac{\sin{(\theta+\phi)}}{\sqrt{1-f^2}}\right)
-  +[\cos(\theta+\phi)]\arcsinh\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
+  +[\cos(\theta+\phi)]\mathrm{arcsinh}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
 \end{equation}
 where $(R,\theta)$ are the polar coordinates in the lens plane,
 whereas $\phi$ is the orientation of the ellipse. Thus $\phi$ should take a constant value across the image. Note the co-ordinate relation
