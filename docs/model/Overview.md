@@ -8,22 +8,18 @@ usemathjax: true
 + [Sketches of the Mathematical Model](Model)
 + [Roulette](Roulette Model)
 
-# Terminology
-
-+ `eta` ($\eta$) is the actual position of the source in the source plane.
-    + This is set by `LensModel::setXY` or `LensModel::setPolar`
-    + RaytraceModel uses a local $\eta$ corresponding to the pixel currently
-      being evaluated, but this is local to that single method.
-+ `nu` ($\nu$) is the apparent position of the source in the source plane.
-    + This can be set with `LensModel::setNu`.
-+ `xi` ($\xi$) is the apparent position of the image in the lens plane.
-    + This is updated by `LensModel::setNu`, as $\xi=\chi\nu$.
-    + RouletteModel also has a `setXi()` method to set $\xi$ to an arbitrary
-      position.
-+ `etaOffset` ($\Delta\eta$) is so that $\xi$ is the image
-  $\eta+\Delta\eta$.
 
 # Software Model
+
+At the highest level, the simulator consists of three components.
+1.  lens model (Lens) which implements a mathematical description
+    of the lens.
+2.  [source model](source) (Source) which gives the mathematical description
+    of the source and produce undistorted images of it.
+3.  simulation model (LensModel) which calculates distorted images
+    by using the lens and source models.
+
+## Modelling the Lens 
 
 ![Class diagram](lensmodel.svg)
 
@@ -42,6 +38,23 @@ by wrapping it inside SampledModel.  The sampled model is really
 intended for lenses where an algebraic expression for the lens
 potential $\psi$ is not known, but the only case implemented is
 sampling an computable function.
+
+
+# Terminology
+
++ `eta` ($\eta$) is the actual position of the source in the source plane.
+    + This is set by `LensModel::setXY` or `LensModel::setPolar`
+    + RaytraceModel uses a local $\eta$ corresponding to the pixel currently
+      being evaluated, but this is local to that single method.
++ `nu` ($\nu$) is the apparent position of the source in the source plane.
+    + This can be set with `LensModel::setNu`.
++ `xi` ($\xi$) is the apparent position of the image in the lens plane.
+    + This is updated by `LensModel::setNu`, as $\xi=\chi\nu$.
+    + RouletteModel also has a `setXi()` method to set $\xi$ to an arbitrary
+      position.
++ `etaOffset` ($\Delta\eta$) is so that $\xi$ is the image
+  $\eta+\Delta\eta$.
+
 
 
 # TODO
