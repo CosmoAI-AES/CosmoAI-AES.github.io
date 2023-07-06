@@ -2,6 +2,7 @@
 title: CosmoSim Test Scripts
 theme: minima
 permalink: /docs/test/
+usemathjax: true
 ---
 
 This is a partial description of the most important test
@@ -10,25 +11,32 @@ For details, it is still necessary to read the code, unfortunately.
 
 # Regression Test
 
-+ `Scripts/regressiontest.sh`
++ Directory `RegressionTest`
 
-This test can be run out of the box.
-It generates images for the most important models and 
+This is a test suite which can be run out of the box,
+using recursive makefiles.
+It can also be run automatically using github actions.
+To run locally (Unix), run
+
+```
+cd RegressionTest
+make clean
+make all
+```
+
+The scripts generate images for the most important models and 
 compare them to previously generated images.
-It will output a list of bad results.
+It will output a list of bad results to the terminal.
 
-**Caveat**  There are always bad results.  It seems that
-the simulation is not entirely deterministic.  The errors are
-not visible in the difference image, and the Euclidean distance
-is typically up to a few hundreds for a $400\times400$ images.
+Each subdirectory considers one simulation model and contains a
+dataset `debug.csv` from which images are generated.
+In the `montage` subdirectory, there are composite images combining
+the generated image, the baseline, abd the difference image.
 
-## TODO
 
-1. Clean up the data set and use more descriptive names.
-2. Remove duplicates.
-2. Extend the test set to use all models and a representative range
-   of data points.
-4. Review the non-deterministic results.
+**Caveat**  The `exactpm` tests give negligible regression errors
+on Windows.  This is probably numerical approximations, but it has
+not yet been investigated.
 
 # $\xi$-move Test
 
@@ -68,8 +76,3 @@ Here the size is the size of the neighbourhood, the distance
 is the Euclidean distance between the original and the reconstructed
 neighbourhood, and relative distance is disance divided by size.
 
-
-
-## TODO
-
-1. Report from the masked comparison.

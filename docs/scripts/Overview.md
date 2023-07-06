@@ -22,7 +22,7 @@ CosmoSim repository.
     + **TODO** further documentation
 + roulettegen.py
     + New script to generate images from a set of roulette amplitudes
-    + **Under Construction**
+    + **TODO** further documentation
 + compare.py
     + Quantitatively compare two batches of images, intended for regression testing.
 + amplitudes.py
