@@ -12,9 +12,9 @@ usemathjax: true
 # Software Model
 
 At the highest level, the simulator consists of three components.
-1.  lens model (Lens) which implements a mathematical description
+1.  [lens model](Lens) (Lens) which implements a mathematical description
     of the lens.
-2.  [source model](source) (Source) which gives the mathematical description
+2.  [source model](Source) (Source) which gives the mathematical description
     of the source and produce undistorted images of it.
 3.  simulation model (LensModel) which calculates distorted images
     by using the lens and source models.

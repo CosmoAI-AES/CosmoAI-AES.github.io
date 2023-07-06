@@ -1,7 +1,6 @@
 ---
 title: The Roulette Model
 theme: minima
-permalink: /docs/model/
 usemathjax: true
 ---
 
