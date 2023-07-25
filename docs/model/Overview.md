@@ -77,18 +77,23 @@ sampling an computable function.
 
 ### C++ components
 
-+ Lens Models
++ Simulation Models
     + `LensModel.cpp` is the abstract base class.
     + Modular Lens Models
         + `RouletteModel.cpp`
         + `Raytrace.cpp`
     + Monolithic Lens Models
-        + `PointMassLens.cpp` simulates the point mass model
-          using the exact formulation
-        + `RoulettePMLens.cpp` simulates the point mass model using
-          the Roulette formalism
-        + `SphereLens.cpp` simulates the SIS model
-          *(deprecated)*
+	+ `RouletteRegenerator.cpp` is for simulation from roulette amplitudes
+	   without any concrete lens model.
+	+ `RotatedModel.cpp` is a superclass for the point mass models.
+            + `PointMassExact.cpp` simulates the point mass model
+              using the exact formulation
+            + `PointMassRoulette.cpp` simulates the point mass model using
+              the Roulette formalism
++ Lens Models
+    + `SIS.cpp` 
+    + `SIE.cpp`  (not tested)
+    + `PointMass.cpp` is incomplete and so far used only with the monolithic models. 
 + Source Models
     + `Source.cpp` is the abstract base class.
     + `SphericalSource.cpp` is standard Guassian model
