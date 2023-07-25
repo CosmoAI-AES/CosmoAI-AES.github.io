@@ -6,6 +6,8 @@ usemathjax: true
 
 # SIS (Singular isothermal sphere)
 
+$$\psi^\mathrm{SIS}(x,y) = - R_E\cdot\sqrt{x^2,y^2}$$
+
 # SIE (Singular isothermal ellipsoid)
 
 The singular isothermal ellipsoid is a simple example of a non-spherical source.
