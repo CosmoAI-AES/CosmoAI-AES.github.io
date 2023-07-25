@@ -25,8 +25,8 @@ Solving the Poisson equation, this gives, according to Kormann (1994) the follow
 $$
 \begin{aligned}
 \begin{split}
-  \psi_\textrm{SIE}(\phi,R,\theta) &=
-  \frac{\xi_0}{\chi_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\Bigg([\sin(\theta+\phi)]\arcsin\left(
+  \psi_\textrm{SIE}(\phi,R,\theta) =
+  \frac{\xi_0}{\chi_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R&\Bigg([\sin(\theta+\phi)]\arcsin\left(
   \sqrt{1-f^2}\cdot \sin{(\theta+\phi)}\right)
   \\&
   +[\cos(\theta+\phi)]\mathrm{arcsinh}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
