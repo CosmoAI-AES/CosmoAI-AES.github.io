@@ -79,11 +79,16 @@ sampling an computable function.
 
 + Lens Models
     + `LensModel.cpp` is the abstract base class.
-    + `PointMassLens.cpp` simulates the point mass model
-      using the exact formulation
-    + `RoulettePMLens.cpp` simulates the point mass model using
-      the Roulette formalism
-    + `SphereLens.cpp` simulates the SIS model
+    + Modular Lens Models
+        + `RouletteModel.cpp`
+        + `Raytrace.cpp`
+    + Monolithic Lens Models
+        + `PointMassLens.cpp` simulates the point mass model
+          using the exact formulation
+        + `RoulettePMLens.cpp` simulates the point mass model using
+          the Roulette formalism
+        + `SphereLens.cpp` simulates the SIS model
+          *(deprecated)*
 + Source Models
     + `Source.cpp` is the abstract base class.
     + `SphericalSource.cpp` is standard Guassian model
