@@ -22,17 +22,15 @@ Note that the normalization is chosen such that the mass inside an elliptical is
 fixed $\Sigma$ is independent of the axis ratio $f$.
 
 Solving the Poisson equation, this gives, according to Kormann (1994) the following.
-$$
 \begin{aligned}
 \begin{split}
   \psi_\textrm{SIE}(\phi,R,\theta) =
-  \frac{\xi_0}{\chi_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R&\Bigg([\sin(\theta+\phi)]\arcsin\left(
-  \sqrt{1-f^2}\cdot \sin{(\theta+\phi)}\right)
+  \frac{\xi_0}{\chi_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\cdot
+  &\Bigg([\sin(\theta+\phi)]\arcsin\left(\sqrt{1-f^2}\cdot \sin{(\theta+\phi)}\right)
   \\&
   +[\cos(\theta+\phi)]\mathrm{arcsinh}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
 \end{split}
 \end{aligned}
-$$
 where $(R,\theta)$ are the polar coordinates in the lens plane,
 whereas $\phi$ is the orientation of the ellipse. Thus $\phi$ should take a constant value across the image. Note the co-ordinate relation
 \begin{equation}
