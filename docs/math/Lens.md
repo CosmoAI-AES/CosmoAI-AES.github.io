@@ -24,7 +24,7 @@ fixed $\Sigma$ is independent of the axis ratio $f$.
 Solving the Poisson equation, this gives, according to Kormann (1994) the following.
 \begin{aligned}
 \begin{split}
-  \psi_\textrm{SIE}(\phi,R,\theta) =
+  \psi_{\xi_0,f,\phi,\chi_\texrm{L}}^\textrm{SIE}(R,\theta) =
   \frac{\xi_0}{\chi_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\cdot
   &\Bigg([\sin(\theta+\phi)]\arcsin\left(\sqrt{1-f^2}\cdot \sin{(\theta+\phi)}\right)
   \\&
