@@ -82,18 +82,23 @@ sampling an computable function.
     + Modular Lens Models
         + `RouletteModel.cpp`
         + `Raytrace.cpp`
+    + Semi-Modular Models using `RotatedModel.cpp` as a superclass.
+      It overrides functions to rotate the image and make all calculations
+      assuming the source placed on the $x$-axis.
+      The subclasses override `getDistortedPos()` to hardcode the actual
+      distortion, and thus assume a specific lens model, but they still
+      delegate `getXi()` to a Lens Object.
+        + `PointMassExact.cpp` simulates the point mass model
+          using the exact formulation
+        + `PointMassRoulette.cpp` simulates the point mass model using
+          the Roulette formalism
     + Monolithic Lens Models
 	+ `RouletteRegenerator.cpp` is for simulation from roulette amplitudes
 	   without any concrete lens model.
-	+ `RotatedModel.cpp` is a superclass for the point mass models.
-            + `PointMassExact.cpp` simulates the point mass model
-              using the exact formulation
-            + `PointMassRoulette.cpp` simulates the point mass model using
-              the Roulette formalism
 + Lens Models
     + `SIS.cpp` 
     + `SIE.cpp`  (not tested)
-    + `PointMass.cpp` is incomplete and so far used only with the monolithic models. 
+    + `PointMass.cpp` is incomplete and so far used only with the `RotateModel` models. 
 + Source Models
     + `Source.cpp` is the abstract base class.
     + `SphericalSource.cpp` is standard Guassian model
