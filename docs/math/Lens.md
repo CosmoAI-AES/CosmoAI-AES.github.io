@@ -6,8 +6,9 @@ usemathjax: true
 
 # SIS (Singular isothermal sphere)
 
+The following expression for $\psi$ is implemented in `amplitudes.py`
 \[
-begin{aligned}\psi^\mathrm{SIS}(x,y) = - R_E\cdot\sqrt{x^2,y^2}\end{aligned}
+\begin{aligned}\psi^\mathrm{SIS}(x,y) = - R_E\cdot\sqrt{x^2,y^2}\end{aligned}
 \]
 
 
