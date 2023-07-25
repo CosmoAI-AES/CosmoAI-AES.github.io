@@ -4,6 +4,10 @@ theme: minima
 usemathjax: true
 ---
 
+# Point Mass
+
+$$\psi = \frac{R_E^2}{D_L^2}\ln \frac{\xi}{R_E}$$
+
 # SIS (Singular isothermal sphere)
 
 The following expression for $\psi$ is implemented in `amplitudes.py`
