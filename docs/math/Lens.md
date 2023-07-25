@@ -7,9 +7,9 @@ usemathjax: true
 # SIS (Singular isothermal sphere)
 
 The following expression for $\psi$ is implemented in `amplitudes.py`
-\[
+$$
 \begin{aligned}\psi^\mathrm{SIS}(x,y) = - R_E\cdot\sqrt{x^2,y^2}\end{aligned}
-\]
+$$
 
 
 # SIE (Singular isothermal ellipsoid)
@@ -28,7 +28,7 @@ Note that the normalization is chosen such that the mass inside an elliptical is
 fixed $\Sigma$ is independent of the axis ratio $f$.
 
 Solving the Poisson equation, this gives, according to Kormann (1994) the following.
-\[
+$$
 \begin{aligned}
 \begin{split}
   \psi_{\xi_0,f,\phi,\chi_\mathrm{L}}^\textrm{SIE}(R,\theta) =
@@ -38,7 +38,7 @@ Solving the Poisson equation, this gives, according to Kormann (1994) the follow
   +[\cos(\theta+\phi)]\mathrm{arcsinh}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
 \end{split}
 \end{aligned}
-\]
+$$
 where $(R,\theta)$ are the polar coordinates in the lens plane,
 whereas $\phi$ is the orientation of the ellipse. Thus $\phi$ should take a constant value across the image. Note the co-ordinate relation
 \begin{equation}
