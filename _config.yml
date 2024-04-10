@@ -25,8 +25,11 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
-theme: slate
+  # remote_theme: pages-themes/midnight@v0.2.0
+remote_theme: pages-themes/dinky@v0.2.0
+  # theme: minima
 plugins:
+  - jekyll-remote-theme 
   - jekyll-feed
 
 # Exclude from processing.

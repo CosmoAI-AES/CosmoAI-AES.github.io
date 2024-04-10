@@ -4,13 +4,15 @@ theme: minima
 usemathjax: true
 ---
 
-# Point Mass
+# Lens Models
+
+## Point Mass
 
 \begin{aligned}
 \psi = \frac{R_E^2}{D_L^2}\ln \frac{\xi}{R_E}
 \end{aligned}
 
-# SIS (Singular isothermal sphere)
+## SIS (Singular isothermal sphere)
 
 The following expression for $\psi$ is implemented in `amplitudes.py`
 {% raw %}
@@ -20,7 +22,7 @@ The sign causes some confusion, and we need to check if also EIS below needs a
 negative sign.
 
 
-# SIE (Singular isothermal ellipsoid)
+## SIE (Singular isothermal ellipsoid)
 
 The singular isothermal ellipsoid is a simple example of a non-spherical source.
 
