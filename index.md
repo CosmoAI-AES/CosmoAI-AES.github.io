@@ -5,7 +5,9 @@
 layout: home
 ---
 
+<!--
 # Mapping Dark Matter via Gravitational Lensing
+-->
 
 We are an inter-disciplinary research group at the Department of ICT and 
 Natural Sciences at NTNU in Ålesund, working on gravitational lensing.
