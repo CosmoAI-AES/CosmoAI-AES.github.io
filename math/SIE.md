@@ -172,3 +172,11 @@ The differentiation with respect to $y$ is similar and gives
   R_E\frac{\sqrt{f}}{f'}
     \sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
 \end{equation}
+
+## Deflection for arbitrary orientation
+
+There are several approaches,
+1. we can differentiate the general formula for $\psi$,
+2. we can rotate the co-ordinate system, use the derivation for $\theta=0$,
+   and finally undo the rotation.
+The latter can be implemented in several different ways too.
