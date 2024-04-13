@@ -145,32 +145,30 @@ It suffices to prove that $T=0$ where
     T =  \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
     - \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}} 
 \end{equation}
-
+We have
+\begin{equation}
+    T =  \frac{R}{\sqrt{f^2R^2 + (1-f^2)x^2}}
+    - \frac{R}{\sqrt{R^2 - (1-f^2)y^2}} 
+\end{equation}
+Using the fact that $R^2=x^2+y^2$ we get
+\begin{equation}
+    T =
+    =  \frac{R}{\sqrt{f^2y^2+x^2}}
+    - \frac{R}{\sqrt{x^2 + f^2y^2}} = 0,
+\end{equation}
+as required.
+We conclude that
+\begin{equation}
+  \frac{d}{dx}\psi(x,y) = 
+  R_E\frac{\sqrt{f}}{f'}
+    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+\end{equation}
 
 ### Differantiation with respect to $y$
 
+The differentiation with respect to $y$ is similar and gives
 \begin{equation}
   \frac{d}{dy}\psi(x,y) = 
-  \frac{\sqrt{f}}{f'}\cdot\left[ 
-    x\frac{1}{1+(\frac{f'}{f}\cdot\frac{y}{r})^2}
-    \cdot
-    \frac{xy}{r^3}
-    +
+  R_E\frac{\sqrt{f}}{f'}
     \sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
-    +
-    y\frac{1}{1-(f'\cdot\frac{y}{r})^2}\cdot\frac{x^2}{r^3}
-    \right]
-\end{equation}
-
-
-
-\begin{equation}
-  \frac{d}{dy}\psi(x,y) = 
-  \frac{\sqrt{f}}{f'}\cdot\left[ 
-    -\frac{x}{r}\frac{xy}{r^2+(\frac{f'}{f}\cdot{x})^2}
-    +
-    \sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
-    +
-    \frac{y}{r}\frac{x^2}{r^2-(f'\cdot{y})^2}
-    \right]
 \end{equation}
