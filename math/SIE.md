@@ -91,6 +91,9 @@ Firstly, we differentiate the $\sin^{-1}$-term
     \\\\&
     = -\frac{f'xy^2}{\sqrt{1 - (f'\frac{y}{R})^2}}
     \frac{1}{R^3}
+    \\\\&
+    = -\frac{f'xy^2}{R^3}\cdot
+    \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}}
 \end{split}
 \end{aligned}
 Secondly, we differentiate the $\sinh^{-1}$-term
@@ -119,35 +122,30 @@ where
     \\\\&
     = \frac{f'}{f}\cdot\frac{xy^2}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}
      \cdot \frac{1}{R^3}
+    \\\\&
+    = \frac{f'xy^2}{R^3} \cdot \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
 \end{split}
 \end{aligned}
-
-
+The partial derivative of the lens potential is then
 \begin{equation}
   \frac{d}{dx}\psi(x,y) = 
-  \frac{\sqrt{f}}{f'}\cdot\left[ 
-    y\frac{1}{1-(f'\cdot\frac{y}{r})^2}
-    \cdot
-    \frac{xy}{r^3}
-    +
-    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{r}\right) 
-    +
-    x\frac{1}{1+(\frac{f'}{f}\cdot\frac{x}{r})^2}
-    \cdot
-    \frac{y^2}{r^3}
+  R_E\frac{\sqrt{f}}{f'}\cdot\left[ 
+    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    + t_1 + t_2
     \right]
+\end{equation}
+We can prove that $t_1+t_2=0$.
+\begin{equation}
+    t_1 + t_2
+    = \frac{f'xy^2}{R^3} \cdot \left[ \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
+    - \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}} \right]
+\end{equation}
+It suffices to prove that $T=0$ where
+\begin{equation}
+    T =  \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
+    - \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}} 
 \end{equation}
 
-\begin{equation}
-  \frac{d}{dx}\psi(x,y) = 
-  \frac{\sqrt{f}}{f'}\cdot\left[ 
-    -\frac{y}{r}\frac{xy}{r^2-(f'\cdot{y})^2}
-    +
-    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{r}\right) 
-    +
-    \frac{x}{r}\frac{y^2}{r^2+(\frac{f'}{f}\cdot{x})^2}
-    \right]
-\end{equation}
 
 ### Differantiation with respect to $y$
 
