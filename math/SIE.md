@@ -201,7 +201,16 @@ $\nabla\psi(x,y)$ counterclockwise.  In other words
   \end{bmatrix}
   \nabla\psi(x,y)
 \end{aligned}
-where the vectors are seen as column vectors.
+where the vectors are seen as column vectors, and
+\begin{aligned}
+  \nabla\psi = 
+  R_E\frac{\sqrt{f}}{f'}\cdot
+  \begin{bmatrix}
+    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    \\
+    \sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
+  \end{bmatrix}
+\end{aligned}
 <!--
 Rotation
 \begin{aligned}
