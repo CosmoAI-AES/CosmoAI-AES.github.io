@@ -179,4 +179,42 @@ There are several approaches,
 1. we can differentiate the general formula for $\psi$,
 2. we can rotate the co-ordinate system, use the derivation for $\theta=0$,
    and finally undo the rotation.
-The latter can be implemented in several different ways too.
+There are several varations of the latter approach too.  Here
+we will consider one, which we consider intuitively simple.
+
+The deflection is given as the vector $\nabla\psi(x,y)$,
+in a Cartesian co-ordinate system with axes aligned with the
+axes of the lens.  We call this the lens frame.
+We are interested in the deflection vector $\vec{\alpha}(x,y)$ in
+a global frame, which shares the origin with the lens frame,
+but is rotated clockwise by an angle $\theta$.
+In other words, the lens is oriented at an angle $\theta$
+(counterclockwise) in the global frame.
+
+We obtain $\vec{\alpha}(x,y)$ in the global frame by rotating
+$\nabla\psi(x,y)$ counterclockwise.  In other words
+\begin{aligned}
+  \vec{\alpha}(x,y) = 
+  \begin{bmatrix}
+    \cos\theta & -\sin\theta \\
+    \sin\theta & \cos\theta 
+  \end{bmatrix}
+  \nabla\psi(x,y)
+\end{aligned}
+where the vectors are seen as column vectors.
+<!--
+Rotation
+\begin{aligned}
+  T =
+  \begin{bmatrix}
+    \cos\theta & -\sin\theta \\
+    \sin\theta & \cos\theta 
+  \end{bmatrix}
+\end{aligned}
+Co-ordinates
+\begin{aligned}
+  \begin{bmatrix} x' \\ y' \end{bmatrix}
+  = T \cdot
+  \begin{bmatrix} x \\ y \end{bmatrix}
+\end{aligned}
+-->
