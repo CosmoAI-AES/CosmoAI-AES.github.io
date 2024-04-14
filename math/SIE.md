@@ -211,6 +211,18 @@ where the vectors are seen as column vectors, and
     \sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
   \end{bmatrix}
 \end{aligned}
+Thus
+\begin{aligned}
+  \nabla\psi = 
+  R_E\frac{\sqrt{f}}{f'}\cdot
+  \begin{bmatrix}
+    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
+    \\\\\\\\
+    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
+  \end{bmatrix}
+\end{aligned}
 <!--
 Rotation
 \begin{aligned}
