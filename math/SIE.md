@@ -196,7 +196,7 @@ $\nabla\psi(x,y)$ counterclockwise.  In other words
 \begin{aligned}
   \vec{\alpha}(x,y) = 
   \begin{bmatrix}
-    \cos\theta & -\sin\theta \\\\
+    \cos\theta & -\sin\theta \\\\\\\\
     \sin\theta & \cos\theta 
   \end{bmatrix}
   \nabla\psi(x,y)
@@ -207,7 +207,7 @@ where the vectors are seen as column vectors, and
   R_E\frac{\sqrt{f}}{f'}\cdot
   \begin{bmatrix}
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    \\\\
+    \\\\\\\\
     \sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
   \end{bmatrix}
 \end{aligned}
