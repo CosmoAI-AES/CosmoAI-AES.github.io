@@ -242,8 +242,9 @@ This uses
     \left(\cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right) \right)
     \\\\\\\\
-  \frac{\partial\psi}{\partial x} &=
+  \frac{\partial\psi}{\partial y} &=
   R_E\frac{\sqrt{f}}{f'}\cdot
     \left( \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right)  \right)
 \end{aligned}
+as taken from the expression for $\nabla\psi$ above.
