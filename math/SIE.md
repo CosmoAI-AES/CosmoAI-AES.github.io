@@ -223,19 +223,27 @@ Thus
     +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
   \end{bmatrix}
 \end{aligned}
-<!--
-Rotation
+
+
+## Implementation
+
+### Evaluation of the lens potential.
+
+To evaluate the lens potential $\psi(x,y)$, we calculate the polar coordinates
+$R$ and $\phi$, and use the formula above for 
+$\psi_{\xi_0,f,\theta,\chi_\mathrm{L}}^\textrm{SIE}(R,\phi)$.
+
+### Evaluation of the Deflection.
+
+This uses
 \begin{aligned}
-  T =
-  \begin{bmatrix}
-    \cos\theta & -\sin\theta \\
-    \sin\theta & \cos\theta 
-  \end{bmatrix}
+  \frac{\partial\psi}{\partial x} &=
+  R_E\frac{\sqrt{f}}{f'}\cdot
+    \left(\cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right) \right)
+    \\\\\\\\
+  \frac{\partial\psi}{\partial x} &=
+  R_E\frac{\sqrt{f}}{f'}\cdot
+    \left( \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right)  \right)
 \end{aligned}
-Co-ordinates
-\begin{aligned}
-  \begin{bmatrix} x' \\ y' \end{bmatrix}
-  = T \cdot
-  \begin{bmatrix} x \\ y \end{bmatrix}
-\end{aligned}
--->
