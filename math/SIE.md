@@ -227,6 +227,8 @@ Thus
 
 ## Implementation
 
+This is implemented in the SIE class (`src/simlib/SIE.cpp`).
+
 ### Evaluation of the lens potential.
 
 To evaluate the lens potential $\psi(x,y)$, we calculate the polar coordinates
