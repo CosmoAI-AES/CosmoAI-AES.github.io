@@ -1,15 +1,16 @@
 ---
 title: CosmoSim Test Scripts
-theme: minima
 permalink: /docs/test/
 usemathjax: true
 ---
+
+# CosmoSim Test Scripts
 
 This is a partial description of the most important test
 suites implemented.
 For details, it is still necessary to read the code, unfortunately.
 
-# Regression Test
+## Regression Test
 
 + Directory `RegressionTest`
 
@@ -38,7 +39,7 @@ the generated image, the baseline, abd the difference image.
 on Windows.  This is probably numerical approximations, but it has
 not yet been investigated.
 
-# $\xi$-move Test
+## $\xi$-move Test
 
 + `Scripts/ximovetest.sh`
 
@@ -48,7 +49,7 @@ The output images are in `Test/ximove`*date*.  The spliced
 images are prefixed `join-` and should look like plausible
 distortions, with symmetry and continuous shapes.
 
-# Roulette Reconstruction Test
+## Roulette Reconstruction Test
 
 + `Test/roulettelens/test.sh`
 
