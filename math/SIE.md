@@ -213,7 +213,7 @@ where the vectors are seen as column vectors, and
 \end{aligned}
 Thus
 \begin{aligned}
-  \nabla\psi = 
+  \vec{\alpha} = 
   C_0\frac{\sqrt{f}}{f'}\cdot
   \begin{bmatrix}
     \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
