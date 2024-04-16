@@ -41,6 +41,15 @@ intended for lenses where an algebraic expression for the lens
 potential $\psi$ is not known, but the only case implemented is
 sampling an computable function.
 
+## The Lens Model
+
+Critical functions
++ `eta` is the actual source position, and is returned by `getEta()`
++ `updateApparentAbs)` does several things
+    + It samples $\psi$, calling `lens->updatePsi(im.size())`
+    + It sets the apparent position $\nu$, by first geting $\xi$
+      from the lens by calling `getXi($\chi\eta$)`.
+
 
 # Terminology
 
