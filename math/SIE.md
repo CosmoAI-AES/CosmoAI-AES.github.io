@@ -22,11 +22,11 @@ fixed $\Sigma$ is independent of the axis ratio $f$.
 Solving the Poisson equation, this gives, according to Kormann (1994) the following.
 \begin{aligned}
 \begin{split}
-  \psi_{\xi_0,f,\theta,\chi_\mathrm{L}}^\textrm{SIE}(R,\phi) =
-  \frac{\xi_0}{\chi_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\cdot
-  &\Bigg([\sin(\theta+\phi)]\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\theta+\phi)}\right)
+  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(R,\phi) =
+  \frac{\xi_0}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\cdot
+  &\Bigg([\sin(\theta+\phi)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\theta+\phi)}\right)
   \\\\&
-  +[\cos(\theta+\phi)]\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
+  +[\cos(\theta+\phi)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
 \end{split}
 \end{aligned}
 where $(R,\phi)$ are the polar coordinates in the lens plane,
@@ -233,7 +233,7 @@ This is implemented in the SIE class (`src/simlib/SIE.cpp`).
 
 To evaluate the lens potential $\psi(x,y)$, we calculate the polar coordinates
 $R$ and $\phi$, and use the formula above for 
-$\psi_{\xi_0,f,\theta,\chi_\mathrm{L}}^\textrm{SIE}(R,\phi)$.
+$\psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(R,\phi)$.
 
 ### Evaluation of the Deflection.
 
