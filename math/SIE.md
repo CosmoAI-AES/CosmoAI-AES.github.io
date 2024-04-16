@@ -208,7 +208,7 @@ where the vectors are seen as column vectors, and
   \begin{bmatrix}
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     \\\\\\\\
-    \sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
+    \sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
   \end{bmatrix}
 \end{aligned}
 Thus
@@ -217,10 +217,10 @@ Thus
   C_0\frac{\sqrt{f}}{f'}\cdot
   \begin{bmatrix}
     \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
+    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
     \\\\\\\\
     \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
+    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
   \end{bmatrix}
 \end{aligned}
 
@@ -242,11 +242,11 @@ This uses
   \frac{\partial\psi}{\partial x} &=
   C_0\frac{\sqrt{f}}{f'}\cdot
     \left(\cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right) \right)
+    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{R}\right) \right)
     \\\\\\\\
   \frac{\partial\psi}{\partial y} &=
   C_0\frac{\sqrt{f}}{f'}\cdot
     \left( \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right)  \right)
+    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{R}\right)  \right)
 \end{aligned}
 as taken from the expression for $\nabla\psi$ above.
