@@ -170,7 +170,7 @@ The differentiation with respect to $y$ is similar and gives
 \begin{equation}
   \frac{d}{dy}\psi(x,y) = 
   C_0\frac{\sqrt{f}}{f'}
-    \sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
+    \sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
 \end{equation}
 
 ## Deflection for arbitrary orientation
