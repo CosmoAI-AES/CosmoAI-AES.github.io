@@ -26,7 +26,7 @@ Solving the Poisson equation, this gives, according to Kormann (1994) the follow
   \frac{\xi_0}{\chi_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\cdot
   &\Bigg([\sin(\theta+\phi)]\arcsin\left(\sqrt{1-f^2}\cdot \sin{(\theta+\phi)}\right)
   \\\\&
-  +[\cos(\theta+\phi)]\mathrm{arcsinh}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
+  +[\cos(\theta+\phi)]\arcsinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
 \end{split}
 \end{aligned}
 where $(R,\phi)$ are the polar coordinates in the lens plane,
@@ -48,14 +48,13 @@ In this section we assume $\theta=0$, aligning the elliptical lens with the
 primary axis. Then $\phi$ becomes
 \begin{equation}
   \psi(r,\phi) =
-  R_E\cdot \frac{\sqrt{f}}{f'}R\cdot\left[ \sin\phi\arc\sin(f'\cdot\sin\phi)
-              + \cos\phi\arc\sinh\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
+  R_E\cdot \frac{\sqrt{f}}{f'}R\cdot\left[ \sin\phi\sin^{-1}(f'\cdot\sin\phi) + \cos\phi\sinh^{-1}\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
 \end{equation}
 In Cartesian coordinates, we get
 \begin{equation}
    \psi(x,y) = R_E\cdot \frac{\sqrt{f}}{f'}\cdot\left[ 
-    y\arc\sin\left(f'\cdot\frac{y}{R}\right) 
-    + x\arc\sinh\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
+    + x\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     \right] 
 \end{equation}
 where 
@@ -69,16 +68,16 @@ We need the following basic rules.
   \frac{d}{dx}\arcsin x  = \frac{1}{\sqrt{1-x^2}}
 \end{equation}
 \begin{equation}
-  \frac{d}{dx}\arc\sinh x = \frac{1}{\sqrt{1+x^2}}
+  \frac{d}{dx}\sinh^{-1} x = \frac{1}{\sqrt{1+x^2}}
 \end{equation}
 
 ### Differantiation with respect to $x$
 
-Firstly, we differentiate the $\arc\sin$-term
+Firstly, we differentiate the $\sin^{-1}$-term
 \begin{aligned}
 \begin{split}
   t_1 = \frac{d}{dx}
-    y\arc\sin\left(f'\cdot\frac{y}{R}\right) 
+    y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
     &= \frac{y}{\sqrt{1 - (f'\frac{y}{R})^2}}(f'y)
     \frac{d}{dx}\frac{1}{R}
     \\\\&
