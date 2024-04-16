@@ -39,7 +39,7 @@ In the following, we use the following shorthands:
 \begin{aligned}
   f' & =\sqrt{1-f^2}, 
 \\\\\\\\
-  R_E & = \frac{\xi_0}{D_L^2}
+  C_0 & = \frac{\xi_0}{D_L^2}
 \end{aligned}
 
 ## Derivation with $\theta=0$ 
@@ -48,11 +48,11 @@ In this section we assume $\theta=0$, aligning the elliptical lens with the
 primary axis. Then $\phi$ becomes
 \begin{equation}
   \psi(r,\phi) =
-  R_E\cdot \frac{\sqrt{f}}{f'}R\cdot\left[ \sin\phi\sin^{-1}(f'\cdot\sin\phi) + \cos\phi\sinh^{-1}\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
+  C_0\cdot \frac{\sqrt{f}}{f'}R\cdot\left[ \sin\phi\sin^{-1}(f'\cdot\sin\phi) + \cos\phi\sinh^{-1}\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
 \end{equation}
 In Cartesian coordinates, we get
 \begin{equation}
-   \psi(x,y) = R_E\cdot \frac{\sqrt{f}}{f'}\cdot\left[ 
+   \psi(x,y) = C_0\cdot \frac{\sqrt{f}}{f'}\cdot\left[ 
     y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
     + x\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     \right] 
@@ -129,7 +129,7 @@ where
 The partial derivative of the lens potential is then
 \begin{equation}
   \frac{d}{dx}\psi(x,y) = 
-  R_E\frac{\sqrt{f}}{f'}\cdot\left[ 
+  C_0\frac{\sqrt{f}}{f'}\cdot\left[ 
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     + t_1 + t_2
     \right]
@@ -160,7 +160,7 @@ as required.
 We conclude that
 \begin{equation}
   \frac{d}{dx}\psi(x,y) = 
-  R_E\frac{\sqrt{f}}{f'}
+  C_0\frac{\sqrt{f}}{f'}
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
 \end{equation}
 
@@ -169,7 +169,7 @@ We conclude that
 The differentiation with respect to $y$ is similar and gives
 \begin{equation}
   \frac{d}{dy}\psi(x,y) = 
-  R_E\frac{\sqrt{f}}{f'}
+  C_0\frac{\sqrt{f}}{f'}
     \sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
 \end{equation}
 
@@ -204,7 +204,7 @@ $\nabla\psi(x,y)$ counterclockwise.  In other words
 where the vectors are seen as column vectors, and
 \begin{aligned}
   \nabla\psi = 
-  R_E\frac{\sqrt{f}}{f'}\cdot
+  C_0\frac{\sqrt{f}}{f'}\cdot
   \begin{bmatrix}
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     \\\\\\\\
@@ -214,7 +214,7 @@ where the vectors are seen as column vectors, and
 Thus
 \begin{aligned}
   \nabla\psi = 
-  R_E\frac{\sqrt{f}}{f'}\cdot
+  C_0\frac{\sqrt{f}}{f'}\cdot
   \begin{bmatrix}
     \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right) 
@@ -240,12 +240,12 @@ $\psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(R,\phi)$.
 This uses
 \begin{aligned}
   \frac{\partial\psi}{\partial x} &=
-  R_E\frac{\sqrt{f}}{f'}\cdot
+  C_0\frac{\sqrt{f}}{f'}\cdot
     \left(\cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right) \right)
     \\\\\\\\
   \frac{\partial\psi}{\partial y} &=
-  R_E\frac{\sqrt{f}}{f'}\cdot
+  C_0\frac{\sqrt{f}}{f'}\cdot
     \left( \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{r}\right)  \right)
 \end{aligned}
