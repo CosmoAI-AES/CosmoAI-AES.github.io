@@ -28,6 +28,8 @@ CosmoSim repository.
 + amplitudes.py
     + Generate a file with roulette amplitudes for the SIS lens.
     + For **development use** only
+    + The generated files are included in the release packages and found by the
+      library.
 
 ## Roulette Amplitude Recovery (`roulettegen.py`)
 

@@ -23,6 +23,7 @@ These pages present software prototypes which we have made publicly available.
 + [User Tools](/docs/scripts/)
 + [Test Scripts](/docs/test/)
 + [Simulation Model](/docs/model/) - technical documentation
++ [Raytrace Simulation](/docs/model/Raytrace) 
 
 ## CosmoSim - Lens Models
 
