@@ -48,13 +48,14 @@ In this section we assume $\theta=0$, aligning the elliptical lens with the
 primary axis. Then $\phi$ becomes
 \begin{equation}
   \psi(r,\phi) =
-  R_E\cdot \frac{\sqrt{f}}{f'}R\cdot\left[ \sin\phi\sin^{-1}(f'\cdot\sin\phi) + \cos\phi\sinh^{-1}\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
+  R_E\cdot \frac{\sqrt{f}}{f'}R\cdot\left[ \sin\phi\arc\sin(f'\cdot\sin\phi)
+              + \cos\phi\arc\sinh\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
 \end{equation}
 In Cartesian coordinates, we get
 \begin{equation}
    \psi(x,y) = R_E\cdot \frac{\sqrt{f}}{f'}\cdot\left[ 
-    y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
-    + x\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    y\arc\sin\left(f'\cdot\frac{y}{R}\right) 
+    + x\arc\sinh\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     \right] 
 \end{equation}
 where 
@@ -68,16 +69,16 @@ We need the following basic rules.
   \frac{d}{dx}\arcsin x  = \frac{1}{\sqrt{1-x^2}}
 \end{equation}
 \begin{equation}
-  \frac{d}{dx}\sinh^{-1} x = \frac{1}{\sqrt{1+x^2}}
+  \frac{d}{dx}\arc\sinh x = \frac{1}{\sqrt{1+x^2}}
 \end{equation}
 
 ### Differantiation with respect to $x$
 
-Firstly, we differentiate the $\sin^{-1}$-term
+Firstly, we differentiate the $\arc\sin$-term
 \begin{aligned}
 \begin{split}
   t_1 = \frac{d}{dx}
-    y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
+    y\arc\sin\left(f'\cdot\frac{y}{R}\right) 
     &= \frac{y}{\sqrt{1 - (f'\frac{y}{R})^2}}(f'y)
     \frac{d}{dx}\frac{1}{R}
     \\\\&
