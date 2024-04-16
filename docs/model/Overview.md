@@ -6,7 +6,8 @@ usemathjax: true
 ---
 
 + [Sketches of the Mathematical Model](Model)
-+ [Roulette](Roulette Model)
++ [Raytrace Simulation](Raytrace) 
++ [Roulette Model](Roulette)
 
 
 # Software Model
