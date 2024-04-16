@@ -24,9 +24,9 @@ Solving the Poisson equation, this gives, according to Kormann (1994) the follow
 \begin{split}
   \psi_{\xi_0,f,\theta,\chi_\mathrm{L}}^\textrm{SIE}(R,\phi) =
   \frac{\xi_0}{\chi_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\cdot
-  &\Bigg([\sin(\theta+\phi)]\arcsin\left(\sqrt{1-f^2}\cdot \sin{(\theta+\phi)}\right)
+  &\Bigg([\sin(\theta+\phi)]\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\theta+\phi)}\right)
   \\\\&
-  +[\cos(\theta+\phi)]\arcsinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
+  +[\cos(\theta+\phi)]\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
 \end{split}
 \end{aligned}
 where $(R,\phi)$ are the polar coordinates in the lens plane,
@@ -65,7 +65,7 @@ where
 The deflection is given by the gradient $\nabla\psi$.
 We need the following basic rules.
 \begin{equation}
-  \frac{d}{dx}\arcsin x  = \frac{1}{\sqrt{1-x^2}}
+  \frac{d}{dx}\sin^{-1} x  = \frac{1}{\sqrt{1-x^2}}
 \end{equation}
 \begin{equation}
   \frac{d}{dx}\sinh^{-1} x = \frac{1}{\sqrt{1+x^2}}
