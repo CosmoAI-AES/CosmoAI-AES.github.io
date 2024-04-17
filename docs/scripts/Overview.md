@@ -7,14 +7,24 @@ usemathjax: true
 
 # Python Scripts
 
-The python scripts are located in the Python directory in the
+The python scripts are located in the CosmoSimPy directory in the
 CosmoSim repository.
+
+## GUI
+
+`CosmoGUI.py` is the main GUI tool, to simulate distortion
+and vary parameters interactively.
+
+```
+python3 CosmoSimPy/CosmoGUI.py
+```
+
+**TODO** further documentation
+
+## Command line operation
 
 + `datagen.py` is the main CLI tool 
     + bulk generation of images
-    + **TODO** further documentation
-+ `CosmoGUI.py` is the main GUI tool 
-    + simulate distortion interactively
     + **TODO** further documentation
 + datasetgen.py 
     + random generation of parameters for data sets

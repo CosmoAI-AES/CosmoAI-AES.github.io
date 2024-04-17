@@ -25,6 +25,8 @@ These pages present software prototypes which we have made publicly available.
 + [Simulation Model](/docs/model/) - technical documentation
     + [Raytrace Simulation](/docs/model/Raytrace) 
     + [Roulette Formalism](/docs/model/Roulette)  (Calculation and Simulation)
++ Implementation Notes
+    + [Python Modules](/docs/Python)
 
 ## CosmoSim - Lens Models
 
