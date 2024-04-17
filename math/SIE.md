@@ -206,9 +206,10 @@ $(x',y')$ the same point in the lens frame.  Hence
    \cdot
    \begin{bmatrix} x \\\\\\\\ y \end{bmatrix}
 \end{aligned}
+In other words, the $(x,y)$ coordinates are rotated clockwise.
 Similarly the deflection is given as $\nabla\psi(x',y')$ in
-the lens frame, and $\vec{\alpha}(x,y)$ in the globale frame.
-Thus
+the lens frame, and $\vec{\alpha}(x,y)$ in the global frame.
+Thus, $\nabla\psi$ has to be rotated counterclockwise, as
 \begin{aligned}
    \vec{\alpha}(x,y)
    &=
