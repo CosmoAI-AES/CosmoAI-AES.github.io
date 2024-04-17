@@ -224,11 +224,11 @@ This gives
   \vec{\alpha}(x,y) = 
   C_0\frac{\sqrt{f}}{f'}\cdot
   \begin{bmatrix}
-    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta-y\sin\theta}{R}\right)
-    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{x\sin\theta+y\cos\theta}{R}\right) 
+    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
+    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
     \\\\\\\\
-    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta-y\sin\theta}{R}\right)
-    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{x\sin\theta+y\cos\theta}{R}\right) 
+    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
+    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
   \end{bmatrix}
 \end{aligned}
 
@@ -250,15 +250,15 @@ This uses
   \frac{\partial\psi}{\partial x} &=
   C_0\frac{\sqrt{f}}{f'}\cdot
     \left(
-    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta-y\sin\theta}{R}\right)
-    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{x\sin\theta+y\cos\theta}{R}\right) 
+    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
+    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
     \right)
     \\\\\\\\
   \frac{\partial\psi}{\partial y} &=
   C_0\frac{\sqrt{f}}{f'}\cdot
     \left(
-    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta-y\sin\theta}{R}\right)
-    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{x\sin\theta+y\cos\theta}{R}\right) 
+    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
+    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
     \right)
 \end{aligned}
 as taken from the expression for $\vec\alpha(x,y)$ above.
