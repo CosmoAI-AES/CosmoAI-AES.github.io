@@ -218,39 +218,16 @@ Thus
    \cdot
    \nabla\psi(x',y')
 \end{aligned}
-
-**TODO** Revise below
-
-We obtain $\vec{\alpha}(x,y)$ in the global frame by rotating
-$\nabla\psi(x,y)$ counterclockwise.  In other words
+This gives
 \begin{aligned}
   \vec{\alpha}(x,y) = 
-  \begin{bmatrix}
-    \cos\theta & -\sin\theta \\\\\\\\
-    \sin\theta & \cos\theta 
-  \end{bmatrix}
-  \nabla\psi(x,y)
-\end{aligned}
-where the vectors are seen as column vectors, and
-\begin{aligned}
-  \nabla\psi = 
   C_0\frac{\sqrt{f}}{f'}\cdot
   \begin{bmatrix}
-    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta-y\sin\theta}{R}\right)
+    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{x\sin\theta+y\cos\theta}{R}\right) 
     \\\\\\\\
-    \sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
-  \end{bmatrix}
-\end{aligned}
-Thus
-\begin{aligned}
-  \vec{\alpha} = 
-  C_0\frac{\sqrt{f}}{f'}\cdot
-  \begin{bmatrix}
-    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
-    \\\\\\\\
-    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
+    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta-y\sin\theta}{R}\right)
+    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{x\sin\theta+y\cos\theta}{R}\right) 
   \end{bmatrix}
 \end{aligned}
 
@@ -271,12 +248,16 @@ This uses
 \begin{aligned}
   \frac{\partial\psi}{\partial x} &=
   C_0\frac{\sqrt{f}}{f'}\cdot
-    \left(\cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{R}\right) \right)
+    \left(
+    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta-y\sin\theta}{R}\right)
+    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{x\sin\theta+y\cos\theta}{R}\right) 
+    \right)
     \\\\\\\\
   \frac{\partial\psi}{\partial y} &=
   C_0\frac{\sqrt{f}}{f'}\cdot
-    \left( \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{y}{R}\right)  \right)
+    \left(
+    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta-y\sin\theta}{R}\right)
+    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{x\sin\theta+y\cos\theta}{R}\right) 
+    \right)
 \end{aligned}
-as taken from the expression for $\nabla\psi$ above.
+as taken from the expression for $\vec\alpha(x,y)$ above.
