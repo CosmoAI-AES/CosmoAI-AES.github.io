@@ -24,16 +24,17 @@ Solving the Poisson equation, this gives, according to Kormann (1994) the follow
 \begin{split}
   \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(R,\phi) =
   \frac{\xi_0}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\cdot
-  &\Bigg([\sin(\theta+\phi)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\theta+\phi)}\right)
+  &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
   \\\\&
-  +[\cos(\theta+\phi)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\theta+\phi)\right)\Bigg).
+  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
 \end{split}
 \end{aligned}
 where $(R,\phi)$ are the polar coordinates in the lens plane,
 whereas $\theta$ is the orientation of the ellipse.
+That is, the major axis of the ellipse is $\theta$ from the $x$-axis, counter-clockwise.
 Thus $\phi$ should take a constant value across the image. Note the co-ordinate relation
 \begin{equation}
-    (X,Y)= R(\sin\theta,\cos\theta).
+    (x,y)= R(\sin\phi,\cos\phi).
 \end{equation}
 In the following, we use the following shorthands:
 \begin{aligned}
@@ -199,8 +200,8 @@ $(x',y')$ the same point in the lens frame.  Hence
    \begin{bmatrix} x' \\\\\\\\ y' \end{bmatrix}
    &=
    \begin{bmatrix}
-     \cos\theta & -\sin\theta \\\\\\\\
-     \sin\theta & \cos\theta 
+     \cos\theta & \sin\theta \\\\\\\\
+     -\sin\theta & \cos\theta 
    \end{bmatrix}
    \cdot
    \begin{bmatrix} x \\\\\\\\ y \end{bmatrix}
