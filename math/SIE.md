@@ -182,7 +182,9 @@ There are several approaches,
 There are several varations of the latter approach too.  Here
 we will consider one, which we consider intuitively simple.
 
-The deflection is given as the vector $\nabla\psi(x,y)$,
+### Approach 1. Rotation of the Coordinate System
+
+The deflection is given as the vector $\nabla\psi$,
 in a Cartesian co-ordinate system with axes aligned with the
 axes of the lens.  We call this the lens frame.
 We are interested in the deflection vector $\vec{\alpha}(x,y)$ in
@@ -190,6 +192,34 @@ a global frame, which shares the origin with the lens frame,
 but is rotated clockwise by an angle $\theta$.
 In other words, the lens is oriented at an angle $\theta$
 (counterclockwise) in the global frame.
+
+We will let $(x,y)$ denote the point in the global frame, and
+$(x',y')$ the same point in the lens frame.  Hence
+\begin{aligned}
+   \begin{bmatrix} x' \\\\\\\\ y' \end{bmatrix}
+   &=
+   \begin{bmatrix}
+     \cos\theta & -\sin\theta \\\\\\\\
+     \sin\theta & \cos\theta 
+   \end{bmatrix}
+   \cdot
+   \begin{bmatrix} x \\\\\\\\ y \end{bmatrix}
+\end{aligned}
+Similarly the deflection is given as $\nabla\psi(x',y')$ in
+the lens frame, and $\vec{\alpha}(x,y)$ in the globale frame.
+Thus
+\begin{aligned}
+   \vec{\alpha}(x,y)
+   &=
+   \begin{bmatrix}
+     \cos\theta & -\sin\theta \\\\\\\\
+     \sin\theta & \cos\theta 
+   \end{bmatrix}
+   \cdot
+   \nabla\psi(x',y')
+\end{aligned}
+
+**TODO** Revise below
 
 We obtain $\vec{\alpha}(x,y)$ in the global frame by rotating
 $\nabla\psi(x,y)$ counterclockwise.  In other words
