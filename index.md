@@ -32,3 +32,7 @@ These pages present software prototypes which we have made publicly available.
 
 + [SIE](/math/SIE)
 + [Other Lens Models](/math/Lens)
+
+## Development
+
++ [Release Process](/docs/Release)
