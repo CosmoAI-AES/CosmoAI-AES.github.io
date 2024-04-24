@@ -1,3 +1,8 @@
+---
+title: Raytrace Simulation
+usemathjax: true
+---
+
 # Raytrace Simulation
 
 The critical API for raytrace simulation are the `psiXvalue(x,y)` and `psiYvalue(x,y)`,

@@ -33,6 +33,10 @@ These pages present software prototypes which we have made publicly available.
 + [SIE](/math/SIE)
 + [Other Lens Models](/math/Lens)
 
+## Notes - under construction
+
++ [Critical Curves](/math/CriticalCurve)
+
 ## Development
 
 + [Release Process](/docs/Release)
