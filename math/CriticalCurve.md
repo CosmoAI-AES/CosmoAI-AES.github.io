@@ -40,7 +40,38 @@ which gives
   A^{-1} (\boldsymbol{\theta}) 
   = 
   \begin{bmatrix}
-    1 - \psi_{xx} & -\psi_{xy} \\
+    1 - \psi_{xx} & -\psi_{xy} \\\\\\\\
     -\psi_{xy} & 1 - \psi_{yy} 
   \end{bmatrix}
 \end{equation}
+
+The **convergence** (or mass distribution) is
+\begin{equation}
+  \kappa(\theta) =
+  \frac12( \psi_{xx} + \psi_{yy} )
+\end{equation}
+We also defines the shorthands
+\begin{aligned}
+  \gamma_+(\theta) &=
+  \frac12( \psi_{xx} - \psi_{yy} ) \\\\\\\\
+  \gamma_\times(\theta) &= \psi_{xy} 
+\end{aligned}
+We can then write
+\begin{equation}
+  A(\boldsymbol{\theta}) 
+  = 
+  \frac1{(1-\kappa)^2 - \gamma_+^2 - \gamma_\times^2}
+  \begin{bmatrix}
+    1 - \kappa + \gamma_+ & \gamma_\times \\\\\\\\
+    \gamma_\times & 1 - \kappa - \gamma_+
+  \end{bmatrix}
+\end{equation}
+It can be shown that $A^{-1}$ and $A$ are indeed inverses.
+
+## Questions
+
+The **magnification** of an image is given as
+\begin{equation}
+  \mu(\boldsymbol{\theta}) = \det A(\boldsymbol{\theta})
+\end{equation}
+*What is the significance of this?*
