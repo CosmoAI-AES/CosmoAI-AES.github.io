@@ -16,6 +16,12 @@ where the axis ratio $f$ obeys $0\lt f\le1$ and $\xi_0$ is a constant parameter 
 mass (analogous to the Einstein radius $R_E$).
 
 **Remark**
+The relationship between $\kappa$ and the lens potential $\psi$ is
+\begin{equation}
+  \kappa(X,Y)= \frac1{D_L^2}\left(\psi_{xx}(X,Y) + \psi_{yy}(X,Y)\right)
+\end{equation}
+
+**Remark**
 Note that the normalization is chosen such that the mass inside an elliptical iso-density contour for 
 fixed $\Sigma$ is independent of the axis ratio $f$.
 
