@@ -18,7 +18,7 @@ mass (analogous to the Einstein radius $R_E$).
 **Remark**
 The relationship between $\kappa$ and the lens potential $\psi$ is
 \begin{equation}
-  \kappa(X,Y)= \frac1{D_L^2}\left(\psi_{xx}(X,Y) + \psi_{yy}(X,Y)\right)
+  \kappa(X,Y)= \frac12D_L^2\left(\psi_{xx}(X,Y) + \psi_{yy}(X,Y)\right)
 \end{equation}
 
 **Remark**
