@@ -30,6 +30,7 @@ These pages present software prototypes which we have made publicly available.
 
 ## CosmoSim - Lens Models
 
++ [LensPotential](/math/LensPotential)
 + [SIE](/math/SIE)
 + [Other Lens Models](/math/Lens)
 
