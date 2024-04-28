@@ -21,6 +21,11 @@ The apparent position, as seen by the observer, is at $\nu_S$ and
 \begin{equation}
   \Delta\boldsymbol{\eta}_S = \boldsymbol{\nu}_S - \boldsymbol{\eta}_S
 \end{equation}
+The apparent position in the lens plane $L$ is called
+\begin{equation}
+  \boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}_S.
+\end{equation}
+
 
 The deflection is most easily described in terms of angles, so 
 we define $\beta$ and $\theta$ as the angles between 
