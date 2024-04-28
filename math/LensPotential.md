@@ -3,6 +3,10 @@ title: Lens Potential and Basic Notation
 usemathjax: true
 ---
 
+# Lens Potential and Basic Notation
+
+**Under construction**
+
 ![Geometric model as described in the text](observer.png)
 
 We assume a flat sky, so that the source is contained in a plane $S$
@@ -17,6 +21,13 @@ The apparent position, as seen by the observer, is at $\nu_S$ and
 \begin{equation}
   \Delta\boldsymbol{\eta}_S = \boldsymbol{\nu}_S - \boldsymbol{\eta}_S
 \end{equation}
+
+The deflection is most easily described in terms of angles, so 
+we define $\beta$ and $\theta$ as the angles between 
+the optical axis and respectivel
+$\boldsymbol{\eta}_S$ and  $\boldsymbol{\nu}_S$.
+We defined $\alpha=\theta-\beta$ as the angle between
+$\boldsymbol{\eta}_S$ and  $\boldsymbol{\nu}_S$.
 
 
 
