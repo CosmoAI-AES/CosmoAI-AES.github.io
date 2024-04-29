@@ -29,10 +29,19 @@ The apparent position in the lens plane $L$ is called
 
 The deflection is most easily described in terms of angles, so 
 we define $\beta$ and $\theta$ as the angles between 
-the optical axis and respectivel
-$\boldsymbol{\eta}_S$ and  $\boldsymbol{\nu}_S$.
-We defined $\alpha=\theta-\beta$ as the angle between
-$\boldsymbol{\eta}_S$ and  $\boldsymbol{\nu}_S$.
+the optical axis and respectively 
+$\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$.
+The deflection angle $\hat\alpha$ is the angle between 
+the actual and apparent source in the source plane as seen
+from the apparent image in the lens plane.
+With the flat sky approximation, we have[^hatalpha],
+
+\begin{equation}
+  \alpha = \frac{D_{LS}}{D_S} \hat\alpha
+\end{equation}
+where $\alpha=\theta-\beta$ as the angle between
+$\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$ as seen
+from the observer.
 
 
 
@@ -43,3 +52,8 @@ as a function $\kappa$, which is related to $\psi$ as follows:
   \kappa(X,Y)= \frac12D_L^2\left(\psi_{xx}(X,Y) + \psi_{yy}(X,Y)\right)
 \end{equation}
 
+[^hatalpha]: 
+    This is seen because $D_S\alpha$ and $D_{LS}\hat\alpha$ are the lengths 
+    of arcs between the actual and apparent source, and for small
+    angles they are both approximately equal to the straigh line
+    $\Delta\boldsymbol{\eta}_S$.
