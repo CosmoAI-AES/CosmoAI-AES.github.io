@@ -26,7 +26,6 @@ The apparent position in the lens plane $L$ is called
   \boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}_S.
 \end{equation}
 
-
 The deflection is most easily described in terms of angles, so 
 we define $\beta$ and $\theta$ as the angles between 
 the optical axis and respectively 
@@ -43,6 +42,10 @@ where $\alpha=\theta-\beta$ as the angle between
 $\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$ as seen
 from the observer.
 
+Now, we can write the actual image as
+\begin{equation}
+  \boldsymbol{\eta}_S = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\hat\boldsymbol{\alpha}
+\end{equation}
 
 
 

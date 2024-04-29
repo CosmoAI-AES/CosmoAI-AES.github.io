@@ -28,6 +28,10 @@ These pages present software prototypes which we have made publicly available.
 + Implementation Notes
     + [Python Modules](/docs/Python)
 
+## Machine Learning with CosmoSim 
+
++ [Machine Learning Examples](/docs/scripts/MachineLearnngExamples)
+
 ## CosmoSim - Lens Models
 
 + [LensPotential](/math/LensPotential)
