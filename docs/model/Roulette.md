@@ -6,6 +6,7 @@ usemathjax: true
 
 # The Roulette Formalism
 
+
 ## Computation of the Roulette Amplitudes
 
 ![Geometry of source and image points](points.svg)

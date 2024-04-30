@@ -5,6 +5,10 @@ usemathjax: true
 
 # Machine Learning Examples
 
+We describe two scenarioes below.
+The first one assumes a parametric lens model.  
+The second one uses the roulette formalism as a parameter-free model.
+
 ## Parameter Recovery
 
 The vanilla problem is to assume particular lens and source models, and
