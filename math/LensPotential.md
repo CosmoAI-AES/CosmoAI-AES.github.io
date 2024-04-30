@@ -48,15 +48,38 @@ Now, we can write the actual image as
 \end{equation}
 
 
+[^hatalpha]: 
+    This is seen because $D_S\alpha$ and $D_{LS}\hat\alpha$ are the lengths 
+    of arcs between the actual and apparent source, and for small
+    angles they are both approximately equal to the straigh line
+    $\Delta\boldsymbol{\eta}_S$.
+
+## Normalisation
+
+The above definitions assume physical units.  It is customary to normalise
+using a constant factor $\xi_0$, corresponding to the Einstein radius.
+This gives the following entities, following Kormann 1994
+\begin{align}
+  \mathbf{x} & = \frac{\boldsymbol{\xi}}{\xi_0}
+  \\\\\\\\
+  \mathbf{y} & = \frac{\boldsymbol{\nu}}{\nu_0} 
+     \quad\text{where } \nu_0 = \frac{D_S}{D_L}\xi_0 
+  \\\\\\\\
+  \mathbf{a} & = \frac{D_LD_{LS}}{D_S\xi_0}}\hat\boldsymbol{\alpha}
+   = \frac{D_L}{\xi_0}}\boldsymbol{\alpha}
+\end{align}
+(Kormann uses $\boldsymbol{\alpha}$ for $\mathbf{a}, but we have
+already used that for $\theta-\beta$.)
+
+The lens potential (gravitational potential) can be written as a function
+of either the angle $\theta$, the vector $\boldsymbol(\xi}$, or the
+normalised $\mathbf{x}$.
+
+
+## Surface Mass Density
 
 The convergence, or dimensionless projected surface-mass density, is given
 as a function $\kappa$, which is related to $\psi$ as follows:
 \begin{equation}
   \kappa(X,Y)= \frac12D_L^2\left(\psi_{xx}(X,Y) + \psi_{yy}(X,Y)\right)
 \end{equation}
-
-[^hatalpha]: 
-    This is seen because $D_S\alpha$ and $D_{LS}\hat\alpha$ are the lengths 
-    of arcs between the actual and apparent source, and for small
-    angles they are both approximately equal to the straigh line
-    $\Delta\boldsymbol{\eta}_S$.
