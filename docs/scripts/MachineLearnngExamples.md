@@ -95,7 +95,7 @@ This generates a new file `roulette.csv` wgucg includes the roulette amplitudes
 instead of lens parameters.
 
 The columns we want to estimate in this scenario are
-+ The roulette amplitudes `alpha[$m$][$s$]` and `beta[$m$][$s$]` 
++ The roulette amplitudes `alpha[`$m$`][`$s$`]` and `beta[`$m$`][`$s$`]` 
   up to a chosen maximum $m$.
 + The relative position of the reference point `xiX` and `xiY`
 + Possibly `sigma` if we want to resimulate
@@ -105,7 +105,8 @@ The columns we want to estimate in this scenario are
 `--xireference`
 
 Other colums
-+ `x`, `y`
-+ `centreX`, `centreY`
++ `x`, `y` is the source position as in the original dataset
++ `centreX`, `centreY` position of the centre of mass in the originally
+  simulated image, before centring
 + `reletaX`, `reletaY`
 + `offsetX`, `offsetY`
