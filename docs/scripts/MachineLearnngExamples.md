@@ -81,8 +81,31 @@ The roulette amplitudes can be thought of as coefficients of a Taylor expansion 
 potential.  Thus they give a local description of the lens potential in a single point.
 The hope is to use this as a parameter-free model, but the research is still in early stages.
 
-The basic dataset can be generated as above, or more parameters can be varied, including the choice
-of lens and source models.  However, when we generate the images, we need to generate the roulette
+The basic dataset can be generated as above, or more parameters can be varied,
+including the choice of lens and source models.
+However, when we generate the images, we need to generate the roulette
 amplitudes as well.
+This can be done as follows:
+```python
+python3 CosmoSimPy/datagen.py \
+   -C -Z 800 -z 400 -D images \
+   --nterms 5 --outfile roulette.csv --csvfile dataset.csv --xireference
+```
+This generates a new file `roulette.csv` wgucg includes the roulette amplitudes 
+instead of lens parameters.
+
+The columns we want to estimate in this scenario are
++ The roulette amplitudes `alpha[$m$][$s$]` and `beta[$m$][$s$]` 
+  up to a chosen maximum $m$.
++ The relative position of the reference point `xiX` and `xiY`
++ Possibly `sigma` if we want to resimulate
 
 **TODO** Complete this
+
+`--xireference`
+
+Other colums
++ `x`, `y`
++ `centreX`, `centreY`
++ `reletaX`, `reletaY`
++ `offsetX`, `offsetY`
