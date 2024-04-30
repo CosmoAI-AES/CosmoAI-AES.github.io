@@ -97,16 +97,19 @@ instead of lens parameters.
 The columns we want to estimate in this scenario are
 + The roulette amplitudes `alpha[`$m$`][`$s$`]` and `beta[`$m$`][`$s$`]` 
   up to a chosen maximum $m$.
-+ The relative position of the reference point `xiX` and `xiY`
-+ Possibly `sigma` if we want to resimulate
+  This is the local description of the lens potential $\psi$.
++ The position of the reference point `xiX` and `xiY` relative to the
+  centre of mass.
+  This is the point where we have the local description of $\psi$.
++ Possibly `sigma` if we want to resimulate.  
+  The position of the source is not required, as it is inferred from
+  the roulette amplitudes.
 
-**TODO** Complete this
+The `--xireference` option tells the simulator to calculate the amplitudes
+in the image of the centre of the actual source.  Without the option, 
+the amplitudes are calculated in the apparent centre of mass.
 
-`--xireference`
-
-Other colums
-+ `x`, `y` is the source position as in the original dataset
-+ `centreX`, `centreY` position of the centre of mass in the originally
-  simulated image, before centring
-+ `reletaX`, `reletaY`
-+ `offsetX`, `offsetY`
+Source information, including the position (`x`, `y`) are copied
+from the original dataset.
+Other colums of the CSV file are described under
+[Roulette Formalism](/docs/model/Roulette).

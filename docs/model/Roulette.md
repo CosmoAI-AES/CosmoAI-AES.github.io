@@ -4,10 +4,11 @@ theme: minima
 usemathjax: true
 ---
 
+# The Roulette Formalism
 
-# Roulette Computation
+## Computation of the Roulette Amplitudes
 
-![Class diagram](points.svg)
+![Geometry of source and image points](points.svg)
 
 The reference points are calculated in the following order
 
@@ -29,7 +30,7 @@ The reference points are calculated in the following order
 
 # RouletteRegenerator: Simulation from Roulette Amplitudes 
 
-![Class diagram](relativeeta.svg)
+![Geometry of source and image points](relativeeta.svg)
 
 To make the reconstruction work, we need the following geometrical 
 points.
@@ -37,10 +38,11 @@ points.
 1.  $\xi$ is the apparent position and the reference point for the
     roulette model in the original formulation.  Unfortunately
     it cannot easily be recovered from a distorted image.
-2.  $\xi'$ is the centre of luminence in the distorted image, and
+2.  $\nu'=\xi'/\chi$ is the centre of luminence in the distorted image, and
     can be recovered from the image.
     Thus this will be used as the reference point and the centre of the
     image in the regeneration.
+    This is stored in the CSV file as (`centreX`,`centreY`).
 3.  $\eta$ and $\eta'$ are the source position corresponding respectively
     to $\xi$ and $\xi'$.
     - $\eta$ is input to the original simulation, but it cannot be recovered
@@ -49,11 +51,12 @@ points.
 4.  $\Delta\eta=\eta'-\eta$ is the difference between the centre of the source
     ($\eta$) and the reference point $\eta'$ corresponding to the centre of the
     roulette convergence ring.
-    It is calculated by `LensModel::getOffset`$(\xi')$ 
-    and stored in the CSV output from `datagen.py`.
-4.  $\eta''=\eta-\xi'/\chi$ is the source position ($\eta$) in the co-ordinate system
-    centred at $\xi'$.  This is calculated by `LensModel::getRelativeEta`$(\xi')$,
-    and stored in the CSV output from `datagen.py`.
+    It is calculated by `LensModel::getOffset`$(\nu')$ 
+    and stored in the CSV output from `datagen.py` as (`offsetX`,`offsetY`).
+4.  $\eta''=\eta-\nu'$ is the source position ($\eta$) in the co-ordinate system
+    centred at $\nu'$.  This is calculated by `LensModel::getRelativeEta`$(\nu')$,
+    and stored in the CSV output from `datagen.py` as
+    (`reletaX`,`reletaY`).
 
 Note that $\eta$ and $\eta'$ are defined in the source plane and $\xi$ and $\xi'$
 in the lens plane.  Working in the source image, which is also in scale with the
