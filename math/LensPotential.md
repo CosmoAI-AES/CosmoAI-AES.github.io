@@ -72,7 +72,13 @@ This gives the following entities, following Kormann 1994[^kormannalpha]
 
 The lens potential (gravitational potential) can be written as a function
 of either the angle $\theta$, the vector $\boldsymbol{\xi}$, or the
-normalised $\mathbf{x}$.
+normalised $\mathbf{x}$.  Thus we can write
+\begin{align}
+  \mathbf{a} = \xi_0\cdot\nabla_{\xi_0}\psi
+  = \nabla_{\mathbf{x}}\psi
+  = \frac{\xi_0}{D_L}\cdot\nabla_{\theta}\psi
+\end{align}
+
 
 [^kormannalpha]:
     Kormann uses $\boldsymbol{\alpha}$ for $\mathbf{a}$, but we have
@@ -85,3 +91,5 @@ as a function $\kappa$, which is related to $\psi$ as follows:
 \begin{equation}
   \kappa(X,Y)= \frac12D_L^2\left(\psi_{xx}(X,Y) + \psi_{yy}(X,Y)\right)
 \end{equation}
+
+## Notes
