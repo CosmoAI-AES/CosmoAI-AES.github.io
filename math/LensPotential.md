@@ -51,6 +51,7 @@ where $\alpha=\theta-\beta$ as the angle between
 $\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$ as seen
 from the observer.
 The same reasoning gives us the following[^hatalpha],
+
 \begin{equation}
   \alpha = \frac{D_{LS}}{D_S} \hat\alpha
 \end{equation}
