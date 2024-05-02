@@ -115,6 +115,14 @@ Different forms of $\psi$ give[^nabla],
     Kormann uses $\boldsymbol{\alpha}$ for $\mathbf{x}$, but we have
     already used that for $\theta-\beta$.
 
+## The Raytrace Equation
+
+The raytrace can be written in any of these forms of $\nabla\psi$, e.g.
+\begin{align}
+  \mathbf{y}  = \mathbf{x}  - \nabla_{\mathbf{x}}\psi
+\end{align}
+
+
 ## Surface Mass Density
 
 The convergence, or dimensionless projected surface-mass density, is given
