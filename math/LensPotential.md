@@ -158,16 +158,16 @@ In this notation, we can write the raytrace equation as
 The convergence, or dimensionless projected surface-mass density, is given
 as a function $\kappa$, which is related to $\psi$ as follows:
 \begin{equation}
-  \kappa(\boldsymbol{\xi})= \frac12D_L^2\left(
+  \kappa(\boldsymbol{\xi})= \frac12\xi_0^2\left(
      \frac{\partial^2\psi}{\partial\xi_1^2} + 
-     \frac{\partial^2\psi}{\partial\xi_2^2} +
+     \frac{\partial^2\psi}{\partial\xi_2^2}
      \right)
 \end{equation}
 or
 \begin{equation}
-  \kappa(\boldsymbol{\xi})= \frac12\xi_0^2\left(
+  \kappa(\boldsymbol{\xi})= \frac12D_L^2\left(
      \frac{\partial^2\psi^{\mathrm{R}}}{\partial\xi_1^2} + 
-     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\xi_2^2} +
+     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\xi_2^2}
      \right)
 \end{equation}
 
