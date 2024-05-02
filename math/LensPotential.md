@@ -146,4 +146,17 @@ as a function $\kappa$, which is related to $\psi$ as follows:
   \kappa(X,Y)= \frac12D_L^2\left(\psi_{xx}(X,Y) + \psi_{yy}(X,Y)\right)
 \end{equation}
 
+## Lens Potential in CosmoSim
+
+In the implementation of CosmoSim, we have used a different definition of $\psi$,
+\begin{equation}
+  \psi^{\mathrm{R}} = \frac{\xi_0^2}{D_L^2}\psi
+\end{equation}
+In this notation, we can write the raytrace equation as
+\begin{equation}
+  \boldsymbol{\eta} 
+  = \frac{D_S}{D_L}(\boldsymbol{\xi} - \nabla_{\xi}\psi^{\mathrm{R}})
+  = \boldsymbol{\nu} - \frac{D_S}{D_L} \nabla_{\xi}\psi^{\mathrm{R}}
+\end{equation}
+
 ## Notes
