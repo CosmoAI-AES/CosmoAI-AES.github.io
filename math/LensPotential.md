@@ -16,35 +16,48 @@ The optical axis is the line from the observer through the lens.
 The planes $S$ and $L$ are orthogonal on the optical axis, and have
 origin in the intersection therewith.
 
-We consider a single source point at $\boldsymbol{\eta}_S$ in $S$.
-The apparent position, as seen by the observer, is at $\nu_S$ and
+We consider a single source point at $\boldsymbol{\eta}$ in $S$.
+The apparent position, as seen by the observer, is at $\nu$ and
 \begin{equation}
-  \Delta\boldsymbol{\eta}_S = \boldsymbol{\nu}_S - \boldsymbol{\eta}_S
+  \Delta\boldsymbol{\eta} = \boldsymbol{\nu} - \boldsymbol{\eta}
 \end{equation}
 The apparent position in the lens plane $L$ is called
 \begin{equation}
-  \boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}_S.
+  \boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}.
 \end{equation}
 
 The deflection is most easily described in terms of angles, so 
 we define $\beta$ and $\theta$ as the angles between 
 the optical axis and respectively 
-$\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$.
+$\boldsymbol{\eta}$ and $\boldsymbol{\nu}$.
 The deflection angle $\hat\alpha$ is the angle between 
 the actual and apparent source in the source plane as seen
 from the apparent image in the lens plane.
-With the flat sky approximation, we have[^hatalpha],
 
-\begin{equation}
-  \alpha = \frac{D_{LS}}{D_S} \hat\alpha
-\end{equation}
+With the flat sky approximation, the angles are related to
+lengths  in the lens plane by a factor of $D_L$, so that
+\begin{align}
+   \boldsymbol{\xi} & = D_L\theta
+\end{align}
+Similarly, in the source plane, the factor is $D_S$
+\begin{align}
+   \boldsymbol{\nu} & = D_L\theta
+   \\\\\\\\
+   \boldsymbol{\eta} & = D_L\beta
+   \\\\\\\\
+   \Delta\boldsymbol{\eta} & = D_L\alpha
+\end{align}
 where $\alpha=\theta-\beta$ as the angle between
 $\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$ as seen
 from the observer.
+The same reasoning gives us the following[^hatalpha],
+\begin{equation}
+  \alpha = \frac{D_{LS}}{D_S} \hat\alpha
+\end{equation}
 
 Now, we can write the actual image as
 \begin{equation}
-  \boldsymbol{\eta}_S = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\hat\boldsymbol{\alpha}
+  \boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}
 \end{equation}
 
 
@@ -70,18 +83,36 @@ This gives the following entities, following Kormann 1994[^kormannalpha]
    = \frac{D_L}{\xi_0}\boldsymbol{\alpha}
 \end{align}
 
+The Einstein radius is a distance in the lens plane.
+The corresponding angle is $\xi_0/D_L$ which is used to denormalise
+$\mathbf{a}$ above.
+Note that in the flat sky approximation, the angle $\mathbf{a}$ is equal
+to the normalised length $\mathbf{x}$.  In the following, we will assume
+this, and write $\mathbf{x}$ throughout.
+
+
 The lens potential (gravitational potential) can be written as a function
-of either the angle $\theta$, the vector $\boldsymbol{\xi}$, or the
-normalised $\mathbf{x}$.  Thus we can write
-\begin{align}
-  \mathbf{a} = \xi_0\cdot\nabla_{\xi_0}\psi
+$\psi$ of either the angle $\theta$, the vector $\boldsymbol{\xi}$, or the
+normalised $\mathbf{x}$.
+The normalised deflection $\mathbf{x}$ is given as
+the gradient of $\psi$, i.e.
+\begin{equation}
+  \mathbf{x} 
   = \nabla_{\mathbf{x}}\psi
+\end{equation}
+Different forms of $\psi$ give[^nabla],
+\begin{align}
+  \mathbf{x} 
+  = \xi_0\cdot\nabla_{\xi}\psi
   = \frac{\xi_0}{D_L}\cdot\nabla_{\theta}\psi
 \end{align}
 
+[^nabla]:
+    We use here the chain rule with $\boldsymbol{\xi}= \xi_0\mathbf{x} $
+    and $\theta = \boldsymbol{\xi}/D_L$.
 
 [^kormannalpha]:
-    Kormann uses $\boldsymbol{\alpha}$ for $\mathbf{a}$, but we have
+    Kormann uses $\boldsymbol{\alpha}$ for $\mathbf{x}$, but we have
     already used that for $\theta-\beta$.
 
 ## Surface Mass Density
