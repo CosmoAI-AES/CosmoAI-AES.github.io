@@ -10,16 +10,17 @@ The singular isothermal ellipsoid is a simple example of a non-spherical source.
 
 The dimensionless projected surface-mass density $\kappa$ is given as
 \begin{equation}
-  \kappa(X,Y)=\frac{\sqrt{f}\xi_0}{2\sqrt{X^2+f^2Y^2}},
+  \kappa(\xi_1,\xi_2)=\frac{\sqrt{f}\xi_0}{2\sqrt{\xi_1^2+f^2\xi_2^2}},
 \end{equation}
 where the axis ratio $f$ obeys $0\lt f\le1$ and $\xi_0$ is a constant parameter related to the total
 mass (analogous to the Einstein radius $R_E$).
 
 **Remark**
-The relationship between $\kappa$ and the lens potential $\psi$ is
+The relationship between $\kappa$ and the lens potential $\psi^{\mathrm{R}}$ is
 \begin{equation}
-  \kappa(X,Y)= \frac12D_L^2\left(\psi_{xx}(X,Y) + \psi_{yy}(X,Y)\right)
+  \kappa(\xi_1,\xi_2)= \frac12D_L^2\left(\psi^{\mathrm{R}}_{\xi_1\xi_1}(\xi_1,\xi_2) + \psi^{\mathrm{R}}_{\xi_2\xi_2}(\xi_1,\xi_2)\right)
 \end{equation}
+where $\psi^{\mathrm{R}}$ is defined in [Lens Potential](LensPotential).
 
 **Remark**
 Note that the normalization is chosen such that the mass inside an elliptical iso-density contour for 
@@ -40,7 +41,7 @@ whereas $\theta$ is the orientation of the ellipse.
 That is, the major axis of the ellipse is $\theta$ from the $x$-axis, counter-clockwise.
 Thus $\phi$ should take a constant value across the image. Note the co-ordinate relation
 \begin{equation}
-    (x,y)= R(\sin\phi,\cos\phi).
+    \boldsymbol{\xi}= R(\sin\phi,\cos\phi).
 \end{equation}
 In the following, we use the following shorthands:
 \begin{aligned}
