@@ -139,13 +139,6 @@ In terms of angles, we have
   = \theta - \frac{\xi_0^2}{D_L^2}\nabla_{\theta}\psi
 \end{equation}
 
-## Surface Mass Density
-
-The convergence, or dimensionless projected surface-mass density, is given
-as a function $\kappa$, which is related to $\psi$ as follows:
-\begin{equation}
-  \kappa(X,Y)= \frac12D_L^2\left(\psi_{xx}(X,Y) + \psi_{yy}(X,Y)\right)
-\end{equation}
 
 ## Lens Potential in CosmoSim
 
@@ -158,6 +151,24 @@ In this notation, we can write the raytrace equation as
   \boldsymbol{\eta} 
   = \frac{D_S}{D_L}(\boldsymbol{\xi} - \nabla_{\xi}\psi^{\mathrm{R}})
   = \boldsymbol{\nu} - \frac{D_S}{D_L} \nabla_{\xi}\psi^{\mathrm{R}}
+\end{equation}
+
+## Surface Mass Density
+
+The convergence, or dimensionless projected surface-mass density, is given
+as a function $\kappa$, which is related to $\psi$ as follows:
+\begin{equation}
+  \kappa(\boldsymbol{\xi})= \frac12D_L^2\left(
+     \frac{\partial^2\psi}{\partial\xi_1^2} + 
+     \frac{\partial^2\psi}{\partial\xi_2^2} +
+     \right)
+\end{equation}
+or
+\begin{equation}
+  \kappa(\boldsymbol{\xi})= \frac12\xi_0^2\left(
+     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\xi_1^2} + 
+     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\xi_2^2} +
+     \right)
 \end{equation}
 
 ## Notes
