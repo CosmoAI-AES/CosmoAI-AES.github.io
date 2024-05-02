@@ -76,7 +76,7 @@ This gives the following entities, following Kormann 1994[^kormannalpha]
 \begin{align}
   \mathbf{x} & = \frac{\boldsymbol{\xi}}{\xi_0}
   \\\\\\\\
-  \mathbf{y} & = \frac{\boldsymbol{\nu}}{\nu_0}
+  \mathbf{y} & = \frac{\boldsymbol{\eta}}{\eta_0}
      \quad\text{where } \nu_0 = \frac{D_S}{D_L}\xi_0
   \\\\\\\\
   \mathbf{a} & = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
@@ -86,10 +86,6 @@ This gives the following entities, following Kormann 1994[^kormannalpha]
 The Einstein radius is a distance in the lens plane.
 The corresponding angle is $\xi_0/D_L$ which is used to denormalise
 $\mathbf{a}$ above.
-Note that in the flat sky approximation, the angle $\mathbf{a}$ is equal
-to the normalised length $\mathbf{x}$.  In the following, we will assume
-this, and write $\mathbf{x}$ throughout.
-
 
 The lens potential (gravitational potential) can be written as a function
 $\psi$ of either the angle $\theta$, the vector $\boldsymbol{\xi}$, or the
@@ -97,12 +93,12 @@ normalised $\mathbf{x}$.
 The normalised deflection $\mathbf{x}$ is given as
 the gradient of $\psi$, i.e.
 \begin{equation}
-  \mathbf{x} 
+  \mathbf{a} 
   = \nabla_{\mathbf{x}}\psi
 \end{equation}
 Different forms of $\psi$ give[^nabla],
 \begin{align}
-  \mathbf{x} 
+  \mathbf{a} 
   = \xi_0\cdot\nabla_{\xi}\psi
   = \frac{\xi_0}{D_L}\cdot\nabla_{\theta}\psi
 \end{align}
@@ -117,11 +113,30 @@ Different forms of $\psi$ give[^nabla],
 
 ## The Raytrace Equation
 
-The raytrace can be written in any of these forms of $\nabla\psi$, e.g.
+The normalised raytrace equation is given as
+\begin{align}
+  \mathbf{y}  = \mathbf{x}  - \mathbf{a}
+\end{align}
+Inserting the gradient for $\mathbf{a}$, we have
 \begin{align}
   \mathbf{y}  = \mathbf{x}  - \nabla_{\mathbf{x}}\psi
 \end{align}
-
+We can rewrite the raytrace equation using any of the forms of $\nabla\psi$.
+In terms of $\xi$, we have
+\begin{equation}
+  \boldsymbol{\eta} 
+  = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}
+  = \frac{D_S}{D_L}(\boldsymbol{\xi} - \xi_0\mathbf{a})
+  = \frac{D_S}{D_L}(\boldsymbol{\xi} - \xi_0^2\nabla_{\xi}\psi)
+\end{equation}
+In terms of angles, we have
+\begin{equation}
+  \boldsymbol{\beta} 
+  = \theta - \alpha
+  = \theta - \frac{\xi_0}{D_L}\mathbf{a}
+  = \theta - \frac{\xi_0}{D_L}\mathbf{a}
+  = \theta - \frac{\xi_0^2}{D_L^2}\nabla_{\theta}\psi
+\end{equation}
 
 ## Surface Mass Density
 
