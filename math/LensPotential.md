@@ -41,11 +41,11 @@ lengths  in the lens plane by a factor of $D_L$, so that
 \end{align}
 Similarly, in the source plane, the factor is $D_S$
 \begin{align}
-   \boldsymbol{\nu} & = D_L\theta
+   \boldsymbol{\nu} & = D_S\theta
    \\\\\\\\
-   \boldsymbol{\eta} & = D_L\beta
+   \boldsymbol{\eta} & = D_S\beta
    \\\\\\\\
-   \Delta\boldsymbol{\eta} & = D_L\alpha
+   \Delta\boldsymbol{\eta} & = D_S\alpha
 \end{align}
 where $\alpha=\theta-\beta$ as the angle between
 $\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$ as seen
