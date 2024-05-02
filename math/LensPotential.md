@@ -58,23 +58,25 @@ Now, we can write the actual image as
 
 The above definitions assume physical units.  It is customary to normalise
 using a constant factor $\xi_0$, corresponding to the Einstein radius.
-This gives the following entities, following Kormann 1994
+This gives the following entities, following Kormann 1994[^kormannalpha]
+
 \begin{align}
   \mathbf{x} & = \frac{\boldsymbol{\xi}}{\xi_0}
   \\\\\\\\
-  \mathbf{y} & = \frac{\boldsymbol{\nu}}{\nu_0} 
-     \quad\text{where } \nu_0 = \frac{D_S}{D_L}\xi_0 
+  \mathbf{y} & = \frac{\boldsymbol{\nu}}{\nu_0}
+     \quad\text{where } \nu_0 = \frac{D_S}{D_L}\xi_0
   \\\\\\\\
-  \mathbf{a} & = \frac{D_LD_{LS}}{D_S\xi_0}}\hat\boldsymbol{\alpha}
-   = \frac{D_L}{\xi_0}}\boldsymbol{\alpha}
+  \mathbf{a} & = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
+   = \frac{D_L}{\xi_0}\boldsymbol{\alpha}
 \end{align}
-(Kormann uses $\boldsymbol{\alpha}$ for $\mathbf{a}, but we have
-already used that for $\theta-\beta$.)
 
 The lens potential (gravitational potential) can be written as a function
-of either the angle $\theta$, the vector $\boldsymbol(\xi}$, or the
+of either the angle $\theta$, the vector $\boldsymbol{\xi}$, or the
 normalised $\mathbf{x}$.
 
+[^kormannalpha]:
+    Kormann uses $\boldsymbol{\alpha}$ for $\mathbf{a}$, but we have
+    already used that for $\theta-\beta$.
 
 ## Surface Mass Density
 
