@@ -18,7 +18,12 @@ mass (analogous to the Einstein radius $R_E$).
 **Remark**
 The relationship between $\kappa$ and the lens potential $\psi^{\mathrm{R}}$ is
 \begin{equation}
-  \kappa(\xi_1,\xi_2)= \frac12D_L^2\left(\psi^{\mathrm{R}}_{\xi_1\xi_1}(\xi_1,\xi_2) + \psi^{\mathrm{R}}_{\xi_2\xi_2}(\xi_1,\xi_2)\right)
+  \kappa(\xi_1,\xi_2) = 
+     \frac12D_L^2\left(
+     \psi_{\xi_1\xi_1}^{\mathrm{R}}(\xi_1,\xi_2) 
+     +
+     \psi_{\xi_2\xi_2}^{\mathrm{R}}(\xi_1,\xi_2)
+     \right)
 \end{equation}
 where $\psi^{\mathrm{R}}$ is defined in [Lens Potential](LensPotential).
 
@@ -29,7 +34,7 @@ fixed $\Sigma$ is independent of the axis ratio $f$.
 Solving the Poisson equation, this gives, according to Kormann (1994) the following.
 \begin{aligned}
 \begin{split}
-  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(R,\phi) =
+  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(R,\phi) =
   \frac{\xi_0}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\cdot
   &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
   \\\\&
@@ -49,6 +54,28 @@ In the following, we use the following shorthands:
 \\\\\\\\
   C_0 & = \frac{\xi_0}{D_L^2}
 \end{aligned}
+
+### Normalisation of the Lens Potential
+
+Recall from [Lens Potential](LensPotential) that the lens potential $\psi^{\mathrm{R}}$
+used in the Roulette formalism differs from the more standard normalisation by a
+factor of $\xi_0^2/D_L^2$ or $C_0\xi_0$.  If we also mormalise $R$, and write
+$R=\xi_0r$, we can rewrite $\psi$ as
+\begin{split}
+  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(r,\phi) =
+  \frac{\xi_0^2}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}r\cdot
+  &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
+  \\\\&
+  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
+\end{split}
+Now the standard normalisation reads
+\begin{split}
+  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(r,\phi) =
+  \sqrt{\frac{f}{1-f^2}}r\cdot
+  &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
+  \\\\&
+  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
+\end{split}
 
 ## Derivation with $\theta=0$ 
 
@@ -249,7 +276,7 @@ This is implemented in the SIE class (`src/simlib/SIE.cpp`).
 
 To evaluate the lens potential $\psi(x,y)$, we calculate the polar coordinates
 $R$ and $\phi$, and use the formula above for 
-$\psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(R,\phi)$.
+$\psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(R,\phi)$.
 
 ### Evaluation of the Deflection.
 
