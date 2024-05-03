@@ -5,8 +5,6 @@ usemathjax: true
 
 # Lens Potential and Basic Notation
 
-**Under construction**
-
 ![Geometric model as described in the text](observer.png)
 
 We assume a flat sky, so that the source is contained in a plane $S$

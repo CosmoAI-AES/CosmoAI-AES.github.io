@@ -32,15 +32,14 @@ These pages present software prototypes which we have made publicly available.
 
 + [Machine Learning Examples](/docs/scripts/MachineLearnngExamples)
 
-## CosmoSim - Lens Models
+## The Mathematics of CosmoSim 
 
-+ [LensPotential](/math/LensPotential)
-+ [SIE](/math/SIE)
-+ [Other Lens Models](/math/Lens)
++ Basic Notation
+    + [LensPotential](/math/LensPotential)
+    + [Critical Curves](/math/CriticalCurve)
++ [Lens Models](/math/Lens)
+    + [SIE](/math/SIE)
 
-## Notes - under construction
-
-+ [Critical Curves](/math/CriticalCurve)
 
 ## Development
 
