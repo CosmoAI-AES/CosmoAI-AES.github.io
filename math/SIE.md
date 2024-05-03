@@ -80,14 +80,14 @@ Now the standard normalisation reads
 ## Derivation with $\theta=0$ 
 
 In this section we assume $\theta=0$, aligning the elliptical lens with the
-primary axis. Then $\phi$ becomes
+primary axis. Then $\psi^{\mathrm{R}}$ becomes
 \begin{equation}
-  \psi(r,\phi) =
+  \psi^{\mathrm{R}}(r,\phi) =
   C_0\cdot \frac{\sqrt{f}}{f'}R\cdot\left[ \sin\phi\sin^{-1}(f'\cdot\sin\phi) + \cos\phi\sinh^{-1}\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
 \end{equation}
 In Cartesian coordinates, we get
 \begin{equation}
-   \psi(x,y) = C_0\cdot \frac{\sqrt{f}}{f'}\cdot\left[ 
+   \psi^{\mathrm{R}}(x,y) = C_0\cdot \frac{\sqrt{f}}{f'}\cdot\left[ 
     y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
     + x\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     \right] 
@@ -97,7 +97,7 @@ where
   R=\sqrt{x^2+y^2}
 \end{equation}
 
-The deflection is given by the gradient $\nabla\psi$.
+The deflection is given by the gradient $\nabla\psi^{\mathrm{R}}$.
 We need the following basic rules.
 \begin{equation}
   \frac{d}{dx}\sin^{-1} x  = \frac{1}{\sqrt{1-x^2}}
@@ -163,7 +163,7 @@ where
 \end{aligned}
 The partial derivative of the lens potential is then
 \begin{equation}
-  \frac{d}{dx}\psi(x,y) = 
+  \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
   C_0\frac{\sqrt{f}}{f'}\cdot\left[ 
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     + t_1 + t_2
@@ -194,7 +194,7 @@ Using the fact that $R^2=x^2+y^2$ we get
 as required.
 We conclude that
 \begin{equation}
-  \frac{d}{dx}\psi(x,y) = 
+  \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
   C_0\frac{\sqrt{f}}{f'}
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
 \end{equation}
@@ -203,7 +203,7 @@ We conclude that
 
 The differentiation with respect to $y$ is similar and gives
 \begin{equation}
-  \frac{d}{dy}\psi(x,y) = 
+  \frac{d}{dy}\psi^{\mathrm{R}}(x,y) = 
   C_0\frac{\sqrt{f}}{f'}
     \sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
 \end{equation}
@@ -211,7 +211,7 @@ The differentiation with respect to $y$ is similar and gives
 ## Deflection for arbitrary orientation
 
 There are several approaches,
-1. we can differentiate the general formula for $\psi$,
+1. we can differentiate the general formula for $\psi^{\mathrm{R}}$,
 2. we can rotate the co-ordinate system, use the derivation for $\theta=0$,
    and finally undo the rotation.
 There are several varations of the latter approach too.  Here
@@ -219,7 +219,7 @@ we will consider one, which we consider intuitively simple.
 
 ### Approach 1. Rotation of the Coordinate System
 
-The deflection is given as the vector $\nabla\psi$,
+The deflection is given as the vector $\nabla\psi^{\mathrm{R}}$,
 in a Cartesian co-ordinate system with axes aligned with the
 axes of the lens.  We call this the lens frame.
 We are interested in the deflection vector $\vec{\alpha}(x,y)$ in
@@ -241,9 +241,9 @@ $(x',y')$ the same point in the lens frame.  Hence
    \begin{bmatrix} x \\\\\\\\ y \end{bmatrix}
 \end{aligned}
 In other words, the $(x,y)$ coordinates are rotated clockwise.
-Similarly the deflection is given as $\nabla\psi(x',y')$ in
+Similarly the deflection is given as $\nabla\psi^{\mathrm{R}}(x',y')$ in
 the lens frame, and $\vec{\alpha}(x,y)$ in the global frame.
-Thus, $\nabla\psi$ has to be rotated counterclockwise, as
+Thus, $\nabla\psi^{\mathrm{R}}$ has to be rotated counterclockwise, as
 \begin{aligned}
    \vec{\alpha}(x,y)
    &=
@@ -252,7 +252,7 @@ Thus, $\nabla\psi$ has to be rotated counterclockwise, as
      \sin\theta & \cos\theta 
    \end{bmatrix}
    \cdot
-   \nabla\psi(x',y')
+   \nabla\psi^{\mathrm{R}}(x',y')
 \end{aligned}
 This gives
 \begin{aligned}
@@ -274,7 +274,7 @@ This is implemented in the SIE class (`src/simlib/SIE.cpp`).
 
 ### Evaluation of the lens potential.
 
-To evaluate the lens potential $\psi(x,y)$, we calculate the polar coordinates
+To evaluate the lens potential $\psi^{\mathrm{R}}(x,y)$, we calculate the polar coordinates
 $R$ and $\phi$, and use the formula above for 
 $\psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(R,\phi)$.
 
@@ -282,14 +282,14 @@ $\psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(R,\phi)$.
 
 This uses
 \begin{aligned}
-  \frac{\partial\psi}{\partial x} &=
+  \frac{\partial\psi^{\mathrm{R}}}{\partial x} &=
   C_0\frac{\sqrt{f}}{f'}\cdot
     \left(
     \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
     -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
     \right)
     \\\\\\\\
-  \frac{\partial\psi}{\partial y} &=
+  \frac{\partial\psi^{\mathrm{R}}}{\partial y} &=
   C_0\frac{\sqrt{f}}{f'}\cdot
     \left(
     \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
