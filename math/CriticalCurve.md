@@ -139,4 +139,6 @@ Thus the critical curve is the solution of the equation $\det\mathcal{A}=0$, or
   0 = \lambda_-\lambda_+ = (1-\kappa)^2 - \gamma_+^2 - \gamma_\times^2
 \end{equation}
 
++ Example: [Critical Curves for SIE](Critical Curves for SIE)
+
 **TODO** Define **caustic**
