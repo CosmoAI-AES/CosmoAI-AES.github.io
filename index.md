@@ -27,6 +27,8 @@ These pages present software prototypes which we have made publicly available.
     + [Roulette Formalism](/docs/model/Roulette)  (Calculation and Simulation)
 + Implementation Notes
     + [Python Modules](/docs/Python)
++ Development and testing
+    + [Workflows](/docs/Workflows) in github
 
 ## Machine Learning with CosmoSim 
 
