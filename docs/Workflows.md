@@ -38,17 +38,16 @@ Trial Build.
 | Windows-2022  | -    | OK   | OK   | Fails |
 | Ubuntu 20.04  | (OK) | -    | -    | OK   |
 | Ubuntu 22.04  | (OK) | OK   | OK   | OK   |
-| MacOS 12[^d12] | -    | OK   | OK[^app] | Fails |
-| MacOS 14      | -    | Fails | Fails | Fails |
+| MacOS 12      | -    | OK   | OK+App| Fails |
+| MacOS 14      | -    | Fails | OK+App | Fails |
 
-+ OK:   *works and tested in he Stable Trial Build*
++ OK:   *works and tested in the Stable Trial Build*
++ OK+App:   *also builds app; Stable Trial Build*
 + (OK): *used to work, but it is no longer validated*
++ TBC: *successful test, but not yet added to the trial build*
 + Fails: *failed and currently no solution*
 + -: *not documented*
 
-[^d12]:
-    Uses compiler.version 14
-
-[^app]:
-    Also builds app
-
+Note that MacOS-12 used compiler.version 14 and MacOS-15 uses 15.
+In thw workflow, conan is configured to be compatible with other
+defaults, so it could probably be changed, but not trivially.
