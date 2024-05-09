@@ -2,6 +2,8 @@
 title: CosmoSim Release Process
 ---
 
+# CosmoSim Release Process
+
 This process is crude, but sufficient for a single developer.
 It should be reconsidered if a team is formed.
 
