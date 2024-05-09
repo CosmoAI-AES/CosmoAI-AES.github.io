@@ -45,3 +45,16 @@ These pages present software prototypes which we have made publicly available.
 
 + [Release Process](/docs/Release)
 + [Workflows](/docs/Workflows) in github
+
+## Publications
+
+If you build on our work, please cite one of our  [[Publications]].
+
+1. Hans Georg Schaathun, Ben David Normann, and Kenny Solevåg-Hoti. 
+    [Om å kartleggja mørk materie med maskinlæring](https://www.ntnu.no/ojs/index.php/nikt/article/view/5666). 
+    In *Norsk IKT-konferanse for forskning og utdanning*, number 1, 2023. 
+2. Hans Georg Schaathun, Ben David Normann, Einar Leite Austnes, Simon Ingebrigtsen, Sondre Westbø Remøy, and Simon Nedreberg Runde. 
+    [On the simulation of gravitational lensing](https://www.scs-europe.net/dlib/2023/2023-0141.html). 
+    In Enrico Vicario, Romeo Bandinelli, Virginia Fani, and Michele Mastroianni, editors, 
+    *Proceedings of the 30th European Conference on Modelling and Simulation*.
+    ECMS - European Council for Modelling and Simulation, 2023. Florence, Italy, 21-23 June 2023. 
