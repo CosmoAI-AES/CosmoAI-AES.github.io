@@ -17,7 +17,7 @@ The following configurations are currently tested and released.
 | Windows-2022  | -    | OK   | OK   | Fails |
 | Ubuntu 20.04  | (OK) | -    | -    | OK   |
 | Ubuntu 22.04  | (OK) | OK   | OK   | OK   |
-| MacOS 12/x86[^mac12]  | -    | (OK)   | App  | Fails |
+| MacOS 12/x86  | -    | OK      | App[^mac12]  | Fails |
 | MacOS 14/arm64 | -    | Fails | OK+App | Fails |
 
 + OK:   *works and tested in the Stable Trial Build*
@@ -47,17 +47,15 @@ The workflow pipline consists of the following workflows.
 ## Workflows for testing
 
 + On push to develop or master: `trial-run.yml`
-    + This builds the system for Windows and Linux, using one configuration for each.
+    + This builds only on Linux, as a simple validation
     + It also verifies that the CLI tool runs without parameters.
-    + This can be replaced by `build-production.yml` or updated to match
 + Manually triggered workflows 
-    + `build-all.yml` builds on several configurations on Linux and Windows
-        + not currently maintained; it should be updated in line with `build-production.yml`
     + `regressiontest.yml` (Regression Test (Modular))
         + triggered on release (`v*` tag)
 	    + output should be checked to validate the function on every platform
 	+ triggered on branch feature/regressiontests
 	+ can be triggered manually
++ `python312.yml` to debug build with Python 3.12 on Windows and MacOS.
 
 ## Deprecated workflows
 
@@ -65,5 +63,7 @@ The workflow pipline consists of the following workflows.
 + `comprehensive-test.yml` runs the regression test on several builds.
     + It currently works on Linux.
     + It fails on Windows because Sobel is not defined in simaux.cpp
-    + **superseded** by `regressiontest.yml`
+    + superseded by `regressiontest.yml`
 + `darwin.yml` used to debug the build for MacOS
++ `build-all.yml` builds on several configurations on Linux and Windows
+    + superseded by `build-production.yml`
