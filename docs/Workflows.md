@@ -27,7 +27,7 @@ The following workflows are defined
         + It fails on Windows because Sobel is not defined in simaux.cpp
 	+ **superseded** by `regressiontest.yml`
 
-# The Trial Build
+# Production pipeline
 
 | Python        | 3.9  | 3.10 | 3.11 | 3.12 |
 | :-            | :-   | :-   | :-   | :-   |
