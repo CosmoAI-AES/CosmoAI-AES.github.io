@@ -14,11 +14,11 @@ The following configurations are currently tested and released.
 
 | Python        | 3.9  | 3.10 | 3.11 | 3.12 |
 | :-            | :-   | :-   | :-   | :-   |
-| Windows-2022  | -    | OK   | OK   | Fails |
+| Windows-2022  | -    | OK   | OK   | OK |
 | Ubuntu 20.04  | (OK) | -    | -    | OK   |
 | Ubuntu 22.04  | (OK) | OK   | OK   | OK   |
-| MacOS 12/x86  | -    | OK      | App[^mac12]  | Fails |
-| MacOS 14/arm64 | -    | Fails | OK+App | Fails |
+| MacOS 12/x86  | -    | OK      | App[^mac12]  | (OK) |
+| MacOS 14/arm64 | -    | Fails | OK+App | OK |
 
 + OK:   *works and tested in the Stable Trial Build*
 + App:   *desktop app provided by Stable Trial Build*
