@@ -6,7 +6,8 @@
 
 # Mapping Dark Matter via Gravitational Lensing
 
-We are an inter-disciplinary research group at the Department of ICT and 
+[CosmoAI-AES](https://github.com/CosmoAI-AES)
+is an inter-disciplinary research group at the Department of ICT and 
 Natural Sciences at NTNU in Ålesund, working on gravitational lensing.
 
 + [Professor Hans Georg Schaathun](http://www.hg.schaathun.net/)
@@ -15,6 +16,11 @@ Natural Sciences at NTNU in Ålesund, working on gravitational lensing.
   is a mathematical physicist working on cosmology
 
 These pages present software prototypes which we have made publicly available.
+So far one prototype is presented in fairly stable format with some documentation.
+[CosmoSim](https://github.com/CosmoAI-AES/CosmoSim) is a simulator of gravitational
+lensing, supporting both an interactive and graphical user interface, and a command
+line interface for bulk generation of images.
+
 
 ## CosmoSim - the simulator
 
