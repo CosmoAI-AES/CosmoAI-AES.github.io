@@ -37,6 +37,7 @@ These pages present software prototypes which we have made publicly available.
 + Basic Notation
     + [LensPotential](/math/LensPotential)
     + [Critical Curves](/math/CriticalCurve)
++ [Roulette](/math/Roulette) formulæ
 + [Lens Models](/math/Lens)
     + [SIE](/math/SIE)
 
