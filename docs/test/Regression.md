@@ -1,6 +1,6 @@
 ---
 title: CosmoSim Regression Tests
-permalink: /docs/test/
+permalink: /docs/test/Regression
 usemathjax: true
 ---
 
