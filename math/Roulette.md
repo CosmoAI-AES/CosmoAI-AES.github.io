@@ -3,8 +3,10 @@ title: The Roulette Formalæ
 usemathjax: true
 ---
 
+
 # The Roulette Formalæ
 
+**DRAFT under construction**
 
 
 ![The figure shows the set-up for the flat-sky approximation, with the source plane (the lens plane) a distance $D_{\mathrm{S}}$ ($D_{\mathrm{L}}$) from the observer.](Model_2Db.jpeg)
