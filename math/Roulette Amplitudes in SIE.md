@@ -36,7 +36,7 @@ For $\theta=0$, this simplifies to
   \frac{d}{dy}\psi^{\mathrm{R}}(x,y) &= 
   C_0\frac{\sqrt{f}}{f'}
     \sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
-\end{equation}
+\end{aligned}
 
 We take the same approach as we did with the raytrace equation, 
 finding the roulette amplitudes first for $\theta=0$, and then 
