@@ -3,28 +3,6 @@ title: The Roulette Formalæ
 usemathjax: true
 ---
 
-$$
-{\mathcal{C}}_{s}
-$$
-
-\begin{equation}
-{\mathcal{C}}_{s}
-\end{equation}
-
-${\mathcal{C}}_{s}$
-
-${\mathcal{C}^{m(k+1)}_{s}} { \partial_{\xi_2} }$
-
-$\mathcal{C}_s^{m(k)}\cdot \partial_{\xi_2}$
-
-\begin{equation}
-\mathcal{C}\_s \partial_{\xi_2}$
-\end{equation}
-
-$\mathcal{C}_s^{m(k)}$
-
-$\boldsymbol{\alpha}\partial_{\xi_2}$
-
 # The Roulette Formalæ
 
 
