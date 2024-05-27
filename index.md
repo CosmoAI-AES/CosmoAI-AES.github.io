@@ -44,6 +44,7 @@ line interface for bulk generation of images.
 + Basic Notation
     + [LensPotential](/math/LensPotential)
     + [Critical Curves](/math/CriticalCurve)
++ [Roulette](/math/Roulette) formulæ
 + [Lens Models](/math/Lens)
     + [SIE](/math/SIE)
 
