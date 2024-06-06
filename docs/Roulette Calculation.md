@@ -32,6 +32,14 @@ The support for SIE follows the same pattern as SIS, but the symbolic calculatio
 extremely time consuming.  It seems to be possible to calculate 5-10 orders, but test
 runs often crash.  This is work in progress.
 
+We have implemented several versions of the amplitudes scripts,
++ no simplification (`amplitudes2.py`) is fast bat generates enormous files.
+    + there seems to be a bug which can kill the script before the file is completely written
+    + one run on IDUN completes in a minute ($m=5$) but the output file is not complete
+    + it uses a lot of memory and seems to crash on nyquist ($m=5$ and 32Gb).
++ factoring between (`amplitudes.py`) as used for SIS is slow
++ full simplification (`amplitudessim.py`) is extremely slow but produces shorter files
+
 ## Point Mass Lens
 
 Point Mass Lenses can be simulated in the roulette model using the 
