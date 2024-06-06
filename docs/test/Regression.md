@@ -34,3 +34,14 @@ the generated image, the baseline, abd the difference image.
 on Windows.  This is probably numerical approximations, but it has
 not yet been investigated.
 
+
++ Testing various lens models
+    + exactpm 
+    + raytrace 
+    + roulette 
+    + roulettepm 
+    + roulettelens 
++ Testing the calculation of roulette amplitudes by `amplitudes.py`
+    + amplitudes 
+    + Note that SIE has not yet been incorporated
+
