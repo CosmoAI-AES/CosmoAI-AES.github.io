@@ -107,7 +107,7 @@ Critical functions
 	   without any concrete lens model.
 + Lens Models
     + `SIS.cpp` 
-    + `SIE.cpp`  (not tested)
+    + `SIE.cpp`  
     + `PointMass.cpp` is incomplete and so far used only with the `RotateModel` models. 
 + Source Models
     + `Source.cpp` is the abstract base class.
