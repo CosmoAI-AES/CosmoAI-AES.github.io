@@ -17,7 +17,7 @@ At the highest level, the simulator consists of three components.
     of the lens.
 2.  [source model](Source) (Source) which gives the mathematical description
     of the source and produce undistorted images of it.
-3.  simulation model (LensModel) which calculates distorted images
+3.  simulation model (SimulatorModel) which calculates distorted images
     by using the lens and source models.
     Some simulation models are couples the lens model for various reasons. 
 
