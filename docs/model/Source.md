@@ -4,14 +4,16 @@ theme: minima
 usemathjax: true
 ---
 
-The Source class is the superclass of all source modesls.
-The API is simple, implementing only the `getImage()` method 
-to return the image (as an OpenCV `Mat` object), in addition
-to the constructor and destructor.
-The constructor takes an integer argument, giving the size of 
-the imagew which is assumed to be square.
+# Source Models
 
-The subclasses take additional parameters to the constructor,
+The source model is entirely separate from the lens and simulation
+models.  It implements a single function `getImage()` which returns
+the source image as an OpenCV `Mat` object.
+
+The Source class is the superclass of all source modesls.
+The constructor takes an integer argument $\sigma$, giving the size which
+is interpreted somewhat differently for the different subclasses.
+The subclasses may take additional parameters to the constructor,
 in addition to the integer size.
 + `SphericalSource` takes $\sigma$ which is the standard deviation in
   the Gaussian distribution of the source mass.
@@ -19,3 +21,5 @@ in addition to the integer size.
   giving the size along the major and minor axes, as well as a rotation $\theta$.
 + `TriangleSource` takes $\sigma$, now interpreted as the size, and
   the rotation $\theta$.
++ `ImageSource` takes an image file which is used as the source image, in addition
+  to the size parameter $\sigma$.
