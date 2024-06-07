@@ -41,7 +41,7 @@ intended for lenses where an algebraic expression for the lens
 potential $\psi$ is not known, but the only case implemented is
 sampling an computable function.
 
-## The Lens Model
+## The Simulation Model
 
 Critical functions
 + `eta` is the actual source position, and is returned by `getEta()`
@@ -54,13 +54,13 @@ Critical functions
 # Terminology
 
 + `eta` ($\eta$) is the actual position of the source in the source plane.
-    + This is set by `LensModel::setXY` or `LensModel::setPolar`
+    + This is set by `SimulatorModel::setXY` or `SimulatorModel::setPolar`
     + RaytraceModel uses a local $\eta$ corresponding to the pixel currently
       being evaluated, but this is local to that single method.
 + `nu` ($\nu$) is the apparent position of the source in the source plane.
-    + This can be set with `LensModel::setNu`.
+    + This can be set with `SimulatorModel::setNu`.
 + `xi` ($\xi$) is the apparent position of the image in the lens plane.
-    + This is updated by `LensModel::setNu`, as $\xi=\chi\nu$.
+    + This is updated by `SimulatorModel::setNu`, as $\xi=\chi\nu$.
     + RouletteModel also has a `setXi()` method to set $\xi$ to an arbitrary
       position.
 + `etaOffset` ($\Delta\eta$) is so that $\xi$ is the image
@@ -73,13 +73,13 @@ Critical functions
 + `getDistortedPos(r,theta)` calculates the source plane position $\eta'$
   in the local co-ordinate system centred at `eta`, given a polar
   co-ordinates $(r,\theta)$ centred on `\xi` in the lens plane.
-    + this is called in `LensModel::distort()`
+    + this is called in `SimulatorModel::distort()`
     + `etaOffset` is added to the output to compensate if $\xi$ is not
       the apparent position
 + RaytraceModel has its own `distort()` function not using
   `getDistortedPos(r,theta)` working on a different logic
 
-##  LensModel flowchart
+##  SimulatorModel flowchart
 
 # Technical Design
 
@@ -88,7 +88,7 @@ Critical functions
 ### C++ components
 
 + Simulation Models
-    + `LensModel.cpp` is the abstract base class.
+    + `SimulatorModel.cpp` is the abstract base class.
     + Modular Lens Models
         + `RouletteModel.cpp`
         + `Raytrace.cpp`
@@ -102,7 +102,7 @@ Critical functions
           using the exact formulation
         + `PointMassRoulette.cpp` simulates the point mass model using
           the Roulette formalism
-    + Monolithic Lens Models
+    + Monolithic Lens/Simulation Models
 	+ `RouletteRegenerator.cpp` is for simulation from roulette amplitudes
 	   without any concrete lens model.
 + Lens Models
