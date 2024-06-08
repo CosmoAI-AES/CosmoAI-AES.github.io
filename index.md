@@ -33,6 +33,7 @@ line interface for bulk generation of images.
     + [Roulette Formalism](/docs/model/Roulette)  (Calculation and Simulation)
 + Implementation Notes
     + [Python Modules](/docs/Python)
+    + [Roulette Calculation](/docs/Roulette Calculation)
 
 ## Machine Learning with CosmoSim 
 
@@ -43,6 +44,7 @@ line interface for bulk generation of images.
 + Basic Notation
     + [LensPotential](/math/LensPotential)
     + [Critical Curves](/math/CriticalCurve)
++ [Roulette](/math/Roulette) formulæ
 + [Lens Models](/math/Lens)
     + [SIE](/math/SIE)
 

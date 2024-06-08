@@ -298,6 +298,9 @@ This uses
 \end{aligned}
 as taken from the expression for $\vec\alpha(x,y)$ above.
 
+**Note** in polar co-ordinates, we replace $x/R$ and $y/R$ with $\cos\phi$ and $\sin\phi$
+respectively, and find that $\nabla\psi$ is constant in $R$.
+
 ## Other properties 
 
 + [Critical Curves for SIE](Critical Curves for SIE)
