@@ -11,6 +11,7 @@ suites implemented.
 For details, it is still necessary to read the code, unfortunately.
 
 + [Sampling Tests](Sampling)
++ [Model Comparison](Model Comparison)
 
 ## Regression Test
 
