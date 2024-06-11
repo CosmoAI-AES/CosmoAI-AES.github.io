@@ -44,3 +44,7 @@ of $\psi$, using a differentiation filter.  This makes it an alternative
 approach for lenses where analytic differentiation is difficult, and an
 independent test where analytic derivatives have been implemented.
 
+Note that `SampledPsiFunctionLens` relies on the constituent lens to
+calculate `caustic()` and `criticalXi()`.  This should probably be changed
+to use generic sampled calculatation of the caustics and critical curves.
+(**TODO**)
