@@ -1,5 +1,5 @@
 ---
-title: CosmoSim Regression Tests
+title: CosmoSim Roulette Tests
 permalink: /docs/test/Roulette
 usemathjax: true
 ---
@@ -18,3 +18,6 @@ sh sis.sh
 ```
 
 The results are shown in the `montageSIS` resp. `montageSIE` directory.
+
+**TODO** This should be merged with the new 
+[Model Comparison](Model Comparison) tests.
