@@ -5,24 +5,26 @@ permalink: /docs/model/Simulator
 usemathjax: true
 ---
 
-## The Simulation Model
+# The Simulation Model
 
 Critical functions
 + `eta` is the actual source position, and is returned by `getEta()`
 + `updateApparentAbs)` does several things
     + It samples $\psi$, calling `lens->updatePsi(im.size())`
-    + It sets the apparent position $\nu$, by first geting $\xi$
-      from the lens by calling `getXi($\chi\eta$)`.
+    + It sets the apparent position $\nu$ for the given $\xi$
 
 
-# Terminology
+## Terminology
 
 + `eta` ($\eta$) is the actual position of the source in the source plane.
     + This is set by `SimulatorModel::setXY` or `SimulatorModel::setPolar`
     + RaytraceModel uses a local $\eta$ corresponding to the pixel currently
       being evaluated, but this is local to that single method.
 + `nu` ($\nu$) is the apparent position of the source in the source plane.
-    + This can be set with `SimulatorModel::setNu`.
+    + This can be set with `SimulatorModel::setNu($\nu$)`.
+    + `updateApparentAbs()` calculates $\nu$ and calls `setNu($\nu$)`.
+    + To calculate $\nu$ for a given $\eta$, `Lens::getXi($\chi\eta$)` is
+      used.
 + `xi` ($\xi$) is the apparent position of the image in the lens plane.
     + This is updated by `SimulatorModel::setNu`, as $\xi=\chi\nu$.
     + RouletteModel also has a `setXi()` method to set $\xi$ to an arbitrary
@@ -32,7 +34,7 @@ Critical functions
 
 
 
-# TODO
+## TODO
 
 + `getDistortedPos(r,theta)` calculates the source plane position $\eta'$
   in the local co-ordinate system centred at `eta`, given a polar
@@ -43,13 +45,13 @@ Critical functions
 + RaytraceModel has its own `distort()` function not using
   `getDistortedPos(r,theta)` working on a different logic
 
-##  SimulatorModel flowchart
+###  SimulatorModel flowchart
 
-# Technical Design
+## Technical Design
 
-## Components
+### Components
 
-### C++ components
+#### C++ components
 
 + Simulation Models
     + `SimulatorModel.cpp` is the abstract base class.
@@ -84,7 +86,7 @@ Critical functions
   This class operates as a facade to the library, and does not 
   expose the individual classes.
 
-### Python Components
+#### Python Components
 
 + `CosmoSim` is a wrapper around `CosmoSimPy` from `CosmoSim.cpp`,
   defining the `CosmoSim` class.
@@ -98,9 +100,9 @@ Critical functions
 + `datagen.py` is a batch script to generate distorted images.
 
 
-## Simulator Model Class
+### Simulator Model Class
 
-### Virtual Functions
+#### Virtual Functions
 
 The following virtual functions have to be overridden by most subclasses.
 They are called from the main update function and overriding them, the entire
@@ -114,7 +116,7 @@ lens model changes.
 The constructor typically has to be overridden as well, to load the formulæ for
 $\alpha$ and $\beta$.
 
-### Setters 
+#### Setters 
 
 Setters are provided for all of the control parameters.
 
@@ -127,7 +129,7 @@ Setters are provided for all of the control parameters.
 + `updateNterms` to update the number of terms in the sum after truncation
 + `updateAll` to update all of the above
 
-### Getters
+#### Getters
 
 Getters are provided for the three images.
 
@@ -135,7 +137,7 @@ Getters are provided for the three images.
 + `getApparent()`
 + `getDistorted()`
 
-### Update
+#### Update
 
 The main routine of the `Simulator` is `update()` which recalculates the 
 three images: actual, apparent, and distorted.  This is called by the setters.

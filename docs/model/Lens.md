@@ -4,6 +4,8 @@ theme: minima
 usemathjax: true
 ---
 
+# Lens Models
+
 The lens can be defined either as a function in two variables $(x,y)$
 or as a sampled signal in two dimensions.
 1. `PsiFunctionLens` uses a function.
@@ -11,11 +13,15 @@ or as a sampled signal in two dimensions.
 1. `PixMapLens` is intended to use an arbitrary sampled signal, but this is not fully
    implemented yet, and has not been tested.
 
-# Common API
+## Common API
 
 The common API is specified by the `Lens` superclass.
 
-# Algebraic Lens Functions
++ `getXi($\chi\eta$)` calculates the apparent position $\xi$
+  for a given source position $\chi\eta$.
+  Co-ordinates are in the lens plane to be totally independent of the source.
+
+## Algebraic Lens Functions
 
 The `PsiFunctionLens` defines the functions `psiValue()`,
 `psiXvalue()`, and `psiYvalue()` to compute $\psi$, $\partial \psi/\partial x$,
@@ -25,7 +31,7 @@ parametric lens model.
 Currently SIS and SIE is provided.  There is also a `PointMassLens` class,
 but this has not been tested.
 
-# Sampled Lenses
+## Sampled Lenses
 
 The `SampledLens` class defines the lens potential $\psi$
 as a 2D sampled array.

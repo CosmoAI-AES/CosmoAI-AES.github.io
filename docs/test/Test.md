@@ -52,3 +52,6 @@ Here the size is the size of the neighbourhood, the distance
 is the Euclidean distance between the original and the reconstructed
 neighbourhood, and relative distance is disance divided by size.
 
+## Old tests (not maintained)
+
++ `Test/timing` created to compare run times for different models
