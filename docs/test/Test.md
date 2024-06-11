@@ -27,7 +27,7 @@ distortions, with symmetry and continuous shapes.
 
 ## Roulette Reconstruction Test
 
-+ `Test/roulettelens/test.sh`
++ `ValidationTest/roulettelens/test.sh`
 
 Given a dataset as CSV, this test
 1. generates images 
