@@ -7,31 +7,57 @@ usemathjax: true
 
 # The Simulation Model
 
-Critical functions
-+ `eta` is the actual source position, and is returned by `getEta()`
-+ `updateApparentAbs)` does several things
-    + It samples $\psi$, calling `lens->updatePsi(im.size())`
-    + It sets the apparent position $\nu$ for the given $\xi$
 
 
-## Terminology
+## Attributes
 
-+ `eta` ($\eta$) is the actual position of the source in the source plane.
-    + This is set by `SimulatorModel::setXY` or `SimulatorModel::setPolar`
-    + RaytraceModel uses a local $\eta$ corresponding to the pixel currently
-      being evaluated, but this is local to that single method.
-+ `nu` ($\nu$) is the apparent position of the source in the source plane.
-    + This can be set with `SimulatorModel::setNu($\nu$)`.
-    + `updateApparentAbs()` calculates $\nu$ and calls `setNu($\nu$)`.
-    + To calculate $\nu$ for a given $\eta$, `Lens::getXi($\chi\eta$)` is
-      used.
-+ `xi` ($\xi$) is the apparent position of the image in the lens plane.
-    + This is updated by `SimulatorModel::setNu`, as $\xi=\chi\nu$.
-    + RouletteModel also has a `setXi()` method to set $\xi$ to an arbitrary
-      position.
-+ `etaOffset` ($\Delta\eta$) is so that $\xi$ is the image
-  $\eta+\Delta\eta$.
++ Private variables in `SimulatorModel`
+    + `eta` ($\eta$) is the actual position of the source in the source plane.
+        + **setters** `SimulatorModel::setXY` or `SimulatorModel::setPolar`
+            + these should be called by the user interface
+        + RaytraceModel uses a local $\eta$ corresponding to the pixel currently
+          being evaluated, but this is local to that single method.
+    + `nu` ($\nu$) is the apparent position of the source in the source plane.
+        + **setter** `SimulatorModel::setNu(`$\nu$`)`
+            + this also sets `referenceXi` and `etaOffset`
+        + `updateApparentAbs()` calculates $\nu$ and calls `setNu(`$\nu$`)`.
+        + To calculate $\nu$ for a given $\eta$, `Lens::getXi(`$\chi\eta$`)` is
+          used.
+    + `xi` ($\xi$) refers to a reference point in the lens plane. 
+      It appears in many local scopes, typically referring to the point
+      being calculated.
+      In the Roulette Model, we use `referenceXi` to refer to the reference
+      point around which the roulettes are expanded.
+        + This is updated by `SimulatorModel::setNu`, as $\xi=\chi\nu$.
+        + **setter**  `setXi()` 
+            + this also sets `etaOffset`
++ `etaOffset` ($\Delta\eta$) is so that $\xi$ is the image of
+  $\eta+\Delta\eta$; i.e. $\Delta\eta=\xi/\chi-\eta$
+    + This is protected and accessed in `RouletteRegenerator`
 
+
+## Consistency
+
+It is important to note that the setters do not ensure a consistent 
+state.  Hence, after setting parameters, the model must be updated
+to ensure consistency.
+
++ `updateApparentAbs` (protected) calculates inferred variables to ensure a
+  consistent state.  
+    + First it calls `lens->updatePsi(im.size())` to make sure the lens
+      is consistent
+    + Then it sets the apparent position $\nu$ using $\xi$ as calculated
+      by `lens->getXi(` $\chi\eta$ `)`
+    + Overriding subclasses:
+        + `RotatedModel` where the image is rotated for calculation
+        + `RouletteRegenerator` where it does nothing
+    + `updateApparentAbs` is only called by `update()` below.
++ `update` recalculates the distorted image
++ `calculateAlphaBeta` calculates the roulete amplitudes if required.
+    + In most classes, this is empty and does nothing.
+    + In `RouletteModel` (but not `RouletteRegenerator`) it calls
+      `lens->calculateAlphaBeta` to compute the amplitudes.
+    + It is called only from the `distort()` method which is never overridden.
 
 
 ## TODO
@@ -115,19 +141,6 @@ lens model changes.
 
 The constructor typically has to be overridden as well, to load the formulæ for
 $\alpha$ and $\beta$.
-
-#### Setters 
-
-Setters are provided for all of the control parameters.
-
-+ `updateXY` to update the $(x,y)$ co-ordinates of the actual image, the
-  relative distance $\chi$ to the lens compared to the source, and the
-  Einstein radius $R_E$.
-  This has to update the apparent position which depends on all of these
-  variables.
-+ `updateSize` to update the size or standard deviation of the source.
-+ `updateNterms` to update the number of terms in the sum after truncation
-+ `updateAll` to update all of the above
 
 #### Getters
 
