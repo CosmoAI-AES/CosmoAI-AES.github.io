@@ -8,6 +8,28 @@ usemathjax: true
 # The Simulation Model
 
 
+## Usage
+
++ Setters to be used to configure the lens and the simulator
+    + `setLens()` - lens parameters are set in the lens object
+    + `setCentred()`
+    + `setMaskMode()`
+    + `setBGColour()`
+    + `setXY()`
+    + `setPolar()`
+    + `setCHI()`
+    + `setNterms()`
+    + `setSource()`
++ `update()` has to be called to recalculate the image
++ `getDistorted()` returns the distorted image
++ Other image getters
+    + `getSource()`
+    + `getActual()`
+    + `getApparent()`
++ Other parameter getters (used in CosmoSimPy)
+    + `getXi()`
+    + `getTrueXi()`
+    + `getNu()`
 
 ## Attributes
 
