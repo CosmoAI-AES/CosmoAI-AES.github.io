@@ -14,6 +14,9 @@ For details, it is still necessary to read the code, unfortunately.
 + [Model Comparison](Model Comparison) to compare roulette and raytrace simulation
 + [Regression](Regression) Tests
 + [Roulette Resimulation Test](Roulette Resimulation Test)
++ [Roulette Model Evaluation](Roulette Model Evaluation)
+  is primarily evaluation of the roulette formalism rather than 
+  the implementation
 
 ## $\xi$-move Test
 
