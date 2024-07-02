@@ -8,6 +8,28 @@ usemathjax: true
 # The Simulation Model
 
 
+## Usage
+
++ Setters to be used to configure the lens and the simulator
+    + `setLens()` - lens parameters are set in the lens object
+    + `setCentred()`
+    + `setMaskMode()`
+    + `setBGColour()`
+    + `setXY()`
+    + `setPolar()`
+    + `setCHI()`
+    + `setNterms()`
+    + `setSource()`
++ `update()` has to be called to recalculate the image
++ `getDistorted()` returns the distorted image
++ Other image getters
+    + `getSource()`
+    + `getActual()`
+    + `getApparent()`
++ Other parameter getters (used in CosmoSimPy)
+    + `getXi()`
+    + `getTrueXi()`
+    + `getNu()`
 
 ## Attributes
 
@@ -60,16 +82,30 @@ to ensure consistency.
     + It is called only from the `distort()` method which is never overridden.
 
 
-## TODO
+## The Update Procedure
 
-+ `getDistortedPos(r,theta)` calculates the source plane position $\eta'$
-  in the local co-ordinate system centred at `eta`, given a polar
-  co-ordinates $(r,\theta)$ centred on `\xi` in the lens plane.
-    + this is called in `SimulatorModel::distort()`
-    + `etaOffset` is added to the output to compensate if $\xi$ is not
-      the apparent position
-+ RaytraceModel has its own `distort()` function not using
-  `getDistortedPos(r,theta)` working on a different logic
++ The `update()` function is non-virtual; there are two update procedures
+  that need to be overridden
+    + `updateApparentAbs()` which is called by `update()`
+    + `calculateAlphaBeta()` which is called by `distort()`
++ `getDistorted()` calculates the distorted image.
+  It is also non-virtual, and there are two approaches to override its
+  behaviour.
+    + `distort()` calculates the distorted image.  By default it uses
+      `getDistortedPos()` which works in the local co-ordinate system
+       of the roulette formalism.
+       The RaytraceModel overrides it, because it relies on global
+       positioning.
+    + `getDistortedPos()` is provided by the subclasses of `RotatedModel()`
+      and by `RouletteModel()`.  All of these classes have been designed
+      using the roulette co-ordinate system.
+        + `getDistortedPos(r,theta)` calculates the source plane position $\eta'$
+          in the local co-ordinate system centred at `eta`, given a polar
+          co-ordinates $(r,\theta)$ centred on `\xi` in the lens plane.
+        + `etaOffset` is added to the output to compensate if $\xi$ is not
+          the apparent position
+
+This could possibly be simplified
 
 ###  SimulatorModel flowchart
 
