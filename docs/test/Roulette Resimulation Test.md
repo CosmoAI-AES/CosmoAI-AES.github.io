@@ -6,12 +6,6 @@ usemathjax: true
 
 # CosmoSim Roulette Resimulation Test
 
-
-These tests were made for the development of the Roulette
-Resimulator.  Documentation is incomplete.
-
-## Roulette Reconstruction Test
-
 + **Directory** `Test/roulettegen`
 
 Given a dataset as CSV, this test
@@ -64,10 +58,12 @@ Here the size is the size of the neighbourhood, the distance
 is the Euclidean distance between the original and the reconstructed
 neighbourhood, and relative distance is disance divided by size.
 
-## $\xi$-reference Test
+### Note on resuts and TODO
 
-+ `Test/xireference/test.sh`
+The current version (develop branch 3 July 2024) uses only the `--xireference` option,
+which is also what has been used in the machine learning tests.
+The role and importance of this option needs documentation.
 
-This test has not been reviewed lately.  It provides an alternative `Makefile` using the
-`--xireference` option.  Duplicate files have been removed, and must be taken from
-the `roulettegen` test.
+If neither `--centred` nor `--xireference` is used, the roulette amplitude
+output is predominantly NaN values.  I do not know why.  This should also 
+be documented, and it may be a good idea to remove options.
