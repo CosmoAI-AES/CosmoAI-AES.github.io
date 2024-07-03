@@ -7,7 +7,7 @@ date: 2024-07-02
 
 # Roulette Modelling Tests
 
-+ **Directory** Tests/roulette
++ **Directory** Test/roulette
 + **Purpose** evaluatte quality and parameter sensitivity of roulette models
 
 ```

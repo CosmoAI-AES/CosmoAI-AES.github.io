@@ -6,14 +6,13 @@ usemathjax: true
 
 # CosmoSim Roulette Resimulation Test
 
-+ **Directory** `ValidationTest`
 
 These tests were made for the development of the Roulette
 Resimulator.  Documentation is incomplete.
 
 ## Roulette Reconstruction Test
 
-+ `ValidationTest/roulettelens/test.sh`
++ **Directory** `Test/roulettegen`
 
 Given a dataset as CSV, this test
 1. generates images 
@@ -23,7 +22,33 @@ Given a dataset as CSV, this test
 1. compares the images calculating the Euclidean image for
    different concentric neighbourhoods around the origin.
 
-The output is a mess.  One should look for the string 
+### Test Script
+
+````
+cd Test/roulettegen
+make clean
+sh test.sh
+```
+
+The test script compares the original roulette simulation
+with the resimulation.  
+Output image collages is found in the `montage` directory.
+
+### Makefile
+
+````
+cd Test/roulettegen
+make montage.log
+```
+
+The makefile compares the roulette resimulation
+with raytrace simulation.
+Output image collages is found in the `montage` directory.
+
+### Old notes
+
+The output is a mess, but it is standardised for many different tests.
+If one uses the text log, one should look for the string 
 `maskedCompare` which appears once for each data point,
 like this.
 ```
@@ -41,5 +66,5 @@ neighbourhood, and relative distance is disance divided by size.
 
 ## $\xi$-reference Test
 
-+ `ValidationTest/roulettelens/test.sh`
++ `ValidationTest/xireference/test.sh`
 
