@@ -68,3 +68,6 @@ neighbourhood, and relative distance is disance divided by size.
 
 + `ValidationTest/xireference/test.sh`
 
+This test has not been reviewed lately.  It provides an alternative `Makefile` using the
+`--xireference` option.  Duplicate files have been removed, and must be taken from
+the `roulettegen` test.
