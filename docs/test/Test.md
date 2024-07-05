@@ -17,6 +17,7 @@ For details, it is still necessary to read the code, unfortunately.
 + [Roulette Model Evaluation](Roulette Model Evaluation)
   is primarily evaluation of the roulette formalism rather than 
   the implementation
++ [Roulette Statistics](Roulette Statistics) to explore the impact of higher order terms
 
 ## $\xi$-move Test
 
