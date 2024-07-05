@@ -6,7 +6,6 @@ usemathjax: true
 
 # CosmoSim Roulette Statistics
 
-+ **Directory** `Test/roulettestatistics`
 + **Purpose** explore the effect of changes in roulette amplitudes
 + Two different tests
     - descriptive statistics
@@ -14,6 +13,7 @@ usemathjax: true
 
 ## Descriptive statistics
 
++ **Directory** `Test/roulettestatistics`
 
 ```sh
 ./datasetgen.sh
@@ -24,20 +24,30 @@ pdflaex report.tex
 The resulting PDF file shows the mean and standard deviation of
 the roulette amplitudes over 4000 images
 
-## Raytrace simulation
 
-If required, a raytrace simulation is run with the command
-```sh
+### Tweaking amplitudes (legacy)
+
+```
 ./raytrace.sh
-```
-This is required for the next test.
-
-## Tweaking amplitudes
-
-```
 ./tweak.sh
 ./txt.py
 pdflatex tweak.tex
 ```
 The resulting PDF report shows several simulations of the same lens and source, tweaking
-different fifth order amplitudes.
+different fifth order amplitudes. The ten first images in the dataset are used.
+
+## Tweaking amplitudes
+
++ **Directory** `Test/tweak2`
+
+```sh
+./tweak.sh
+```
+The resulting PDF report shows several simulations of the same lens and source, tweaking
+different fifth order amplitudes. The ten first images in the dataset are used.
+
+This test uses a special selection of lens/source configuration, instead of the random
+selection in the other tests.
+
+
+
