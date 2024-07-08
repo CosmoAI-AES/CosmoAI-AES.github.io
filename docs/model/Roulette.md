@@ -28,6 +28,17 @@ The reference points are calculated in the following order
    is most efficient and there is no reason not to use this.
 
 
+# RouletteModel: Forward Simulation in the Roulette Formalism 
+
++ `updateApparentAbs()` calculates inferred parameters when all
+  input parameters have been set.
+    + It calls `lens-<updatePsi()` to make the lens consistent
+    + it gets $\xi$ (`referenceXi`) from `lens->getXi(`$\chi\eta$`)`
++ `getXi()` is implemented differently in
+    + The superclass `Lens`, using raytrace logic
+        + `\xi = \chi\eta + \nabla\psi(\chi\eta)`
+    + `SampledLens` which uses fix point iteration
+    + `PointMass`, but this needs review (**TODO**)
 
 # RouletteRegenerator: Simulation from Roulette Amplitudes 
 

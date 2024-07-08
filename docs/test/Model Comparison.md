@@ -1,6 +1,6 @@
 ---
 title: Sampling Tests
-permalink: /docs/test/Sampling
+permalink: /docs/test/Model Comparison
 usemathjax: true
 date: 2024-06-08
 ---
@@ -39,3 +39,20 @@ cd Tests/SIE
 sh sie.sh
 sh compare.sh
 ```
+
+## Sampling Results
+
+The sampling tests (`montage-raytrace` and `montage-roulette`) are designed
+to validate analytic models by using a sampled version as reference. 
+
+## Roulette Results
+
+The `montage-compare` results are created to validate the roulette model,
+and thus the calculation of roulette amplitudes.
+
+## Design Notes
+
++ The code is complicated by the fact that sampling is implemented as
+  a separate lens model, and not a separate simulation model.
+  Hence, we cannot syntactically fix the lens model as SIS (resp. SIE)
+  and try all the different simulation models with and without sampling.

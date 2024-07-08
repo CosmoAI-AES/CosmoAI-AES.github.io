@@ -5,51 +5,115 @@ permalink: /docs/model/Simulator
 usemathjax: true
 ---
 
-## The Simulation Model
-
-Critical functions
-+ `eta` is the actual source position, and is returned by `getEta()`
-+ `updateApparentAbs)` does several things
-    + It samples $\psi$, calling `lens->updatePsi(im.size())`
-    + It sets the apparent position $\nu$, by first geting $\xi$
-      from the lens by calling `getXi($\chi\eta$)`.
+# The Simulation Model
 
 
-# Terminology
+## Usage
 
-+ `eta` ($\eta$) is the actual position of the source in the source plane.
-    + This is set by `SimulatorModel::setXY` or `SimulatorModel::setPolar`
-    + RaytraceModel uses a local $\eta$ corresponding to the pixel currently
-      being evaluated, but this is local to that single method.
-+ `nu` ($\nu$) is the apparent position of the source in the source plane.
-    + This can be set with `SimulatorModel::setNu`.
-+ `xi` ($\xi$) is the apparent position of the image in the lens plane.
-    + This is updated by `SimulatorModel::setNu`, as $\xi=\chi\nu$.
-    + RouletteModel also has a `setXi()` method to set $\xi$ to an arbitrary
-      position.
-+ `etaOffset` ($\Delta\eta$) is so that $\xi$ is the image
-  $\eta+\Delta\eta$.
++ Setters to be used to configure the lens and the simulator
+    + `setLens()` - lens parameters are set in the lens object
+    + `setCentred()`
+    + `setMaskMode()`
+    + `setBGColour()`
+    + `setXY()`
+    + `setPolar()`
+    + `setCHI()`
+    + `setNterms()`
+    + `setSource()`
++ `update()` has to be called to recalculate the image
++ `getDistorted()` returns the distorted image
++ Other image getters
+    + `getSource()`
+    + `getActual()`
+    + `getApparent()`
++ Other parameter getters (used in CosmoSimPy)
+    + `getXi()`
+    + `getTrueXi()`
+    + `getNu()`
+
+## Attributes
+
++ Private variables in `SimulatorModel`
+    + `eta` ($\eta$) is the actual position of the source in the source plane.
+        + **setters** `SimulatorModel::setXY` or `SimulatorModel::setPolar`
+            + these should be called by the user interface
+        + RaytraceModel uses a local $\eta$ corresponding to the pixel currently
+          being evaluated, but this is local to that single method.
+    + `nu` ($\nu$) is the apparent position of the source in the source plane.
+        + **setter** `SimulatorModel::setNu(`$\nu$`)`
+            + this also sets `referenceXi` and `etaOffset`
+        + `updateApparentAbs()` calculates $\nu$ and calls `setNu(`$\nu$`)`.
+        + To calculate $\nu$ for a given $\eta$, `Lens::getXi(`$\chi\eta$`)` is
+          used.
+    + `xi` ($\xi$) refers to a reference point in the lens plane. 
+      It appears in many local scopes, typically referring to the point
+      being calculated.
+      In the Roulette Model, we use `referenceXi` to refer to the reference
+      point around which the roulettes are expanded.
+        + This is updated by `SimulatorModel::setNu`, as $\xi=\chi\nu$.
+        + **setter**  `setXi()` 
+            + this also sets `etaOffset`
++ `etaOffset` ($\Delta\eta$) is so that $\xi$ is the image of
+  $\eta+\Delta\eta$; i.e. $\Delta\eta=\xi/\chi-\eta$
+    + This is protected and accessed in `RouletteRegenerator`
 
 
+## Consistency
 
-# TODO
+It is important to note that the setters do not ensure a consistent 
+state.  Hence, after setting parameters, the model must be updated
+to ensure consistency.
 
-+ `getDistortedPos(r,theta)` calculates the source plane position $\eta'$
-  in the local co-ordinate system centred at `eta`, given a polar
-  co-ordinates $(r,\theta)$ centred on `\xi` in the lens plane.
-    + this is called in `SimulatorModel::distort()`
-    + `etaOffset` is added to the output to compensate if $\xi$ is not
-      the apparent position
-+ RaytraceModel has its own `distort()` function not using
-  `getDistortedPos(r,theta)` working on a different logic
++ `updateApparentAbs` (protected) calculates inferred variables to ensure a
+  consistent state.  
+    + First it calls `lens->updatePsi(im.size())` to make sure the lens
+      is consistent
+    + Then it sets the apparent position $\nu$ using $\xi$ as calculated
+      by `lens->getXi(` $\chi\eta$ `)`
+    + Overriding subclasses:
+        + `RotatedModel` where the image is rotated for calculation
+        + `RouletteRegenerator` where it does nothing
+    + `updateApparentAbs` is only called by `update()` below.
++ `update` recalculates the distorted image
++ `calculateAlphaBeta` calculates the roulete amplitudes if required.
+    + In most classes, this is empty and does nothing.
+    + In `RouletteModel` (but not `RouletteRegenerator`) it calls
+      `lens->calculateAlphaBeta` to compute the amplitudes.
+    + It is called only from the `distort()` method which is never overridden.
 
-##  SimulatorModel flowchart
 
-# Technical Design
+## The Update Procedure
 
-## Components
++ The `update()` function is non-virtual; there are two update procedures
+  that need to be overridden
+    + `updateApparentAbs()` which is called by `update()`
+    + `calculateAlphaBeta()` which is called by `distort()`
++ `getDistorted()` calculates the distorted image.
+  It is also non-virtual, and there are two approaches to override its
+  behaviour.
+    + `distort()` calculates the distorted image.  By default it uses
+      `getDistortedPos()` which works in the local co-ordinate system
+       of the roulette formalism.
+       The RaytraceModel overrides it, because it relies on global
+       positioning.
+    + `getDistortedPos()` is provided by the subclasses of `RotatedModel()`
+      and by `RouletteModel()`.  All of these classes have been designed
+      using the roulette co-ordinate system.
+        + `getDistortedPos(r,theta)` calculates the source plane position $\eta'$
+          in the local co-ordinate system centred at `eta`, given a polar
+          co-ordinates $(r,\theta)$ centred on `\xi` in the lens plane.
+        + `etaOffset` is added to the output to compensate if $\xi$ is not
+          the apparent position
 
-### C++ components
+This could possibly be simplified
+
+###  SimulatorModel flowchart
+
+## Technical Design
+
+### Components
+
+#### C++ components
 
 + Simulation Models
     + `SimulatorModel.cpp` is the abstract base class.
@@ -84,7 +148,7 @@ Critical functions
   This class operates as a facade to the library, and does not 
   expose the individual classes.
 
-### Python Components
+#### Python Components
 
 + `CosmoSim` is a wrapper around `CosmoSimPy` from `CosmoSim.cpp`,
   defining the `CosmoSim` class.
@@ -98,9 +162,9 @@ Critical functions
 + `datagen.py` is a batch script to generate distorted images.
 
 
-## Simulator Model Class
+### Simulator Model Class
 
-### Virtual Functions
+#### Virtual Functions
 
 The following virtual functions have to be overridden by most subclasses.
 They are called from the main update function and overriding them, the entire
@@ -114,20 +178,7 @@ lens model changes.
 The constructor typically has to be overridden as well, to load the formulæ for
 $\alpha$ and $\beta$.
 
-### Setters 
-
-Setters are provided for all of the control parameters.
-
-+ `updateXY` to update the $(x,y)$ co-ordinates of the actual image, the
-  relative distance $\chi$ to the lens compared to the source, and the
-  Einstein radius $R_E$.
-  This has to update the apparent position which depends on all of these
-  variables.
-+ `updateSize` to update the size or standard deviation of the source.
-+ `updateNterms` to update the number of terms in the sum after truncation
-+ `updateAll` to update all of the above
-
-### Getters
+#### Getters
 
 Getters are provided for the three images.
 
@@ -135,7 +186,7 @@ Getters are provided for the three images.
 + `getApparent()`
 + `getDistorted()`
 
-### Update
+#### Update
 
 The main routine of the `Simulator` is `update()` which recalculates the 
 three images: actual, apparent, and distorted.  This is called by the setters.
