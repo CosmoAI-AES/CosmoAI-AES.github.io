@@ -143,12 +143,10 @@ masking is done twice.
 + RouletteRegenerator has a default masking radius of zero, but the
   radius can be explicitly set with `setMaskRadius()`, which will
   give masking as for other Roulette Models.
-+ Raytrace has masking code in `parallelDistort()` which is inherited
-  but not in `distort()` which is overridden.
-  To ensure consistent behaviour, and because masking is not normally
-  needed, the masking radius is set to $2^{20}$ which should be larger
-  than the image.
-    + **TODO** more consistent behaviour would be nice
++ Raytrace does not mask during computation, but `maskImage()` works
+  as it does for Roulette Models.  This is done to facilitate comparison
+  between Raytrace and Roulette, and the mask is only meaningful in relation
+  to Roulette.
 
 # TODO
 
