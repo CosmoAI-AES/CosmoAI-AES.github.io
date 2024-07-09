@@ -23,9 +23,8 @@ python3 CosmoSimPy/CosmoGUI.py
 
 ## Command line operation
 
-+ `datagen.py` is the main CLI tool 
++ [`datagen.py`](datagen script) is the main CLI tool 
     + bulk generation of images
-    + **TODO** further documentation
 + datasetgen.py 
     + random generation of parameters for data sets
     + the output is a CSV file to be read by `datagen.py`

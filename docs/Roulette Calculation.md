@@ -19,7 +19,7 @@ SIS has the most extensive support.
   amplitudes and export these to a file (usually `50.txt`) included in the distribution.
 + The `SIS` class reads the file (`50.txt`) and evaluates the formulæ to calculate the
   amplitudes in a given point (usually corresponding to the centre of the source).
-+ The `datagen.txt` script can output a new dataset including roulette amplitudes
++ The `datagen.py` script can output a new dataset including roulette amplitudes
   when images are created.
 + The `roulettegen.py` can read the dataset with amplitudes and simulate distorted images
   using the `RouletteRegenerator` class.
