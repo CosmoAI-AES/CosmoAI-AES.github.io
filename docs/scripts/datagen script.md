@@ -69,12 +69,8 @@ can be specified.
 
 ```sh
 python3 CosmoSimPy/datagen.py  --csvfile Dataset/debug.csv \
-    --outfile roulette.csv --xireference
+    --outfile roulette.csv 
 ```
-
-Note that the `--xireference` option should always be given.
-The default option does not work as intended.
-
 
 ## Undocumented options 
 
@@ -89,6 +85,13 @@ recent versions, if they have been implemented at all.
 + `--psiplot'` : Plot lens potential as 3D surface
 + `--kappaplot` : Plot mass distribution as 3D surface
 + `--family` : Several images moving the viewpoint
++ `--no-xireference` calculate roulette amplitudes in the centre of light,
+  instead of the source centre
+    + this does not change the expansion point used for simulation
+      in `datagen.py`.
+    + requires `--centred`, lest the origin be the origin and the model collapse
+    + `--xireference` is the default, using the same expansion point
+       as the original simulation.
 
 It is also possible to generate a single image by ommitting the CSV file
 and giving all parameters on the command line.
