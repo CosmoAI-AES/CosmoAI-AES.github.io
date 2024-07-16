@@ -3,6 +3,10 @@ title: Roulette Amplitudes for the SIE Lens
 usemathjax: true
 ---
 
+**IMPORTANT** 
+This is incorrect.  The ideas were used in early implementation
+but proves wrong.  The notes are incomplete and will not be revised.
+
 # Roulette Amplitudes for the SIE Lens
 
 In the implementation, we calculate the first order derivatives of $\psi$ as
