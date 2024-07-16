@@ -80,4 +80,13 @@ We get
   \big(\frac{\partial y'}{\partial y}\big)^{j}
   \frac{\partial^{m+n}\psi}{(\partial x')^{m-i+j}(\partial y')^{n-j+i}}
 \end{equation}
+Inserting for the derivatives of $x'$ and $y'$ we get
+\begin{equation}
+  \frac{\partial^{m+n}\psi}{(\partial x)^m(\partial r)^n}
+  = \sum_{i=0}^m \sum_{j=0}^n \binom{m+n}{i+j}
+  \cos^{m-i+j}\theta\cdot
+  \sin^{n-j+i}\theta\cdot
+  (-1)^i
+  \frac{\partial^{m+n}\psi}{(\partial x')^{m-i+j}(\partial y')^{n-j+i}}
+\end{equation}
 **TODO** Check this
