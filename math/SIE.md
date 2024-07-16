@@ -304,4 +304,6 @@ respectively, and find that $\nabla\psi$ is constant in $R$.
 ## Other properties 
 
 + [Critical Curves for SIE](Critical Curves for SIE)
-+ [Roulette Amplitudes in SIE](Roulette Amplitudes in SIE)
++ [Differentiation of SIE](Differentiation of SIE)
++ Deprecated
+    + [Roulette Amplitudes in SIE](Roulette Amplitudes in SIE)
