@@ -219,8 +219,7 @@ There are several approaches,
 3. [Approach 2](Differentiation of SIE)
    Use a co-ordinate substitution and use the chain rule with 
    derivatives for $\theta=0$ as constituent results.
-2. Approach 3. 
-3. We can differentiate the general formula for $\psi^{\mathrm{R}}$,
+2. Approach 3.  We can differentiate the general formula for $\psi^{\mathrm{R}}$,
    This seems to be computationally intractible for higher-order
    derivatives.
 
