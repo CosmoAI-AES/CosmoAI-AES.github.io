@@ -227,4 +227,3 @@ There are several approaches,
 ## Other properties 
 
 + [Critical Curves for SIE](Critical Curves for SIE)
-+ [Roulette Amplitudes in SIE](Roulette Amplitudes in SIE)
