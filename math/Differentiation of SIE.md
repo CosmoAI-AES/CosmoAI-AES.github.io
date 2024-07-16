@@ -70,3 +70,14 @@ Because $\psi$ is specified most compactly in the lens frame,
 it is computationally cheaper to differentiate in this frame.
 Given derivatives in the lens frame, we can find the derivatives
 in the global frame using the chain rule.
+We get
+\begin{equation}
+  \frac{\partial^{m+n}\psi}{(\partial x)^m(\partial r)^n}
+  = \sum_{i=0}^m \sum_{j=0}^n \binom{m+n}{i+j}
+  \big(\frac{\partial x'}{\partial x}\big)^{m-i}
+  \big(\frac{\partial y'}{\partial x}\big)^{i}
+  \big(\frac{\partial x'}{\partial y}\big)^{n-j}
+  \big(\frac{\partial y'}{\partial y}\big)^{j}
+  \frac{\partial^{m+n}\psi}{(\partial x')^{m-i+j}(\partial y')^{n-j+i}}
+\end{equation}
+**TODO** Check this
