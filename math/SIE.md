@@ -227,3 +227,4 @@ There are several approaches,
 ## Other properties 
 
 + [Critical Curves for SIE](Critical Curves for SIE)
++ [Implementation of SIE](Implementation of SIE)
