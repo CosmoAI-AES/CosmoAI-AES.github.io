@@ -11,10 +11,13 @@ suites implemented.
 For details, it is still necessary to read the code, unfortunately.
 
 + [Sampling Tests](Sampling)
-+ [Model Comparison](Model Comparison)
++ [Model Comparison](Model Comparison) to compare roulette and raytrace simulation
 + [Regression](Regression) Tests
-+ [Roulette](Roulette) Tests
 + [Roulette Resimulation Test](Roulette Resimulation Test)
++ [Roulette Model Evaluation](Roulette Model Evaluation)
+  is primarily evaluation of the roulette formalism rather than 
+  the implementation
++ [Roulette Statistics](Roulette Statistics) to explore the impact of higher order terms
 
 ## $\xi$-move Test
 

@@ -128,6 +128,26 @@ Special for resimulation from roulette amplitudes:
 
 + `setXiEta()` **to be implemented**
 
+# Masking
+
+Masking is important for the Roulette Simulator, because computation
+is expensive.  The current code is wrangled with technical debt, and
+masking is done twice.
+
++ For Roulette Models, the `distort()` function only calculates pixels
+  inside the convergence ring, if `maskMode` is set.
+  This speeds up calculation.
++ The `maskImage()` functions allows masking after calculation.
+  It takes an optional scale parameter, and the radius of the mask is
+  scale times the radius of the convergence ring.
++ RouletteRegenerator has a default masking radius of zero, but the
+  radius can be explicitly set with `setMaskRadius()`, which will
+  give masking as for other Roulette Models.
++ Raytrace does not mask during computation, but `maskImage()` works
+  as it does for Roulette Models.  This is done to facilitate comparison
+  between Raytrace and Roulette, and the mask is only meaningful in relation
+  to Roulette.
+
 # TODO
 
 + When are the roulette amplitudes calculated?
