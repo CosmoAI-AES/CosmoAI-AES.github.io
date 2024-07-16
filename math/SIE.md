@@ -211,7 +211,7 @@ The differentiation with respect to $y$ is similar and gives
 ## Deflection for arbitrary orientation
 
 There are several approaches,
-1. [Approach 1](Differrenting SIE Approach 1).
+1. [Approach 1](Differentiating SIE Approach 1).
    We can rotate the co-ordinate system and use the derivation 
    for $\theta=0$.
    This works for the first-order derivatives, but we have not
