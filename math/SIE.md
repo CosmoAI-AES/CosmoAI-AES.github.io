@@ -63,7 +63,7 @@ factor of $\xi_0^2/D_L^2$ or $C_0\xi_0$.  If we also mormalise $R$, and write
 $R=\xi_0r$, we can rewrite $\psi$ as
 \begin{split}
   \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(r,\phi) =
-  \frac{\xi_0^2}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}\cdot R\cdot
+  \frac{\xi_0^2}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}\cdot r\cdot
   &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
   \\\\&
   +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
@@ -71,7 +71,7 @@ $R=\xi_0r$, we can rewrite $\psi$ as
 Now the standard normalisation reads
 \begin{split}
   \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(r,\phi) =
-  \sqrt{\frac{f}{1-f^2}}\cdot R\cdot
+  \sqrt{\frac{f}{1-f^2}}\cdot r\cdot
   &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
   \\\\&
   +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
