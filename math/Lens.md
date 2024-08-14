@@ -30,6 +30,8 @@ $C_0=R_E/D_L^2$.  Thus the deflection is given as
 The differentiation is straight forward.
 See `psiXvalue` and `psiYvalue` in `SIS.cpp`.
 
+Roulette amplitudes are calculated using the recursive formulæ.
+
 ## SIE
 
 \begin{aligned}
@@ -68,6 +70,7 @@ As for SIS, $C_0=R_E/D_L^2$ is called `einsteinR` in the code.
 See `psiXvalue` and `psiYvalue` in `SIE.cpp`.
 
 + [Calculation of the SIE Deflection](/math/SIE)
++ [SIE Roulette Amplitudes](/math/Roulette Amplitudes in SIE)
 
 # Implementation 
 

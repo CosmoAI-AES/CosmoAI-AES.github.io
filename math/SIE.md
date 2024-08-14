@@ -210,19 +210,26 @@ The differentiation with respect to $y$ is similar and gives
 
 ## Deflection for arbitrary orientation
 
-There are several approaches,
-1. [Approach 1](Differentiating SIE Approach 1).
-   We can rotate the co-ordinate system and use the derivation 
-   for $\theta=0$.
-   This works for the first-order derivatives, but we have not
-   solved it for higher order.
-3. [Approach 2](Differentiation of SIE)
-   Use a co-ordinate substitution and use the chain rule with 
-   derivatives for $\theta=0$ as constituent results.
-2. Approach 3.  We can differentiate the general formula for $\psi^{\mathrm{R}}$,
-   This seems to be computationally intractible for higher-order
-   derivatives.
+For Raytrace simulation, we only require the first order derivatives.
+We find it easiest to calculate the deflection vector in a local
+co-ordinate system where $\theta=0$, and then rotate the deflection
+vector to get the deflectio in the global co-ordinate system.
+This is derived as [Approach 1](Differentiating SIE Approach 1).
 
+In Roulette simulation, we require higher order derivatives.
+The recursive formulæ for roulette amplitudes proved intractible,
+but the non-recursive formulæ are straight forward if higher-order
+partial derivatives of $\psi$ can be calculated.
+
+The rotation trick which worked for first-order derivativs does not
+easily generalise to higher orders.
+We ended up using a co-ordinate substitution and chain rule
+differentiation.  This is elaborated as 
+[Approach 2](Differentiation of SIE).
+
+A possible . Approach 3 would differentiate the general formula for
+$\psi^{\mathrm{R}}$, but believing this to be computationally intractible,
+we have not developed this any further.
 
 ## Other properties 
 
