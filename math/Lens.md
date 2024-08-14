@@ -23,10 +23,10 @@ negative sign.
 In practice, we omit the (constant) factor $D_L$ in the implementation.
 In other words, what is called `einsteinR` in the code, is the quantity
 $C_0=R_E/D_L^2$.  Thus the deflection is given as
-\begin{align}
+\begin{aligned}
   \frac{\partial\psi}{\partial x} &= C_0\cdot\frac{x}{\sqrt{x^2+y^"}}\\
   \frac{\partial\psi}{\partial y} &= C_0\cdot\frac{y}{\sqrt{x^2+y^"}}
-\end{align}
+\end{aligned}
 The differentiation is straight forward.
 See `psiXvalue` and `psiYvalue` in `SIS.cpp`.
 
@@ -49,7 +49,7 @@ where $(R,\phi)$ are the polar coordinates in the lens plane, i.e.
 \end{equation}
 
 The deflection is given as
-\begin{align}
+\begin{aligned}
   \frac{\partial\psi}{\partial x} &=
      C_0\cdot\frac{\sqrt{f}{\sqrt{1-f^2}}\cdot\big(
         \cos\theta\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}x')
@@ -60,12 +60,12 @@ The deflection is given as
         \sin\theta\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}x')
         + \cos\theta\cdot\sin^{-1}(\sqrt{1-f^2}y')
         \big)
-\end{align}
+\end{aligned}
 where
-\begin{align}
+\begin{aligned}
   x' &= \frac{\cos\theta\cdot x + \sin\theta\cdot y}{\sqrt{x^2+y^2}} \\
   y' &= \frac{-\sin\theta\cdot x + \cos\theta\cdot y}{\sqrt{x^2+y^2}}
-\end{align}
+\end{aligned}
 As for SIS, $C_0=R_E/D_L^2$ is called `einsteinR` in the code.
 See `psiXvalue` and `psiYvalue` in `SIE.cpp`.
 
