@@ -101,9 +101,9 @@ Define
 \begin{aligned}
    \Gamma^m_s &=
    \begin{cases}
-      0 & \text{if $m+s$ is even},\\
-      \frac{D_L^{m+1}}{2^{m+\delta_{0s}\binom{m1}{\frac{m+1-s}2} & \text{if $m+s$ is even}
-   \end{cases} \\
+      0  \quad\text{if $m+s$ is even},\\\\\\\\
+      \frac{D_L^{m+1}}{2^{m+\delta_{0s}\binom{m1}{\frac{m+1-s}2} \quad \text{otherwise}
+   \end{cases} \\\\\\\\
    K^m_s &=  \bigg(\frac[\partial^2\psi}{(\partial x)^2}\bigg)
       + \bigg(\frac[\partial^2\psi}{(\partial y)^2}\bigg)
 \end{aligned}
@@ -113,7 +113,7 @@ then we have
       \sum_{k=0}^{\floor{s/2+1}} (-1)^k
       \binom{s}{2k+1}
       \frac{\partial^s\psi}{(partial x)^{s-2k}(partial y)^{2k}}
-   \\
+   \\\\\\\\
    \beta^m_s &=  
       \sum_{k=0}^{\floor{s/2}+1} (-1)^k
       \binom{s}{2k}
