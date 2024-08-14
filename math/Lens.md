@@ -45,7 +45,28 @@ where $(R,\phi)$ are the polar coordinates in the lens plane, i.e.
     (x,y) = R\cdot (\sin\phi,\cos\phi).
 \end{equation}
 
-+ [Deflection in SIE](/math/SIE)
+The deflection is given as
+\begin{align}
+  \frac{\partial\psi}{\partial x} &=
+     C_0\cdot\frac{\sqrt{f}{\sqrt{1-f^2}}\cdot\big(
+        \cos\theta\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}x')
+        - \sin\theta\cdot\sin^{-1}(\sqrt{1-f^2}y')
+        \big)
+  \frac{\partial\psi}{\partial y} &=
+     C_0\cdot\frac{\sqrt{f}{\sqrt{1-f^2}}\cdot\big(
+        \sin\theta\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}x')
+        + \cos\theta\cdot\sin^{-1}(\sqrt{1-f^2}y')
+        \big)
+\end{align}
+where
+\begin{align}
+  x' &= \frac{\cos\theta\cdot x + \sin\theta\cdot y}{\sqrt{x^2+y^2}} \\
+  y' &= \frac{-\sin\theta\cdot x + \cos\theta\cdot y}{\sqrt{x^2+y^2}}
+\end{align}
+As for SIS, $C_0=R_E/D_L^2$ is called `einsteinR` in the code.
+See `psiXvalue` and `psiYvalue` in `SIE.cpp`.
+
++ [Calculation of the SIE Deflection](/math/SIE)
 
 # Implementation 
 
