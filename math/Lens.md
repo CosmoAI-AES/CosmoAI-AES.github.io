@@ -20,6 +20,15 @@ The following expression for $\psi$ is implemented in `amplitudes.py`
 The sign causes some confusion, and we need to check if also SIE below needs a
 negative sign.
 
+In practice, we omit the (constant) factor $D_L$ in the implementation.
+In other words, what is called `einsteinR` in the code, is the quantity
+$C_0=R_E/D_L^2$.  Thus the deflection is given as
+\begin{align}
+  \frac{\partial\psi}{\partial x} &= C_0\cdot\frac{x}{\sqrt{x^2+y^"}}\\
+  \frac{\partial\psi}{\partial y} &= C_0\cdot\frac{y}{\sqrt{x^2+y^"}}
+\end{align}
+See `psiXvalue` and `psiYvalue` in `SIS.cpp`.
+
 ## SIE
 
 \begin{aligned}
