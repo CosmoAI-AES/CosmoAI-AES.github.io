@@ -3,6 +3,9 @@ title: Differentiation of SIE
 usemathjax: true
 ---
 
+# Differentiation of SIE (Approach 2)
+
+
 Calculation of the amplitudes is computationally expensive,
 and a lot of care is needed to make it tenable.
 We have tried several approaches which have failed.
