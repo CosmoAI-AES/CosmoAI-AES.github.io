@@ -106,7 +106,7 @@ We need the following basic rules.
   \frac{d}{dx}\sinh^{-1} x = \frac{1}{\sqrt{1+x^2}}
 \end{equation}
 
-### Differantiation with respect to $x$
+### Differentiation with respect to $x$
 
 Firstly, we differentiate the $\sin^{-1}$-term
 \begin{aligned}
@@ -199,7 +199,7 @@ We conclude that
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
 \end{equation}
 
-### Differantiation with respect to $y$
+### Differentiation with respect to $y$
 
 The differentiation with respect to $y$ is similar and gives
 \begin{equation}
