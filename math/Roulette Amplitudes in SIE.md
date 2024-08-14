@@ -101,7 +101,7 @@ Define
 \begin{aligned}
    \Gamma^m_s &=
    \begin{cases}
-      0  \quad\text{if $m+s$ is even},\\\\\\\\
+      0  \quad\text{if $m+s$ is even},\\
       \frac{D_L^{m+1}}{2^{m+\delta_{0s}\binom{m1}{\frac{m+1-s}2} \quad \text{otherwise}
    \end{cases} \\\\\\\\
    K^m_s &=  \bigg(\frac[\partial^2\psi}{(\partial x)^2}\bigg)
