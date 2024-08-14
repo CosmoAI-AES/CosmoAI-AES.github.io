@@ -27,6 +27,7 @@ $C_0=R_E/D_L^2$.  Thus the deflection is given as
   \frac{\partial\psi}{\partial x} &= C_0\cdot\frac{x}{\sqrt{x^2+y^"}}\\
   \frac{\partial\psi}{\partial y} &= C_0\cdot\frac{y}{\sqrt{x^2+y^"}}
 \end{align}
+The differentiation is straight forward.
 See `psiXvalue` and `psiYvalue` in `SIS.cpp`.
 
 ## SIE
