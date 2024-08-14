@@ -71,6 +71,7 @@ See `psiXvalue` and `psiYvalue` in `SIE.cpp`.
 
 + [Calculation of the SIE Deflection](/math/SIE)
 + [SIE Roulette Amplitudes](/math/Roulette Amplitudes in SIE)
++ [Legacy Notes on SIE](/math/Legacy Notes on SIE)
 
 # Implementation 
 
