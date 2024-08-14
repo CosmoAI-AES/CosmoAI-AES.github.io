@@ -100,10 +100,10 @@ We use this with the chain rule below.
 Define
 \begin{aligned}
    \Gamma^m_s &=
-   \begin{cases}
+\begin{cases}
       0  \quad\text{if $m+s$ is even},\\
       \frac{D_L^{m+1}}{2^{m+\delta_{0s}\binom{m1}{\frac{m+1-s}2} \quad \text{otherwise}
-   \end{cases} \\\\\\\\
+\end{cases} \\\\\\\\
    K^m_s &=  \bigg(\frac[\partial^2\psi}{(\partial x)^2}\bigg)
       + \bigg(\frac[\partial^2\psi}{(\partial y)^2}\bigg)
 \end{aligned}
@@ -112,12 +112,12 @@ then we have
    \alpha^m_s &=
       \sum_{k=0}^{\lfloor s/2+1 \rfloor} (-1)^k
       \binom{s}{2k+1}
-      \frac{\partial^s\psi}{(partial x)^{s-2k}(partial y)^{2k}}
+      \frac{\partial^s\psi}{(\partial x)^{s-2k}(\partial y)^{2k}}
    \\\\\\\\
    \beta^m_s &=  
       \sum_{k=0}^{\lfloor s/2\rfloor+1} (-1)^k
       \binom{s}{2k}
-      \frac{\partial^s\psi}{(partial x)^{s-2k-1}(partial y)^{2k+1}}
+      \frac{\partial^s\psi}{(\partial x)^{s-2k-1}(\partial y)^{2k+1}}
 \end{aligned}
 
 
