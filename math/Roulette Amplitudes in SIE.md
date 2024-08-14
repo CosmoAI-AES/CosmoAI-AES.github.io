@@ -105,7 +105,7 @@ Define
       \frac{D_L^{m+1}}{2^{m+\delta_{0s}}}\binom{m1}{\frac{m+1-s}2} \quad \text{otherwise}
 \end{cases} \\\\\\\\
    K^m_s &=  \bigg(\frac{\partial^2\psi}{(\partial x)^2}\bigg)
-      + \bigg(\frac[\partial^2\psi}{(\partial y)^2}\bigg)
+      + \bigg(\frac{\partial^2\psi}{(\partial y)^2}\bigg)
 \end{aligned}
 then we have
 \begin{aligned}
