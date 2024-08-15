@@ -111,13 +111,13 @@ then we have
 \begin{aligned}
    \alpha^m_s &=
       \Gamma^m_sK^{\frac{m+1-s}2}
-      \sum_{k=0}^{\lfloor s/2+1 \rfloor} (-1)^k
+      \sum_{k=0}^{\lfloor s/2 \rfloor} (-1)^k
       \binom{s}{2k}
       \frac{\partial^s\psi}{(\partial x)^{s-2k}(\partial y)^{2k}}
    \\\\\\\\
    \beta^m_s &=  
       \Gamma^m_sK^{\frac{m+1-s}2}
-      \sum_{k=0}^{\lfloor s/2\rfloor+1} (-1)^k
+      \sum_{k=0}^{\lfloor (s-1)/2\rfloor} (-1)^k
       \binom{s}{2k+1}
       \frac{\partial^s\psi}{(\partial x)^{s-2k-1}(\partial y)^{2k+1}}
 \end{aligned}
