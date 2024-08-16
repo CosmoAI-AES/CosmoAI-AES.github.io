@@ -40,8 +40,11 @@ not yet been investigated.
     + raytrace 
     + roulette 
     + roulettepm 
-    + roulettelens 
 + Testing the calculation of roulette amplitudes by `amplitudes.py`
     + amplitudes 
     + Note that SIE has not yet been incorporated
++ Legacy 
+    + roulettelens
+        + This is broken, but not sure why.
+        + Equally reliable tests can be obtained using `Test/roulettegen`
 
