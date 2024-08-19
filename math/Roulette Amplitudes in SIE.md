@@ -126,3 +126,28 @@ Then we have
 In practice, we omit the $D_L$ factors, because they cancel against other factors
 when the amplitudes are used in the deflection formulæ.
 
+For implementation, we need to rewrite $\alpha_s^m$ and $\beta_s^m$
+without the $\square$ operator.
+We get
+\begin{aligned}
+   \alpha^m_s(\vec{\xi}) &=
+      \Gamma^m_s
+      \sum_{k=0}^{\lfloor s/2 \rfloor} (-1)^k
+      \binom{s}{2k}
+      \sum_{h=0}^H\binom{H}{h}
+      \frac{\partial^{m+1}\psi(\vec{\xi})}
+          {(\partial x)^{m+1-2k-2i}(\partial y)^{2k+2i}}
+   \\\\\\\\
+   \beta^m_s(\vec{\xi}) &=  
+      \Gamma^m_s
+      \sum_{k=0}^{\lfloor (s-1)/2\rfloor} (-1)^k
+      \binom{s}{2k+1}
+      \sum_{h=0}^H\binom{H}{h}
+      \frac{\partial^{m+1}\psi(\vec{\xi})}
+          {(\partial x)^{m-2k-2i}(\partial y)^{2k+2i+1}}
+\end{aligned}
+where
+\begin{aligned}
+  H = \frac{m+1-s}{2}
+\end{aligned}
+
