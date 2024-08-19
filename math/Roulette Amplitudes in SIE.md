@@ -104,19 +104,20 @@ Define
       0  \quad\text{if $m+s$ is even},\\\\\\\\
       -\frac{D_L^{m+1}}{2^{m+\delta_{0s}}}\binom{m+1}{\frac{m+1-s}2} \quad \text{otherwise}
 \end{cases} \\\\\\\\
-   K &=  \frac{\partial^2\psi}{(\partial x)^2}
-      + \frac{\partial^2\psi}{(\partial y)^2}
+   \square &=  \frac{\partial^2}{(\partial x)^2}
+      + \frac{\partial^2}{(\partial y)^2}
 \end{aligned}
-then we have
+Note that $\square$ is an operator.
+Then we have
 \begin{aligned}
    \alpha^m_s &=
-      \Gamma^m_sK^{\frac{m+1-s}2}
+      \Gamma^m_s\square^{\frac{m+1-s}2}
       \sum_{k=0}^{\lfloor s/2 \rfloor} (-1)^k
       \binom{s}{2k}
       \frac{\partial^s\psi}{(\partial x)^{s-2k}(\partial y)^{2k}}
    \\\\\\\\
    \beta^m_s &=  
-      \Gamma^m_sK^{\frac{m+1-s}2}
+      \Gamma^m_s\square^{\frac{m+1-s}2}
       \sum_{k=0}^{\lfloor (s-1)/2\rfloor} (-1)^k
       \binom{s}{2k+1}
       \frac{\partial^s\psi}{(\partial x)^{s-2k-1}(\partial y)^{2k+1}}
