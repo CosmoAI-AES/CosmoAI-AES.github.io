@@ -46,7 +46,6 @@ line interface for bulk generation of images.
     + [Critical Curves](/math/CriticalCurve)
 + [Roulette](/math/Roulette) formulæ
 + [Lens Models](/math/Lens)
-    + [SIE](/math/SIE)
 
 
 ## Development
