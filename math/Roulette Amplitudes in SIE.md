@@ -136,7 +136,7 @@ We get
       \binom{s}{2k}
       \sum_{h=0}^H\binom{H}{h}
       \frac{\partial^{m+1}\psi(\vec{\xi})}
-          {(\partial x)^{m+1-2k-2i}(\partial y)^{2k+2i}}
+          {(\partial x)^{m+1-2k-2h}(\partial y)^{2k+2h}}
    \\\\\\\\
    \beta^m_s(\vec{\xi}) &=  
       \Gamma^m_s
@@ -144,10 +144,45 @@ We get
       \binom{s}{2k+1}
       \sum_{h=0}^H\binom{H}{h}
       \frac{\partial^{m+1}\psi(\vec{\xi})}
-          {(\partial x)^{m-2k-2i}(\partial y)^{2k+2i+1}}
+          {(\partial x)^{m-2k-2h}(\partial y)^{2k+2h+1}}
 \end{aligned}
 where
 \begin{aligned}
   H = \frac{m+1-s}{2}
 \end{aligned}
 
+## Alternative Step 3.  Roulette Amplitudes
+
+This uses the ECMS paper.
+\begin{aligned}
+   \alpha^m_s &= - \frac1{2^{\delta_{0s}}} D^{m+1}_{\textrm{L}}
+   \sum_{k=0}^m\binom{m}{k}\left({\mathcal{C}}^{m(k)}_s\partial_{\xi_1}
+                                +{\mathcal{C}}^{m(k+1)}_s\partial_{\xi_2}\right)
+                      \partial^{m-k}_{\xi_1}\partial^k_{\xi_2}\psi
+\end{aligned}
+\begin{aligned}
+   \beta^m_s &=-D^{m+1}_\textrm{L}\sum_{k=0}^m\binom{m}{k}\left({\mathcal{S}}_s^{m(k)}\partial_{\xi_1}+{\mathcal{S}}_s^{m(k+1)}\partial_{\xi_2}\right)\partial_{\xi_1}^{m-k}\partial_{\xi_2}^k\psi
+\end{aligned}
+where
+\begin{aligned}
+   \mathcal{C}^{m(k)}_s &= \frac{1}{\pi}\int_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\cos s\phi
+   \\\\\\\\
+   \mathcal{S}^{m(k)}_s &= \frac{1}{\pi}\int_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\sin s\phi
+\end{aligned}
+Rearranging, for the sake of implementation, we can write
+\begin{aligned}
+   \alpha^m_s &= - \frac1{2^{\delta_{0s}}} D_\textrm{L}^{m+1}
+   \sum_{k=0}^m\binom{m}{k}\left({\mathcal{C}}_s^{m(k)}
+                      \partial_{\xi_1}^{m-k+1}\partial_{\xi_2}^k\psi
+                                +{\mathcal{C}}_s^{m(k+1)}
+                      \partial_{\xi_1}^{m-k}\partial_{\xi_2}^{k+1}\psi
+				\right)
+   \\\\\\\\
+   \beta^m_s &= -D_\textrm{L}^{m+1}\sum_{k=0}^m\binom{m}{k}\left(
+         {\mathcal{S}}_s^{m(k)}
+	 \partial_{\xi_1}^{m-k+1}\partial_{\xi_2}^k\psi
+	 +
+	 {\mathcal{S}}_s^{m(k+1)}
+	 \partial_{\xi_1}^{m-k}\partial_{\xi_2}^{k+1}\psi
+	 \right)
+\end{aligned}
