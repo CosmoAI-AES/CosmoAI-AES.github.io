@@ -136,7 +136,7 @@ We get
       \binom{s}{2k}
       \sum_{h=0}^H\binom{H}{h}
       \frac{\partial^{m+1}\psi(\vec{\xi})}
-          {(\partial x)^{m+1-2k-2i}(\partial y)^{2k+2i}}
+          {(\partial x)^{m+1-2k-2h}(\partial y)^{2k+2h}}
    \\\\\\\\
    \beta^m_s(\vec{\xi}) &=  
       \Gamma^m_s
@@ -144,7 +144,7 @@ We get
       \binom{s}{2k+1}
       \sum_{h=0}^H\binom{H}{h}
       \frac{\partial^{m+1}\psi(\vec{\xi})}
-          {(\partial x)^{m-2k-2i}(\partial y)^{2k+2i+1}}
+          {(\partial x)^{m-2k-2h}(\partial y)^{2k+2h+1}}
 \end{aligned}
 where
 \begin{aligned}
