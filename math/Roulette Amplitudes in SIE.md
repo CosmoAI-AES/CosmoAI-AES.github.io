@@ -155,12 +155,13 @@ where
 
 This uses the ECMS paper.
 \begin{aligned}
-   \alpha^m_s &= - \frac1{2^{\delta_{0s}}} D_\textrm{L}^{m+1}
-   \sum_{k=0}^m\binom{m}{k}\left({\mathcal{C}}_s^{m(k)}\partial_{\xi_1}
-                                +{\mathcal{C}}_s^{m(k+1)}\partial_{\xi_2}\right)
-                      \partial_{\xi_1}^{m-k}\partial_{\xi_2}^k\psi,
-   \\\\\\\\
-   \beta^m_s &=-D_\textrm{L}^{m+1}\sum_{k=0}^m\binom{m}{k}\left({\mathcal{S}}_s^{m(k)}\partial_{\xi_1}+{\mathcal{S}}_s^{m(k+1)}\partial_{\xi_2}\right)\partial_{\xi_1}^{m-k}\partial_{\xi_2}^k\psi
+   \alpha^m_s &= - \frac1{2^{\delta_{0s}}} D^{m+1}_{\textrm{L}}
+   \sum_{k=0}^m\binom{m}{k}\left({\mathcal{C}}^{m(k)}_s\partial_{\xi_1}
+                                +{\mathcal{C}}^{m(k+1)}_s\partial_{\xi_2}\right)
+                      \partial^{m-k}_{\xi_1}\partial^k_{\xi_2}\psi
+\end{aligned}
+\begin{aligned}
+   \beta^m_s &=-D^{m+1}_\textrm{L}\sum_{k=0}^m\binom{m}{k}\left({\mathcal{S}}_s^{m(k)}\partial_{\xi_1}+{\mathcal{S}}_s^{m(k+1)}\partial_{\xi_2}\right)\partial_{\xi_1}^{m-k}\partial_{\xi_2}^k\psi
 \end{aligned}
 where
 \begin{aligned}
