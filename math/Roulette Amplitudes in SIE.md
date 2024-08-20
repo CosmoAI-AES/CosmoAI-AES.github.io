@@ -151,3 +151,37 @@ where
   H = \frac{m+1-s}{2}
 \end{aligned}
 
+## Alternative Step 3.  Roulette Amplitudes
+
+This uses the ECMS paper.
+\begin{aligned}
+   \alpha_s^m&= - \frac1{2^{\delta_{0s}}} D_\textrm{L}^{m+1}
+   \sum_{k=0}^m\binom{m}{k}\left({\mathcal{C}}_s^{m(k)}\partial_{\xi_1}
+                                +{\mathcal{C}}_s^{m(k+1)}\partial_{\xi_2}\right)
+                      \partial_{\xi_1}^{m-k}\partial_{\xi_2}^k\psi,
+   \\\\\\\\
+   \beta_s^m&=-D_\textrm{L}^{m+1}\sum_{k=0}^m\binom{m}{k}\left({\mathcal{S}}_s^{m(k)}\partial_{\xi_1}+{\mathcal{S}}_s^{m(k+1)}\partial_{\xi_2}\right)\partial_{\xi_1}^{m-k}\partial_{\xi_2}^k\psi
+\end{aligned}
+where
+\begin{aligned}
+   {\mathcal{C}}_s^{m(k)}&=\frac{1}{\pi}\int_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\cos s\phi\label{C},
+   \\\\\\\\
+   {\mathcal{S}}_s^{m(k)}&=\frac{1}{\pi}\int_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\sin s\phi.\label{S}
+\end{aligned}
+Rearranging, for the sake of implementation, we can write
+\begin{aligned}
+   \alpha_s^m&= - \frac1{2^{\delta_{0s}}} D_\textrm{L}^{m+1}
+   \sum_{k=0}^m\binom{m}{k}\left({\mathcal{C}}_s^{m(k)}
+                      \partial_{\xi_1}^{m-k+1}\partial_{\xi_2}^k\psi
+                                +{\mathcal{C}}_s^{m(k+1)}
+                      \partial_{\xi_1}^{m-k}\partial_{\xi_2}^{k+1}\psi
+				\right)
+   \\\\\\\\
+   \beta_s^m&=-D_\textrm{L}^{m+1}\sum_{k=0}^m\binom{m}{k}\left(
+         {\mathcal{S}}_s^{m(k)}
+	 \partial_{\xi_1}^{m-k+1}\partial_{\xi_2}^k\psi
+	 +
+	 {\mathcal{S}}_s^{m(k+1)}
+	 \partial_{\xi_1}^{m-k}\partial_{\xi_2}^{k+1}\psi
+	 \right)
+\end{aligned}
