@@ -20,6 +20,7 @@ The common API is specified by the `Lens` superclass.
 + `getXi($\chi\eta$)` calculates the apparent position $\xi$
   for a given source position $\chi\eta$.
   Co-ordinates are in the lens plane to be totally independent of the source.
+    + See [calculation](/math/getXi)
 
 ## Algebraic Lens Functions
 
