@@ -10,7 +10,6 @@ This is a partial description of the most important test
 suites implemented.
 For details, it is still necessary to read the code, unfortunately.
 
-+ [Sampling Tests](Sampling)
 + [Model Comparison](Model Comparison) to compare roulette and raytrace simulation
 + [Regression](Regression) Tests
 + [Roulette Resimulation Test](Roulette Resimulation Test)
@@ -18,6 +17,7 @@ For details, it is still necessary to read the code, unfortunately.
   is primarily evaluation of the roulette formalism rather than 
   the implementation
 + [Roulette Statistics](Roulette Statistics) to explore the impact of higher order terms
++ [Cluster Lenses](Cluster Lenses) 
 
 ## $\xi$-move Test
 
