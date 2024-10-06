@@ -9,9 +9,22 @@ usemathjax: true
 The lens can be defined either as a function in two variables $(x,y)$
 or as a sampled signal in two dimensions.
 1. `PsiFunctionLens` uses a function.
-1. `SampledPsiFunctionLens` wraps a `PsiFunctionLens` object, sampling its function.
-1. `PixMapLens` is intended to use an arbitrary sampled signal, but this is not fully
-   implemented yet, and has not been tested.
+1. `SampledFunctionLens` uses a sampled function (pixmap).
+    + The only operational implementation is the `SampledPsiFunctionLens`
+      subclass which wraps a `PsiFunctionLens` object, sampling its function.
+    + More generic subclasses could be added.
+
+## The `Lens` superclass
+
+The toplevel `Lens` class implements only one function,
+namely `getXi` which determines the apparent source position
+by fix-point iteration.  This is intended to be shared by
+`SampledLens` and `ClusterLens`, but currently `SampledLens`
+implements its own fix-point iteration, and some work is needed
+to replace it.
+
+Other functions raise a NotImplemented exception.  We avoid abstract
+classes to make python binding easier.
 
 ## Common API
 
