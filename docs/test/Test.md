@@ -10,8 +10,12 @@ This is a partial description of the most important test
 suites implemented.
 For details, it is still necessary to read the code, unfortunately.
 
-+ [Model Comparison](Model Comparison) to compare roulette and raytrace simulation
-+ [Regression](Regression) Tests
++ [Regression](Regression Tests) 
+  are the most important tests to avoid bugs being 
+  introduced during development
++ [Model Comparison](Model Comparison)
+  to compare roulette and raytrace simulation
++ [Cluster Lens](Cluster Lens) tests 
 + [Roulette Resimulation Test](Roulette Resimulation Test)
 + [Roulette Model Evaluation](Roulette Model Evaluation)
   is primarily evaluation of the roulette formalism rather than 
