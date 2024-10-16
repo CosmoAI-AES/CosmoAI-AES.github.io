@@ -21,7 +21,6 @@ For details, it is still necessary to read the code, unfortunately.
   is primarily evaluation of the roulette formalism rather than 
   the implementation
 + [Roulette Statistics](Roulette Statistics) to explore the impact of higher order terms
-+ [Cluster Lenses](Cluster Lenses) 
 
 ## $\xi$-move Test
 
@@ -33,6 +32,21 @@ The output images are in `Test/ximove`*date*.  The spliced
 images are prefixed `join-` and should look like plausible
 distortions, with symmetry and continuous shapes.
 
+## Timing
+
+**Purpose** compare run times for different models
+
+```
+cd Test/timing
+sh time.sh
+```
+
+Generated data are discarded.  The only interesting output is the 
+reports from time.
+
 ## Old tests (not maintained)
 
-+ `Test/timing` created to compare run times for different models
++ `Test/TeX` typeset ampltiudes in TeX
+    + created for debugging purposes
+    + retained as an example of the feature
++ `Test/pmtest` old tests for PointMass lenses.

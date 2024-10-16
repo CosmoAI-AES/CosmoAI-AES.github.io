@@ -21,6 +21,12 @@ python3 CosmoSimPy/CosmoGUI.py
 
 **TODO** further documentation
 
+### Problems
+
++ Configuration widgets are never disabled even if most of them may be irrelevant
+  to a given model.
++ SIE is slow and irresponsive.  It is doubtful if this can be corrected.
+
 ## Command line operation
 
 + [`datagen.py`](datagen script) is the main CLI tool 
