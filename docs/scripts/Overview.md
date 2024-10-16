@@ -45,10 +45,11 @@ python3 CosmoSimPy/CosmoGUI.py
     + For **development use** only
     + The generated files are included in the release packages and found by the
       library.
++ [Machine Learning Examples](MachineLearningExamples)
 
 ## Roulette Amplitude Recovery (`roulettegen.py`)
 
-The `roulettegen.py` script ois still experimental and the model may change.
+The `roulettegen.py` script is still experimental and the model may change.
 The purpose is to make a new CSV file, alongside the distorted images, including
 roulette amplitudes.  This entails the following steps.
 
