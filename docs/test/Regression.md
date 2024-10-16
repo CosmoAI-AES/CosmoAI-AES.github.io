@@ -47,6 +47,11 @@ not yet been investigated.
         + new-raytrace 
         + sampled-roulette 
         + sampled-raytrace 
+    + Tests for cluster lenses, using the same dataset
+        + cluster-roulette 
+        + cluster-raytrace 
+        + cluster-sampled-roulette 
+        + cluster-sampled-raytrace 
 + Testing the calculation of roulette amplitudes by `amplitudes.py`
     + amplitudes 
     + Note that SIE has not yet been incorporated
