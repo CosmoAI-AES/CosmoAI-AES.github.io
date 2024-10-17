@@ -16,6 +16,7 @@ For details, it is still necessary to read the code, unfortunately.
 + [Model Comparison](Model Comparison)
   to compare roulette and raytrace simulation
 + [Cluster Lens](Cluster Lens) tests 
++ [PointMass](PointMass) tests 
 + [Roulette Resimulation Test](Roulette Resimulation Test)
 + [Roulette Model Evaluation](Roulette Model Evaluation)
   is primarily evaluation of the roulette formalism rather than 
@@ -49,4 +50,3 @@ reports from time.
 + `Test/TeX` typeset ampltiudes in TeX
     + created for debugging purposes
     + retained as an example of the feature
-+ `Test/pmtest` old tests for PointMass lenses.
