@@ -29,11 +29,10 @@ line interface for bulk generation of images.
 + [User Tools](/docs/scripts/)
 + [Test Scripts](/docs/test/)
 + [Software Model](/docs/Software) - technical documentation
-+ [Simulation Model](/docs/model/) - technical documentation
++ [Simulation Model](/docs/model/) -
+  technical documentation of the simulator library
     + [Raytrace Simulation](/docs/model/Raytrace) 
-    + [Roulette Formalism](/docs/model/Roulette)  (Calculation and Simulation)
-+ Implementation Notes
-    + [Roulette Calculation](/docs/Roulette Calculation)
+    + [Roulette Simulation](/docs/Roulette)  (Overview)
 
 ## Machine Learning with CosmoSim 
 

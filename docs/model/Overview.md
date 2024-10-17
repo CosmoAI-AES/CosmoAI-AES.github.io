@@ -9,8 +9,7 @@ usemathjax: true
 + [Raytrace Simulation](Raytrace) 
 + [Roulette Model](Roulette)
 
-
-# Software Model
+# Simulator Library
 
 At the highest level, the simulator consists of three components.
 1.  [lens model](Lens) (Lens) which implements a mathematical description
