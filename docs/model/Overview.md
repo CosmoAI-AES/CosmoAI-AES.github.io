@@ -5,8 +5,6 @@ permalink: /docs/model/
 usemathjax: true
 ---
 
-+ [Raytrace Simulation](Raytrace) 
-+ [Roulette Model](Roulette)
 
 # Simulator Library
 
@@ -18,6 +16,9 @@ At the highest level, the simulator consists of three components.
 3.  [simulation model](Simulator) (SimulatorModel) which calculates distorted images
     by using the lens and source models.
     Some simulation models are couples the lens model for various reasons. 
+    Two generic simulation models are supported.
+    + [Raytrace Simulation](Raytrace) 
+    + [Roulette Model](Roulette)
 
 ## Modelling the Lens 
 
