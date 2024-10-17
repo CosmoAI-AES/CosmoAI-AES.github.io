@@ -5,7 +5,6 @@ permalink: /docs/model/
 usemathjax: true
 ---
 
-+ [Sketches of the Mathematical Model](Model)
 + [Raytrace Simulation](Raytrace) 
 + [Roulette Model](Roulette)
 
