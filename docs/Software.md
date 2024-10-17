@@ -5,6 +5,17 @@ permalink: /docs/Software
 usemathjax: true
 ---
 
+# CosmoSim
+
+![Model 3D](Model_3D.jpeg)
+
+The purpose of CosmoSim is to simulate gravitation lenses.
+In other words, giving a model of a lens and a model of a source,
+it can generate the distorted image of the source as seen through
+the lens.
+
+## Architecture
+
 ![CosmoSim Modules](software.svg)
 
 The CosmoSim software suite consists of three layers.
