@@ -13,6 +13,7 @@ or as a sampled signal in two dimensions.
     + The only operational implementation is the `SampledPsiFunctionLens`
       subclass which wraps a `PsiFunctionLens` object, sampling its function.
     + More generic subclasses could be added.
++ Common [Lens API](../Lens API)
 
 ## The `Lens` superclass
 
@@ -26,14 +27,7 @@ to replace it.
 Other functions raise a NotImplemented exception.  We avoid abstract
 classes to make python binding easier.
 
-## Common API
 
-The common API is specified by the `Lens` superclass.
-
-+ `getXi($\chi\eta$)` calculates the apparent position $\xi$
-  for a given source position $\chi\eta$.
-  Co-ordinates are in the lens plane to be totally independent of the source.
-    + See [calculation](/math/getXi)
 
 ## Algebraic Lens Functions
 
