@@ -9,7 +9,7 @@ usemathjax: true
 
 ## Computation of the Roulette Amplitudes
 
-![Geometry of source and image points](points.svg)
+![Geometry of source and image points](../points.svg)
 
 The reference points are calculated in the following order
 
@@ -42,7 +42,7 @@ The reference points are calculated in the following order
 
 # RouletteRegenerator: Simulation from Roulette Amplitudes 
 
-![Geometry of source and image points](relativeeta.svg)
+![Geometry of source and image points](../relativeeta.svg)
 
 To make the reconstruction work, we need the following geometrical 
 points.
