@@ -20,8 +20,8 @@ the lens.
 
 The CosmoSim software suite consists of three layers.
 1.  The simulator library, *simlib*
-1.  The python wrapper, *CosmoSimPy*
-1.  A range of executable python scripts, including the GUI
+1.  The python wrapper, [CosmoSimPy](CosmoSimPy)
+1.  A range of [executable python scripts](scripts/), including the GUI
    `CosmoGUI.py` and the batch generator `datagen.py`.
 
 The mathematical model is implemented in the simulator library, which
