@@ -28,12 +28,11 @@ line interface for bulk generation of images.
   [Source repository](https://github.com/CosmoAI-AES/CosmoSim)
 + [User Tools](/docs/scripts/)
 + [Test Scripts](/docs/test/)
-+ [Simulation Model](/docs/model/) - technical documentation
++ [Software Model](/docs/Software) - technical documentation
++ [Simulation Model](/docs/model/) -
+  technical documentation of the simulator library
     + [Raytrace Simulation](/docs/model/Raytrace) 
-    + [Roulette Formalism](/docs/model/Roulette)  (Calculation and Simulation)
-+ Implementation Notes
-    + [Python Modules](/docs/Python)
-    + [Roulette Calculation](/docs/Roulette Calculation)
+    + [Roulette Simulation](/docs/Roulette)  (Overview)
 
 ## Machine Learning with CosmoSim 
 
@@ -46,6 +45,7 @@ line interface for bulk generation of images.
     + [Critical Curves](/math/CriticalCurve)
 + [Roulette](/math/Roulette) formulæ
 + [Lens Models](/math/Lens)
++ [PointMassCloud](/math/PointMassCloud) (in progress)
 
 
 ## Development

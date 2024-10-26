@@ -4,7 +4,7 @@ usemathjax: true
 ---
 
 
-# The Roulette Formulæ
+# The Roulette Formalism
 
 **DRAFT under construction**
 

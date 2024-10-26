@@ -5,12 +5,8 @@ permalink: /docs/model/
 usemathjax: true
 ---
 
-+ [Sketches of the Mathematical Model](Model)
-+ [Raytrace Simulation](Raytrace) 
-+ [Roulette Model](Roulette)
 
-
-# Software Model
+# Simulator Library
 
 At the highest level, the simulator consists of three components.
 1.  [lens model](Lens) (Lens) which implements a mathematical description
@@ -20,10 +16,13 @@ At the highest level, the simulator consists of three components.
 3.  [simulation model](Simulator) (SimulatorModel) which calculates distorted images
     by using the lens and source models.
     Some simulation models are couples the lens model for various reasons. 
+    Two generic simulation models are supported.
+    + [Raytrace Simulation](Raytrace) 
+    + [Roulette Model](../Roulette)
 
 ## Modelling the Lens 
 
-![Class diagram](lensmodel.svg)
+![Class diagram](../lensmodel.svg)
 
 The software aims to separate the simulation model (LensModel)
 and the actual lens (Lens), as is seen in the class diagram above.

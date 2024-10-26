@@ -36,10 +36,22 @@ not yet been investigated.
 
 
 + Testing various lens models
-    + exactpm 
-    + raytrace 
-    + roulette 
-    + roulettepm 
+    + Tests of the PointMass simulators
+        + exactpm 
+        + roulettepm 
+    + Old tests of the generic Raytrace and Roulette Models
+        + raytrace 
+        + roulette 
+    + The following tests are newer and use the same set of lens configurations
+        + new-roulette 
+        + new-raytrace 
+        + sampled-roulette 
+        + sampled-raytrace 
+    + Tests for cluster lenses, using the same dataset
+        + cluster-roulette 
+        + cluster-raytrace 
+        + cluster-sampled-roulette 
+        + cluster-sampled-raytrace 
 + Testing the calculation of roulette amplitudes by `amplitudes.py`
     + amplitudes 
     + Note that SIE has not yet been incorporated

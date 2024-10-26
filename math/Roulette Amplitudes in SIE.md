@@ -92,7 +92,7 @@ We use this with the chain rule below.
      \cos^{m-i+j}\theta\cdot
      \sin^{n-j+i}\theta\cdot
      (-1)^i\cdot
-     \frac{\partial^{m+n}\psi}{(\partial x)^{m+n-i-j}(\partial y)^{i+j}} 
+     \frac{\partial^{m+n}\psi}{(\partial x')^{m+n-i-j}(\partial y')^{i+j}} 
 \end{aligned}
 
 ## Step 3.  Roulette Amplitudes
