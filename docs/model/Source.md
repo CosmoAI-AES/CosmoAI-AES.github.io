@@ -23,3 +23,4 @@ in addition to the integer size.
   the rotation $\theta$.
 + `ImageSource` takes an image file which is used as the source image, in addition
   to the size parameter $\sigma$.
++ Source [Constellation](Constellation)
