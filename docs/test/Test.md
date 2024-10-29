@@ -15,13 +15,15 @@ For details, it is still necessary to read the code, unfortunately.
   introduced during development
 + [Model Comparison](Model Comparison)
   to compare roulette and raytrace simulation
-+ [Cluster Lens](Cluster Lens) tests 
 + [PointMass](PointMass) tests 
 + [Roulette Resimulation Test](Roulette Resimulation Test)
 + [Roulette Model Evaluation](Roulette Model Evaluation)
   is primarily evaluation of the roulette formalism rather than 
   the implementation
 + [Roulette Statistics](Roulette Statistics) to explore the impact of higher order terms
++ Testing new features Autumn 2024 
+    + [Source Constellation](Source Constellation Test)
+    + [Cluster Lens](Cluster Lens) tests 
 
 ## $\xi$-move Test
 
