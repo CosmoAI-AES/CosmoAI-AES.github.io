@@ -19,6 +19,12 @@ python3 CosmoSimPy/datagen.py  --csvfile Dataset/debug.csv \
 ```
 The resulting CSV file (roulette.csv) can be fed to the resimulator.
 
+Below, we will try to explain briefly how the roulette output file
+work.  See the [Roulette Formalism](/docs/model/Roulette) for a more
+detailed mathematical model.
+
+(This is **under construction**)
+
 ## The Roulette Output file
 
 The output file has most of the familiar columns from the input,
