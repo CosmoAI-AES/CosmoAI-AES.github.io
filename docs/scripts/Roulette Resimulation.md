@@ -5,6 +5,21 @@ permalink: /docs/scripts/Roulette Resimulation
 usemathjax: true
 ---
 
+The idea behind roulette resimulation is to recover the roulette amplitudes
+and simulate the lens distortion using only the amplitudes and no other 
+information about the lens.  
+
+The end goal is to use roulette amplitudes recovered from observed images
+by machine learning, but immediate tests can be made using exact roulette
+amplitudes calculated from the lens. This can be done by specifying an
+output file for roulette amplitudes using `datagen.py --outfile`:
+```
+python3 CosmoSimPy/datagen.py  --csvfile Dataset/debug.csv \
+    --outfile roulette.csv
+```
+The resulting CSV file (roulette.csv) can be fed to the resimulator.
+
+
 ## Roulette Amplitude Recovery (`roulettegen.py`)
 
 The `roulettegen.py` script is still experimental and the model may change.
