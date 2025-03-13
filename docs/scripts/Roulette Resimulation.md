@@ -19,10 +19,23 @@ python3 CosmoSimPy/datagen.py  --csvfile Dataset/debug.csv \
 ```
 The resulting CSV file (roulette.csv) can be fed to the resimulator.
 
+## The Roulette Output file
+
+The output file has most of the familiar columns from the input,
+giving the lens parameters.  Additional it has
++ `alpha[`$i$`][`$j$`]`, `beta[`$i$`][`$j$`]` for the roulette amplitudes
++ `centreX`, `centreY` : Centre point
+    + If `--centre` is not used, this is $(0,0)$.
+    + If `--centre` is used the image has been translated by 
+      $-($`centreX`,`centryY`$)$; i.e. (`centreX`,`centreY`) is
+      the coordinates of the centre of light prior to centring the
+      image.
++ `reletaX`, `reletaY`
++ `offsetX`, `offsetY`
++ `xiX`, `xiY`
 
 ## Roulette Amplitude Recovery (`roulettegen.py`)
 
-The `roulettegen.py` script is still experimental and the model may change.
 The purpose is to make a new CSV file, alongside the distorted images, including
 roulette amplitudes.  This entails the following steps.
 
