@@ -54,12 +54,11 @@ giving the lens parameters.  Additional it has
     + If `--centre` is not used, it is equal to (`x`,`y`)
     + If `--centre` is used, it is relative to the new origin, i.e.
       equal to (`x`-`centreX`,`y`-`centreY`)
-+ `offsetX`, `offsetY` is the source position in the co-ordinate system
-  centered at the reference point for the roulette expansion.
-+ `xiX`, `xiY`
-    + When `--xireference` is used (default), this is the apparent position
-      `\xi` and also the reference point for the roulette expansion, in the
-      original co-ordinate system (before centring).
++ `offsetX`, `offsetY` is difference between the source position corresponding
+  to the centre point $($`centreX`,`centryY`$)$ and the actual source centre.
+    + This may only be relevant when `--no-xireference` is used.
++ `xiX`, `xiY` : apparent position of the source, relative to the origin
+      $($`centreX`,`centryY`$)$.
 
 ## Roulette Amplitude Recovery (`roulettegen.py`)
 
