@@ -38,7 +38,9 @@ giving the lens parameters.  Additional it has
       $-($`centreX`,`centryY`$)$; i.e. (`centreX`,`centreY`) is
       the coordinates of the centre of light prior to centring the
       image.
-+ `reletaX`, `reletaY`
++ `reletaX`, `reletaY` is the source position
+    + If `--centre` is not used, it is equal to (`x`,`y`)
+    + If `--centre` is used, it is equal to (`x`-`centreX`,`y`-`centreY`)
 + `offsetX`, `offsetY`
 + `xiX`, `xiY`
 
