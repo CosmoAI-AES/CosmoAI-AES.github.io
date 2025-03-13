@@ -25,6 +25,18 @@ Below, we will try to explain briefly how the roulette output file
 work.  See the [Roulette Formalism](/docs/model/Roulette) for a more
 detailed mathematical model.
 
+There are two critical options for the simulation
+1.  `--centre` which centres the image at the centre of light after
+    calculation.  This is important in machine learning applications,
+    to avoid leaking information through the choice of co-ordinate
+    system.
+2.  `--no-xireference` which calculates roulette amplitudes at the
+    centre of light in the distorted image, rather than the apparent
+    position of the centre of the undistorted image.  
+    This is **not recommended**, but the reader should be aware of
+    its existence because it used to be the default and some of the
+    documentation may still refer to it.
+
 (This is **under construction**)
 
 ## The Roulette Output file
@@ -40,9 +52,14 @@ giving the lens parameters.  Additional it has
       image.
 + `reletaX`, `reletaY` is the source position
     + If `--centre` is not used, it is equal to (`x`,`y`)
-    + If `--centre` is used, it is equal to (`x`-`centreX`,`y`-`centreY`)
-+ `offsetX`, `offsetY`
+    + If `--centre` is used, it is relative to the new origin, i.e.
+      equal to (`x`-`centreX`,`y`-`centreY`)
++ `offsetX`, `offsetY` is the source position in the co-ordinate system
+  centered at the reference point for the roulette expansion.
 + `xiX`, `xiY`
+    + When `--xireference` is used (default), this is the apparent position
+      `\xi` and also the reference point for the roulette expansion, in the
+      original co-ordinate system (before centring).
 
 ## Roulette Amplitude Recovery (`roulettegen.py`)
 
