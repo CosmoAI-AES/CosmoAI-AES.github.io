@@ -1,9 +1,11 @@
 ---
-title: Roulette Resimulation
+title: Roulette Resimulation Scripts
 theme: minima
 permalink: /docs/scripts/Roulette Resimulation
 usemathjax: true
 ---
+
+# Roulette Resimulation Scripts
 
 The idea behind roulette resimulation is to recover the roulette amplitudes
 and simulate the lens distortion using only the amplitudes and no other 
