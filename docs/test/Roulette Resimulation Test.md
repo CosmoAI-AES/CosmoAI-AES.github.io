@@ -62,8 +62,11 @@ neighbourhood, and relative distance is disance divided by size.
 
 The current version (develop branch 3 July 2024) uses only the `--xireference` option,
 which is also what has been used in the machine learning tests.
+As of March 2025 `--xireference` is the default; it can be turned off with
+`--no-reference`.
 The role and importance of this option needs documentation.
 
-If neither `--centred` nor `--xireference` is used, the roulette amplitude
+If `--no-xireference` is used without `--centred`, the roulette amplitude
 output is predominantly NaN values.  I do not know why.  This should also 
 be documented, and it may be a good idea to remove options.
+

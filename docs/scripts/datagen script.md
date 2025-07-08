@@ -60,17 +60,8 @@ command line.  The CSV file takes precedence though.
 + `--einsteinradius` : Einstein radius
 + `--ratio` : Ratio (usually Elliptic eccentricity) for the lens
 + `--orientation` : Orientation of the lens
-
-
-## Roulette amplitudes
-
-To calculate and store the roulette amplitude, an output CSV file
-can be specified.
-
-```sh
-python3 CosmoSimPy/datagen.py  --csvfile Dataset/debug.csv \
-    --outfile roulette.csv 
-```
++ `--outfile` : Output file for roulette amplitudes, see
+  [Roulette Resimulation](Roulette Resimulation)
 
 ## Undocumented options 
 
