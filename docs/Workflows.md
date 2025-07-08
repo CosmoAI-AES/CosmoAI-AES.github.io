@@ -20,10 +20,10 @@ The following configurations are currently tested and released.
 | MacOS 12/x86  | -    | OK      | App[^mac12]  | (OK) |
 | MacOS 14/arm64 | -    | Fails | OK+App | OK |
 
-+ OK:   *works and tested in the Stable Trial Build*
-+ App:   *desktop app provided by Stable Trial Build*
++ OK:   *works and tested*
++ App:   *desktop app*
 + (OK): *used to work, but it is no longer validated*
-+ TBC: *successful test, but not yet added to the trial build*
++ TBC: *successful test, but not yet added to build*
 + Fails: *failed and currently no solution*
 + -: *not documented*
 
@@ -37,11 +37,15 @@ In thw workflow, conan is configured to be compatible with other
 defaults, so it could probably be changed, but not trivially.
 
 The workflow pipline consists of the following workflows.
-+ `build-production.yml` builds the software according to the table above.
-+ `dist.yml` calls `build-production.yml` and packs up the python code with
++ `build-production.yml` (Build for Release)
+  builds the software according to the table above.
++ `dist.yml` (Make Python Distribution) calls
+  `build-production.yml` and packs up the python code with
   all the compiled libraries.
-+ `release.yml` calls `dist.yml`, creates a release, and uploads all the assets.
-+ `release-test.yml` is identical to `release.yml` except that it marks the release
++ `release.yml` (Make Release) calls `dist.yml`, creates a release,
+  and uploads all the assets.
++ `release-test.yml` (Test Release) is identical to `release.yml`
+  except that it marks the release
   as draft and is triggered by other tags.
 
 ## Workflows for testing
