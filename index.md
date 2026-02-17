@@ -50,8 +50,8 @@ line interface for bulk generation of images.
 
 ## Development
 
-+ [Release Process](/docs/Release)
-+ [Workflows](/docs/Workflows) in github
++ [Release Process](/docs/devel/Release)
++ [Workflows](/docs/devel/Workflows) in github
 
 ## Publications
 
