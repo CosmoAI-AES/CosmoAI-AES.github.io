@@ -7,36 +7,35 @@ usemathjax: true
 
 # Python Scripts
 
-The python scripts are located in the CosmoSimPy directory in the
-CosmoSim repository.
+The CosmoSim library provides a range of scripts.
 
 ## GUI
 
-`CosmoGUI.py` is the main GUI tool, to simulate distortion
-and vary parameters interactively.
+The GUI tool allows interactive simulation of distortion.
+The user can vary parameters and see the resulting image immediately..
 
+```sh
+python -m CosmoSim.GUI
 ```
-python3 CosmoSimPy/CosmoGUI.py
-```
 
-**TODO** further documentation
-
-### Problems
+### Known Problems
 
 + Configuration widgets are never disabled even if most of them may be irrelevant
   to a given model.
-+ SIE is slow and irresponsive.  It is doubtful if this can be corrected.
 
 ## Command line operation
 
-+ [`datagen.py`](datagen script) is the main CLI tool 
++ [`CosmoSim.datagen`](datagen script) is the main CLI tool 
     + bulk generation of images
-+ datasetgen.py 
++ `CosmoSim.dataset`
     + random generation of parameters for data sets
     + the output is a CSV file to be read by `datagen.py`
     + **TODO** further documentation
-+ roulettegen.py  [Roulette Resimulation](Roulette Resimulation)
++ `CosmoSim.roulettegen`  [Roulette Resimulation](Roulette Resimulation)
     + generate images from a set of roulette amplitudes
+
+## Other scripts
+
 + compare.py
     + Quantitatively compare two batches of images, intended for regression testing.
 + amplitudes.py

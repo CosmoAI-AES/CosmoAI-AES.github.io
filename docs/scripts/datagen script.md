@@ -4,18 +4,22 @@ title: datagen script
 
 # datagen script
 
-The main simulator application is the `datagen.py` script.
+The datagen submodule is the main simulator application.
+Its main purpose is batch generation of distorted images.
+
+```sh
+python -m CosmoSim.datagen
+```
 
 ## Simple batch mode
 
 The simples run of the simulator specifies a CSV file with
 parameters, and generates the distorted image for each row.
 ```sh
-python3 CosmoSimPy/datagen.py  --csvfile Dataset/debug.csv
+python -m CosmoSim.datagen --csvfile Dataset/debug.csv
 ```
 
 ### Some useful options
-
 
 + `--directory dir` : directory path for output files
 + `--maxcount n`:  Maximum number of images to generate
