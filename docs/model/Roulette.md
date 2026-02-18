@@ -70,6 +70,26 @@ points.
     and stored in the CSV output from `datagen.py` as
     (`reletaX`,`reletaY`).
 
+
+Concepts in the original co-ordinate system centred at the lens.
+
+| Concept (Ray) | Lens Plane | Source Plane | Data file |
+| :- | :- | :- | :- |
+| Apparent source position | $\xi$ | $\nu$ | |
+| Actual source position | ($\chi\eta$) | $\eta$ | |
+| Centre of light | $\xi'$ | $\nu'$ | (`centreX`,`centreY`) |
+| Source of Centre of light | ($\chi\eta'$) | $\eta'$ | |
+| Offset | | $\Delta\eta=\eta'-\eta$ | (`offsetX`,`offsetY`) |
+
+Concepts in the image co-ordinate system.
+We assume here that the image has been centred at $\nu'$.
+If the image is not centred, then $\nu'=(0,0)$ for the purpose of calculation.
+
+| Concept (Ray) | Image Plane | Data file |
+| :- | :- | :- | :- |
+| Apparent source position | $\nu-\nu'$ | (`xiX`,`xiY`) |
+| Actual source position | $\eta''=\eta-\nu'$ | (`reletaX`,`reletaY`) |
+
 Note that $\eta$ and $\eta'$ are defined in the source plane and $\xi$ and $\xi'$
 in the lens plane.  Working in the source image, which is also in scale with the
 images, we have $\nu=\xi/\chi$ and $\nu'=\xi'/\chi$.
