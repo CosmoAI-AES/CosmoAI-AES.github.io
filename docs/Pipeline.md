@@ -111,3 +111,13 @@ training.filename = "_test/train.csv"
 testing.filename = "_test/test.csv"
 validation.filename = "_test/validation.csv"
 ```
+
+Proposed approach.
++ One TOML file for sets of models and hyperparameters
++ Generate individual TOML files
++ Use array SLURM jobs with one TOML file per constituennt job
+
+## Validation of prediction models
+
+1. Standard heuristics
+2. Resimulation
