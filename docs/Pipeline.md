@@ -1,14 +1,16 @@
 ---
-title: Experimental Pipeline 
+title: Machine Learning Pipeline 
 ---
 
-# Experimental Pipeline
+# Machine Learning Pipeline
 
 The `droulette` project aims to define a pipeline for experiments
 using `CosmoSim` data.  The codebase has not been made public yet.
 
 The min principle for the pipeline is to use a TOML file for each
 step, to define the data and parameters used.
+
+See also older notes on [Machine Learning Examples](scripts/MachineLearningExamples).
 
 ## Dataset generation
 
@@ -51,6 +53,11 @@ phi-max = 359
 r-min = "einsteinR"
 r-max = 100
 ```
+
+Note
++ the `-C` flag is important.  It centres the image to avoid leaking information
+  through the choice of origin.
++ `-Z n` can be added to choose image size $n\times n$
 
 ## Dataset formatting
 
@@ -104,3 +111,13 @@ training.filename = "_test/train.csv"
 testing.filename = "_test/test.csv"
 validation.filename = "_test/validation.csv"
 ```
+
+Proposed approach.
++ One TOML file for sets of models and hyperparameters
++ Generate individual TOML files
++ Use array SLURM jobs with one TOML file per constituennt job
+
+## Validation of prediction models
+
+1. Standard heuristics
+2. Resimulation

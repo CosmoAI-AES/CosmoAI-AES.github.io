@@ -26,7 +26,8 @@ line interface for bulk generation of images.
 
 + Installation, see the README file in the
   [Source repository](https://github.com/CosmoAI-AES/CosmoSim)
-+ [User Tools](/docs/scripts/)
++ [Machine Learning Pipeline](/docs/Pipeline)
++ other [User Tools](/docs/scripts/)
 + [Test Scripts](/docs/test/)
 + [Software Model](/docs/Software) - technical documentation
 + [Simulation Model](/docs/model/) -
@@ -34,9 +35,6 @@ line interface for bulk generation of images.
     + [Raytrace Simulation](/docs/model/Raytrace) 
     + [Roulette Simulation](/docs/Roulette)  (Overview)
 
-## Machine Learning with CosmoSim 
-
-+ [Machine Learning Examples](/docs/scripts/MachineLearnngExamples)
 
 ## The Mathematics of CosmoSim 
 
