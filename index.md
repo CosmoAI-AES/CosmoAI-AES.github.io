@@ -15,18 +15,22 @@ Natural Sciences at NTNU in Ålesund, working on gravitational lensing.
 + [Dr Ben David Normann](https://www.bendavidnormann.com/research)
   is a mathematical physicist working on cosmology
 
-These pages present software prototypes which we have made publicly available.
-So far one prototype is presented in fairly stable format with some documentation.
-[CosmoSim](https://github.com/CosmoAI-AES/CosmoSim) is a simulator of gravitational
-lensing, supporting both an interactive and graphical user interface, and a command
-line interface for bulk generation of images.
+These pages present prototypes for two pieces of software.
+
++ [CosmoSim](https://github.com/CosmoAI-AES/CosmoSim) is a simulator of 
+  gravitational lensing, supporting both an interactive and graphical 
+  user interface, and a command line interface for bulk generation of images.
++ [droulette](https://github.com/CosmoAI-AES/droulette) is not publicly
+  available as of March 2026, but will be made public in the future.
+  It provides the plumbing code to apply machine learning to 
+  images from CosmoSim.
 
 
 ## CosmoSim - the simulator
 
 + Installation, see the README file in the
   [Source repository](https://github.com/CosmoAI-AES/CosmoSim)
-+ [Machine Learning Pipeline](/docs/Pipeline)
++ [Machine Learning Pipeline](/docs/ML/Pipeline)
 + other [User Tools](/docs/scripts/)
 + [Test Scripts](/docs/test/)
 + [Software Model](/docs/Software) - technical documentation
