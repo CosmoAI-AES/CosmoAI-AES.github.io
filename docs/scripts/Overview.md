@@ -5,25 +5,10 @@ permalink: /docs/scripts/
 usemathjax: true
 ---
 
-# Python Scripts
+# CosmoSim on the Command Line 
 
 The CosmoSim library provides a range of scripts.
 
-## GUI
-
-The GUI tool allows interactive simulation of distortion.
-The user can vary parameters and see the resulting image immediately..
-
-```sh
-python -m CosmoSim.GUI
-```
-
-### Known Problems
-
-+ Configuration widgets are never disabled even if most of them may be irrelevant
-  to a given model.
-
-## Command line operation
 
 + [`CosmoSim.datagen`](datagen script) is the main CLI tool 
     + bulk generation of images
@@ -43,7 +28,6 @@ python -m CosmoSim.GUI
     + For **development use** only
     + The generated files are included in the release packages and found by the
       library.
-+ [Machine Learning Examples](MachineLearningExamples)
 
 ## Source Models Supported
 

@@ -28,10 +28,13 @@ These pages present prototypes for two pieces of software.
 
 ## CosmoSim - the simulator
 
-+ Installation, see the README file in the
-  [Source repository](https://github.com/CosmoAI-AES/CosmoSim)
-+ [Machine Learning Pipeline](/docs/ML/Pipeline)
-+ other [User Tools](/docs/scripts/)
++ **Installation**  CosmoSim is a 
+  [Python Package](https://pypi.org/project/CosmoSim)
+  and can be installed with `pip install CosmoSim`.
++ [CosmoSim GUI](/docs/scripts/GUI),
+  which is run as `python -m CosmoSim.GUI`.
++ [Machine Learning Pipeline](/docs/ML/Pipeline) with `droulette`
++ [User Tools](/docs/scripts/) for command line operation.
 + [Test Scripts](/docs/test/)
 + [Software Model](/docs/Software) - technical documentation
 + [Simulation Model](/docs/model/) -
