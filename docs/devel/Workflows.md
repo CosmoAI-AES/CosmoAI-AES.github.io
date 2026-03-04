@@ -11,8 +11,8 @@ work on some architectures, but python packaging is the
 only one maintained for cross-platform use.
 
 The following workflows are defined
-+ `pypideploy.yml` deployes on the PyPI server
-+ `pypitest.yml` deployes on the PyPI *test* server
++ `pypideploy.yml` deploys on the PyPI server
++ `pypitest.yml` deploys on the PyPI *test* server
 + `wheels.yml` build the python library (wheel)
 + `release.yml` (Make Release) calls `dist.yml`, creates a release,
   and uploads all the assets.

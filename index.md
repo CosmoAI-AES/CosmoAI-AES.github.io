@@ -26,7 +26,7 @@ These pages present prototypes for two pieces of software.
   images from CosmoSim.
 
 
-## CosmoSim - the simulator
+## Using CosmoSim 
 
 + **Installation**  CosmoSim is a 
   [Python Package](https://pypi.org/project/CosmoSim)
@@ -35,6 +35,9 @@ These pages present prototypes for two pieces of software.
   which is run as `python -m CosmoSim.GUI`.
 + [Machine Learning Pipeline](/docs/ML/Pipeline) with `droulette`
 + [User Tools](/docs/scripts/) for command line operation.
+
+## Technical Documentation
+
 + [Test Scripts](/docs/test/)
 + [Software Model](/docs/Software) - technical documentation
 + [Simulation Model](/docs/model/) -
