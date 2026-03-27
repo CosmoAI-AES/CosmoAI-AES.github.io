@@ -16,3 +16,19 @@ Hezaveh uses 192x192 image size with a pixel size of 0.04"
 | $\chi$ | not specified | 50 |
 | Lens rotation ($\theta$) | not specified | $0°\ldots 179°$ |
 | Source rotation ($\phi$) | not specified | $0°\ldots 359°$ |
+
+## Parameters
+
+The following are the variable names as used as CSV column headers.
+
++ Lens
+    + einsteinR,
+    + ellipseratio
+    + orientation
++ Source
+    + sigma,sigma2,
+    + theta (lens orientation)
++ Source Position
+    + R (polar radius)
+    + phi (polar angle)
+
