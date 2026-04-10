@@ -1,5 +1,6 @@
 ---
 title: Machine Learning Pipeline 
+usemathjax: true
 ---
 
 # Machine Learning Pipeline
@@ -52,6 +53,10 @@ Two CSV files are produced.
 that the `-C` flag is critical.
 It centres the image to avoid leaking information
 through the choice of origin.
+
+**See also** discussion of
+[Parameter ranges](../Dataset).
+
 
 
 ### (3) Prepare roulette data for machine learning
