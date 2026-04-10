@@ -25,4 +25,22 @@ For SIS and SIE lenses, this can be simplified to compute
 \end{equation}
 because $\nabla\psi$ is constant along any ray from the lens centre (origin).
 
-## Secondary reference points
+## Secondary reference point (SIS) lens
+
+For the SIS lens, there may be a secondary image on the opposite
+side of the lens.
+The primary reference point is positive proportional to $\eta$,
+while the secondary reference point is negative proportional.
+Both are solutions to the same equation.
+
+## Four images
+
+The SIE lens may produce Einstein crosses, comprising four images.
+
+**TODO**
+
+## Einstein rings
+
+**TODO** How do we deal with Einstein rings?
+
+
