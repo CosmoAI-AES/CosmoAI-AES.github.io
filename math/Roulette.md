@@ -8,6 +8,14 @@ usemathjax: true
 
 **DRAFT under construction**
 
+**TODO** 
+The formalism should be rewritten to use angular distances.
+In the implementation, the primary unit is pixels in the source plane.
+However, $\psi$ is a function of $\boldsymbol{\xi}$ in the lens plane,
+still measured by the same linear unit.
+It would be convenient if we could avoid the scaling
+and still get consistent nomenclature.
+
 
 ![The figure shows the set-up for the flat-sky approximation, with the source plane (the lens plane) a distance $D_{\mathrm{S}}$ ($D_{\mathrm{L}}$) from the observer.](Model_2Db.jpeg)
 
