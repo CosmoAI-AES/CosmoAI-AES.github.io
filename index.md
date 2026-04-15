@@ -39,30 +39,9 @@ errors and inconsistencies.
     + other details on [droulette](docs/droulette)
 + [User Tools](/docs/scripts/) for command line operation.
 
-## Technical Documentation
+To understand the software, it will be necessary to have at least
+a superficial understanding of the [](math/math).
 
-+ [Test Scripts](/docs/test/)
-+ [Software Model](/docs/Software) - technical documentation
-+ [Simulation Model](/docs/model/) -
-  technical documentation of the simulator library
-    + [Raytrace Simulation](/docs/model/Raytrace) 
-    + [Roulette Simulation](/docs/Roulette)  (Overview)
-
-
-## The Mathematics of CosmoSim 
-
-+ Basic Notation
-    + [LensPotential](/math/LensPotential)
-    + [Critical Curves](/math/CriticalCurve)
-+ [Roulette](/math/Roulette) formulæ
-+ [Lens Models](/math/Lens)
-+ [PointMassCloud](/math/PointMassCloud) (in progress)
-
-
-## Development
-
-+ [Release Process](/docs/devel/Release)
-+ [Workflows](/docs/devel/Workflows) in github
 
 ## Publications
 

@@ -44,7 +44,7 @@ project:
             - file: docs/ML/MachineLearning.md
             - file: docs/ML/Pipeline.md
             - file: docs/Dataset.md
-    - title: Technical Documentation
+    - file: docs/tech.md
       children:
         - file: docs/CosmoSimPy.md
         - file: docs/Lens API.md

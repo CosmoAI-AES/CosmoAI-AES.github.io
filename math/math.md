@@ -16,4 +16,10 @@ In this chapter we will review the basic models and notation that
 we use throughout the project.
 
 
+## Outline
 
++ [](/math/LensPotential)
++ [Critical Curves](/math/CriticalCurve)
++ [Roulette](/math/Roulette) formulæ
++ [Lens Models](/math/Lens)
++ [PointMassCloud](/math/PointMassCloud) (in progress)
