@@ -1,4 +1,4 @@
----
+
 title: Lens Potential and Basic Notation
 usemathjax: true
 ---
@@ -30,7 +30,7 @@ from the apparent image in the lens plane.
 
 With the flat sky approximation, the angles are related to
 lengths  in the lens plane by a factor of $D_L$, so that
-$$\boldsymbol{\xi} & = D_L\theta$$
+$$\boldsymbol{\xi} = D_L\theta$$
 Similarly, in the source plane, the factor is $D_S$
 $$
 \begin{align}
