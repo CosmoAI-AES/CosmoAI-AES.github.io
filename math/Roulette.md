@@ -75,9 +75,7 @@ image and the lens in the lens plane.
 Since $\boldsymbol{\xi}$ and $\boldsymbol{\eta}\_{\mathrm{app}}$ lie on the same
 line through the viewpoint (cf. figure), we have
 $$
-\begin{equation}
   \xi = |\boldsymbol{\xi}| = \frac{D\_\textrm{L}}{D\_\textrm{S}}\cdot|\boldsymbol{\eta}\_{\mathrm{app}}|.
-\end{equation}
 $$
 Following Clarkson, we use polar co-ordinates $(r,\phi)$ for the
 distorted image.

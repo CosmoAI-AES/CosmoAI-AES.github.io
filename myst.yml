@@ -2,10 +2,17 @@
 version: 1
 project:
   id: a77fa618-d81f-4358-9d99-f3bac57b2b7f
-  # title:
-  # description:
-  # keywords: []
-  # authors: []
+  title: CosmoSim
+  description: The CosmoAI project aims to use the roulette formalism, simulation, and machine learning to reconstruct the mass of gravitational lenses.
+  keywords: 
+      - cosmology 
+      - machine learning 
+      - simulation 
+      - roulette formalism 
+      - gravitational lensing
+  authors: 
+    - Hans Georg Schaathun
+    - Ben David Normann
   github: https://github.com/CosmoAI-AES/CosmoAI-AES.github.io
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   toc:
