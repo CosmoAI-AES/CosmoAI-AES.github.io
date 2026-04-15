@@ -11,7 +11,7 @@ usemathjax: true
 
 ![The figure shows the set-up for the flat-sky approximation, with the source plane (the lens plane) a distance $D_{\mathrm{S}}$ ($D_{\mathrm{L}}$) from the observer.](Model_2Db.jpeg)
 
-![The figure shows the set-up for the model used. In particular, the local coordinate systems used in the source plane and lens plane are shown.](/docs/model/Model_3D.jpeg)
+![The figure shows the set-up for the model used. In particular, the local coordinate systems used in the source plane and lens plane are shown.](/docs/Model_3D.jpeg)
 
 
 \begin{equation}
