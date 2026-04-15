@@ -34,6 +34,7 @@ These pages present prototypes for two pieces of software.
 + [CosmoSim GUI](/docs/scripts/GUI),
   which is run as `python -m CosmoSim.GUI`.
 + [Machine Learning Pipeline](/docs/ML/Pipeline) with `droulette`
+    + other details on [droulette](docs/droulette)
 + [User Tools](/docs/scripts/) for command line operation.
 
 ## Technical Documentation
