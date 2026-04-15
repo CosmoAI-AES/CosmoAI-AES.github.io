@@ -1,7 +1,6 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 ---
 
 # Mapping Dark Matter via Gravitational Lensing
@@ -35,8 +34,8 @@ errors and inconsistencies.
   and can be installed with `pip install CosmoSim`.
 + [CosmoSim GUI](/docs/scripts/GUI),
   which is run as `python -m CosmoSim.GUI`.
-+ [Machine Learning Pipeline](/docs/ML/Pipeline) with `droulette`
-    + other details on [droulette](docs/droulette)
++ [](/docs/ML/Pipeline) with `droulette`
+    + other details on [](/docs/droulette)
 + [User Tools](/docs/scripts/) for command line operation.
 
 To understand the software, it will be necessary to have at least

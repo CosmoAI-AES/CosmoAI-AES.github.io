@@ -1,8 +1,7 @@
 ---
-title: Machine Learning Pipeline 
+title: The droulette package
 usemathjax: true
 ---
-
 
 # The droulette package
 
