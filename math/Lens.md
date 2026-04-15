@@ -88,12 +88,11 @@ As for SIS, $C_0=R_E/D_L^2$ is called `einsteinR` in the code.
 See `psiXvalue` and `psiYvalue` in `SIE.cpp`.
 
 + [Calculation of the SIE Deflection](/math/SIE)
-+ [SIE Roulette Amplitudes](/math/Roulette Amplitudes in SIE)
-+ [Legacy Notes on SIE](/math/Legacy Notes on SIE)
++ [](/math/Roulette%20Amplitudes%20in%20SIE)
++ [](/math/Legacy%20Notes%20on%20SIE)
 
-# Implementation 
-
-
-+ The factors $D_L$ and $D_L/D_S$ are ommitted in the calculations 
-  the roulette amplitudes ($\alpha$ and $\beta$), because they cancel when the
-  amplitudes are used in deflection formula.
+::: {note} Implementation 
+The factors $D_L$ and $D_L/D_S$ are ommitted in the calculations 
+the roulette amplitudes ($\alpha$ and $\beta$), because they cancel when the
+amplitudes are used in deflection formula.
+:::
