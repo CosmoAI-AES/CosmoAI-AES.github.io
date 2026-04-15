@@ -13,3 +13,9 @@ title: Publications on CosmoSim
     In Enrico Vicario, Romeo Bandinelli, Virginia Fani, and Michele Mastroianni, editors, 
     *Proceedings of the 30th European Conference on Modelling and Simulation*.
     ECMS - European Council for Modelling and Simulation, 2023. Florence, Italy, 21-23 June 2023. 
+3.  Normann, B.D., Solevåg-Hoti, K. & Schaathun, H.G.
+    [A short review on joint weak and strong cluster lens-mass reconstruction](https://link.springer.com/article/10.1140/epjp/s13360-025-07095-1).
+    *Eur. Phys. J. Plus* 140, 1175 (2025).
+    DOI: [](https://doi.org/10.1140/epjp/s13360-025-07095-1)
+
+

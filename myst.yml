@@ -50,6 +50,7 @@ project:
             - file: docs/scripts/GUI.md
             - file: docs/scripts/Overview.md
             - file: docs/scripts/Roulette Resimulation.md
+        - file: docs/droulette.md
         - title: ML
           children:
             - file: docs/ML/MachineLearning.md
