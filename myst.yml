@@ -15,9 +15,9 @@ project:
       children:
         - file: math/LensPotential.md
         - file: math/Lens.md
-        - file: math/PointMassCloud.md
         - file: math/Roulette.md
-        - file: math/getXi.md
+          children:
+          - file: math/getXi.md
         - title: The SIE Lens
           children:
           - file: math/SIE.md
@@ -28,10 +28,13 @@ project:
         - file: math/CriticalCurve.md
           children:
           - file: math/Critical Curves for SIE.md
+        - title: Cluster Lenses
+          children:
+          - file: math/PointMassCloud.md
         - title: Legacy Notes
           children:
           - file: math/Legacy Notes on SIE.md
-    - title: User Documentation
+    - file: docs/user.md
       children:
         - title: Scripts
           children:

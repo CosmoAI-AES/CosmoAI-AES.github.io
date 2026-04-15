@@ -10,13 +10,13 @@ usemathjax: true
 The CosmoSim library provides a range of scripts.
 
 
-+ [`CosmoSim.datagen`](datagen script) is the main CLI tool 
++ [`CosmoSim.datagen`](datagen%20script) is the main CLI tool 
     + bulk generation of images
 + `CosmoSim.dataset`
     + random generation of parameters for data sets
     + the output is a CSV file to be read by `datagen.py`
     + **TODO** further documentation
-+ `CosmoSim.roulettegen`  [Roulette Resimulation](Roulette Resimulation)
++ `CosmoSim.roulettegen`  [](Roulette%20Resimulation)
     + generate images from a set of roulette amplitudes
 
 ## Other scripts
