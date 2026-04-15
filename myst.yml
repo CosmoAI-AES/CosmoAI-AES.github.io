@@ -32,6 +32,7 @@ project:
           - file: math/Differentiating SIE Approach 1.md
           - file: math/Implementation of SIE.md
           - file: math/Roulette Amplitudes in SIE.md
+        - file: math/sersic.md
         - file: math/CriticalCurve.md
           children:
           - file: math/Critical Curves for SIE.md
