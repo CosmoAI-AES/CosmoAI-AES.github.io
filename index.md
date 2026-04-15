@@ -25,6 +25,8 @@ These pages present prototypes for two pieces of software.
   It provides the plumbing code to apply machine learning to 
   images from CosmoSim.
 
+**Warning!** These pages are under construction, and there will be
+errors and inconsistencies.
 
 ## Using CosmoSim 
 
