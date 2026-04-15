@@ -48,7 +48,6 @@ project:
       children:
         - file: docs/CosmoSimPy.md
         - file: docs/Lens API.md
-        - file: docs/Publications.md
         - file: docs/Roulette.md
         - file: docs/Software.md
         - file: docs/Software v2.5.0.md
@@ -76,6 +75,7 @@ project:
       children:
             - file: docs/devel/Release.md
             - file: docs/devel/Workflows.md
+    - file: docs/Publications.md
     - file: about.md
     
 site:

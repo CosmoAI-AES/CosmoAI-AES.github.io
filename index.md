@@ -66,7 +66,7 @@ errors and inconsistencies.
 
 ## Publications
 
-If you build on our work, please cite one of our  [[Publications]].
+If you build on our work, please cite one of our  [](docs/Publications):
 
 1. Hans Georg Schaathun, Ben David Normann, and Kenny Solevåg-Hoti. 
     [Om å kartleggja mørk materie med maskinlæring](https://www.ntnu.no/ojs/index.php/nikt/article/view/5666). 
