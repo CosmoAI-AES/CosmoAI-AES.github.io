@@ -1,9 +1,9 @@
 ---
-title: Lens Potential and Basic Notation
+title: Basic Notation
 usemathjax: true
 ---
 
-# Lens Potential and Basic Notation
+# Basic Notation
 
 ![Geometric model as described in the text](observer.png)
 
