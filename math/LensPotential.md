@@ -1,4 +1,4 @@
-
+---
 title: Lens Potential and Basic Notation
 usemathjax: true
 ---
@@ -31,16 +31,12 @@ from the apparent image in the lens plane.
 With the flat sky approximation, the angles are related to
 lengths  in the lens plane by a factor of $D_L$, so that
 $$\boldsymbol{\xi} = D_L\theta$$
-Similarly, in the source plane, the factor is $D_S$.
-$$
-\begin{align}
-   \boldsymbol{\nu} & = D_S\theta
-   \\\\\\\\
-   \boldsymbol{\eta} & = D_S\beta
-   \\\\\\\\
-   \Delta\boldsymbol{\eta} & = D_S\alpha
-\end{align}
-$$
+Similarly, in the source plane, the factor is $D_S$, so that we
+get
+$$\boldsymbol{\nu} = D_S\theta,$$
+$$\boldsymbol{\eta} = D_S\beta,$$
+and
+$$\Delta\boldsymbol{\eta} & = D_S\alpha,$$
 where $\alpha=\theta-\beta$ as the angle between
 $\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$ as seen
 from the observer.
@@ -50,6 +46,17 @@ $$\alpha = \frac{D_{LS}}{D_S} \hat\alpha$$
 
 Now, we can write the actual image as
 $$\boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}$$
+
+::: {note} Implementation
+In the implementation, the basic unit is pixels in the source plane,
+and $D_S$ is normalised to 1.
+It is convenient to think of pixels in the source plane corresponding
+to angular distances, so that effectively $\theta=\boldsymbol{\nu}$.
+
+The only relevant distance situated in the lens plane is $\xi$, which
+is also measured in source plane pixels.
+The scaling factor is called $\chi=\frac{||\boldsymbol{\xi}||}{||\boldsymbol{\nu}||}$.
+:::
 
 [^hatalpha]: 
     This is seen because $D_S\alpha$ and $D_{LS}\hat\alpha$ are the lengths 

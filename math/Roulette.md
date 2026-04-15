@@ -1,5 +1,5 @@
 ---
-title: The Roulette Formalæ
+title: The Roulette Formalism
 usemathjax: true
 ---
 
