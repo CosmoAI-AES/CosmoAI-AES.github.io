@@ -49,11 +49,12 @@ project:
             - file: docs/Dataset.md
     - file: docs/tech.md
       children:
+        - file: docs/Software.md
+          children:
+          - file: docs/Software v2.5.0.md
         - file: docs/CosmoSimPy.md
         - file: docs/Lens API.md
         - file: docs/Roulette.md
-        - file: docs/Software.md
-        - file: docs/Software v2.5.0.md
         - title: Model
           children:
             - file: docs/model/Constellation.md

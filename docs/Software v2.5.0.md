@@ -1,11 +1,11 @@
 ---
-title: CosmoSim Software Model
+title: CosmoSim v2.5.0
 theme: minima
 permalink: /docs/Software
 usemathjax: true
 ---
 
-# CosmoSim
+# CosmoSim v2.5.0
 
 ![Model 3D](Model_3D.jpeg)
 
