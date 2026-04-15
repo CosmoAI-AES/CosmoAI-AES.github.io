@@ -31,7 +31,7 @@ from the apparent image in the lens plane.
 With the flat sky approximation, the angles are related to
 lengths  in the lens plane by a factor of $D_L$, so that
 $$\boldsymbol{\xi} = D_L\theta$$
-Similarly, in the source plane, the factor is $D_S$
+Similarly, in the source plane, the factor is $D_S$.
 $$
 \begin{align}
    \boldsymbol{\nu} & = D_S\theta
@@ -63,6 +63,7 @@ The above definitions assume physical units.  It is customary to normalise
 using a constant factor $\xi_0$, corresponding to the Einstein radius.
 This gives the following entities, following Kormann 1994[^kormannalpha]
 
+$$
 \begin{align}
   \mathbf{x} & = \frac{\boldsymbol{\xi}}{\xi_0}
   \\\\\\\\
@@ -72,6 +73,7 @@ This gives the following entities, following Kormann 1994[^kormannalpha]
   \mathbf{a} & = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
    = \frac{D_L}{\xi_0}\boldsymbol{\alpha}
 \end{align}
+$$
 
 The Einstein radius is a distance in the lens plane.
 The corresponding angle is $\xi_0/D_L$ which is used to denormalise
