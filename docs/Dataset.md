@@ -23,30 +23,19 @@ This is based on a sketch by Ben David March 2026.
     $0.1"\le\theta_E\le3.0"$.
     + where $\theta_E=R_E/\chi$, i.e. $R_E$ converted to angular units.
 2.  Restrict such that $\Delta\beta\le\theta_E$.
+    + **TODO** what is $\Delta\beta$?
 3.  Choose the source position inside or around the critical curve,
-    For example
-    + choose the polar coordinates $(R,\phi)$ so that $R\le c\theta_E$
-      for some constant $C$, e.g. $c=1.2$.
+    For example, choose the polar coordinates $(R,\phi)$ 
+    + so that $R\le c\theta_E$ for some constant $C$, e.g. $c=1.2$.
+    + $\phi$ chosen uniformly at random
 4.  Choose the orientation of the elliptical lens uniformly at random.
 5.  Choose the orientation of the elliptical source uniformly at random.
 6.  CHoose the ellipticity $f$ of the lens uniformly at random, so
     that $0.6\le f\le 0.9$.
+7.  **TODO** Source parameters
+    + size
+    + sersic parameters
 
-
-## Parameters
-
-The following are the variable names as used as CSV column headers.
-
-+ Lens
-    + einsteinR,
-    + ellipseratio
-    + orientation
-+ Source
-    + sigma,sigma2,
-    + theta (lens orientation)
-+ Source Position
-    + R (polar radius)
-    + phi (polar angle)
 
 ## Proposal from Oda
 
