@@ -22,24 +22,32 @@ and still get consistent nomenclature.
 ![The figure shows the set-up for the model used. In particular, the local coordinate systems used in the source plane and lens plane are shown.](/docs/Model_3D.jpeg)
 
 
+$$
 \begin{equation}
 \alpha\_s^m = - \frac{1}{2^{\delta\_{0s}}} D\_\textrm{L}^{m+1}
 \sum\_{k=0}^m\binom{m}{k}
   \left(\mathcal{C}\_s^{m(k)}\partial\_{\xi\_1}+\mathcal{C}\_s^{m(k+1)}\partial\_{\xi\_2}\right)
 \partial\_{\xi\_1}^{m-k}\partial\_{\xi\_2}^k\psi
 \end{equation}
+$$
 
+$$
 \begin{equation}
    \mathcal{C}\_s^{m(k)}=\frac{1}{\pi}\int\_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\cos s\phi
 \end{equation}
+$$
 
+$$
 \begin{equation}
    \beta\_s^m=-D\_\textrm{L}^{m+1}\sum\_{k=0}^m\binom{m}{k}\left({\mathcal{S}}\_s^{m(k)}\partial\_{\xi\_1}+{\mathcal{S}}\_s^{m(k+1)}\partial\_{\xi\_2}\right)\partial\_{\xi\_1}^{m-k}\partial\_{\xi\_2}^k\psi
 \end{equation}
+$$
 
+$$
 \begin{equation}
    \mathcal{S}\_s^{m(k)}=\frac{1}{\pi}\int\_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\sin s\phi.
 \end{equation}
+$$
 
 The observed lensing is decomposed into two steps, as shown the figure.
 The first step is a translation (deflection), corresponding to the difference 
@@ -48,11 +56,13 @@ $\boldsymbol{\Delta\eta}$ between actual
 and apparent 
 ($\boldsymbol{\eta}\_\textrm{app}$) source-plane position.
 In the roulette formalism, this translational part of the lensing is given as
+$$
 \begin{equation}
    \boldsymbol{\Delta\eta}
    =\boldsymbol{\eta}\_\textrm{app}-\boldsymbol{\eta}\_\textrm{act}
    =-D\_\textrm{S}\cdot(\alpha^0\_1,\beta^0\_1),
 \end{equation}
+$$
 where $(\alpha^0_1,\beta^0_1)$ is a vector of roulette amplitudes, as
 defined above.
 
@@ -64,9 +74,11 @@ We write $\xi=|\boldsymbol{\xi}|$ for the distance between the distorted
 image and the lens in the lens plane.
 Since $\boldsymbol{\xi}$ and $\boldsymbol{\eta}\_{\mathrm{app}}$ lie on the same
 line through the viewpoint (cf. figure), we have
+$$
 \begin{equation}
   \xi = |\boldsymbol{\xi}| = \frac{D\_\textrm{L}}{D\_\textrm{S}}\cdot|\boldsymbol{\eta}\_{\mathrm{app}}|.
 \end{equation}
+$$
 Following Clarkson, we use polar co-ordinates $(r,\phi)$ for the
 distorted image.
 The source image is described in Cartesian co-ordinates $(x^\prime,y^\prime)$ centered
@@ -75,6 +87,7 @@ Thus the light observed at a position (pixel) $(r,\phi)$ is drawn from
 a different position (pixel) $(x',y')=\mathcal{D}$$(r,\phi)$ in the source image.
 From~Eq.~48 in \citet{Clarkson_2016_II} it is possible to show that 
 the mapping $\mathcal{D}$ is given as
+$$
 \begin{aligned}
       \frac{D\_{\mathrm{L}}}{D\_{\mathrm{S}}}\cdot
    \begin{bmatrix} x' \\\\ y' \end{bmatrix} &=
@@ -102,6 +115,7 @@ the mapping $\mathcal{D}$ is given as
         \cos{(s-1)\phi} & -\cos{(s+1)\phi} 
     \end{bmatrix}.
 \end{aligned}
+$$
 The coefficients $\alpha\_m^s$ and $\beta\_m^s$ depend on the lens potential
 $\psi(\xi_1,\xi_2)$, from which one may derive the physical properties of the lens.
 

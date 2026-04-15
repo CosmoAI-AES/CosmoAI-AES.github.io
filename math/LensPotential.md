@@ -16,15 +16,9 @@ origin in the intersection therewith.
 
 We consider a single source point at $\boldsymbol{\eta}$ in $S$.
 The apparent position, as seen by the observer, is at $\nu$ and
-\begin{equation}
-  \Delta\boldsymbol{\eta} = \boldsymbol{\nu} - \boldsymbol{\eta}
-\end{equation}
+$$\Delta\boldsymbol{\eta} = \boldsymbol{\nu} - \boldsymbol{\eta}$$
 The apparent position in the lens plane $L$ is called
-\begin{equation}
-  \boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}.
-\end{equation}
-
-
+$$\boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}.$$
 
 The deflection is most easily described in terms of angles, so 
 we define $\beta$ and $\theta$ as the angles between 
@@ -36,10 +30,9 @@ from the apparent image in the lens plane.
 
 With the flat sky approximation, the angles are related to
 lengths  in the lens plane by a factor of $D_L$, so that
-\begin{align}
-   \boldsymbol{\xi} & = D_L\theta
-\end{align}
+$$\boldsymbol{\xi} & = D_L\theta$$
 Similarly, in the source plane, the factor is $D_S$
+$$
 \begin{align}
    \boldsymbol{\nu} & = D_S\theta
    \\\\\\\\
@@ -47,20 +40,16 @@ Similarly, in the source plane, the factor is $D_S$
    \\\\\\\\
    \Delta\boldsymbol{\eta} & = D_S\alpha
 \end{align}
+$$
 where $\alpha=\theta-\beta$ as the angle between
 $\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$ as seen
 from the observer.
 The same reasoning gives us the following[^hatalpha],
 
-\begin{equation}
-  \alpha = \frac{D_{LS}}{D_S} \hat\alpha
-\end{equation}
+$$\alpha = \frac{D_{LS}}{D_S} \hat\alpha$$
 
 Now, we can write the actual image as
-\begin{equation}
-  \boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}
-\end{equation}
-
+$$\boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}$$
 
 [^hatalpha]: 
     This is seen because $D_S\alpha$ and $D_{LS}\hat\alpha$ are the lengths 
