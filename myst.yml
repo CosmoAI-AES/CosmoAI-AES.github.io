@@ -13,8 +13,8 @@ project:
     - file: index.md
     - title: Mathematical Model
       children:
-        - file: math/Lens.md
         - file: math/LensPotential.md
+        - file: math/Lens.md
         - file: math/PointMassCloud.md
         - file: math/Roulette.md
         - file: math/getXi.md
