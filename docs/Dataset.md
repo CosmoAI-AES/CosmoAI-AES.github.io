@@ -33,7 +33,7 @@ This is based on a sketch by Ben David March 2026.
 6.  CHoose the ellipticity $f$ of the lens uniformly at random, so
     that $0.6\le f\le 0.9$.
 7.  Source parameters - sersic profiel
-    + size: $\sigma$
+    + size: $2\le\sigma5$
     + sersic index  $1\le n_s\le 5$
     + luminosity  $10\le l\le 20$, exponentially distributed
       with $\lambda=2.0$ (see below)
