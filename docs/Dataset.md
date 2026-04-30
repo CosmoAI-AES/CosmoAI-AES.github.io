@@ -22,8 +22,6 @@ This is based on a sketch by Ben David March 2026.
 1.  Choose the Einstein radius uniformly at random, so that
     $0.1"\le\theta_E\le3.0"$.
     + where $\theta_E=R_E/\chi$, i.e. $R_E$ converted to angular units.
-2.  Restrict such that $\Delta\beta\le\theta_E$.
-    + **TODO** what is $\Delta\beta$?
 3.  Choose the source position inside or around the critical curve,
     For example, choose the polar coordinates $(R,\phi)$ 
     + so that $R\le c\theta_E$ for some constant $C$, e.g. $c=1.2$.
