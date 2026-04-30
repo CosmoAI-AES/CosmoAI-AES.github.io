@@ -32,10 +32,11 @@ This is based on a sketch by Ben David March 2026.
 5.  Choose the orientation of the elliptical source uniformly at random.
 6.  CHoose the ellipticity $f$ of the lens uniformly at random, so
     that $0.6\le f\le 0.9$.
-7.  **TODO** Source parameters
-    + size
-    + sersic parameters
-
+7.  Source parameters - sersic profiel
+    + size: $\sigma$
+    + sersic index  $1\le n_s\le 5$
+    + luminosity  $10\le l\le 20$, exponentially distributed
+      with $\lambda=2.0$ (see below)
 
 ## Proposal from Oda
 
@@ -48,3 +49,16 @@ This is based on a sketch by Ben David March 2026.
 | $\chi$ | not specified | 50 |
 | Lens rotation ($\theta$) | not specified | $0°\ldots 179°$ |
 | Source rotation ($\phi$) | not specified | $0°\ldots 359°$ |
+| Sersisk indeks (`n_sersic`) | N/A | $1\ldots5$ |
+| Luminosity | N/A | $10\ldots20$[^exp] |
+
+[^exp]: Luminosity is exponentially distributed with $\lambda=2.0$.
+
+The exponential distribution used for luminsoty returns
+$u = 1 - \exp{-\lambda\cdot x}$ where 
+$x$ is exponentially distributed, that is with a probability 
+density function $f(x;\lambda) = \lambda\exp{-\lambda x}$
+for positive $x$.  
+This $u$ is scaled to within the given range.
+
+

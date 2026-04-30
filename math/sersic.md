@@ -23,3 +23,5 @@ We define
 
 The pixel value is given as
 $$v = \exp -b\cdot\bigg( \big(\frac{r}{r_e}\big)^{\frac{1}{n}} - 1\bigg)$$
+
+The model is taken from [](https://arxiv.org/pdf/astro-ph/0503176).
