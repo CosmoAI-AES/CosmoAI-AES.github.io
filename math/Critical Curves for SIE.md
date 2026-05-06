@@ -12,9 +12,9 @@ The [SIE](SIE) lens is defined by the convergence
 \end{equation}
 where $f$ is the ratio between the minor and major axes.
 
-According to [Kormann 1994](https://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?1994A&A...284..285K&classic=YES)
+The magnification matrix for SIE may now be calculated [Kormann 1994](https://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?1994A&A...284..285K&classic=YES)
 
-the magnification matrix for SIE now becomes
+and becomes
 $$
   \mathcal{A}(\boldsymbol{\theta}) 
   = 
