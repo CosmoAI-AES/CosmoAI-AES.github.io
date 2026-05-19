@@ -20,6 +20,14 @@ $$\Delta\boldsymbol{\eta} = \boldsymbol{\nu} - \boldsymbol{\eta}$$
 The apparent position in the lens plane $L$ is called
 $$\boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}.$$
 
+As a note to the side, the distancees $D_L$ and $D_S$ are cosmological,
+meaning that they depend on time. This is due to the expansion of the fabric of the 
+cosmos (space). This expansion is measured through something known as redshifting $z$ of 
+light. Such considerations are spared for a later section, and we suffice it for now 
+to mention that such distances are not additive in the ordinary sense. Let $D_{LS}(z)$ be 
+the distance between the lens plane and the source plane. Then $D_S(z)\,\neq\,D_{L}(z)+D_{S}(z).$
+We come back to this in due time.
+
 The deflection is most easily described in terms of angles, so 
 we define $\beta$ and $\theta$ as the angles between 
 the optical axis and respectively 
@@ -45,7 +53,12 @@ The same reasoning gives us the following[^hatalpha],
 $$\alpha = \frac{D_{LS}}{D_S} \hat\alpha$$
 
 Now, we can write the actual image as
-$$\boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}$$
+$$
+\begin{align}
+\label{raytracePhys}
+\boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}
+\end{align}
+$$
 
 ::: {note} Implementation
 In the implementation, the basic unit is pixels in the source plane,
@@ -55,40 +68,65 @@ to angular distances, so that effectively $\theta=\boldsymbol{\nu}$.
 
 The only relevant distance situated in the lens plane is $\xi$, which
 is also measured in source plane pixels.
-The scaling factor is called $\chi=\frac{||\boldsymbol{\xi}||}{||\boldsymbol{\nu}||}$.
+The scaling factor is called $\chi=\frac{D_L}{D_S}=\frac{||\boldsymbol{\xi}||}{||\boldsymbol{\nu}||}$.
 :::
+
+It is noteworthy that if we consider spherical geometries (a source sphere and a lens sphere),
+we may also write down the equation
+$$
+\begin{align}
+\label{raytraceAng}
+\boldsymbol{\beta}=\boldsymbol{\theta}-\boldsymbol{\alpha}.
+\end{align}
+$$
+Considering small angles,
+$$
+\sin\theta\approx\theta
+$$
+
+it may readily be shown that Eq.~\eqref{raytracePhys} and Eq.~\eqref{raytraceAng} are the same.
 
 [^hatalpha]: 
     This is seen because $D_S\alpha$ and $D_{LS}\hat\alpha$ are the lengths 
     of arcs between the actual and apparent source, and for small
-    angles they are both approximately equal to the straigh line
+    angles they are both approximately equal to the straight line
     $\Delta\boldsymbol{\eta}_S$.
 
 ## Normalisation
 
 The above definitions assume physical units.  It is customary to normalise
-using a constant factor $\xi_0$, corresponding to the Einstein radius.
-This gives the following entities, following Kormann 1994[^kormannalpha]
+using a constant factor $\xi_0$. This gives the following entities, following Kormann 1994
 
 $$
 \begin{align}
-  \mathbf{x} & = \frac{\boldsymbol{\xi}}{\xi_0}
-  \\\\\\\\
-  \mathbf{y} & = \frac{\boldsymbol{\eta}}{\eta_0}
-     \quad\text{where } \nu_0 = \frac{D_S}{D_L}\xi_0
-  \\\\\\\\
-  \mathbf{a} & = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
-   = \frac{D_L}{\xi_0}\boldsymbol{\alpha}
+  \mathbf{x}= \frac{\boldsymbol{\xi}}{\xi_0}\quad,\quad\mathbf{y} = \frac{\boldsymbol{\eta}}{\eta_0}
+     \quad\text{where } \nu_0 = \frac{D_S}{D_L}\xi_0\quad,\quad
+  \boldsymbol{\alpha} = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
 \end{align}
 $$
+In addition to the previously mentioned (cosmological) distances $D_L$, $D_S$ and $D_{LS}$ we must also
+find a proper length scale $\xi_0$ from which we normalise everything else. In SEF, Kormann1994 and other
+standard sources one typically takes $\xi_0$ to be the so-called Einstein radius. This is the radius at which
+a spherically symmetric lens will produce a ring (so-called Einstein ring) whenever the source is directly behind
+the lens, along the optical axis.
 
-The Einstein radius is a distance in the lens plane.
-The corresponding angle is $\xi_0/D_L$ which is used to denormalise
-$\mathbf{a}$ above.
+In normalised coordinates the ray-trace equation reads 
 
-The lens potential (gravitational potential) can be written as a function
-$\psi$ of either the angle $\theta$, the vector $\boldsymbol{\xi}$, or the
-normalised $\mathbf{x}$.
+$$
+\begin{align}
+\label{raytraceNorm}
+\mathbf{y}=\mathbf{x}-\boldsymbol{\alpha}.
+\end{align}
+$$
+This is an alternative normalisation from the angular version, given in Eq.~\eqref{raytraceAng}.
+**Note that in this work, we will use angular coordinates.** In the following we will therefore proceed with this.
+
+
+## The thin-lens potential and the lens-potential $\psi$  
+Considering a thin lens, it is customary to define the lens potential as the projection of the 3D gravitaitonal lens
+potential down on the lens plane. Such a simplification is warranted due to $D_L \gt \xi_0$.
+
+
 The normalised deflection $\mathbf{x}$ is given as
 the gradient of $\psi$, i.e.
 \begin{equation}
@@ -105,10 +143,6 @@ Different forms of $\psi$ give[^nabla],
 [^nabla]:
     We use here the chain rule with $\boldsymbol{\xi}= \xi_0\mathbf{x} $
     and $\theta = \boldsymbol{\xi}/D_L$.
-
-[^kormannalpha]:
-    Kormann uses $\boldsymbol{\alpha}$ for $\mathbf{x}$, but we have
-    already used that for $\theta-\beta$.
 
 ## The Raytrace Equation
 
