@@ -144,7 +144,7 @@ Different forms of $\psi$ give[^nabla],
     We use here the chain rule with $\boldsymbol{\xi}= \xi_0\mathbf{x} $
     and $\theta = \boldsymbol{\xi}/D_L$.
 
-## The Raytrace Equation
+## The Raytrace Equationn
 
 The normalised raytrace equation is given as
 \begin{align}
