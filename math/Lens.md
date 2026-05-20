@@ -42,11 +42,14 @@ See `psiXvalue` and `psiYvalue` in `SIS.cpp`.
 Roulette amplitudes are calculated using the recursive formulæ.
 
 ## SIE
-
+The extension of the SIS to an ellipsoide is well described in KORMAANN 1994, and referred to as
+ the _Singular Isothermal Ellipsoid_, or SIE-lens for short. It is a three-parameter family of lens models: 
+The Einstein radius ($\theta_E$), the excentricity factor $f$ and the orientation $\lambda$ of the lens relative to the 
+polar axis. Given these parameters, the lens profile is given as:
 $$
 \begin{aligned}
 \begin{split}
-  \psi^\textrm{SIE}(\theta_E,f,\lambda;\theta,\phi) =
+  \psi^R_\textrm{SIE}(\theta_E,f,\lambda;\theta,\phi) =
   \theta_E\sqrt{\frac{f}{1-f^2}}\theta\cdot
   &\Bigg([\sin(\phi-\lambda)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\lambda)}\right)
   \\\\&
