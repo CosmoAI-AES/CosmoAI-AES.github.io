@@ -71,7 +71,7 @@ we may also write down the equation
 
 \begin{align}
 \label{raytraceAng}
-\boldsymbol{\beta}=\boldsymbol{\theta}-\boldsymbol{\alpha}.
+\boldsymbol{\beta}=\boldsymbol{\theta}-\frac{\xi_0}{D_L}\boldsymbol{\alpha}.
 \end{align}
 
 Considering small angles,
@@ -111,24 +111,25 @@ In normalised coordinates the ray-trace equation reads
 $$
 \begin{align}
 \label{raytraceNorm}
-\mathbf{y}=\mathbf{x}-\boldsymbol{\alpha}.
+\mathbf{y}=\mathbf{x}-\boldsymbol{\alpha},
 \end{align}
 $$
-This is an alternative normalisation from the angular version, given in Eq.~\eqref{raytraceAng}.
-**Note, however, that in this work we will use angular coordinates,** to which we now turn 
-our focus. 
+which also explains the particular definition of $\boldsymbol{\alpha}$: it makes the normalized 
+version of the ray-trace equation look very nice and tidy. The normalisation presented above is however
+somewhat different from the one we shall prefer in this work, **where we shall prefer to work in angular coordinates,** 
+such as the ones given in Eq.~\eqref{raytraceAng}.In the sections to follow, such coordinates will therefore
+be our focus.
 
 
 ## The thin-lens approximation and the lens-potential $\psi$  
 Considering a thin lens, it is customary to define the lens potential as the projection of the 3D gravitaitonal lens
 potential down on the lens plane. Such a simplification is typically warranted, due to $D_L \gt\gt \xi_0$.
 
-
-One may now show that the reduced deflection angle $\boldsymbol{\alpha}$ is given by
+Our starting point here will be to define the lensing potential to so that its gradient is the reduced deflection angle $\boldsymbol{\alpha}$ 
 the gradient of $\psi$, i.e.
 \begin{equation}
-  \boldsymbol{\alpha} 
-  = \nabla_{\mathbf{x}}\psi.
+  \boxed{\boldsymbol{\alpha} 
+  = \nabla_{\mathbf{x}}\psi.}
 \end{equation}
 In angular coordintes, which we prefer here, the chain rule gives[^nabla],
 \begin{align}
@@ -146,26 +147,18 @@ WThe normalised raytrace equation~\eqref{raytraceNorm} is thus rewritten to
 \begin{align}
   \mathbf{y}  = \mathbf{x}  - \nabla_{\mathbf{x}}\psi
 \end{align}
-Working on the sphere, id est; rewriting to our preferred angular coordinate system, We
-find the following:
-In terms of $\xi$, we have
-\begin{equation}
-  \boldsymbol{\eta} 
-  = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}
-  = \frac{D_S}{D_L}(\boldsymbol{\xi} - \xi_0\mathbf{a})
-  = \frac{D_S}{D_L}(\boldsymbol{\xi} - \xi_0^2\nabla_{\xi}\psi)
-\end{equation}
-In terms of angles, we have
+Working on the sphere, id est; rewriting to our preferred angular coordinate system, the chain rule 
+gives
 \begin{equation}
   \boldsymbol{\beta} 
-  = \theta - \alpha
-  = \theta - \frac{\xi_0}{D_L}\mathbf{a}
-  = \theta - \frac{\xi_0}{D_L}\mathbf{a}
-  = \theta - \frac{\xi_0^2}{D_L^2}\nabla_{\theta}\psi
+  = \theta - \frac{\xi_0}{D_L}\alpha
+  = \theta - \frac{\xi_0}{D_L}\boldsymbol{\alpha}
+  = \theta - \frac{\xi_0^2}{D_L^2}\nabla_{\theta}\psi.
 \end{equation}
+This final equation shall be taken as motivation to redefine the standard lensing potential ever so slightly.
 
 
-## Lens Potential in CosmoSim
+### Lens Potential in CosmoSim
 
 In the implementation of CosmoSim, we have used a different
 definition of $\psi$,
