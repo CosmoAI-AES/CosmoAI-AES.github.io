@@ -128,14 +128,14 @@ Reinstating dimensionfull variables $\boldsymbol{\xi}=\xi_0\mathbf{x}$ we find $
 This radius is known as the Einstein radius.
 
 $$R_E\equiv \xi_0\alpha.$$
-Note that for a so-called SIS-lens (to be introduced later) we find $\boldsymbol{\alpha}=1,$ and hence
+Note that for a so-called SIS-lens and similarely for the Point-mass lens (PML), both of which will be discussed later,
+calculations yield 
 
-$$\boxed{R_E^{SIS}=\xi_0.}$$
+$$\boxed{R_E^{SIS}=R_E^{PML}=\xi_0.}$$
 
-When we talk about the Einstein radius, we shall usually mean the one corresponding to the SIS Einstein radius. This 
-relation is therefore important to note. Also note that the Einstein radius is also commonly referred to as angular
-separation, in which one referrs to 
-
+When we talk about the Einstein radius, we shall usually mean the one corresponding to the SIS /PML Einstein radius, without 
+explicitely mentioning. The final relation above is therefore important to note. Also note that the Einstein radius is
+commonly referred to in angular variables (in the lens plane), in which one defines
 $$\theta_E=\frac{R_E}{D_L}.$$
 :::
 

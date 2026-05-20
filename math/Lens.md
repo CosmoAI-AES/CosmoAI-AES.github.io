@@ -10,9 +10,10 @@ Stars and other celestial objects may sometimes be modelled as so-called point-m
 The gravitational potential is in this case  
 $$
 \begin{aligned}
-\psi^R = \frac{R_E^2}{D_L^2}\ln \frac{\xi}{R_E}
+\psi^R = \theta_E^2\ln \frac{\theta}{\theta_E}
 \end{aligned}
 $$
+where $\theta_E$ is the previously defined angular Einstein radius, $\theta_E=R_E/D_L$ and where $\theta=\sqrt{\theta_1^2+\theta_2^2}.$
 
 ## SIS (Singular isothermal sphere)
 
@@ -24,12 +25,9 @@ $$
   \psi^R_\mathrm{SIS}(x,y) = \theta_E\cdot\theta,
 \end{aligned}
 $$
-where $\theta_E$ is the previously defined angular Einstein radius, $\theta_E=R_E/D_L$.
 [CHECK: There was a negative sign here that I removed, HG]
-Also note that $\theta=\sqrt{\theta_1^2+\theta_2^2}.$
-
-In the code, we are working in angular variables. Hence what is called `einsteinR` in the code, is the quantity
-$\theta_E=R_E/D_L$.  Thus the deflection is given as
+where notation is as for the point-mass case. In the code, we are working in angular variables. Hence what is called `einsteinR` 
+in the code, is the *angular Einstein radius* $\theta_E$. Thus the deflection is in the SIS case given as
 $$
 \begin{aligned}
   \frac{\partial\psi}{\partial \theta_1} &= \theta_E\cdot\frac{\theta_1}{\sqrt{\theta_1^2+\theta_1^2}}=\theta_E\frac{\theta_1}{\theta}\\\\\\\\
