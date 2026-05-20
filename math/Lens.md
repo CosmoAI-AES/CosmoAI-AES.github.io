@@ -46,18 +46,18 @@ Roulette amplitudes are calculated using the recursive formulæ.
 $$
 \begin{aligned}
 \begin{split}
-  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(R,\phi) =
-  \frac{\xi_0}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\cdot
-  &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
+  \psi^\textrm{SIE}(\theta_E,f,\lambda;\theta,\phi) =
+  \theta_E\sqrt{\frac{f}{1-f^2}}\theta\cdot
+  &\Bigg([\sin(\phi-\lambda)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\lambda)}\right)
   \\\\&
-  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
+  +[\cos(\phi-\lambda)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\lambda)\right)\Bigg).
 \end{split}
 \end{aligned}
 $$
-where $(R,\phi)$ are the polar coordinates in the lens plane, i.e.
+where $\lambda$ is the orientation of the major axis relative to the polar axis whereas $(\theta,\phi)$ are (normalized) polar coordinates in the lens plane, i.e.
 $$
 \begin{equation}
-    (x,y) = R\cdot (\sin\phi,\cos\phi).
+    \boldsymbol{\theta}=\theta_E\mathbf{x}=\theta(\sin\phi,\cos\phi).
 \end{equation}
 $$
 
