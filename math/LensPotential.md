@@ -20,6 +20,7 @@ $$\Delta\boldsymbol{\eta} = \boldsymbol{\nu} - \boldsymbol{\eta}$$
 The apparent position in the lens plane $L$ is called
 $$\boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}.$$
 
+::: {note} Cosmological distances depend on time (/redshift)
 As a note to the side, the distancees $D_L$ and $D_S$ are cosmological,
 meaning that they depend on time. This is due to the expansion of the fabric of the 
 cosmos (space). This expansion is measured through something known as redshifting $z$ of 
@@ -27,6 +28,7 @@ light. Such considerations are spared for a later section, and we suffice it for
 to mention that such distances are not additive in the ordinary sense. Let $D_{LS}(z)$ be 
 the distance between the lens plane and the source plane. Then $D_S(z)\,\neq\,D_{L}(z)+D_{S}(z).$
 We come back to this in due time.
+:::
 
 The deflection is most easily described in terms of angles, so 
 we define $\beta$ and $\theta$ as the angles between 
@@ -39,26 +41,19 @@ from the apparent image in the lens plane.
 With the flat sky approximation, the angles are related to
 lengths  in the lens plane by a factor of $D_L$, so that
 $$\boldsymbol{\xi} = D_L\theta$$
-Similarly, in the source plane, the factor is $D_S$, so that we
-get
-$$\boldsymbol{\nu} = D_S\theta,$$
-$$\boldsymbol{\eta} = D_S\beta,$$
-and
-$$\Delta\boldsymbol{\eta} & = D_S\alpha,$$
-where $\alpha=\theta-\beta$ as the angle between
-$\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$ as seen
-from the observer.
-The same reasoning gives us the following[^hatalpha],
+Similarly, in the source plane[^hatalpha], we find 
 
-$$\alpha = \frac{D_{LS}}{D_S} \hat\alpha$$
+$$\boldsymbol{\eta} = D_S\beta,$$
+but also
+$$ \boldsymbol{\Delta\eta}= D_{LS}\hat{\boldsymbol{\alpha}}.$$
 
 Now, we can write the actual image as
-$$
+
 \begin{align}
 \label{raytracePhys}
 \boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}
 \end{align}
-$$
+
 
 ::: {note} Implementation
 In the implementation, the basic unit is pixels in the source plane,
@@ -73,18 +68,20 @@ The scaling factor is called $\chi=\frac{D_L}{D_S}=\frac{||\boldsymbol{\xi}||}{|
 
 It is noteworthy that if we consider spherical geometries (a source sphere and a lens sphere),
 we may also write down the equation
-$$
+
 \begin{align}
 \label{raytraceAng}
 \boldsymbol{\beta}=\boldsymbol{\theta}-\boldsymbol{\alpha}.
 \end{align}
-$$
+
 Considering small angles,
 $$
 \sin\theta\approx\theta
 $$
 
 it may readily be shown that Eq.~\eqref{raytracePhys} and Eq.~\eqref{raytraceAng} are the same.
+It is this latter equation that we shall take to be our constitutive relation. But before
+we get there, let us also introduce the standard way of normalizing. 
 
 [^hatalpha]: 
     This is seen because $D_S\alpha$ and $D_{LS}\hat\alpha$ are the lengths 
@@ -94,8 +91,7 @@ it may readily be shown that Eq.~\eqref{raytracePhys} and Eq.~\eqref{raytraceAng
 
 ## Normalisation
 
-The above definitions assume physical units.  It is customary to normalise
-using a constant factor $\xi_0$. This gives the following entities, following Kormann 1994
+It is customary to normalise using a constant factor $\xi_0$. This gives the following entities, following Kormann 1994
 
 $$
 \begin{align}
@@ -104,8 +100,8 @@ $$
   \boldsymbol{\alpha} = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
 \end{align}
 $$
-In addition to the previously mentioned (cosmological) distances $D_L$, $D_S$ and $D_{LS}$ we must also
-find a proper length scale $\xi_0$ from which we normalise everything else. In SEF, Kormann1994 and other
+In addition to the previously mentioned (cosmological) distances $D_L$, $D_S$ and $D_{LS}$ we must thus
+find a proper length scale $\xi_0$ from which we normalize everything else. In SEF, Kormann1994 and other
 standard sources one typically takes $\xi_0$ to be the so-called Einstein radius. This is the radius at which
 a spherically symmetric lens will produce a ring (so-called Einstein ring) whenever the source is directly behind
 the lens, along the optical axis.
@@ -119,23 +115,24 @@ $$
 \end{align}
 $$
 This is an alternative normalisation from the angular version, given in Eq.~\eqref{raytraceAng}.
-**Note that in this work, we will use angular coordinates.** In the following we will therefore proceed with this.
+**Note, however, that in this work we will use angular coordinates,** to which we now turn 
+our focus. 
 
 
-## The thin-lens potential and the lens-potential $\psi$  
+## The thin-lens approximation and the lens-potential $\psi$  
 Considering a thin lens, it is customary to define the lens potential as the projection of the 3D gravitaitonal lens
-potential down on the lens plane. Such a simplification is warranted due to $D_L \gt \xi_0$.
+potential down on the lens plane. Such a simplification is typically warranted, due to $D_L \gt\gt \xi_0$.
 
 
-The normalised deflection $\mathbf{x}$ is given as
+One may now show that the reduced deflection angle $\boldsymbol{\alpha}$ is given by
 the gradient of $\psi$, i.e.
 \begin{equation}
-  \mathbf{a} 
-  = \nabla_{\mathbf{x}}\psi
+  \boldsymbol{\alpha} 
+  = \nabla_{\mathbf{x}}\psi.
 \end{equation}
-Different forms of $\psi$ give[^nabla],
+In angular coordintes, which we prefer here, the chain rule gives[^nabla],
 \begin{align}
-  \mathbf{a} 
+  \boldsymbol{\alpha} 
   = \xi_0\cdot\nabla_{\xi}\psi
   = \frac{\xi_0}{D_L}\cdot\nabla_{\theta}\psi
 \end{align}
@@ -144,17 +141,13 @@ Different forms of $\psi$ give[^nabla],
     We use here the chain rule with $\boldsymbol{\xi}= \xi_0\mathbf{x} $
     and $\theta = \boldsymbol{\xi}/D_L$.
 
-## The Raytrace Equationn
 
-The normalised raytrace equation is given as
-\begin{align}
-  \mathbf{y}  = \mathbf{x}  - \mathbf{a}
-\end{align}
-Inserting the gradient for $\mathbf{a}$, we have
+WThe normalised raytrace equation~\eqref{raytraceNorm} is thus rewritten to
 \begin{align}
   \mathbf{y}  = \mathbf{x}  - \nabla_{\mathbf{x}}\psi
 \end{align}
-We can rewrite the raytrace equation using any of the forms of $\nabla\psi$.
+Working on the sphere, id est; rewriting to our preferred angular coordinate system, We
+find the following:
 In terms of $\xi$, we have
 \begin{equation}
   \boldsymbol{\eta} 
