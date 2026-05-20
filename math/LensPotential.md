@@ -120,6 +120,22 @@ somewhat different from the one we shall prefer in this work, **where we shall p
 such as the ones given in Eq.~\eqref{raytraceAng}.In the sections to follow, such coordinates will therefore
 be our focus.
 
+::: {note} Einstein Radius $R_E$ and $\Theta_E$
+Consider a source directly behind a spherically symmetric lens. Id est, consider a source at $y=0$. In that case the
+normalized ray-trace equation yields
+$$x=\alpha.$$
+Reinstating dimensionfull variables $\boldsymbol{\xi}=\xi_0\mathbf{x}$ we find $\boldsymbol{\xi}=\xi_0\boldsymbol{\alpha}$.
+This radius is known as the Einstein radius.
+
+$$R_E\equiv \xi_0\alpha.$$
+Note that for a so-called SIS-lens (to be introduced later) we find $\boldsymbol{\alpha}=1,$ and hence
+
+$$\boxed{R_E^{SIS}=\xi_0.}$$
+
+When we talk about the Einstein radius, we shall usually mean the one corresponding to the SIS Einstein radius. This 
+relation is therefore important to note. 
+:::
+
 
 ## The thin-lens approximation and the lens-potential $\psi$  
 Considering a thin lens, it is customary to define the lens potential as the projection of the 3D gravitaitonal lens
