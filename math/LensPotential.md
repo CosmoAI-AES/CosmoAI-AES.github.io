@@ -155,42 +155,37 @@ gives
   = \theta - \frac{\xi_0}{D_L}\boldsymbol{\alpha}
   = \theta - \frac{\xi_0^2}{D_L^2}\nabla_{\theta}\psi.
 \end{equation}
-This final equation shall be taken as motivation to redefine the standard lensing potential ever so slightly.
+This final equation shall be taken as motivation to redefine the standard lensing potential 
+ever so slightly. Let $\psi$ be the usual lensing potential. Then we define
 
-
-### Lens Potential in CosmoSim
-
-In the implementation of CosmoSim, we have used a different
-definition of $\psi$,
 \begin{equation}
-  \psi^{\mathrm{R}} = \frac{\xi_0^2}{D_L^2}\psi
+  \boxed{\psi^{\mathrm{R}} = \frac{\xi_0^2}{D_L^2}\psi}
 \end{equation}
-**TODO** double-check this
 
-In this notation, we can write the raytrace equation as
+
+In this notation, we find the following pleasing expression for the angular version of 
+the ray-trace equation:
+
 \begin{equation}
-  \boldsymbol{\eta} 
-  = \frac{D_S}{D_L}(\boldsymbol{\xi} - \nabla_{\xi}\psi^{\mathrm{R}})
-  = \boldsymbol{\nu} - \frac{D_S}{D_L} \nabla_{\xi}\psi^{\mathrm{R}}
+\boxed{\boldsymbol{\beta} = \theta - \nabla_{\theta}\psi^R.}
 \end{equation}
-This is relation is implemented in the `RaytraceModel::calculateEta()` 
+This relation is implemented in the `RaytraceModel::calculateEta()` 
 function in CosmoSim.
 
 ## Surface Mass Density
 
-The convergence, or dimensionless projected surface-mass density, is given
-as a function $\kappa$, which is related to $\psi$ as follows:
+A final, very central concept in lensing, is the convergence $\kappa$. This is the dimensionless,
+projected surface-mass density, which is related to $\psi$ through the Poisson equation. In our 
+coordinates this gives
 \begin{equation}
-  \kappa(\boldsymbol{\xi})= \frac12\xi_0^2\left(
-     \frac{\partial^2\psi}{\partial\xi_1^2} + 
-     \frac{\partial^2\psi}{\partial\xi_2^2}
-     \right)
+  \kappa(\boldsymbol{\theta})= \frac12\nabla\psi^R
 \end{equation}
-or
+
+Writing it out more explicitely, we find 
 \begin{equation}
-  \kappa(\boldsymbol{\xi})= \frac12D_L^2\left(
-     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\xi_1^2} + 
-     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\xi_2^2}
+\kappa(\boldsymbol{\theta})= \frac12\left(
+     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\theta_1^2} + 
+     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\theta_2^2}
      \right)
 \end{equation}
 
