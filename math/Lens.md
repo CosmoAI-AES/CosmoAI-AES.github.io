@@ -6,23 +6,26 @@ usemathjax: true
 # Lens Models
 
 ## Point Mass
-
+Stars and other celestial objects may sometimes be modelled as so-called point-masses.
+The gravitational potential is in this case  
 $$
 \begin{aligned}
-\psi = \frac{R_E^2}{D_L^2}\ln \frac{\xi}{R_E}
+\psi^R = \frac{R_E^2}{D_L^2}\ln \frac{\xi}{R_E}
 \end{aligned}
 $$
 
 ## SIS (Singular isothermal sphere)
 
-The following expression for $\psi$ is implemented in `amplitudes.py`
+It is often necessary to model the lens as an extended object. The simplest such model,
+useful for instance in the modelling of a galaxy surrounded by dark amtter, is the 
+so-called _Singular isothermal sphere_, or SIS-model for short. The following expression for $\psi^R$ is implemented in `amplitudes.py`
 $$
 \begin{aligned}
-  \psi^\mathrm{SIS}(x,y) = - \frac{R_E}{D_L^2}\cdot\sqrt{x^2+y^2}
+  \psi^R_\mathrm{SIS}(x,y) = \theta_E\cdot\theta,
 \end{aligned}
 $$
-The sign causes some confusion, and we need to check if also SIE below needs a
-negative sign.
+[CHECK: There was a negative sign here that I removed, HG]
+where $\theta=\sqrt{\theta_1^2+\theta_2^2}.$
 
 In practice, we omit the (constant) factor $D_L$ in the implementation.
 In other words, what is called `einsteinR` in the code, is the quantity
