@@ -147,8 +147,8 @@ potential down on the lens plane. Such a simplification is typically warranted, 
 Our starting point here will be to define the lensing potential to so that its gradient is the reduced deflection angle $\boldsymbol{\alpha}$ 
 the gradient of $\psi$, i.e.
 \begin{equation}
-  \boxed{\boldsymbol{\alpha} 
-  = \nabla_{\mathbf{x}}\psi.}
+  \boldsymbol{\alpha} 
+  = \nabla_{\mathbf{x}}\psi.
 \end{equation}
 In angular coordintes, which we prefer here, the chain rule gives[^nabla],
 \begin{align}
@@ -189,7 +189,9 @@ the ray-trace equation:
 \boxed{\boldsymbol{\beta} = \theta - \nabla_{\theta}\psi^R.}
 \end{equation}
 This relation is implemented in the `RaytraceModel::calculateEta()` 
-function in CosmoSim.
+function in CosmoSim. It follows that 
+
+$$\boxed{\boldsymbol{\alpha}=\frac{D_L}{\xi_0}\nabla_\theta\psi^R}$$
 
 ## Surface Mass Density
 
@@ -197,7 +199,7 @@ A final, very central concept in lensing, is the convergence $\kappa$. This is t
 projected surface-mass density, which is related to $\psi$ through the Poisson equation. In our 
 coordinates this gives
 \begin{equation}
-  \kappa(\boldsymbol{\theta})= \frac12\nabla_\theta\psi^R
+  \boxed{\kappa(\boldsymbol{\theta})= \frac12\nabla_\theta\psi^R}
 \end{equation}
 
 Writing it out more explicitely, we find 
