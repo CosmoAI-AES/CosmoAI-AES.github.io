@@ -191,7 +191,7 @@ the ray-trace equation:
 This relation is implemented in the `RaytraceModel::calculateEta()` 
 function in CosmoSim. It follows that 
 
-$$\boxed{\boldsymbol{\alpha}=\frac{D_L}{\xi_0}\nabla_\theta\psi^R}$$
+$$\boxed{\boldsymbol{\alpha}=\frac{1}{\theta_E}\nabla_\theta\psi^R}$$
 
 ## Surface Mass Density
 
