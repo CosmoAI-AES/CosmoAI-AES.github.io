@@ -20,21 +20,23 @@ where $\theta_E$ is the previously defined angular Einstein radius, $\theta_E=R_
 It is often necessary to model the lens as an extended object. The simplest such model,
 useful for instance in the modelling of a galaxy surrounded by dark amtter, is the 
 so-called _Singular isothermal sphere_, or SIS-model for short. The following expression for $\psi^R$ is implemented in `amplitudes.py`
+
 $$
-\begin{aligned}
   \psi^R_\mathrm{SIS}(x,y) = \theta_E\cdot\theta,
-\end{aligned}
 $$
+
 [CHECK: There was a negative sign here that I removed, HG]
 where notation is as for the point-mass case. In the code, we are working in angular variables. Hence what is called `einsteinR` 
-in the code, is the *angular Einstein radius* $\theta_E$. Thus the deflection is in the SIS case given as
+in the code, is the *angular Einstein radius* $\theta_E$. Note that the partial derivatives are readily calculated as
+
 $$
-\begin{aligned}
-  \frac{\partial\psi}{\partial \theta_1} &= \theta_E\cdot\frac{\theta_1}{\sqrt{\theta_1^2+\theta_1^2}}=\theta_E\frac{\theta_1}{\theta}\\\\\\\\
-  \frac{\partial\psi}{\partial \theta_2} &= \theta_E\cdot\frac{\theta_2}{\sqrt{x^2+y^2}}=\theta_E\frac{\theta_2}{\theta}
-\end{aligned}
+  \frac{\partial\psi}{\partial \theta_1} = \theta_E\cdot\frac{\theta_1}{\sqrt{\theta_1^2+\theta_1^2}}=\theta_E\frac{\theta_1}{\theta}\quad\textrm{and}\quad
+  \frac{\partial\psi}{\partial \theta_2} = \theta_E\cdot\frac{\theta_2}{\sqrt{x^2+y^2}}=\theta_E\frac{\theta_2}{\theta}
 $$
-The differentiation is straight forward.
+Thus the reduced deflection angle is in the SIS case given as
+
+$$\boldsymbol{\alpha}=\frac{1}{\theta_E}\left(\theta_1,\theta_2\right).$$
+
 See `psiXvalue` and `psiYvalue` in `SIS.cpp`.
 
 Roulette amplitudes are calculated using the recursive formulæ.
