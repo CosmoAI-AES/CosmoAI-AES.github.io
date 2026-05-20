@@ -57,7 +57,7 @@ $$
 \end{split}
 \end{aligned}
 $$
-where $\lambda$ is the orientation of the major axis relative to the polar axis whereas $(\theta,\phi)$ are (normalized) polar coordinates in the lens plane, i.e.
+where $(\theta,\phi)$ are (normalized) polar coordinates in the lens plane, i.e.
 $$
 \begin{equation}
     \boldsymbol{\theta}=\theta_E\mathbf{x}=\theta(\sin\phi,\cos\phi).
@@ -67,38 +67,31 @@ $$
 The deflection is given as
 $$
 \begin{aligned}
-  \frac{\partial\psi}{\partial x} &=
-     C_0\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}\cdot\big(
-        \cos\theta\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{x'}{R})
-        - \sin\theta\cdot\sin^{-1}(\sqrt{1-f^2}\frac{y'}{R})
+  \frac{\partial\psi}{\partial \theta_1} &=
+     \theta_E\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}\cdot\big(
+        \cos\lambda\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{x'}{\theta})
+        - \sin\lambda\cdot\sin^{-1}(\sqrt{1-f^2}\frac{y'}{\theta})
         \big)
   \\\\\\\\
-  \frac{\partial\psi}{\partial y} &=
-     C_0\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}\cdot\big(
-        \sin\theta\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{x'}{R})
-        + \cos\theta\cdot\sin^{-1}(\sqrt{1-f^2}\frac{y'}{R})
+  \frac{\partial\psi}{\partial \theta_2} &=
+     \theta_E\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}\cdot\big(
+        \sin\lambda\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{x'}{\theta})
+        + \cos\lambda\cdot\sin^{-1}(\sqrt{1-f^2}\frac{y'}{\theta})
         \big)
 \end{aligned}
 $$
 where
 $$
 \begin{aligned}
-  x' &= \cos\theta\cdot x + \sin\theta\cdot y
-  \\\\\\\\
-  y' &= -\sin\theta\cdot x + \cos\theta\cdot y
-  \\\\\\\\
-  R &= \sqrt{x^2+y^2}
+  \theta_1^\prime &= \cos\lambda\cdot \theta_1 + \sin\lambda\cdot \theta_2
+  \\
+  \theta_2^\prime &= -\sin\lambda\cdot \theta_1 + \cos\lambda\cdot \theta_2
 \end{aligned}
 $$
-As for SIS, $C_0=R_E/D_L^2$ is called `einsteinR` in the code.
+and $\theta = \sqrt{\theta_1^2+\theta_2^2}$ as before.
+As for SIS, $\theta_E$ is called `einsteinR` in the code.
 See `psiXvalue` and `psiYvalue` in `SIE.cpp`.
 
 + [Calculation of the SIE Deflection](/math/SIE)
 + [](/math/Roulette%20Amplitudes%20in%20SIE)
 + [](/math/Legacy%20Notes%20on%20SIE)
-
-::: {note} Implementation 
-The factors $D_L$ and $D_L/D_S$ are ommitted in the calculations 
-the roulette amplitudes ($\alpha$ and $\beta$), because they cancel when the
-amplitudes are used in deflection formula.
-:::
