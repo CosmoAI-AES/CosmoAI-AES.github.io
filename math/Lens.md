@@ -69,14 +69,14 @@ The deflection may now be calculated using that
 \begin{aligned}
   \frac{\partial\psi}{\partial \theta_1} &=
      \theta_E\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}\cdot\big(
-        \cos\lambda\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{x'}{\theta})
-        - \sin\lambda\cdot\sin^{-1}(\sqrt{1-f^2}\frac{y'}{\theta})
+        \cos\lambda\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{\theta_1^\prime}{\theta})
+        - \sin\lambda\cdot\sin^{-1}(\sqrt{1-f^2}\frac{\theta_2^\prime}{\theta})
         \big)
   \\\\\\\\
   \frac{\partial\psi}{\partial \theta_2} &=
      \theta_E\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}\cdot\big(
-        \sin\lambda\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{x'}{\theta})
-        + \cos\lambda\cdot\sin^{-1}(\sqrt{1-f^2}\frac{y'}{\theta})
+        \sin\lambda\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{\theta_1^\prime}{\theta})
+        + \cos\lambda\cdot\sin^{-1}(\sqrt{1-f^2}\frac{\theta_2^\prime}{\theta})
         \big)
 \end{aligned}
 
