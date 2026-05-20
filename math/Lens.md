@@ -24,16 +24,16 @@ $$
   \psi^R_\mathrm{SIS}(x,y) = \theta_E\cdot\theta,
 \end{aligned}
 $$
+where $\theta_E$ is the previously defined angular Einstein radius, $\theta_E=R_E/D_L$.
 [CHECK: There was a negative sign here that I removed, HG]
-where $\theta=\sqrt{\theta_1^2+\theta_2^2}.$
+Also note that $\theta=\sqrt{\theta_1^2+\theta_2^2}.$
 
-In practice, we omit the (constant) factor $D_L$ in the implementation.
-In other words, what is called `einsteinR` in the code, is the quantity
-$C_0=R_E/D_L^2$.  Thus the deflection is given as
+In the code, we are working in angular variables. Hence what is called `einsteinR` in the code, is the quantity
+$\theta_E=R_E/D_L$.  Thus the deflection is given as
 $$
 \begin{aligned}
-  \frac{\partial\psi}{\partial x} &= C_0\cdot\frac{x}{\sqrt{x^2+y^2}}\\\\\\\\
-  \frac{\partial\psi}{\partial y} &= C_0\cdot\frac{y}{\sqrt{x^2+y^2}}
+  \frac{\partial\psi}{\partial \theta_1} &= \theta_E\cdot\frac{\theta_1}{\sqrt{\theta_1^2+\theta_1^2}}=\theta_E\frac{\theta_1}{\theta}\\\\\\\\
+  \frac{\partial\psi}{\partial \theta_2} &= \theta_E\cdot\frac{\theta_2}{\sqrt{x^2+y^2}}=\theta_E\frac{\theta_2}{\theta}
 \end{aligned}
 $$
 The differentiation is straight forward.
