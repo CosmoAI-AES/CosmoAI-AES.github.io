@@ -133,7 +133,10 @@ Note that for a so-called SIS-lens (to be introduced later) we find $\boldsymbol
 $$\boxed{R_E^{SIS}=\xi_0.}$$
 
 When we talk about the Einstein radius, we shall usually mean the one corresponding to the SIS Einstein radius. This 
-relation is therefore important to note. 
+relation is therefore important to note. Also note that the Einstein radius is also commonly referred to as angular
+separation, in which one referrs to 
+
+$$\theta_E=\frac{R_E}{D_L}.$$
 :::
 
 
