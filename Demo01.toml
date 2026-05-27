@@ -1,0 +1,15 @@
+[lens]
+einsteinR=46
+ellipseratio=0.34
+orientation=107
+chi=50
+
+[position]
+x=11.01
+y=0.31
+
+[source]
+sigma=20
+theta=45
+position="cartesian"
+
