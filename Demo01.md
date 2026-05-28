@@ -64,39 +64,109 @@ Typically, the CSV names reflect the identifiers used in the code, which make th
 For the time being, we have to live with the ambiguity.
 :::
 
-The parameter set is also stored in in the file `Demo01.toml`, which we can read like this:
+## First test of the API
+
+We can define the configuration as a dict using the nested (TOML) structure.
+
+```{code-cell} ipython3
+cfg = { 'lens': { 
+            'einsteinR': 46,
+            'ellipseratio': 0.34,
+            'orientation': 107,
+            'chi': 50}
+      , 'source': {
+            'mode': 'Spherical',
+            'sigma': 20,
+            'theta': 45,
+            'position': 'cartesian'}
+      , 'position': {'x': 11.01, 'y': 0.31}
+      }
+```
+
+CosmoSim uses `Parameters` objects which store the parameters as a cascaded dictionary,
+incorporating defaults.   This is instantiated using the `dict` that we just made.
+
+```{code-cell} ipython3
+param = Parameters( cfg )
+print( param )
+```
+
+::: {admonition} Remark
+It is possible to define the config as a flat `dict` using the CSV labels, and
+the convert it to the nested structure with the `getConfig()` function.
+:::
+
+We can simulate the configuration by merely instantiating a `SimImage` object, as follows.
+The simulator runs as part of the instantiation.  
+It is rather verbose, with debug messages still left in.
+
+```{code-cell} ipython3
+imsim = SimImage( param )
+```
+
+Usually, this output is not interesting, but if we have relied heavily on defaults, we can read some of the values actually used from this output.
+We see `GAUSS` indicating that a Gaussian light profile has been used for the source. We also see `POINTMASS_EXACT` which refers to the point mass lens, which is simulated with an exact formula equivalent to raytracing. We will get back to this later.
+
+The interesting part is the image, which we can retrieve with a 
+second line.
+
+```{code-cell} ipython3
+im = imsim.getImage()
+print( im )
+print( type( im ) )
+```
+
+The image is a numpy *array*, but we can view it as a proper image using
+`matplotlib`.
+
+```{code-cell} ipython3
+plt.imshow( im, cmap='gray')
+plt.title( "First simulation test" )
+plt.axis("off")
+```
+
+## Better configuration
+
+For the second test, we will keep the configuration in a TOML file.
+This tends to be easier to read than the `dict` in python code.
+The file is [Demo01.toml](./Demo01.toml), and we read it thus:
 
 ```{code-cell} ipython3
 import tomllib as tl
 with open( "Demo01.toml", 'rb') as f:
             toml = tl.load(f)
-    
+param = Parameters( toml )
+imsim = SimImage( param, verbose=2 )
+im = imsim.getImage()
+plt.imshow( im, cmap='gray')
+plt.title( "Simulation from TOML" )
+plt.axis("off")
 ```
 
-The result is a nested python `dict`.
+The result is a nested python `dict` which we can import as we did before..
 
 ```{code-cell} ipython3
-print( toml )
-```
-
-## Batch Simulation
-
-Now we need to load the original dataset to be able to rerun the simulator.
 
 ```
-dataset = pd.read_csv( "dataset.csv" )
-origrow = dataset[ dataset["filename"] == fn ].iloc[0]
-display( origrow )
+
+## Workbook
+
+```{code-cell} ipython3
+print( param.get( "mask" ) )
 ```
 
-That's the configuration we want to simulate.
-Now we need to instantiate the simulator, as follows:
+```{code-cell} ipython3
+print ( param )
+```
 
+```{code-cell} ipython3
+param["management"]["mask"] = False
+imsim = SimImage( param )
+plt.imshow( imsim.getImage(), cmap="grey" )
 ```
-sim = CosmoSim()
-sim.setMaskMode( False )
-imsim = SimImage(sim,row=origrow,verbose=0)
-```
+
+## Old sketches
+
 
 With the simulator instance, we can get the image.  We take an annotated version which shows the centre of light (green) and the reference point for roulette expansion (blue).
 
