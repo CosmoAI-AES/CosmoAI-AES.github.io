@@ -22,6 +22,7 @@ project:
       children:
         - file: math/LensPotential.md
         - file: math/Lens.md
+        - file: math/CosmologicalDistances.md
         - file: math/Roulette.md
           children:
           - file: math/getXi.md
