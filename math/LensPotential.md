@@ -20,6 +20,16 @@ $$\Delta\boldsymbol{\eta} = \boldsymbol{\nu} - \boldsymbol{\eta}$$
 The apparent position in the lens plane $L$ is called
 $$\boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}.$$
 
+::: {note} Cosmological distances depend on time (/redshift)
+As a note to the side, the distancees $D_L$ and $D_S$ are cosmological,
+meaning that they depend on time. This is due to the expansion of the fabric of the 
+cosmos (space). This expansion is measured through something known as redshifting $z$ of 
+light. Such considerations are spared for a later section, and we suffice it for now 
+to mention that such distances are not additive in the ordinary sense. Let $D_{LS}(z)$ be 
+the distance between the lens plane and the source plane. Then $D_S(z)\,\neq\,D_{L}(z)+D_{S}(z).$
+We come back to this in due time.
+:::
+
 The deflection is most easily described in terms of angles, so 
 we define $\beta$ and $\theta$ as the angles between 
 the optical axis and respectively 
@@ -31,21 +41,19 @@ from the apparent image in the lens plane.
 With the flat sky approximation, the angles are related to
 lengths  in the lens plane by a factor of $D_L$, so that
 $$\boldsymbol{\xi} = D_L\theta$$
-Similarly, in the source plane, the factor is $D_S$, so that we
-get
-$$\boldsymbol{\nu} = D_S\theta,$$
-$$\boldsymbol{\eta} = D_S\beta,$$
-and
-$$\Delta\boldsymbol{\eta} & = D_S\alpha,$$
-where $\alpha=\theta-\beta$ as the angle between
-$\boldsymbol{\eta}_S$ and $\boldsymbol{\nu}_S$ as seen
-from the observer.
-The same reasoning gives us the following[^hatalpha],
+Similarly, in the source plane[^hatalpha], we find 
 
-$$\alpha = \frac{D_{LS}}{D_S} \hat\alpha$$
+$$\boldsymbol{\eta} = D_S\beta,$$
+but also
+$$ \boldsymbol{\Delta\eta}= D_{LS}\hat{\boldsymbol{\alpha}}.$$
 
 Now, we can write the actual image as
-$$\boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}$$
+
+\begin{align}
+\label{raytracePhys}
+\boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}
+\end{align}
+
 
 ::: {note} Implementation
 In the implementation, the basic unit is pixels in the source plane,
@@ -55,49 +63,96 @@ to angular distances, so that effectively $\theta=\boldsymbol{\nu}$.
 
 The only relevant distance situated in the lens plane is $\xi$, which
 is also measured in source plane pixels.
-The scaling factor is called $\chi=\frac{||\boldsymbol{\xi}||}{||\boldsymbol{\nu}||}$.
+The scaling factor is called $\chi=\frac{D_L}{D_S}=\frac{||\boldsymbol{\xi}||}{||\boldsymbol{\nu}||}$.
 :::
+
+It is noteworthy that if we consider spherical geometries (a source sphere and a lens sphere),
+we may also write down the equation
+
+\begin{align}
+\label{raytraceAng}
+\boldsymbol{\beta}=\boldsymbol{\theta}-\frac{\xi_0}{D_L}\boldsymbol{\alpha}.
+\end{align}
+
+Considering small angles,
+$$
+\sin\theta\approx\theta
+$$
+
+it may readily be shown that Eq.~\eqref{raytracePhys} and Eq.~\eqref{raytraceAng} are the same.
+It is this latter equation that we shall take to be our constitutive relation. But before
+we get there, let us also introduce the standard way of normalizing. 
 
 [^hatalpha]: 
     This is seen because $D_S\alpha$ and $D_{LS}\hat\alpha$ are the lengths 
     of arcs between the actual and apparent source, and for small
-    angles they are both approximately equal to the straigh line
+    angles they are both approximately equal to the straight line
     $\Delta\boldsymbol{\eta}_S$.
 
 ## Normalisation
 
-The above definitions assume physical units.  It is customary to normalise
-using a constant factor $\xi_0$, corresponding to the Einstein radius.
-This gives the following entities, following Kormann 1994[^kormannalpha]
+It is customary to normalise using a constant factor $\xi_0$. This gives the following entities, following Kormann 1994
 
 $$
 \begin{align}
-  \mathbf{x} & = \frac{\boldsymbol{\xi}}{\xi_0}
-  \\\\\\\\
-  \mathbf{y} & = \frac{\boldsymbol{\eta}}{\eta_0}
-     \quad\text{where } \nu_0 = \frac{D_S}{D_L}\xi_0
-  \\\\\\\\
-  \mathbf{a} & = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
-   = \frac{D_L}{\xi_0}\boldsymbol{\alpha}
+  \mathbf{x}= \frac{\boldsymbol{\xi}}{\xi_0}\quad,\quad\mathbf{y} = \frac{\boldsymbol{\eta}}{\eta_0}
+     \quad\text{where } \nu_0 = \frac{D_S}{D_L}\xi_0\quad,\quad
+  \boldsymbol{\alpha} = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
 \end{align}
 $$
+In addition to the previously mentioned (cosmological) distances $D_L$, $D_S$ and $D_{LS}$ we must thus
+find a proper length scale $\xi_0$ from which we normalize everything else. In SEF, Kormann1994 and other
+standard sources one typically takes $\xi_0$ to be the so-called Einstein radius. This is the radius at which
+a spherically symmetric lens will produce a ring (so-called Einstein ring) whenever the source is directly behind
+the lens, along the optical axis.
 
-The Einstein radius is a distance in the lens plane.
-The corresponding angle is $\xi_0/D_L$ which is used to denormalise
-$\mathbf{a}$ above.
+In normalised coordinates the ray-trace equation reads 
 
-The lens potential (gravitational potential) can be written as a function
-$\psi$ of either the angle $\theta$, the vector $\boldsymbol{\xi}$, or the
-normalised $\mathbf{x}$.
-The normalised deflection $\mathbf{x}$ is given as
+$$
+\begin{align}
+\label{raytraceNorm}
+\mathbf{y}=\mathbf{x}-\boldsymbol{\alpha},
+\end{align}
+$$
+which also explains the particular definition of $\boldsymbol{\alpha}$: it makes the normalized 
+version of the ray-trace equation look very nice and tidy. The normalisation presented above is however
+somewhat different from the one we shall prefer in this work, **where we shall prefer to work in angular coordinates,** 
+such as the ones given in Eq.~\eqref{raytraceAng}.In the sections to follow, such coordinates will therefore
+be our focus.
+
+::: {note} Einstein Radius $R_E$ and $\Theta_E$
+Consider a source directly behind a spherically symmetric lens. Id est, consider a source at $y=0$. In that case the
+normalized ray-trace equation yields
+$$x=\alpha.$$
+Reinstating dimensionfull variables $\boldsymbol{\xi}=\xi_0\mathbf{x}$ we find $\boldsymbol{\xi}=\xi_0\boldsymbol{\alpha}$.
+This radius is known as the Einstein radius.
+
+$$R_E\equiv \xi_0\alpha.$$
+Note that for a so-called SIS-lens and similarely for the Point-mass lens (PML), both of which will be discussed later,
+calculations yield 
+
+$$\boxed{R_E^{SIS}=R_E^{PML}=\xi_0.}$$
+
+When we talk about the Einstein radius, we shall usually mean the one corresponding to the SIS /PML Einstein radius, without 
+explicitely mentioning. The final relation above is therefore important to note. Also note that the Einstein radius is
+commonly referred to in angular variables (in the lens plane), in which one defines
+$$\theta_E=\frac{R_E}{D_L}.$$
+:::
+
+
+## The thin-lens approximation and the lens-potential $\psi$  
+Considering a thin lens, it is customary to define the lens potential as the projection of the 3D gravitaitonal lens
+potential down on the lens plane. Such a simplification is typically warranted, due to $D_L \gt\gt \xi_0$.
+
+Our starting point here will be to define the lensing potential to so that its gradient is the reduced deflection angle $\boldsymbol{\alpha}$ 
 the gradient of $\psi$, i.e.
 \begin{equation}
-  \mathbf{a} 
-  = \nabla_{\mathbf{x}}\psi
+  \boldsymbol{\alpha} 
+  = \nabla_{\mathbf{x}}\psi.
 \end{equation}
-Different forms of $\psi$ give[^nabla],
+In angular coordintes, which we prefer here, the chain rule gives[^nabla],
 \begin{align}
-  \mathbf{a} 
+  \boldsymbol{\alpha} 
   = \xi_0\cdot\nabla_{\xi}\psi
   = \frac{\xi_0}{D_L}\cdot\nabla_{\theta}\psi
 \end{align}
@@ -106,71 +161,52 @@ Different forms of $\psi$ give[^nabla],
     We use here the chain rule with $\boldsymbol{\xi}= \xi_0\mathbf{x} $
     and $\theta = \boldsymbol{\xi}/D_L$.
 
-[^kormannalpha]:
-    Kormann uses $\boldsymbol{\alpha}$ for $\mathbf{x}$, but we have
-    already used that for $\theta-\beta$.
 
-## The Raytrace Equation
-
-The normalised raytrace equation is given as
-\begin{align}
-  \mathbf{y}  = \mathbf{x}  - \mathbf{a}
-\end{align}
-Inserting the gradient for $\mathbf{a}$, we have
+WThe normalised raytrace equation~\eqref{raytraceNorm} is thus rewritten to
 \begin{align}
   \mathbf{y}  = \mathbf{x}  - \nabla_{\mathbf{x}}\psi
 \end{align}
-We can rewrite the raytrace equation using any of the forms of $\nabla\psi$.
-In terms of $\xi$, we have
-\begin{equation}
-  \boldsymbol{\eta} 
-  = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}
-  = \frac{D_S}{D_L}(\boldsymbol{\xi} - \xi_0\mathbf{a})
-  = \frac{D_S}{D_L}(\boldsymbol{\xi} - \xi_0^2\nabla_{\xi}\psi)
-\end{equation}
-In terms of angles, we have
+Working on the sphere, id est; rewriting to our preferred angular coordinate system, the chain rule 
+gives
 \begin{equation}
   \boldsymbol{\beta} 
-  = \theta - \alpha
-  = \theta - \frac{\xi_0}{D_L}\mathbf{a}
-  = \theta - \frac{\xi_0}{D_L}\mathbf{a}
-  = \theta - \frac{\xi_0^2}{D_L^2}\nabla_{\theta}\psi
+  = \theta - \frac{\xi_0}{D_L}\alpha
+  = \theta - \frac{\xi_0}{D_L}\boldsymbol{\alpha}
+  = \theta - \frac{\xi_0^2}{D_L^2}\nabla_{\theta}\psi.
 \end{equation}
+This final equation shall be taken as motivation to redefine the standard lensing potential 
+ever so slightly. Let $\psi$ be the usual lensing potential. Then we define
 
-
-## Lens Potential in CosmoSim
-
-In the implementation of CosmoSim, we have used a different
-definition of $\psi$,
 \begin{equation}
-  \psi^{\mathrm{R}} = \frac{\xi_0^2}{D_L^2}\psi
+  \boxed{\psi^{\mathrm{R}} = \frac{\xi_0^2}{D_L^2}\psi}
 \end{equation}
-**TODO** double-check this
 
-In this notation, we can write the raytrace equation as
+
+In this notation, we find the following pleasing expression for the angular version of 
+the ray-trace equation:
+
 \begin{equation}
-  \boldsymbol{\eta} 
-  = \frac{D_S}{D_L}(\boldsymbol{\xi} - \nabla_{\xi}\psi^{\mathrm{R}})
-  = \boldsymbol{\nu} - \frac{D_S}{D_L} \nabla_{\xi}\psi^{\mathrm{R}}
+\boxed{\boldsymbol{\beta} = \theta - \nabla_{\theta}\psi^R.}
 \end{equation}
-This is relation is implemented in the `RaytraceModel::calculateEta()` 
-function in CosmoSim.
+This relation is implemented in the `RaytraceModel::calculateEta()` 
+function in CosmoSim. It follows that 
+
+$$\boxed{\boldsymbol{\alpha}=\frac{1}{\theta_E}\nabla_\theta\psi^R}$$
 
 ## Surface Mass Density
 
-The convergence, or dimensionless projected surface-mass density, is given
-as a function $\kappa$, which is related to $\psi$ as follows:
+A final, very central concept in lensing, is the convergence $\kappa$. This is the dimensionless,
+projected surface-mass density, which is related to $\psi$ through the Poisson equation. In our 
+coordinates this gives
 \begin{equation}
-  \kappa(\boldsymbol{\xi})= \frac12\xi_0^2\left(
-     \frac{\partial^2\psi}{\partial\xi_1^2} + 
-     \frac{\partial^2\psi}{\partial\xi_2^2}
-     \right)
+  \boxed{\kappa(\boldsymbol{\theta})= \frac12\nabla_\theta\psi^R}
 \end{equation}
-or
+
+Writing it out more explicitely, we find 
 \begin{equation}
-  \kappa(\boldsymbol{\xi})= \frac12D_L^2\left(
-     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\xi_1^2} + 
-     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\xi_2^2}
+\kappa(\boldsymbol{\theta})= \frac12\left(
+     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\theta_1^2} + 
+     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\theta_2^2}
      \right)
 \end{equation}
 
