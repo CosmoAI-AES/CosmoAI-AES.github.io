@@ -25,6 +25,7 @@ modules.
 ```{code-cell} ipython3
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 from PIL import Image
 import toml
 ```
@@ -280,38 +281,130 @@ def quadSim( param ):
 
     fig.add_subplot(2, 2, 3)
     plt.imshow( imRoulette, cmap='gray')
-
     plt.title( "Roulette Simulation" )
     plt.axis("off")
+    
     fig.add_subplot(2, 2, 4)
-    plt.imshow( im, cmap='gray')
+    plt.imshow( imRaytrace, cmap='gray')
     plt.title( "Raytrace Simulation" )
     plt.axis("off")
+
+    return( imRaytrace, imRoulette, imRaytraceSampled, imRouletteSampled )
 ```
 
 ## The triangle source
 
+The triangle source is specially designed for visual comparison of lensing
+configurations.  This is what we get.
+
 ```{code-cell} ipython3
 param["source"]["mode"] = "Triangle"
-quadSim( `param` )
+(im1,im2,im3,im4) = quadSim( param )
 ```
 
-# Old sketches
+Since we stored the four images in variables (`im1` through `im4`), we can
+also compare them using difference images.  However, we have to take the range
+($0\ldots255$) into account when we calculate the difference.  The following
+function does this
 
-
-With the simulator instance, we can get the image.  We take an annotated version which shows the centre of light (green) and the reference point for roulette expansion (blue).
-
+```{code-cell} ipython3
+def imageDiff(im1,im2):
+    return ( (im1.astype(float) - im2.astype(float) + 256)/2 ).astype(np.uint8)
 ```
-def annotatedSim(imsim):
-    im = imsim.getAnnotated()WithWith
-    print( "Centre point", imsim.centrepoint )
-    print( "Prior shape", im.shape )
-    csimg.drawAxes( im )
-    im = csimg.crop( im )
-    print( "Posterior shape", im.shape )
-    return im
-im = annotatedSim(imsim)
+
+Armed with the function, we can plot diff images.
+
+```{code-cell} ipython3
+fig = plt.figure(figsize=(14,7))
+fig.tight_layout(pad=0.0)
+plt.subplots_adjust(hspace=0.1, wspace=0.1) 
+
+fig.add_subplot(1, 3, 1)
+plt.imshow( imageDiff( im1, im3 ), cmap='gray')
+plt.title( "Raytrace Simulation" )
 plt.axis("off")
-plt.title( fn )
-plt.imshow(im)
+
+fig.add_subplot(1, 3, 2)
+plt.imshow( imageDiff( im2, im3 ), cmap='gray')
+plt.title( "Roulette Simulation" )
+plt.axis("off")
+    
+fig.add_subplot(1, 3, 3)
+plt.imshow( imageDiff( im4, im3 ), cmap='gray')
+plt.title( "Sampled Roulette Simulation" )
+plt.axis("off")
 ```
+
+We see that the two raytrace simulations perfectly match, except for the
+tiny anomilty in the centre, which is probably due to the singularity of
+the lens potential at the origin.
+
+The roulette simulations match well within the convergence ring.
+
+What should concern us at the minute is the very small convergence ring 
+for the unsampled roulette simulation.  This does look wrong.
+
+## The number of Roulette terms
+
+The roulette simulation is based on a truncated series, but we did
+not pay attention to the number of terms retained above.
+A potential problem is that only five terms have been analytically
+computed for the SIE lens.  This may explain the poor performance.
+Since numerical differentiation is fast, there is no issue in using many terms
+in the sampled version.
+We can set the number of terms as follows.
+
+
+```{code-cell} ipython3
+param["simulator"]["nterms"] = 5
+param["simulator"]["model"] = "Roulette"
+param["simulator"]["sampled"] = False
+imsim = SimImage( param, verbose=0 )
+imr = imsim.getImage()
+plt.imshow( imr, cmap='gray')
+plt.title( "Roulette with five terms" )
+plt.axis("off")
+```
+
+This looks a great deal better.  The small triangles are obviously the spurious images forming around the convergence ring.
+To see better, we can add an axis cross, which also tells us exactly where the lens is, at the origin.
+
+```{code-cell} ipython3
+csimg.drawAxes( imr )
+plt.imshow( imr, cmap="grey" )
+```
+
+To see it all, we can plot all the four simulations.
+
+```{code-cell} ipython3
+param["source"]["mode"] = "Triangle"
+(im1,im2,im3,im4) = quadSim( param )
+```
+
+The difference images are as follows (compared against sampled raytrace).
+
+```{code-cell} ipython3
+fig = plt.figure(figsize=(14,7))
+fig.tight_layout(pad=0.0)
+plt.subplots_adjust(hspace=0.1, wspace=0.1) 
+
+fig.add_subplot(1, 3, 1)
+plt.imshow( imageDiff( im1, im3 ), cmap='gray')
+plt.title( "Raytrace Simulation" )
+plt.axis("off")
+
+fig.add_subplot(1, 3, 2)
+plt.imshow( imageDiff( im2, im3 ), cmap='gray')
+plt.title( "Roulette Simulation" )
+plt.axis("off")
+    
+fig.add_subplot(1, 3, 3)
+plt.imshow( imageDiff( im4, im3 ), cmap='gray')
+plt.title( "Sampled Roulette Simulation" )
+plt.axis("off")
+```
+
+This gives a much better match.  The sampled roulette has a little
+noise compared to the unsampled versions, but this may just be due
+to sampling and numerical error.
+
