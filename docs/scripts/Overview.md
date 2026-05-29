@@ -7,17 +7,28 @@ usemathjax: true
 
 # CosmoSim on the Command Line 
 
-The CosmoSim library provides a range of scripts.
+The CosmoSim module is executable (as of version 3.0.0),
+providing several modes of operation.
++ `python -m CosmoSim --version` shows version information and exits.
++ `python -m CosmoSim --rnd --toml infile  --csvfile outfile ...` 
+  does bulk simulation, generating random parameters based on the
+  specification in the `infile`.
++ `python -m CosmoSim --csvfile fn ...` (without `--rnd`)
+  does bulk simulation using the given set of parameters.
++ `python -m CosmoSim --roulette fn ...` 
+  does roulette resimulation using amplitudes from the given file.
 
-
-+ [`CosmoSim.datagen`](datagen%20script) is the main CLI tool 
-    + bulk generation of images
+The dataset generation (`rnd`) can also be accessed separately:
 + `CosmoSim.dataset`
     + random generation of parameters for data sets
     + the output is a CSV file to be read by `datagen.py`
     + **TODO** further documentation
-+ `CosmoSim.roulettegen`  [](Roulette%20Resimulation)
-    + generate images from a set of roulette amplitudes
+
++ In version 2.x, the main functionality was split between two scripts
+    + [`CosmoSim.datagen`](datagen%20script) is the main CLI tool 
+        + bulk generation of images
+    + `CosmoSim.roulettegen`  [](Roulette%20Resimulation)
+        + generate images from a set of roulette amplitudes
 
 ## Other scripts
 
