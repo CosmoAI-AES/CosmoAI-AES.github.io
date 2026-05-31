@@ -354,7 +354,6 @@ Since numerical differentiation is fast, there is no issue in using many terms
 in the sampled version.
 We can set the number of terms as follows.
 
-
 ```{code-cell} ipython3
 param["simulator"]["nterms"] = 5
 param["simulator"]["model"] = "Roulette"
@@ -408,3 +407,82 @@ This gives a much better match.  The sampled roulette has a little
 noise compared to the unsampled versions, but this may just be due
 to sampling and numerical error.
 
+## Elliptic source
+
+Finally, lets look at elliptic sources.  We reset the simulator to 
+Raytrace and SIE, and change the source to `SersicEllipsoid`.
+
+```{code-cell} ipython3
+param["simulator"]["config"] = "raysie"
+param["source"]["mode"] = "SersicEllipsoid"
+(im1,im2,im3,im4) = quadSim( param )
+```
+
+We also compute the diff images
+
+```{code-cell} ipython3
+fig = plt.figure(figsize=(14,7))
+fig.tight_layout(pad=0.0)
+plt.subplots_adjust(hspace=0.1, wspace=0.1) 
+
+fig.add_subplot(1, 3, 1)
+plt.imshow( imageDiff( im1, im3 ), cmap='gray')
+plt.title( "Raytrace Simulation" )
+plt.axis("off")
+
+fig.add_subplot(1, 3, 2)
+plt.imshow( imageDiff( im2, im3 ), cmap='gray')
+plt.title( "Roulette Simulation" )
+plt.axis("off")
+    
+fig.add_subplot(1, 3, 3)
+plt.imshow( imageDiff( im4, im3 ), cmap='gray')
+plt.title( "Sampled Roulette Simulation" )
+plt.axis("off")
+```
+
+It may also be interesting to rotate the source differently
+
+```{code-cell} ipython3
+print( param.get( ("source","theta") ) )
+param["source"]["theta"] = 90
+(im1,im2,im3,im4) = quadSim( param )
+```
+
+We observe that the original rotation of the source was 45°.
+We changed it to 90°.
+
+```{code-cell} ipython3
+fig = plt.figure(figsize=(14,7))
+fig.tight_layout(pad=0.0)
+plt.subplots_adjust(hspace=0.1, wspace=0.1) 
+
+fig.add_subplot(1, 3, 1)
+plt.imshow( imageDiff( im1, im3 ), cmap='gray')
+plt.title( "Raytrace Simulation" )
+plt.axis("off")
+
+fig.add_subplot(1, 3, 2)
+plt.imshow( imageDiff( im2, im3 ), cmap='gray')
+plt.title( "Roulette Simulation" )
+plt.axis("off")
+    
+fig.add_subplot(1, 3, 3)
+plt.imshow( imageDiff( im4, im3 ), cmap='gray')
+plt.title( "Sampled Roulette Simulation" )
+plt.axis("off")
+```
+
+One may get a better impression of the ellipsoid shape by making the 
+source larger, but this is left as an exercise for the reader.
+
+::: {tip}
+To change the source size, one uses
+```
+param["source"]["sigma"] = 20
+param["source"]["sigma2"] = 40
+:::
+The parameter `sigma` refers to the standard deviation in a Gaussian
+light profile.  Ellipsoid spheres have a size parameter along each axis,
+hence `sigma` and `sigma2`.
+:::
