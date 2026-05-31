@@ -37,7 +37,7 @@ errors and inconsistencies.
 + [CosmoSim Demo](/docs/demo/index) showing API operation in Jupyter Notebook
 + [](/docs/ML/Pipeline) with `droulette`
     + other details on [](/docs/droulette)
-+ [User Tools](/docs/scripts/) for command line operation.
++ [User Tools](/docs/scripts/Overview.md) for command line operation.
 
 To understand the software, it will be necessary to have at least
 a superficial understanding of the [](math/math).
