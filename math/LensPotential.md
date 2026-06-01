@@ -71,7 +71,7 @@ we may also write down the equation
 
 \begin{align}
 \label{raytraceAng}
-\boldsymbol{\beta}=\boldsymbol{\theta}-\frac{\xi_0}{D_L}\boldsymbol{\alpha}.
+\boldsymbol{\beta}=\boldsymbol{\theta}-\alpha.
 \end{align}
 
 Considering small angles,
@@ -97,7 +97,7 @@ $$
 \begin{align}
   \mathbf{x}= \frac{\boldsymbol{\xi}}{\xi_0}\quad,\quad\mathbf{y} = \frac{\boldsymbol{\eta}}{\eta_0}
      \quad\text{where } \eta_0 = \frac{D_S}{D_L}\xi_0\quad,\quad
-  \boldsymbol{\alpha} = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
+  \mathbf{a} = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
 \end{align}
 $$
 In addition to the previously mentioned (cosmological) distances $D_L$, $D_S$ and $D_{LS}$ we must thus
@@ -111,7 +111,7 @@ In normalised coordinates the ray-trace equation reads
 $$
 \begin{align}
 \label{raytraceNorm}
-\mathbf{y}=\mathbf{x}-\boldsymbol{\alpha},
+\mathbf{y}=\mathbf{x}-\mathbf{a},
 \end{align}
 $$
 which also explains the particular definition of $\boldsymbol{\alpha}$: it makes the normalized 
