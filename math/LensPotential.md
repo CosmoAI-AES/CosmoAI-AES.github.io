@@ -97,7 +97,7 @@ $$
 \begin{align}
   \mathbf{x}= \frac{\boldsymbol{\xi}}{\xi_0}\quad,\quad\mathbf{y} = \frac{\boldsymbol{\eta}}{\eta_0}
      \quad\text{where } \eta_0 = \frac{D_S}{D_L}\xi_0\quad,\quad
-  \mathbf{a} = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
+  \mathbf{a} = \frac{D_L}{\xi_0}\alpha=\frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
 \end{align}
 $$
 In addition to the previously mentioned (cosmological) distances $D_L$, $D_S$ and $D_{LS}$ we must thus
@@ -114,7 +114,7 @@ $$
 \mathbf{y}=\mathbf{x}-\mathbf{a},
 \end{align}
 $$
-which also eexplains the particular definition of $\boldsymbol{\alpha}$: it makes the normalized 
+which also explains the particular definition of $\boldsymbol{\alpha}$: it makes the normalized 
 version of the ray-trace equation look very nice and tidy. The normalisation presented above is however
 somewhat different from the one we shall prefer in this work, **where we shall prefer to work in angular coordinates,** 
 such as the ones given in Eq.~\eqref{raytraceAng}.In the sections to follow, such coordinates will therefore
@@ -127,7 +127,7 @@ $$\beta=0\quad\rightarrow\quad \alpha\equiv\theta_E$$
 The particular value of $\alpha$ for which the source is directly behind the lens is known as the angular Einstein radius. The physical radius in the lens plane corresponding to the angular Einstein radius is known as the Einstein radius. 
 
 $$R_E\equiv D_L\theta_E$$
-Note that for a so-called SIS-lens and similarely for the Point-mass lens (PML), the deflection $\hat{\alpha}$ and hence the reduced deflection angle $\alpha$ may be calculated. One then finds that the normalization variable chosen earlier is in fact the Einstein radius:
+Note that for a so-called SIS-lens and similarely for the Point-mass lens (PML), the deflection $\hat{\alpha}$ and hence also $\mathbf{a}$ may be calculated. In fact one finds $a=1$. By such it is readily shown that 
 
 $$\boxed{R_E^{SIS}=R_E^{PML}=\xi_0.}$$
 :::
