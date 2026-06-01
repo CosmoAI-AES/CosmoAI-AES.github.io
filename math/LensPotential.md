@@ -71,7 +71,7 @@ we may also write down the equation
 
 \begin{align}
 \label{raytraceAng}
-\boldsymbol{\beta}=\boldsymbol{\theta}-\alpha.
+\boldsymbol{\beta}=\boldsymbol{\theta}-\boldsymbol{\alpha}
 \end{align}
 
 Considering small angles,
@@ -114,29 +114,22 @@ $$
 \mathbf{y}=\mathbf{x}-\mathbf{a},
 \end{align}
 $$
-which also explains the particular definition of $\boldsymbol{\alpha}$: it makes the normalized 
+which also eexplains the particular definition of $\boldsymbol{\alpha}$: it makes the normalized 
 version of the ray-trace equation look very nice and tidy. The normalisation presented above is however
 somewhat different from the one we shall prefer in this work, **where we shall prefer to work in angular coordinates,** 
 such as the ones given in Eq.~\eqref{raytraceAng}.In the sections to follow, such coordinates will therefore
 be our focus.
 
-::: {note} Einstein Radius $R_E$ and $\Theta_E$
-Consider a source directly behind a spherically symmetric lens. Id est, consider a source at $y=0$. In that case the
-normalized ray-trace equation yields
-$$x=\alpha.$$
-Reinstating dimensionfull variables $\boldsymbol{\xi}=\xi_0\mathbf{x}$ we find $\boldsymbol{\xi}=\xi_0\boldsymbol{\alpha}$.
-This radius is known as the Einstein radius.
+::: {note} Einstein Radius $R_E$ and $\theta_E$
+Consider a source directly behind a spherically symmetric lens. Id est, consider a source at $\beta=0$. In that case the
+angular form of the ray-trace equation yields
+$$\beta=0\quad\rightarrow\quad \alpha\equiv\theta_E$$
+The particular value of $\alpha$ for which the source is directly behind the lens is known as the angular Einstein radius. The physical radius in the lens plane corresponding to the angular Einstein radius is known as the Einstein radius. 
 
-$$R_E\equiv \xi_0\alpha.$$
-Note that for a so-called SIS-lens and similarely for the Point-mass lens (PML), both of which will be discussed later,
-calculations yield 
+$$R_E\equiv D_L\theta_E$$
+Note that for a so-called SIS-lens and similarely for the Point-mass lens (PML), the deflection $\hat{\alpha}$ and hence the reduced deflection angle $\alpha$ may be calculated. One then finds that the normalization variable chosen earlier is in fact the Einstein radius:
 
 $$\boxed{R_E^{SIS}=R_E^{PML}=\xi_0.}$$
-
-When we talk about the Einstein radius, we shall usually mean the one corresponding to the SIS /PML Einstein radius, without 
-explicitely mentioning. The final relation above is therefore important to note. Also note that the Einstein radius is
-commonly referred to in angular variables (in the lens plane), in which one defines
-$$\theta_E=\frac{R_E}{D_L}.$$
 :::
 
 
@@ -144,10 +137,10 @@ $$\theta_E=\frac{R_E}{D_L}.$$
 Considering a thin lens, it is customary to define the lens potential as the projection of the 3D gravitaitonal lens
 potential down on the lens plane. Such a simplification is typically warranted, due to $D_L \gt\gt \xi_0$.
 
-Our starting point here will be to define the lensing potential to so that its gradient is the reduced deflection angle $\boldsymbol{\alpha}$ 
+To connect with SEF and other standard literature we will start by defining the lensing potential so that its gradient is the so-called reduced deflection angle $\mathbf{a}$ 
 the gradient of $\psi$, i.e.
 \begin{equation}
-  \boldsymbol{\alpha} 
+  \mathbf{a} 
   = \nabla_{\mathbf{x}}\psi.
 \end{equation}
 In angular coordintes, which we prefer here, the chain rule gives[^nabla],
@@ -162,16 +155,16 @@ In angular coordintes, which we prefer here, the chain rule gives[^nabla],
     and $\theta = \boldsymbol{\xi}/D_L$.
 
 
-WThe normalised raytrace equation~\eqref{raytraceNorm} is thus rewritten to
+The normalised raytrace equation~\eqref{raytraceNorm} is thus rewritten to
 \begin{align}
   \mathbf{y}  = \mathbf{x}  - \nabla_{\mathbf{x}}\psi
 \end{align}
-Working on the sphere, id est; rewriting to our preferred angular coordinate system, the chain rule 
+Working on the sphere we also had 
 gives
 \begin{equation}
   \boldsymbol{\beta} 
-  = \theta - \frac{\xi_0}{D_L}\alpha
-  = \theta - \frac{\xi_0}{D_L}\boldsymbol{\alpha}
+  = \theta - \alpha
+  = \theta - \frac{\xi_0}{D_L}\mathbf{a}
   = \theta - \frac{\xi_0^2}{D_L^2}\nabla_{\theta}\psi.
 \end{equation}
 This final equation shall be taken as motivation to redefine the standard lensing potential 
@@ -191,7 +184,7 @@ the ray-trace equation:
 This relation is implemented in the `RaytraceModel::calculateEta()` 
 function in CosmoSim. It follows that 
 
-$$\boxed{\boldsymbol{\alpha}=\frac{1}{\theta_E}\nabla_\theta\psi^R}$$
+$$\boxed{\boldsymbol{\alpha}=\theta_E\mathbf{a}=\nabla_\theta\psi^R}$$
 
 ## Surface Mass Density
 
