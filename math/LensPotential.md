@@ -96,7 +96,7 @@ It is customary to normalise using a constant factor $\xi_0$. This gives the fol
 $$
 \begin{align}
   \mathbf{x}= \frac{\boldsymbol{\xi}}{\xi_0}\quad,\quad\mathbf{y} = \frac{\boldsymbol{\eta}}{\eta_0}
-     \quad\text{where } \nu_0 = \frac{D_S}{D_L}\xi_0\quad,\quad
+     \quad\text{where } \eta_0 = \frac{D_S}{D_L}\xi_0\quad,\quad
   \boldsymbol{\alpha} = \frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
 \end{align}
 $$
