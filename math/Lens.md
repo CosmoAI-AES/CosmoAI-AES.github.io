@@ -35,7 +35,8 @@ $$
 $$
 Thus the reduced deflection angle is in the SIS case given as
 
-$$\boldsymbol{\alpha}=\frac{1}{\theta_E}\left(\theta_1,\theta_2\right).$$
+$$\boldsymbol{\alpha}=\frac{\theta_E}{\theta}\left(\theta_1,\theta_2\right).$$
+Note that the norm of this vector is constant; $\alpha=|\boldsymbol{\alpha}|=\theta_E.$
 
 See `psiXvalue` and `psiYvalue` in `SIS.cpp`.
 
