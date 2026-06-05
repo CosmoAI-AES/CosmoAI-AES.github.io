@@ -206,6 +206,11 @@ This also means that if there are different sources at different depths,
 they will require different lens models in the implementation.
 :::
 
+::: {note} Implementation
+An overview of how the model parameters are represented in the code,
+see [](/docs/Notation).
+:::
+
 ## Surface Mass Density
 
 A final, very central concept in lensing, is the convergence $\kappa$.

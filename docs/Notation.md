@@ -12,10 +12,17 @@ descriptions.
     + the value is retrieved as `SimulatorModel::getEta()`.
 + `einsteinR` refers to the Einstein radius $\theta_E$.
     + `theta` refers to the rotation of an elliptic source.
-+ The actual position $\nu$ or $\theta$ is denoted `nu` with no disctinction
-  between the angular position $\theta$ and the position $\nu$ in the source
-  plane.
++ The actual position $\theta$ is denoted `nu` 
+    + using angular co-ordinates, we identify $\nu$ and $\xi$ with $\theta$,
+      and variables and functions are not consistently named.
+    + `nu` is computed by `Lens::getXi()` (which may be overridden)
+      as a function of `eta` ($\beta$).
 + `referenceXi` is the point in which the roulette amplitudes are computed.
+    + In the standard mode of operation, this is equal to `nu` ($\theta$),
+      but it is possible to set it arbitrarily.
++ `xi` is often used as a local variable, referring to an observed point
+  where the light intensity is being computed.  It is not fixed point in
+  the model.
 
 ## Image coordinates
 
