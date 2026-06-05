@@ -7,12 +7,24 @@ usemathjax: true
 
 ![Geometric model as described in the text](observer.png)
 
-We assume a flat sky, so that the source is contained in a plane $S$
-at distance $D_S$ from the observer, and the lens in a plane $L$ at
-distance $D_L$ from the observer.
+we assume a flat sky and a thin lens, which means the lens is 
+concentrated in one plane, orthogonal on the line of sight, with
+no extension in depth. We call this the lens plane $L$.
+Similarly, the source that we observe through the lens, is concentrated 
+in a parallel plane, called the source plane $S$.
+The distances to the lens and source planes are denoted
+$D_L$ and $D_S$ respectively.
 The optical axis is the line from the observer through the lens.
-The planes $S$ and $L$ are orthogonal on the optical axis, and have
-origin in the intersection therewith.
+
+::: {note} Justified assumptions
+The flat sky assumption comes from a local approxation of a sphere
+as a plane.  The visible sky is really a sphere, but considering a 
+sufficiently small section, it can be treated as a plane.
+
+The thin lens assumption comes from the sparsity of mass in the universe.
+The extent of the lens in depth is assumed to be negligible compared to
+the distance $D_L$.
+:::
 
 We consider a single source point at $\boldsymbol{\eta}$ in $S$.
 The apparent position, as seen by the observer, is at $\nu$ and
@@ -23,10 +35,14 @@ $$\boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}.$$
 ::: {note} Cosmological distances depend on time (/redshift)
 As a note to the side, the distancees $D_L$ and $D_S$ are cosmological,
 meaning that they depend on time. This is due to the expansion of the fabric of the 
-cosmos (space). This expansion is measured through something known as redshifting $z$ of 
-light. Such considerations are spared for a later section, and we suffice it for now 
-to mention that such distances are not additive in the ordinary sense. Let $D_{LS}(z)$ be 
-the distance between the lens plane and the source plane. Then $D_S(z)\,\neq\,D_{L}(z)+D_{S}(z).$
+cosmos (space).
+This expansion is measured through something known as redshifting $z$ of 
+light.
+Such considerations are spared for a later section, and we suffice it for now 
+to mention that such distances are not additive in the ordinary sense.
+Let $D_{LS}(z)$ be 
+the distance between the lens plane and the source plane.
+Then $D_S(z)\,\neq\,D_{L}(z)+D_{S}(z).$
 We come back to this in due time.
 :::
 
@@ -49,37 +65,27 @@ $$ \boldsymbol{\Delta\eta}= D_{LS}\hat{\boldsymbol{\alpha}}.$$
 
 Now, we can write the actual image as
 
-\begin{align}
-\label{raytracePhys}
+$$
 \boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}
-\end{align}
-
+$$ (raytracePhys)
 
 ::: {note} Implementation
-In the implementation, the basic unit is pixels in the source plane,
-and $D_S$ is normalised to 1.
-It is convenient to think of pixels in the source plane corresponding
-to angular distances, so that effectively $\theta=\boldsymbol{\nu}$.
-
-The only relevant distance situated in the lens plane is $\xi$, which
-is also measured in source plane pixels.
-The scaling factor is called $\chi=\frac{D_L}{D_S}=\frac{||\boldsymbol{\xi}||}{||\boldsymbol{\nu}||}$.
+The implementation uses the angular distances $\alpha$ and $\beta$.
 :::
 
 It is noteworthy that if we consider spherical geometries (a source sphere and a lens sphere),
 we may also write down the equation
 
-\begin{align}
-\label{raytraceAng}
+$$
 \boldsymbol{\beta}=\boldsymbol{\theta}-\boldsymbol{\alpha}
-\end{align}
+$$ (raytraceAng)
 
 Considering small angles,
 $$
 \sin\theta\approx\theta
 $$
 
-it may readily be shown that Eq.~\eqref{raytracePhys} and Eq.~\eqref{raytraceAng} are the same.
+it may readily be shown that Eq.~{eq}`raytracePhys` and Eq.~{eq}`raytraceAng` are the same.
 It is this latter equation that we shall take to be our constitutive relation. But before
 we get there, let us also introduce the standard way of normalizing. 
 
@@ -109,31 +115,34 @@ the lens, along the optical axis.
 In normalised coordinates the ray-trace equation reads 
 
 $$
-\begin{align}
-\label{raytraceNorm}
 \mathbf{y}=\mathbf{x}-\mathbf{a},
-\end{align}
-$$
+$$ (raytraceNorm)
 which also explains the particular definition of $\boldsymbol{\alpha}$: it makes the normalized 
 version of the ray-trace equation look very nice and tidy. The normalisation presented above is however
-somewhat different from the one we shall prefer in this work, **where we shall prefer to work in angular coordinates,** 
-such as the ones given in Eq.~\eqref{raytraceAng}.In the sections to follow, such coordinates will therefore
-be our focus.
+somewhat different from the one we shall prefer in this work,
+**where we shall prefer to work in angular coordinates,** 
+such as the ones given in Eq.~{eq}`raytraceAng`.
+In the sections to follow, such coordinates will therefore be our focus.
 
-::: {note} Einstein Radius $R_E$ and $\theta_E$
+::: {note} Definition: Einstein Radius 
 Consider a source directly behind a spherically symmetric lens. Id est, consider a source at $\beta=0$. In that case the
 angular form of the ray-trace equation yields
 $$\beta=0\quad\rightarrow\quad \alpha\equiv\theta_E$$
-The particular value of $\alpha$ for which the source is directly behind the lens is known as the angular Einstein radius. The physical radius in the lens plane corresponding to the angular Einstein radius is known as the Einstein radius. 
-
+The particular value of $\alpha$ for which the source is directly behind the lens is known as the angular Einstein radius.
+The physical radius in the lens plane corresponding to the angular Einstein radius is known as the Einstein radius. 
 $$R_E\equiv D_L\theta_E$$
-Note that for a so-called SIS-lens and similarely for the Point-mass lens (PML), the deflection $\hat{\alpha}$ and hence also $\mathbf{a}$ may be calculated. In fact one finds $a=1$. By such it is readily shown that 
+:::
+
+::: {note} Einstein Radius for SIS and Point Mass
+Note that for a so-called SIS-lens and similarely for the Point-mass lens (PML),
+the deflection $\hat{\alpha}$ and hence also $\mathbf{a}$ may be calculated. In fact one finds $a=1$. By such it is readily shown that 
 
 $$\boxed{R_E^{SIS}=R_E^{PML}=\xi_0.}$$
 :::
 
 
-## The thin-lens approximation and the lens-potential $\psi$  
+## The lens-potential $\psi$  
+
 Considering a thin lens, it is customary to define the lens potential as the projection of the 3D gravitaitonal lens
 potential down on the lens plane. Such a simplification is typically warranted, due to $D_L \gt\gt \xi_0$.
 
@@ -155,7 +164,7 @@ In angular coordintes, which we prefer here, the chain rule gives[^nabla],
     and $\theta = \boldsymbol{\xi}/D_L$.
 
 
-The normalised raytrace equation~\eqref{raytraceNorm} is thus rewritten to
+The normalised raytrace equation~{eq}`raytraceNorm` is thus rewritten to
 \begin{align}
   \mathbf{y}  = \mathbf{x}  - \nabla_{\mathbf{x}}\psi
 \end{align}
@@ -175,16 +184,16 @@ ever so slightly. Let $\psi$ be the usual lensing potential. Then we define
 \end{equation}
 
 
-In this notation, we find the following pleasing expression for the angular version of 
-the ray-trace equation:
-
-\begin{equation}
-\boxed{\boldsymbol{\beta} = \theta - \nabla_{\theta}\psi^R.}
-\end{equation}
-This relation is implemented in the `RaytraceModel::calculateEta()` 
-function in CosmoSim. It follows that 
-
+In this notation, we find the following pleasing expression for the 
+angular version of the ray-trace equation:
+$$
+\boxed{\boldsymbol{\beta} = \theta - \nabla_{\theta}\psi^R(\theta).}
+$$ (raytraceeq)
+It follows that 
 $$\boxed{\boldsymbol{\alpha}=\theta_E\mathbf{a}=\nabla_\theta\psi^R}$$
+
+The raytrace equation {eq}`raytraceeq` is implemented as 
+`RaytraceModel::calculateEta()` in CosmoSim.
 
 ## Surface Mass Density
 
