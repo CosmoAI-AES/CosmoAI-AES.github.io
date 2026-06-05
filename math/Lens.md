@@ -10,10 +10,19 @@ Stars and other celestial objects may sometimes be modelled as so-called point-m
 The gravitational potential is in this case  
 $$
 \begin{aligned}
-\psi^R = \theta_E^2\ln \frac{\theta}{\theta_E}
+\psi^R = \theta_E^2\ln\theta
 \end{aligned}
 $$
-where $\theta_E$ is the previously defined angular Einstein radius, $\theta_E=R_E/D_L$ and where $\theta=\sqrt{\theta_1^2+\theta_2^2}.$
+where $\theta_E$ is the previously defined angular Einstein radius, $\theta_E=R_E/D_L$ and where $\theta=\sqrt{\theta_1^2+\theta_2^2}.$ 
+:::{note}
+Note that if one starts from $\psi=\ln{x} one finds 
+$$
+\begin{aligned}
+\psi^R = \theta_E^2\ln\frac{\theta}{\theta_E}= \theta_E^2\ln\theta-\theta_E^2\ln\theta_E
+\end{aligned}
+But the latter term is a constant, and the potential is always defined only up to a constant term, which shows that these two expressions are the same, as far as physics is concerned.
+$$
+:::
 
 ## SIS (Singular isothermal sphere)
 
