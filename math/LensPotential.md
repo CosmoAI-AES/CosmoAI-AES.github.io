@@ -195,9 +195,21 @@ $$\boxed{\boldsymbol{\alpha}=\theta_E\mathbf{a}=\nabla_\theta\psi^R}$$
 The raytrace equation {eq}`raytraceeq` is implemented as 
 `RaytraceModel::calculateEta()` in CosmoSim.
 
+::: {warning}
+The model may give the impression that the distortion is independent
+of the distances $D_S$ and $D_L$.  
+In fact, the Einstein radius $\theta_E$ depends on the relative distance
+$\frac{D_L}{D_S}$, as can be verified by studying the geometry
+and the angles $\alpha$ and $\hat\alpha$.
+
+This also means that if there are different sources at different depths,
+they will require different lens models in the implementation.
+:::
+
 ## Surface Mass Density
 
-A final, very central concept in lensing, is the convergence $\kappa$. This is the dimensionless,
+A final, very central concept in lensing, is the convergence $\kappa$.
+This is the dimensionless,
 projected surface-mass density, which is related to $\psi$ through the Poisson equation. In our 
 coordinates this gives
 \begin{equation}
