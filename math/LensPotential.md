@@ -127,9 +127,10 @@ $$\beta=0\quad\rightarrow\quad \alpha\equiv\theta_E$$
 The particular value of $\alpha$ for which the source is directly behind the lens is known as the angular Einstein radius. The physical radius in the lens plane corresponding to the angular Einstein radius is known as the Einstein radius. 
 
 $$R_E\equiv D_L\theta_E$$
-Note that for a so-called SIS-lens and similarely for the Point-mass lens (PML), the deflection $\hat{\alpha}$ and hence also $\mathbf{a}$ may be calculated. In fact one finds $a=1$. By such it is readily shown that 
+Note that for a so-called SIS-lens and similarely for the Point-mass lens (PML), the deflection $\hat{\alpha}$ and hence also $\mathbf{a}$ may be calculated. In fact one finds $a=1$. By such it is readily shown that both in the case of a PML and in the case of SIS the normalization constant $\xi$ \textit{is} the Einstein radius.
 
-$$\boxed{R_E^{SIS}=R_E^{PML}=\xi_0.}$$
+$$\boxed{R_E=\xi_0}$$
+Id est: The normalization constant $\xi_0$ is the Einstein radius.
 :::
 
 
