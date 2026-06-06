@@ -21,31 +21,36 @@ and still get consistent nomenclature.
 
 ![The figure shows the set-up for the model used. In particular, the local coordinate systems used in the source plane and lens plane are shown.](/docs/Model_3D.jpeg)
 
+Using angular coordinates, such that 
+$$
+\partial_i=\frac{\partial}{\partial\theta_i}
+$$ 
+we find the following expressions for the so-called Roulette amplitudes.
 
 $$
 \begin{equation}
-\alpha\_s^m = - \frac{1}{2^{\delta\_{0s}}} D\_\textrm{L}^{m+1}
-\sum\_{k=0}^m\binom{m}{k}
-  \left(\mathcal{C}\_s^{m(k)}\partial\_{\xi\_1}+\mathcal{C}\_s^{m(k+1)}\partial\_{\xi\_2}\right)
-\partial\_{\xi\_1}^{m-k}\partial\_{\xi\_2}^k\psi
+\alpha\_s^m = - \frac{1}{2^{\delta_{0s}}}
+\sum_{k=0}^m\binom{m}{k}
+  \left(\mathcal{C}_s^{m(k)}\partial_1+\mathcal{C}_s^{m(k+1)}\partial_2\right)
+\partial_1^{m-k}\partial_2^k\psi
 \end{equation}
 $$
 
 $$
 \begin{equation}
-   \mathcal{C}\_s^{m(k)}=\frac{1}{\pi}\int\_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\cos s\phi
+   \mathcal{C}_s^{m(k)}=\frac{1}{\pi}\int_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\cos s\phi
 \end{equation}
 $$
 
 $$
 \begin{equation}
-   \beta\_s^m=-D\_\textrm{L}^{m+1}\sum\_{k=0}^m\binom{m}{k}\left({\mathcal{S}}\_s^{m(k)}\partial\_{\xi\_1}+{\mathcal{S}}\_s^{m(k+1)}\partial\_{\xi\_2}\right)\partial\_{\xi\_1}^{m-k}\partial\_{\xi\_2}^k\psi
+   \beta\_s^m=-\sum_{k=0}^m\binom{m}{k}\left({\mathcal{S}}_s^{m(k)}\partial_1+{\mathcal{S}}_s^{m(k+1)}\partial_2\right)\partial_1^{m-k}\partial_2^k\psi
 \end{equation}
 $$
 
 $$
 \begin{equation}
-   \mathcal{S}\_s^{m(k)}=\frac{1}{\pi}\int\_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\sin s\phi.
+   \mathcal{S}_s^{m(k)}=\frac{1}{\pi}\int_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\sin s\phi.
 \end{equation}
 $$
 
