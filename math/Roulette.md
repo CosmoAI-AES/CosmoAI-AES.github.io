@@ -90,36 +90,38 @@ Thus the light observed at a position (pixel) $(r,\phi)$ is drawn from
 a different position (pixel) $(x',y')=\mathcal{D}$$(r,\phi)$ in the source image.
 From~Eq.~48 in \citet{Clarkson_2016_II} it is possible to show that 
 the mapping $\mathcal{D}$ is given as
+
 $$
 \begin{aligned}
-      \frac{D\_{\mathrm{L}}}{D\_{\mathrm{S}}}\cdot
-   \begin{bmatrix} x' \\\\ y' \end{bmatrix} &=
-   r\cdot\begin{bmatrix} \cos\phi \\\\ \sin\phi \end{bmatrix} 
-      + \sum\_{m=1}^{\infty} \frac{r^m}{m!\cdot D\_{\mathrm{L}}^{m-1}}
-      \cdot\sum\_{s=0}^{m+1} c\_{m+s}
-       \left(\alpha\_s^m \boldsymbol{A}\_{s} + \beta\_s^m \boldsymbol{B}\_{s} \right) 
-       \begin{bmatrix} C^+ \\\\ C^- \end{bmatrix}
-   \\\\\\\\
-   C^\pm &= \pm \frac{s}{m+1},\\\\\\\\
-   c\_{m+s} &= 
+      \frac{D_{\mathrm{L}}}{D_{\mathrm{S}}}\cdot
+   \begin{bmatrix} x' \\ y' \end{bmatrix} &=
+   r\cdot\begin{bmatrix} \cos\phi \\ \sin\phi \end{bmatrix} 
+      + \sum_{m=1}^{\infty} \frac{r^m}{m!\cdot D_{\mathrm{L}}^{m-1}}
+      \cdot\sum_{s=0}^{m+1} c_{m+s}
+       \left(\alpha_s^m \boldsymbol{A}_{s} + \beta_s^m \boldsymbol{B}_{s} \right) 
+       \begin{bmatrix} C^+ \\ C^- \end{bmatrix}
+   \\
+   C^\pm &= \pm \frac{s}{m+1},\\
+   c_{m+s} &= 
       \frac{1 - (-1)^{m+s}}{4} =
    \begin{cases}
-      0, \quad m+s \text{ is even},\\\\\\\\
+      0, \quad m+s \text{ is even},\\
       \frac12, \quad m+s \text{ is odd},
    \end{cases}
-\\\\\\\\
-    \boldsymbol{A}\_{s} &= \begin{bmatrix}
-    \cos{(s-1)\phi} & \cos{(s+1)\phi} \\\\\\\\
+\\
+    \boldsymbol{A}_{s} &= \begin{bmatrix}
+    \cos{(s-1)\phi} & \cos{(s+1)\phi} \\
     -\sin{(s-1)\phi} &  \sin{(s+1)\phi} \end{bmatrix},
-    \\\\\\\\
-    \boldsymbol{B}\_{s} &=
+    \\
+    \boldsymbol{B}_{s} &=
     \begin{bmatrix} 
-        \sin{(s-1)\phi} & \sin{(s+1)\phi} \\\\\\\\
+        \sin{(s-1)\phi} & \sin{(s+1)\phi} \\
         \cos{(s-1)\phi} & -\cos{(s+1)\phi} 
     \end{bmatrix}.
 \end{aligned}
 $$
-The coefficients $\alpha\_m^s$ and $\beta\_m^s$ depend on the lens potential
+
+The coefficients $\alpha_m^s$ and $\beta\_m^s$ depend on the lens potential
 $\psi(\xi_1,\xi_2)$, from which one may derive the physical properties of the lens.
 
 In practice the sum has to be truncated by limiting $m\le m_0$ for some $m_0$.
