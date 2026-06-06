@@ -35,7 +35,6 @@ $$
   \psi^R_\mathrm{SIS}(x,y) = \theta_E\cdot\theta,
 $$
 
-[CHECK: There was a negative sign here that I removed, HG]
 where notation is as for the point-mass case. In the code, we are working in angular variables. Hence what is called `einsteinR` 
 in the code, is the *angular Einstein radius* $\theta_E$. Note that the partial derivatives are readily calculated as
 
