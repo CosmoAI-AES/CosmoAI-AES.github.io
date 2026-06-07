@@ -90,6 +90,7 @@ Thus the light observed at a position (pixel) $(r,\phi)$ is drawn from
 a different position (pixel) $(x',y')=\mathcal{D}$$(r,\phi)$ in the source image.
 From~Eq.~48 in \citet{Clarkson_2016_II} it is possible to show that 
 the mapping $\mathcal{D}$ is given as
+
 $$
 \begin{aligned}
    \begin{bmatrix} \beta_1 \\\\ \beta_2 \end{bmatrix} &=
@@ -103,17 +104,17 @@ $$
    c\_{m+s} &= 
       \frac{1 - (-1)^{m+s}}{4} =
    \begin{cases}
-      0, \quad m+s \text{ is even},\\\\\\\\
+      0, \quad m+s \text{ is even},\\
       \frac12, \quad m+s \text{ is odd},
    \end{cases}
-\\\\\\\\
-    \boldsymbol{A}\_{s} &= \begin{bmatrix}
-    \cos{(s-1)\phi} & \cos{(s+1)\phi} \\\\\\\\
+\\
+    \boldsymbol{A}_{s} &= \begin{bmatrix}
+    \cos{(s-1)\phi} & \cos{(s+1)\phi} \\
     -\sin{(s-1)\phi} &  \sin{(s+1)\phi} \end{bmatrix},
-    \\\\\\\\
-    \boldsymbol{B}\_{s} &=
+    \\
+    \boldsymbol{B}_{s} &=
     \begin{bmatrix} 
-        \sin{(s-1)\phi} & \sin{(s+1)\phi} \\\\\\\\
+        \sin{(s-1)\phi} & \sin{(s+1)\phi} \\
         \cos{(s-1)\phi} & -\cos{(s+1)\phi} 
     \end{bmatrix}.
 \end{aligned}
