@@ -43,13 +43,17 @@ systems: one for calculation and one for presentation.
 + The CSV outfile gives
     + `centreX`, `centreY`   ($\xi'$)
     + `reletaX`, `reletaY`   ($\xi' \mapsto \eta - \xi'$)
-    + `offsetX`, `offsetY`   ($\xi' \mapsto \xi' - \nabla\psi(\xi') - \eta$)
     + `xiX`, `xiY`  (`xioffset` internally: $\xi'\mapsto\nu-\xi'$
+    + `offsetX`, `offsetY`   ($\xi' \mapsto \xi' - \nabla\psi(\xi') - \eta$)
 
 Here $\xi'$ is the origin of the new co-ordinate system, so that
 `xi?` and `releta?` are $\nu$ and $\eta$ in the the new frame.
-The last pair, `offset?` places `referenceXi`, but this is strangely
-defined.
+
+The (`offsetX`,`offsetY`) pair places `referenceXi`.
+It is the difference between the actual source position $\eta$ and the
+source position corresponding to observed position $\xi'$ (`relativeXi`).
+This is used in the `distort()` function in the simulator to get light
+from the right pixel in the source image.
 
 ## Image coordinates
 
