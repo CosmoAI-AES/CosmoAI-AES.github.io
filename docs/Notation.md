@@ -37,13 +37,19 @@ systems: one for calculation and one for presentation.
 
 + The critical points in the simulator are
     + $\xi=\nu$, $\eta$
-    + `referenceXi` which is the reference point for the roulett formalism
+    + `referenceXi` which is the reference point for the roulett formalism.
+      This is normally equal to $\xi=\nu$, but may be set arbitrarily.
     + The lens position which defaults to the origin
 + The CSV outfile gives
     + `centreX`, `centreY`   ($\xi'$)
     + `reletaX`, `reletaY`   ($\xi' \mapsto \eta - \xi'$)
     + `offsetX`, `offsetY`   ($\xi' \mapsto \xi' - \nabla\psi(\xi') - \eta$)
     + `xiX`, `xiY`  (`xioffset` internally: $\xi'\mapsto\nu-\xi'$
+
+Here $\xi'$ is the origin of the new co-ordinate system, so that
+`xi?` and `releta?` are $\nu$ and $\eta$ in the the new frame.
+The last pair, `offset?` places `referenceXi`, but this is strangely
+defined.
 
 ## Image coordinates
 
