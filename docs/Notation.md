@@ -24,6 +24,27 @@ descriptions.
   where the light intensity is being computed.  It is not fixed point in
   the model.
 
+
+## Coordinate system
+
+Applying machine learning, it is important to view the coordinate 
+system as arbitrary.  If, say, the lens is fixed at origin, information
+is leaked.  For this reason, the images are translated to have the origin
+at the centre of visible light.
+
+As a consequence, `CosmoSim` has to consider at least two co-ordinate 
+systems: one for calculation and one for presentation.
+
++ The critical points in the simulator are
+    + $\xi=\nu$, $\eta$
+    + `referenceXi` which is the reference point for the roulett formalism
+    + The lens position which defaults to the origin
++ The CSV outfile gives
+    + `centreX`, `centreY`   ($\xi'$)
+    + `reletaX`, `reletaY`   ($\xi' \mapsto \eta - \xi'$)
+    + `offsetX`, `offsetY`   ($\xi' \mapsto \xi' - \nabla\psi(\xi') - \eta$)
+    + `xiX`, `xiY`  (`xioffset` internally: $\xi'\mapsto\nu-\xi'$
+
 ## Image coordinates
 
 It is important to note that images are indexed as matrices, and not with
