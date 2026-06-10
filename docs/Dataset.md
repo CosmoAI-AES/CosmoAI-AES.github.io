@@ -8,6 +8,15 @@ Hezaveh uses $192\times192$ image size with a pixel size of 0.04"
 (seconds of arc).
 This seems to be a reasonable choice to follow.
 
+::: {note} Units in CosmoSim
+As of v3.0.0 CosmoSim assumes angular units for all parameters, so that
+the source position and the Einstein radius are on the same scale in angular
+terms.
+
+In past versions, the Einstein radius was measured as a length in the lens
+plane, and would thus be scaled to be compared to units in the source plane.
+:::
+
 ::: {note} Image Size
 In early experiments, we used an image size of $512\times512$
 in CosmoSim, but this requires more that 50Gb of GPU memory
