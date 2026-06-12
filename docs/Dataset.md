@@ -38,9 +38,9 @@ This is based on a sketch by Ben David March 2026.
 4.  Choose the orientation of the elliptical lens uniformly at random.
 5.  Choose the orientation of the elliptical source uniformly at random.
 6.  CHoose the ellipticity $f$ of the lens uniformly at random, so
-    that $0.6\le f\le 0.9$.
-7.  Source parameters - sersic profiel
-    + size: $0.04"\le\sigma\le0.08"$ eller $0.1$\ldots0.2"$
+    that $0.1\le f\le 0.9$.
+7.  Source parameters - sersic profile
+    + size: $0.04"\le\sigma\le0.08"$ eller $0.1\ldots0.2"$
     + sersic index  $1\le n_s\le 5$
     + luminosity  $10\le l\le 20$, exponentially distributed
       with $\lambda=2.0$ (see below)
