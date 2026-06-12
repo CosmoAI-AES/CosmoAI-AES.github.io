@@ -35,16 +35,25 @@ This is based on a sketch by Ben David March 2026.
     For example, choose the polar coordinates $(R,\phi)$ 
     + so that $R\le c\theta_E$ for some constant $C$, e.g. $c=1.2$.
     + $\phi$ chosen uniformly at random
-4.  Choose the orientation of the elliptical lens uniformly at random.
-5.  Choose the orientation of the elliptical source uniformly at random.
+4.  Choose the orientation of the elliptical lens uniformly at random
+    from a half-circle.
+5.  Choose the orientation of the elliptical source uniformly at random
+    from a half-circle.
 6.  CHoose the ellipticity $f$ of the lens uniformly at random, so
     that $0.1\le f\le 0.9$.
 7.  Source parameters - sersic profile
-    + size: $0.04"\le\sigma\le0.08"$ eller $0.1\ldots0.2"$
+    + size: $0.04"\le\sigma\le0.2"$
     + sersic index  $1\le n_s\le 5$
     + luminosity  $10\le l\le 20$, exponentially distributed
       with $\lambda=2.0$ (see below)
-8. For cluster lenses we could use $10\ldots100$ times $\sigma$ or max $5\sigma$
+
+## Cluster lenses
+
+1. For cluster lenses, each constituent lens is placed in the same way as 
+   the source, relative to the origin, in polar co-ordinates $(R_L,\phi_L)$.
+    + select random distance $R_L\le2\theta_E$, where $\theta_E$ is the
+      Einstein radius of the constituent lens
+    + select random angle $\phi_L$ 
 
 ## Proposal from Oda
 
