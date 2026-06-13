@@ -86,6 +86,9 @@ project:
             - file: docs/test/Roulette Statistics.md
             - file: docs/test/Source Constellation Test.md
             - file: docs/test/Test.md
+    - title: Demoes
+      children:
+        file: demo/Demo01.ipynb
     - title: Development
       children:
             - file: docs/devel/Release.md
