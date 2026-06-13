@@ -50,10 +50,9 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Set up ipykernel
-        run: |
 ###           pip install jupyter-server nbclient nbformat ipykernel jupyter-client
-          python -m ipykernel install --user --name=python3
+      - name: Set up ipykernel
+        run: python -m ipykernel install --user --name=python3
 
       - name: Execute Notebooks 
         run: |
