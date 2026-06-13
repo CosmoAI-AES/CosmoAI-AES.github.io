@@ -89,6 +89,8 @@ project:
     - title: Demoes
       children:
       - file: demo/Demo01.ipynb
+      - file: demo/demo/Annotation.ipynb
+      - file: demo/demo/RouletteML01.ipynb
     - title: Development
       children:
       - file: docs/devel/Release.md

@@ -44,4 +44,3 @@ This is based on a sketch by Ben David March 2026.
     + sersic index  $1\le n_s\le 5$
     + luminosity  $10\le l\le 20$, exponentially distributed
       with $\lambda=2.0$ (see below)
-

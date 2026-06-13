@@ -40,8 +40,6 @@ import CosmoSim.Image as csimg
 from CosmoSim import Parameters
 ```
 
-
-
 # Annotation
 
 It is possible to annotate images, something we have not shown above.

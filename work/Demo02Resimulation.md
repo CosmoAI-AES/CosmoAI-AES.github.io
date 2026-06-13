@@ -45,7 +45,7 @@ to make a baseline raytrace simulation using a SIE lens.
 We have just rounded some of the parameters to get neater numbers.
 
 ```{code-cell} ipython3
-with open( "Demo01.toml", 'rb') as f:
+with open( "Demo02.toml", 'rb') as f:
             toml = tl.load(f)
 
 param = Parameters( toml )
