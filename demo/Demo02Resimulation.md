@@ -131,4 +131,3 @@ def quadSim( param ):
 
     return( imRaytrace, imRoulette, imRaytraceSampled, imRouletteSampled )
 ```
-

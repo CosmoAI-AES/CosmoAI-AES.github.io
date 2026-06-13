@@ -5,7 +5,7 @@ use of the CosmoSim API.
 They can be downloaded and run, assuming CosmoSim v3 is installed.
 
 ```
-pip install CosmoSim==3.0.0b3
+pip install CosmoSim==3.0.0b4
 ```
 
 + [](Demo01) shows the basic operation of the simulator.
