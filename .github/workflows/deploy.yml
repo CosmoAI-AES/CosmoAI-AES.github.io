@@ -45,7 +45,7 @@ jobs:
 
       - name: CosmoSim
         run: |
-          pip install CosmoSim==3.0.0b3
+          pip install CosmoSim==3.0.0b3 --user
       - name: install packages
         run: |
           pip install -r requirements.txt
