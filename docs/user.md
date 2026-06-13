@@ -9,7 +9,7 @@ starting point.
 
 Version 3.0.0 provides an API to use the simulator from Jupyter
 Notebook or custom scripts.  There is a demo of this
-+ [](demo/Demo01)
++ [](/demo/Demo01)
 
 ## Physical interpretation
 

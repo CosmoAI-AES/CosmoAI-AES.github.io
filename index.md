@@ -34,7 +34,7 @@ errors and inconsistencies.
   and can be installed with `pip install CosmoSim`.
 + [CosmoSim GUI](/docs/scripts/GUI),
   which is run as `python -m CosmoSim.GUI`.
-+ [CosmoSim Demo](/docs/demo/index) showing API operation in Jupyter Notebook
++ [CosmoSim Demo](/demo/index) showing API operation in Jupyter Notebook
 + [](/docs/ML/Pipeline) with `droulette`
     + other details on [](/docs/droulette)
 + [User Tools](/docs/scripts/Overview.md) for command line operation.

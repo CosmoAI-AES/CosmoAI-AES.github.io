@@ -48,9 +48,6 @@ project:
             - file: docs/scripts/datagen script.md
             - file: docs/scripts/Overview.md
             - file: docs/scripts/Roulette Resimulation.md
-        - file: docs/demo/index.md
-          children:
-            - file: docs/demo/Demo01.ipynb
         - file: docs/droulette.md
           children:
             - file: docs/ML/MachineLearning.md
@@ -87,6 +84,7 @@ project:
             - file: docs/test/Source Constellation Test.md
             - file: docs/test/Test.md
     - title: Demoes
+      file: demo/index.md
       children:
       - file: demo/Demo01.ipynb
       - file: demo/demo/Annotation.ipynb
