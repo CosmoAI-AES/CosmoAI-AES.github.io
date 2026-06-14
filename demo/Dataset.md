@@ -100,6 +100,18 @@ cfg = csd.readtoml( "dataset.toml" )
 display( cfg )
 ```
 
+::: {note} Remark
+For the most part, this TOML file allows the same settings as the TOML file
+for other CosmoSim modules.  When a parameter is to be drawn uniformly at 
+random, the range is given by two parameters, suffixed by `-min` and `-max`
+respectively.  Thus, when there is an `einstein` parameter, we can define
+`einstein-min` and `einstein-max`.  In the case of luminosity, there is also
+a `luminosity-lambda` parameter for the exponential distribution.
+
+For string values, such as for `simulator.config`, a list of 
+strings can be given, to draw one element uniformly at random.
+:::
+
 To get a single random object, we use the `getline()` function.
 
 ```{code-cell} ipython3
@@ -109,3 +121,19 @@ display( ob )
 
 The filename `fn` is used for indexing as well as saving images in 
 batch processing.  It can be omitted.
+
+## Generating the image
+
+## Bulk generation
+
+In most cases, one will want to generate the dataset from the command line
+```
+python -m CosmoSim.dataset config.toml dataset.csv
+```
+This generates a CSV file which can be used for image generation.
+
+It is also possible to generate the dataset and the images in one go,
+using
+```
+python -m CosmoSim --toml config.toml --csvfile dataset.csv ...
+```
