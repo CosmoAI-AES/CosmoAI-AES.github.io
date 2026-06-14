@@ -123,6 +123,22 @@ batch processing.  It can be omitted.
 
 ## Generating the image
 
+```{code-cell} ipython3
+import CosmoSim as cs
+
+param = cs.Parameters( )
+param.setRow( ob )
+```
+
+```{code-cell} ipython3
+imsim = cs.SimImage( param )
+im = imsim.getImage()
+plt.imshow( im, cmap='gray')
+plt.title( "Random image test" )
+plt.axis("off")
+```
+
+
 ## Bulk generation
 
 In most cases, one will want to generate the dataset from the command line
