@@ -126,6 +126,7 @@ batch processing.  It can be omitted.
 ```{code-cell} ipython3
 import CosmoSim as cs
 import CosmoSim.datagen as csg
+import matplotlib.pyplot as plt
 
 param = cs.Parameters( )
 param.setRow( ob )
