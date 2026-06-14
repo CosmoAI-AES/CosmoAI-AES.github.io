@@ -125,13 +125,14 @@ batch processing.  It can be omitted.
 
 ```{code-cell} ipython3
 import CosmoSim as cs
+import CosmoSim.datagen as csg
 
 param = cs.Parameters( )
 param.setRow( ob )
 ```
 
 ```{code-cell} ipython3
-imsim = cs.SimImage( param )
+imsim = csg.SimImage( param )
 im = imsim.getImage()
 plt.imshow( im, cmap='gray')
 plt.title( "Random image test" )
