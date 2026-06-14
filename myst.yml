@@ -88,8 +88,8 @@ project:
       children:
       - file: demo/Demo01.ipynb
       - file: demo/Annotation.ipynb
-      - file: demo/Demo02Resimulation.md
-      - file: demo/Dataset.md
+      - file: demo/Demo02Resimulation.ipynb
+      - file: demo/Dataset.ipynb
       - file: demo/RouletteML01.ipynb
     - title: Development
       children:
