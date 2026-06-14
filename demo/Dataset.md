@@ -140,6 +140,13 @@ plt.title( "Random image test" )
 plt.axis("off")
 ```
 
+```{code-cell} ipython3
+actual = imsim.getActual()
+plt.imshow( actual, cmap='gray')
+plt.title( "Undistorted source" )
+plt.axis("off")
+```
+
 
 ## Bulk generation
 
