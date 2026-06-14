@@ -141,7 +141,7 @@ plt.axis("off")
 ```
 
 ```{code-cell} ipython3
-actual = imsim.getActual()
+actual = imsim.getActualImage()
 plt.imshow( actual, cmap='gray')
 plt.title( "Undistorted source" )
 plt.axis("off")
