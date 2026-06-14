@@ -10,7 +10,8 @@ chi=50
 
 [source]
 mode="SersicSphere"
-sigma=20
+sigma=30
+sigma2=10
 theta=45
 position="cartesian"
 n_sersic=4
