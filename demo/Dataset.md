@@ -18,6 +18,7 @@ title: Sample Datasets
 
 The purpose of this demonstration is to explore reasonable parameters
 for dataset generation.
+We aim to follow established custom in the literature, as far as possible. 
 
 ::: {note} Image scale
 Hezaveh uses $192\times192$ image size with a pixel corresponding
@@ -28,74 +29,83 @@ Calculations are made in $512\times\512$ and crop to $256\times256$
 afterwards.
 :::
 
-::: {note} Units in CosmoSim
-As of v3.0.0 CosmoSim assumes angular units for all parameters, so that
-the source position and the Einstein radius are on the same scale in angular
-terms.
+Because we centre the images on the visible light, there will usually
+be a lot of empty background to crop.  Making the calculations on  
+larger images will prevent many cropping artifacts.
+We also note that the image size is limited by computer memory, when
+they are used with machine learning.  We were unable to use
+$512\times512$ images on a GPU with 50Gb memory, but $256\times256$ work.
 
-In past versions, the Einstein radius was measured as a length in the lens
-plane, and would thus be scaled to be compared to units in the source plane.
-:::
+## Parameter ranges
 
-::: {note} Image Size
-In early experiments, we used an image size of $512\times512$
-in CosmoSim, but this requires more that 50Gb of GPU memory
-for machine learning.
-We have made successful tests using $256\times256$.
-:::
+To build training sets we need to generate random sets of plausible 
+images.  The ranges and probability distribution may vary from study
+to study.  The parameters we establish here are designed to be realistic
+examples of strong lensing, erring on the side of wider ranges.
 
-## Proposed Selection Algorithm
+| Parameter | Symnol | Identifier | Distribution | Range |
+| :- | :- | :- | :- | :- |
+| Einstein radius | $\theta_E$ | `einsteinR` | Uniform | $0.1"\le\theta_E\le3.0"$ |
+| Source position | $R$ | `position.r`  | Uniform | $R\le1.2\theta_E$ |
+| Source location | $\phi$ | `position.phi` | Uniform | $0\le\phi\le180$ |
+| Lens orientation | | `orientation`  | Uniform | $0\ldots180$ |
+| Source orientation | |  | Uniform | $0\ldots180$ |
+| Lens ellipticity | $f$ | `ellipseratio` | Uniform | $0.1\le f\le 0.9$ |
+| Source size | $\sigma$ | `sigma` | Uniform | $0.04"\le f\le 0.2"$ |
+| Sersic index | $n_s$ | `n_sersic` | Uniform |  $1\le n_s\le 5$ |
+| Luminosity  | $l$ | `luminosity` | Exponential |  $10\le l\le 20$, $\lambda=2.0$ |
 
-This is based on a sketch by Ben David March 2026.
+1.  The source position is given in polar co-ordinates $(R,\phi)$.
+    + The distance $R$ is chosen to be inside or around the critical curve,
+      hence the limit $R\le c\theta_E$ for some constant $c$.
+2.  Angles are given in degrees in the source code and chosen uniformly from a
+    half circle, because of symmetry.
+3.  The source is spherical with a sersic profile.
 
-1.  Choose the Einstein radius uniformly at random, so that
-    $0.1"\le\theta_E\le3.0"$.
-    + where $\theta_E=R_E/\chi$, i.e. $R_E$ converted to angular units.
-3.  Choose the source position inside or around the critical curve,
-    For example, choose the polar coordinates $(R,\phi)$ 
-    + so that $R\le c\theta_E$ for some constant $C$, e.g. $c=1.2$.
-    + $\phi$ chosen uniformly at random
-4.  Choose the orientation of the elliptical lens uniformly at random
-    from a half-circle.
-5.  Choose the orientation of the elliptical source uniformly at random
-    from a half-circle.
-6.  CHoose the ellipticity $f$ of the lens uniformly at random, so
-    that $0.1\le f\le 0.9$.
-7.  Source parameters - sersic profile
-    + size: $0.04"\le\sigma\le0.2"$
-    + sersic index  $1\le n_s\le 5$
-    + luminosity  $10\le l\le 20$, exponentially distributed
-      with $\lambda=2.0$ (see below)
-
-## Cluster lenses
-
-1. For cluster lenses, each constituent lens is placed in the same way as 
-   the source, relative to the origin, in polar co-ordinates $(R_L,\phi_L)$.
-    + select random distance $R_L\le2\theta_E$, where $\theta_E$ is the
-      Einstein radius of the constituent lens
-    + select random angle $\phi_L$ 
-
-## Proposal from Oda
-
-| Parameter | Hezaveh (arcsec) | CosmoSim (512x512) |
-| :-        | :-               | :-                 |
-| $R_E$     | $0.1"\ldots3.0"$     | $1\ldots 39$ (resiprocal) |
-| Lens Ellipticity | $0\ldots0.9$     | $1.0\ldots 0.1$ (resiprocal) |
-| Source Size | $0.05"\ldots0.8"$ | $1\ldots10$ |
-| Source Position ($R$) | not specified | $1\ldots10$ |
-| $\chi$ | not specified | 50 |
-| Lens rotation ($\theta$) | not specified | $0°\ldots 179°$ |
-| Source rotation ($\phi$) | not specified | $0°\ldots 359°$ |
-| Sersisk indeks (`n_sersic`) | N/A | $1\ldots5$ |
-| Luminosity | N/A | $10\ldots20$[^exp] |
-
-[^exp]: Luminosity is exponentially distributed with $\lambda=2.0$.
-
-The exponential distribution used for luminsoty returns
-$u = 1 - \exp{-\lambda\cdot x}$ where 
-$x$ is exponentially distributed, that is with a probability 
-density function $f(x;\lambda) = \lambda\exp{-\lambda x}$
+::: {note} Definition
+The **exponential distribution** returns
+$$u = 1 - \exp{-\lambda\cdot x}$$
+where $x$ is exponentially distributed, that is with a probability 
+density function 
+$$f(x;\lambda) = \lambda\exp{-\lambda x}$$
 for positive $x$.  
 This $u$ is scaled to within the given range.
+:::
 
+::: {note} Cluster lenses
+For cluster lenses, each constituent lens is placed in the same way as 
+the source, relative to the origin, in polar co-ordinates $(R_L,\phi_L)$.
++ select random distance $R_L\le2\theta_E$, where $\theta_E$ is the
+  Einstein radius of the constituent lens
++ select random angle $\phi_L$ 
+:::
 
++++
+
+## Dataset generation
+
+The `CosmoSim.dataset` module provides the functions to generate random datasets.
+
+```{code-cell} ipython3
+import CosmoSim.dataset as csd
+```
+
+The probability distribution is specified by a nested `dict`, typically 
+defined in a TOML file, similar to those used in other CosmoSim modules.
+However, the `dataset` submodule does not use the `Parameters` class for
+its parameters at present.
+
+```{code-cell} ipython3
+cfg = csd.readtoml( "dataset.toml" )
+display( cfg )
+```
+
+To get a single random object, we use the `getline()` function.
+
+```{code-cell} ipython3
+ob = csd.getline( cfg, fn="test.png" )
+display( ob )
+```
+
+The filename `fn` is used for indexing as well as saving images in 
+batch processing.  It can be omitted.
