@@ -18,8 +18,6 @@ kernelspec:
 + 0.04" per pixel (arc seconds per pixel)
 
 
-
-
 + SiE/Sersic
 + 2x / 4x SIE cluster with one source
 + Test expansion in origin ($\xi$)

@@ -12,6 +12,8 @@ pip install CosmoSim==3.0.0b4
 
 ## Work in progress
 
++ [](Demo02Resimulation)
 + [](Annotation) shows how to annotate the simulated images with
   critical curves and key points. 
 + [](RouletteML01) demonstrates resimulation from roulette parameters.
++ [](Dataset)
