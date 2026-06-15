@@ -8,8 +8,9 @@ orientation=105
 
 
 [source]
-mode="SersicSphere"
-sigma=20
+mode="SersicEllipsoid"
+sigma=10
+sigma2=30
 theta=45
 position="cartesian"
 n_sersic=4
@@ -17,5 +18,5 @@ luminosity=10
 
 [position]
 x=12
-y=0
+y=6
 
