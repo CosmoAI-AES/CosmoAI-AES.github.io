@@ -54,7 +54,7 @@ We will use the simulation from `SimImage` to get roulette amplitudes
 for resimulation.
 
 ```{code-cell} ipython3
-with open( "Demo03.toml", 'rb') as f:
+with open( "Demo03.toml", 'rb' ) as f:
             toml = tl.load(f)
 
 param = Parameters( toml )
@@ -99,7 +99,8 @@ display( row )
 Here we see that we have roulette amplitudes up to order 5, which is the maximum implemented for analytical SIE.
 
 ```{code-cell} ipython3
-rsim = Resim( row, verbose=4 )
+resimParam = Parameters( { "simulator" : { "xireference" : True } } )
+rsim = Resim( row, param=resimParam, verbose=4 )
 resimImage = rsim.getImage()
 csimg.imshow( resimImage, "Resimulation" )
 ```
@@ -181,7 +182,7 @@ csimg.drawAxes(rouletteImage)
 csimg.drawAxes(resimImage)
 
 fig.add_subplot(2, 3, 4)
-csimg.imshow( rouletteImage, "Original simulroulette ation" )
+csimg.imshow( rouletteImage, "Original roulette simulation" )
 fig.add_subplot(2, 3, 6)
 csimg.imshow( resimImage, "Resimulation" )
 ```
