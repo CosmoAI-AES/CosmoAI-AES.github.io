@@ -38,14 +38,20 @@ Additionally, we require the `Resim` class for resimulation.
 from CosmoSim.roulettegen import Resim
 ```
 
+The `Resim` class shares the `GenericSim` superclass with `SimImage`,
+which we used in [](./Demo01) but simulates from precomputed roulette
+parameters and not from a regular lens model. 
+
 ## Basic Configuration
 
 We start with parameters similar to the ones from [](./Demo01),
 to make a baseline raytrace simulation using a SIE lens.
 We have just rounded some of the parameters to get neater numbers.
+We will use the simulation from `SimImage` to get roulette amplitudes
+for resimulation.
 
 ```{code-cell} ipython3
-with open( "Demo02.toml", 'rb') as f:
+with open( "Demo03.toml", 'rb') as f:
             toml = tl.load(f)
 
 param = Parameters( toml )
@@ -58,9 +64,28 @@ plt.axis("off")
 
 ## Roulette parameters
 
+We can retrieve the roulette amplitudes with the `getData()` method.
+
 ```{code-cell} ipython3
 row = imsim.getData()
+```
+
+We have run this in verbose mode since it is the first time we use it.
+Feel free to go back to the instantiation of `imsim` to reduce it.
+
+The resulting data is a pandas `Series`.
+
+
+```{code-cell} ipython3
 display( row )
+```
+
+Here we see that we have roulette amplitudes up to order 16.
+High-order amplitudes are zero, so we may want to look at the the first
+ones.
+
+```{code-cell} ipython3
+display( row[0:15] )
 ```
 
 ```{code-cell} ipython3
