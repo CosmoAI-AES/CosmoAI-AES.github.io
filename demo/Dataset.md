@@ -83,6 +83,13 @@ the source, relative to the origin, in polar co-ordinates $(R_L,\phi_L)$.
 
 ## Dataset generation
 
+Before we start, lets check the version.
+
+```{code-cell} ipython3
+import CosmoSim
+print( CosmoSim.__version__ )
+```
+
 The `CosmoSim.dataset` module provides the functions to generate random datasets.
 
 ```{code-cell} ipython3
@@ -133,7 +140,7 @@ param.setRow( ob )
 ```
 
 ```{code-cell} ipython3
-imsim = csg.SimImage( param )
+imsim = csg.SimImage( param, verbose=0 )
 im = imsim.getImage()
 plt.imshow( im, cmap='gray')
 plt.title( "Random image test" )
@@ -159,4 +166,8 @@ It is also possible to generate the dataset and the images in one go,
 using
 ```
 python -m CosmoSim --toml config.toml --csvfile dataset.csv ...
+```
+
+```{code-cell} ipython3
+
 ```
