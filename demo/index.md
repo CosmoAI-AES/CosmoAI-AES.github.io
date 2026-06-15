@@ -9,11 +9,11 @@ pip install CosmoSim==3.0.0b4
 ```
 
 + [](Demo01) shows the basic operation of the simulator.
++ [](Demo02Annotation) shows how to annotate the simulated images with
+  critical curves and key points. 
 
 ## Work in progress
 
-+ [](Annotation) shows how to annotate the simulated images with
-  critical curves and key points. 
 + [](Demo02Resimulation) sbows the principles of simulation from 
   roulette amplitudes.
 + [](Dataset) shows how to generate datasets for machine learning.
