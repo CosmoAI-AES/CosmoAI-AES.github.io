@@ -234,7 +234,7 @@ fig.tight_layout(pad=0.0)
 plt.subplots_adjust(hspace=0.1, wspace=0.1) 
 
 fig.add_subplot(1, 3, 1)
-csimg.imshow( resimImage2, "Resimulation from centred image" )
+csimg.imshow( resimImageC, "Resimulation from centred image" )
 fig.add_subplot(1, 3, 2)
 csimg.imshow( csimg.imageDiff(resimImageC,resimImage), "Difference with previous resimulation" )
 fig.add_subplot(1, 3, 3)
