@@ -30,6 +30,9 @@ from CosmoSim import CosmoSim
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
 from CosmoSim import Parameters
+
+import CosmoSim as cs
+print( "CosmoSim version", cs.__version__ )
 ```
 
 Additionally, we require the `Resim` class for resimulation.
@@ -55,26 +58,43 @@ with open( "Demo03.toml", 'rb') as f:
             toml = tl.load(f)
 
 param = Parameters( toml )
-imsim = SimImage( param, verbose=2 )
+imsim = SimImage( param, verbose=0 )
 im = imsim.getImage()
-plt.imshow( im, cmap='gray')
-plt.title( "Baseline simulation" )
-plt.axis("off")
+csimg.imshow( im, "Baseline simulation" )
 ```
+
+::: {tip}
+Here we use convenience functions from the `CosmoSim.Image` module (`csimg`),
+instead of using matplotlib directly.  [](./Demo01) used more cumbersome code.
+:::
+
+::: {tip} 
+For debugging, it may be useful to change the verbosity level on the fly.
+On this point, the C++ code functions differently from the python code.
+Where the python code often has per-class and per-function verbosity settings,
+the C++ code uses a single global variable which can be set thus:
+```
+from CosmoSim.CosmoSimPy import setDebug
+setDebug(3)
+```
+This is set every time the `Resim` or `SimImage` classes are instantiated,
+which works well enough if only one instance is made, or all use the same 
+verbosity level.  For more complex situations, the above `setDebug` may be
+useful.  We used it during debugging, but it has now been from the final demo.
+:::
 
 ## Roulette parameters
 
 We can retrieve the roulette amplitudes with the `getData()` method.
 
 ```{code-cell} ipython3
-row = imsim.getData()
+row = imsim.getData(verbose=2)
 ```
 
 We have run this in verbose mode since it is the first time we use it.
 Feel free to go back to the instantiation of `imsim` to reduce it.
 
 The resulting data is a pandas `Series`.
-
 
 ```{code-cell} ipython3
 display( row )
@@ -89,20 +109,39 @@ display( row[0:25] )
 ```
 
 ```{code-cell} ipython3
-rsim = Resim( row )
-im = rsim.getImage()
-plt.imshow( im, cmap='gray')
-plt.title( "Resimulation" )
-plt.axis("off")
+rsim = Resim( row, verbose=0 )
+resimImage = rsim.getImage()
+csimg.imshow( resimImage, "Resimulation" )
 ```
 
 ```{code-cell} ipython3
-rsim = Resim( row )
 actual = rsim.getActualImage()
-plt.imshow( actual, cmap='gray')
-plt.title( "Actual source image" )
-plt.axis("off")
+csimg.imshow( actual, "Actual source image" )
 ```
+
+To compare the images, we can plot side by side
+
+```{code-cell} ipython3
+csimg.drawAxes(actual)
+
+fig = plt.figure(figsize=(15,10))
+fig.tight_layout(pad=0.0)
+plt.subplots_adjust(hspace=0.1, wspace=0.1) 
+
+fig.add_subplot(2, 3, 1)
+csimg.imshow( actual, "Actual source image" )
+
+fig.add_subplot(2, 3, 5)
+csimg.imshow( csimg.imageDiff(im,resimImage), "Difference image" )
+
+csimg.drawAxes(im)
+csimg.drawAxes(resimImage)
+
+fig.add_subplot(2, 3, 4)
+csimg.imshow( im, "Original simulation" )
+fig.add_subplot(2, 3, 6)
+csimg.imshow( resimImage, "Resimulation" )
+
 
 ## Roulette amplitudes from sampled lenses
 
@@ -110,57 +149,4 @@ plt.axis("off")
 
 ## Comparing simulation models
 
-## A convenience function
-
-The following function does the four simulations and plots above,
-for any given set of parameters `param`.
-When we fiddle with the source (or lens) description, we will use
-this to run all tests at once.
-
-```{code-cell} ipython3
-def quadSim( param ):
-    param["simulator"]["model"] = "Roulette"
-    param["simulator"]["sampled"] = True
-    imsimRouletteSampled = SimImage( param, verbose=0 )
-    imRouletteSampled = imsimRouletteSampled.getImage()
-
-    param["simulator"]["sampled"] = False
-    imsimRoulette = SimImage( param, verbose=0 )
-    imRoulette = imsimRoulette.getImage()
-
-    param["simulator"]["model"] = "Raytrace"
-    param["simulator"]["sampled"] = True
-    imsimRaytrace = SimImage( param, verbose=0 )
-    imRaytrace = imsimRaytrace.getImage()
-
-    param["simulator"]["sampled"] = False
-    imsimRaytraceSampled = SimImage( param, verbose=0 )
-    imRaytraceSampled = imsimRaytraceSampled.getImage()
-
-    fig = plt.figure(figsize=(10, 10))
-    fig.tight_layout(pad=0.0)
-    plt.subplots_adjust(hspace=0.1, wspace=0.1) 
-
-    fig.add_subplot(2, 2, 1)
-    plt.imshow( imRouletteSampled, cmap='gray')
-    plt.title( "Sampled Roulette Simulation" )
-    plt.axis("off")
-
-    fig.add_subplot(2, 2, 2)
-    plt.imshow( imRaytraceSampled, cmap='gray')
-    plt.title( "Sampled Raytrace Simulation" )
-
-    plt.axis("off")
-
-    fig.add_subplot(2, 2, 3)
-    plt.imshow( imRoulette, cmap='gray')
-    plt.title( "Roulette Simulation" )
-    plt.axis("off")
-    
-    fig.add_subplot(2, 2, 4)
-    plt.imshow( imRaytrace, cmap='gray')
-    plt.title( "Raytrace Simulation" )
-    plt.axis("off")
-
-    return( imRaytrace, imRoulette, imRaytraceSampled, imRouletteSampled )
 ```
