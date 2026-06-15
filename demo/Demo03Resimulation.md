@@ -99,7 +99,7 @@ display( row )
 Here we see that we have roulette amplitudes up to order 5, which is the maximum implemented for analytical SIE.
 
 ```{code-cell} ipython3
-rsim = Resim( row, verbose=0 )
+rsim = Resim( row, verbose=4 )
 resimImage = rsim.getImage()
 csimg.imshow( resimImage, "Resimulation" )
 ```
@@ -170,13 +170,14 @@ plt.subplots_adjust(hspace=0.1, wspace=0.1)
 fig.add_subplot(2, 3, 1)
 csimg.imshow( actual, "Actual source image" )
 
+csimg.drawAxes(im)
 fig.add_subplot(2, 3, 3)
 csimg.imshow( im, "Original simulation" )
 
 fig.add_subplot(2, 3, 5)
 csimg.imshow( csimg.imageDiff(rouletteImage,resimImage), "Difference image" )
 
-csimg.drawAxes(im)
+csimg.drawAxes(rouletteImage)
 csimg.drawAxes(resimImage)
 
 fig.add_subplot(2, 3, 4)
