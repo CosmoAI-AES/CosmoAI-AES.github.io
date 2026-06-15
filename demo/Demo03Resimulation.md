@@ -65,7 +65,8 @@ csimg.imshow( im, "Baseline simulation" )
 
 ::: {tip}
 Here we use convenience functions from the `CosmoSim.Image` module (`csimg`),
-instead of using matplotlib directly.  [](./Demo01) used more cumbersome code.
+instead of using matplotlib directly.
+The code in [](./Demo01) was more cumbersome code on this point.
 :::
 
 ::: {tip} 
@@ -90,17 +91,13 @@ The resulting data is a pandas `Series`.
 
 ```{code-cell} ipython3
 row = imsim.getData()
-```
-
-```{code-cell} ipython3
 display( row )
 ```
 
 Here we see that we have roulette amplitudes up to order 5, which is the maximum implemented for analytical SIE.
 
 ```{code-cell} ipython3
-resimParam = Parameters( { "simulator" : { "xireference" : True } } )
-rsim = Resim( row, param=resimParam, verbose=4 )
+rsim = Resim( row )
 resimImage = rsim.getImage()
 csimg.imshow( resimImage, "Resimulation" )
 ```
@@ -130,9 +127,16 @@ csimg.imshow( actual, "Actual source image" )
 
 To compare the images, we can plot side by side
 We also add reference lines to each image, except the difference image.
+If the code is confusing, it is because we
 
 ```{code-cell} ipython3
+imdiff = csimg.imageDiff(rouletteImage,resimImage)
+rdiff = csimg.imageDiff(rouletteImage,im)
+
 csimg.drawAxes(actual)
+csimg.drawAxes(im)
+csimg.drawAxes(rouletteImage)
+csimg.drawAxes(resimImage)
 
 fig = plt.figure(figsize=(15,10))
 fig.tight_layout(pad=0.0)
@@ -140,55 +144,107 @@ plt.subplots_adjust(hspace=0.1, wspace=0.1)
 
 fig.add_subplot(2, 3, 1)
 csimg.imshow( actual, "Actual source image" )
-
-fig.add_subplot(2, 3, 5)
-csimg.imshow( csimg.imageDiff(rouletteImage,resimImage), "Difference image" )
-
-csimg.drawAxes(im)
-csimg.drawAxes(rouletteImage)
-csimg.drawAxes(resimImage)
-
-fig.add_subplot(2, 3, 3)
+fig.add_subplot(2, 3, 2)
 csimg.imshow( im, "Original raytrace simulation" )
+fig.add_subplot(2, 3, 3)
+csimg.imshow( rdiff, "Roulette/raytrace difference" )
+fig.add_subplot(2, 3, 5)
+csimg.imshow( imdiff, "Difference image" )
 fig.add_subplot(2, 3, 4)
 csimg.imshow( rouletteImage, "Roulette simulation" )
 fig.add_subplot(2, 3, 6)
 csimg.imshow( resimImage, "Resimulation" )
 ```
 
-This does not look right.
+::: {note}
+We have not centred the images above.
+
+For use with machine learning, it is critical to centre the image on a canonical
+point to avoid leaking information from the choice of origin.  We usually centre
+the image on the centre of light.
+
+In weak lensing, with a single visible image, it is also useful to centre and crop
+to get a better view.  Here, however, with images curling around the origin, centring
+makes little difference to the display, and the extra conversion would only be confusing.
+:::
 
 ## Centring the image
 
-```{code-cell} ipython3
-im = imsim.getImage(centred=True,verbose=1)
-rouletteImage = roulette.getImage(centred=True,verbose=1)
+In the original simulation, centring is straight forward, by
+setting `simulator.centred` to `True`.
 
-fig = plt.figure(figsize=(15,10))
+```{code-cell} ipython3
+param["simulator"]["centred"] = True
+param["simulator"]["model"] = "Raytrace"
+imsim = SimImage( param, verbose=0 )
+imC = imsim.getImage(verbose=1)
+
+fig = plt.figure(figsize=(10,5))
 fig.tight_layout(pad=0.0)
 plt.subplots_adjust(hspace=0.1, wspace=0.1) 
 
-fig.add_subplot(2, 3, 1)
-csimg.imshow( actual, "Actual source image" )
-
-csimg.drawAxes(im)
-fig.add_subplot(2, 3, 3)
-csimg.imshow( im, "Original simulation" )
-
-fig.add_subplot(2, 3, 5)
-csimg.imshow( csimg.imageDiff(rouletteImage,resimImage), "Difference image" )
-
-csimg.drawAxes(rouletteImage)
-csimg.drawAxes(resimImage)
-
-fig.add_subplot(2, 3, 4)
-csimg.imshow( rouletteImage, "Original roulette simulation" )
-fig.add_subplot(2, 3, 6)
-csimg.imshow( resimImage, "Resimulation" )
+fig.add_subplot(1, 2, 1)
+csimg.imshow( imC, "Original simulation - centred" )
+fig.add_subplot(1, 2, 2)
+csimg.imshow( csimg.imageDiff(imC,im), "Difference" )
 ```
 
-## Roulette amplitudes from sampled lenses
+We have plotted the difference image to see that centring does make a difference.
+We can also note the difference it makes to the data for resimulation.
 
-## Resimulation
+```{code-cell} ipython3
+rowC = imsim.getData()
+display( pd.DataFrame( [row, rowC] ).transpose() )
+```
 
-## Comparing simulation models
+The roulette amplitudes do not change.  The are calculated in the same point.
+However the relative source position `reletaX`/`reletaY` does. 
+It is the sum of the original position and the centrepoint `centreX`/`centreY`.
+
+We can do the same with roulette; `centred` is still `True`.
+
+```{code-cell} ipython3
+param["simulator"]["model"] = "Roulette"
+roulette = SimImage( param, verbose=0 )
+rouletteImageC = roulette.getImage(verbose=0)
+
+fig = plt.figure(figsize=(10,5))
+fig.tight_layout(pad=0.0)
+plt.subplots_adjust(hspace=0.1, wspace=0.1) 
+
+fig.add_subplot(1, 2, 1)
+csimg.imshow( rouletteImageC, "Roulette simulation - centred" )
+fig.add_subplot(1, 2, 2)
+csimg.imshow( csimg.imageDiff(rouletteImageC,rouletteImage), "Difference" )
+```
+
+Finally we resimulate from the data from the centred simulatior.
+We compare the result with both the original resimulation and with the centred
+raytrace.
+
+```{code-cell} ipython3
+rsim = Resim( rowC, verbose=0 )
+resimImageC = rsim.getImage()
+
+fig = plt.figure(figsize=(15,5))
+fig.tight_layout(pad=0.0)
+plt.subplots_adjust(hspace=0.1, wspace=0.1) 
+
+fig.add_subplot(1, 3, 1)
+csimg.imshow( resimImage2, "Resimulation from centred image" )
+fig.add_subplot(1, 3, 2)
+csimg.imshow( csimg.imageDiff(resimImageC,resimImage), "Difference with previous resimulation" )
+fig.add_subplot(1, 3, 3)
+csimg.imshow( csimg.imageDiff(resimImageC,imC), "Difference with centred raytrace" )
+```
+
+We note that the image has shifted compared to the original resimulation.  
+The right hand image shows that the co-ordinate system is shifted to match the
+centred raytrace image.
+
+## Closure
+
+I hope we have managed to demonstrate some of the caveats.
+There is some work in progress here.  We should aim to improve the naming
+conventions and document the different co-ordinate systems to make it more
+transparent.
