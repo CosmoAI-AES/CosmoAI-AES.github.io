@@ -23,7 +23,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
-import toml
 import tomllib as tl
 
 from CosmoSim import CosmoSim
@@ -62,6 +61,10 @@ imsim = SimImage( param, verbose=0 )
 im = imsim.getImage()
 csimg.imshow( im, "Baseline simulation" )
 ```
+
+::: {tip}
+Download [Demo03.toml](./Demo03.toml).
+:::
 
 ::: {tip}
 Here we use convenience functions from the `CosmoSim.Image` module (`csimg`),

@@ -106,6 +106,10 @@ cfg = csd.readtoml( "dataset.toml" )
 display( cfg )
 ```
 
+::: {tip}
+Download [dataset.toml](./dataset.toml).
+:::
+
 ::: {note} Remark
 For the most part, this TOML file allows the same settings as the TOML file
 for other CosmoSim modules.  When a parameter is to be drawn uniformly at 
