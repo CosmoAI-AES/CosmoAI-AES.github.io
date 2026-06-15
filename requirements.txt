@@ -1,4 +1,4 @@
-CosmoSim==3.0.0b6
+CosmoSim==3.0.0b7
 numpy 
 matplotlib
 opencv-python
