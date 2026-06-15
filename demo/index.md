@@ -5,7 +5,7 @@ use of the CosmoSim API.
 They can be downloaded and run, assuming CosmoSim v3 is installed.
 
 ```
-pip install CosmoSim==3.0.0b7
+pip install CosmoSim>=3.0.0 --upgrade
 ```
 
 + [](Demo01.ipynb) shows the basic operation of the simulator.
