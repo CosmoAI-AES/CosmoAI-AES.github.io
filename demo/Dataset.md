@@ -158,6 +158,25 @@ plt.title( "Undistorted source" )
 plt.axis("off")
 ```
 
+## Sampling
+
+
+```{code-cell} ipython3
+sims = [ csg.SimImage( param, verbose=9 ) for _ in range(8) ]
+ims = [ sim.getImage() for sim in sims ]
+```
+
+```{code-cell} ipython3
+import CosmoSim.Image as csimg
+
+fig = plt.figure(figsize=(20, 10))
+fig.tight_layout(pad=0.0)
+plt.subplots_adjust(hspace=0.1, wspace=0.1) 
+
+for im in ims:
+   csimg.imshow( im )
+```
+
 ## Bulk generation
 
 In most cases, one will want to generate the dataset from the command line
