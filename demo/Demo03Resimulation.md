@@ -85,7 +85,7 @@ High-order amplitudes are zero, so we may want to look at the the first
 ones.
 
 ```{code-cell} ipython3
-display( row[0:15] )
+display( row[0:25] )
 ```
 
 ```{code-cell} ipython3
@@ -93,6 +93,14 @@ rsim = Resim( row )
 im = rsim.getImage()
 plt.imshow( im, cmap='gray')
 plt.title( "Resimulation" )
+plt.axis("off")
+```
+
+```{code-cell} ipython3
+rsim = Resim( row )
+actual = rsim.getActualImage()
+plt.imshow( actual, cmap='gray')
+plt.title( "Actual source image" )
 plt.axis("off")
 ```
 
