@@ -15,6 +15,7 @@ kernelspec:
 
 # CosmoSim Demo Part I
 
+
 ## Preparation
 
 We will use pandas to handle sets of lensing systems with
@@ -473,8 +474,8 @@ plt.title( "Sampled Roulette Simulation" )
 plt.axis("off")
 ```
 
-One may get a better impression of the ellipsoid shape by making the 
-source larger, but this is left as an exercise for the reader.
+As we can see, different rotations make a massive difference to the observed
+image.  However, this source is extremely longated.
 
 ::: {tip}
 To change the source size, one uses
@@ -486,3 +487,15 @@ The parameter `sigma` refers to the standard deviation in a Gaussian
 light profile.  Ellipsoid spheres have a size parameter along each axis,
 hence `sigma` and `sigma2`.
 :::
+
+## Closure
+
+We have demonstrated the four basic simulation modes here, roulette and raytrace
+with and without sampling. This provides the cornerstone for further exploration.
+
+We have also demonstrated some variation in sources, but we have still not discussed
+what makes reasonable parameters for lenses and sources.
+
+The only lens we have considered is SIE.  The other main alternative is SIS.
+Point Mass lenses are also implemented but not as thoroughly tested with newer
+features of CosmoSim. (As of 15 June 2026.)

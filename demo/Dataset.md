@@ -147,7 +147,6 @@ plt.title( "Undistorted source" )
 plt.axis("off")
 ```
 
-
 ## Bulk generation
 
 In most cases, one will want to generate the dataset from the command line
