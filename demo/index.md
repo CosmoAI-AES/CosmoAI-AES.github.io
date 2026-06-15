@@ -8,13 +8,13 @@ They can be downloaded and run, assuming CosmoSim v3 is installed.
 pip install CosmoSim==3.0.0b7
 ```
 
-+ [](Demo01) shows the basic operation of the simulator.
-+ [](Demo02Annotation) shows how to annotate the simulated images with
++ [](Demo01.ipynb) shows the basic operation of the simulator.
++ [](Demo02Annotation.ipynb) shows how to annotate the simulated images with
   critical curves and key points. 
-+ [](./Demo03Resimulation) sbows the principles of simulation from 
++ [](./Demo03Resimulation.ipynb) sbows the principles of simulation from 
   roulette amplitudes.
 
 ## Work in progress
 
-+ [](Dataset) shows how to generate datasets for machine learning.
-+ [](RouletteML01) demonstrates resimulation from roulette parameters.
++ [](Dataset.ipynb) shows how to generate datasets for machine learning.
++ [](RouletteML01.ipynb) demonstrates resimulation from roulette parameters.
