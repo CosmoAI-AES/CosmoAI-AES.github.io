@@ -1,5 +1,6 @@
 [simulator]
 config="raysie"
+nterms=5
 
 [lens]
 einsteinR=50

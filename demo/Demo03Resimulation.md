@@ -114,12 +114,25 @@ resimImage = rsim.getImage()
 csimg.imshow( resimImage, "Resimulation" )
 ```
 
+For reference, we can do the original roulette simulation, using a
+`SimImage` object.
+
+```{code-cell} ipython3
+param["simulator"]["model"] = "Roulette"
+roulette = SimImage( param, verbose=0 )
+rouletteImage = roulette.getImage()
+csimg.imshow( rouletteImage, "Roulette simulation" )
+```
+
+We can also have a look at the original source image.
+
 ```{code-cell} ipython3
 actual = rsim.getActualImage()
 csimg.imshow( actual, "Actual source image" )
 ```
 
 To compare the images, we can plot side by side
+We also add reference lines to each image, except the difference image.
 
 ```{code-cell} ipython3
 csimg.drawAxes(actual)
@@ -130,23 +143,53 @@ plt.subplots_adjust(hspace=0.1, wspace=0.1)
 
 fig.add_subplot(2, 3, 1)
 csimg.imshow( actual, "Actual source image" )
+fig.add_subplot(2, 3, 3)
+csimg.imshow( im, "Original raytrace simulation" )
 
 fig.add_subplot(2, 3, 5)
-csimg.imshow( csimg.imageDiff(im,resimImage), "Difference image" )
+csimg.imshow( csimg.imageDiff(rouletteImage,resimImage), "Difference image" )
 
 csimg.drawAxes(im)
 csimg.drawAxes(resimImage)
 
 fig.add_subplot(2, 3, 4)
-csimg.imshow( im, "Original simulation" )
+csimg.imshow( rouletteImage, "Roulette simulation" )
 fig.add_subplot(2, 3, 6)
 csimg.imshow( resimImage, "Resimulation" )
+```
 
+This does not look right.
+
+## Centring the image
+
+```{code-cell} ipython3
+im = imsim.getImage(centred=True,verbose=1)
+rouletteImage = roulette.getImage(centred=True,verbose=1)
+
+fig = plt.figure(figsize=(15,10))
+fig.tight_layout(pad=0.0)
+plt.subplots_adjust(hspace=0.1, wspace=0.1) 
+
+fig.add_subplot(2, 3, 1)
+csimg.imshow( actual, "Actual source image" )
+
+fig.add_subplot(2, 3, 3)
+csimg.imshow( im, "Original simulation" )
+
+fig.add_subplot(2, 3, 5)
+csimg.imshow( csimg.imageDiff(rouletteImage,resimImage), "Difference image" )
+
+csimg.drawAxes(im)
+csimg.drawAxes(resimImage)
+
+fig.add_subplot(2, 3, 4)
+csimg.imshow( rouletteImage, "Original simulroulette ation" )
+fig.add_subplot(2, 3, 6)
+csimg.imshow( resimImage, "Resimulation" )
+```
 
 ## Roulette amplitudes from sampled lenses
 
 ## Resimulation
 
 ## Comparing simulation models
-
-```
