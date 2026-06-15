@@ -86,27 +86,17 @@ useful.  We used it during debugging, but it has now been from the final demo.
 ## Roulette parameters
 
 We can retrieve the roulette amplitudes with the `getData()` method.
+The resulting data is a pandas `Series`.
 
 ```{code-cell} ipython3
-row = imsim.getData(verbose=2)
+row = imsim.getData()
 ```
-
-We have run this in verbose mode since it is the first time we use it.
-Feel free to go back to the instantiation of `imsim` to reduce it.
-
-The resulting data is a pandas `Series`.
 
 ```{code-cell} ipython3
 display( row )
 ```
 
-Here we see that we have roulette amplitudes up to order 16.
-High-order amplitudes are zero, so we may want to look at the the first
-ones.
-
-```{code-cell} ipython3
-display( row[0:25] )
-```
+Here we see that we have roulette amplitudes up to order 5, which is the maximum implemented for analytical SIE.
 
 ```{code-cell} ipython3
 rsim = Resim( row, verbose=0 )
@@ -124,12 +114,18 @@ rouletteImage = roulette.getImage()
 csimg.imshow( rouletteImage, "Roulette simulation" )
 ```
 
+The two roulette simulations look similar but displaced compared to each other.
+
+## The Source 
+
 We can also have a look at the original source image.
 
 ```{code-cell} ipython3
 actual = rsim.getActualImage()
 csimg.imshow( actual, "Actual source image" )
 ```
+
+## Comparison
 
 To compare the images, we can plot side by side
 We also add reference lines to each image, except the difference image.
@@ -143,15 +139,16 @@ plt.subplots_adjust(hspace=0.1, wspace=0.1)
 
 fig.add_subplot(2, 3, 1)
 csimg.imshow( actual, "Actual source image" )
-fig.add_subplot(2, 3, 3)
-csimg.imshow( im, "Original raytrace simulation" )
 
 fig.add_subplot(2, 3, 5)
 csimg.imshow( csimg.imageDiff(rouletteImage,resimImage), "Difference image" )
 
 csimg.drawAxes(im)
+csimg.drawAxes(rouletteImage)
 csimg.drawAxes(resimImage)
 
+fig.add_subplot(2, 3, 3)
+csimg.imshow( im, "Original raytrace simulation" )
 fig.add_subplot(2, 3, 4)
 csimg.imshow( rouletteImage, "Roulette simulation" )
 fig.add_subplot(2, 3, 6)
