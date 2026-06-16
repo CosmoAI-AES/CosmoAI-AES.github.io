@@ -161,13 +161,20 @@ plt.axis("off")
 
 ## Sampling
 
-To create a small set of images and get an impression of the 
-distribution, we make a quick function to generate a single
-random distorted image.
+To get an impression of distribution, we can bulk generate
+configurations.  Let's first look at the dataset, as follows.
 
 ```{code-cell} ipython3
-def getImage(cfg):
-    ob = csd.getline( cfg ) 
+import pandas as pd
+obs = [ csd.getline( cfg ) for ob in range(8) ]
+df = pd.DataFrame( obs )
+display(df)
+```
+
+To create the images we make a quick function to generate a each one.
+
+```{code-cell} ipython3
+def getImage(ob):
     param = cs.Parameters()
     param.setRow( ob )
     sim = csg.SimImage( param, verbose=0 )
@@ -176,13 +183,14 @@ def getImage(cfg):
     return im
 ```
 
-Each line of the function is as used above in the document.
+Each line of the function is as used above in the document,
+except that we have added cropping.
 Now we can quickly generate a list of images and display them.
 
 ```{code-cell} ipython3
 import CosmoSim.Image as csimg
 
-ims = [ getImage(cfg) for _ in range(8) ]
+ims = [ getImage(ob) for ob in obs ]
 
 fig = plt.figure(figsize=(20, 10))
 fig.tight_layout(pad=0.0)
