@@ -172,7 +172,7 @@ def getImage(cfg):
     param.setRow( ob )
     sim = csg.SimImage( param, verbose=0 )
     im = sim.getImage() 
-    csimg.crop( im, param.get( "imagesize" ) )
+    csimg.crop( im, param.get( "imagesize" ), verbose=0 )
     return im
 ```
 
