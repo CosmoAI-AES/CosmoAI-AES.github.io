@@ -25,12 +25,12 @@ luminosity-max = 20
 luminosity-lambda = 2.0
 sigma-min = 1.25
 sigma-max = 20
-position = "polar"
+position = "relative"
 
 [position]
 # (phi,r) is the source position in polar co-ordinates, angle in degrees
 phi-min = 0
 phi-max = 360
 r-min = 1
-r-max = 75
+r-relativemax = 1.2
 

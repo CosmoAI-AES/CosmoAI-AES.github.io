@@ -24,7 +24,8 @@ Hezaveh uses $192\times192$ image size with a pixel corresponding
 to 0.04" (seconds of arc).
 We will use the same scale of 0.04"/pixel, but use slightly larger
 images.
-Calculations are made in $512\times\512$ and crop to $256\times256$
+Calculations are made in 
+$512\times512$ and crop to $256\times256$
 afterwards.
 :::
 
@@ -45,7 +46,7 @@ examples of strong lensing, erring on the side of wider ranges.
 | Parameter | Symnol | Identifier | Distribution | Range |
 | :- | :- | :- | :- | :- |
 | Einstein radius | $\theta_E$ | `einsteinR` | Uniform | $0.1"\le\theta_E\le3.0"$ |
-| Source position | $R$ | `position.r`  | Uniform | $R\le1.2\theta_E$ |
+| Source position | $R$ | `position.r`  | Uniform | $R\le1.2\cdot\theta_E$ |
 | Source location | $\phi$ | `position.phi` | Uniform | $0\le\phi\le180$ |
 | Lens orientation | | `orientation`  | Uniform | $0\ldots180$ |
 | Source orientation | |  | Uniform | $0\ldots180$ |
@@ -63,11 +64,11 @@ examples of strong lensing, erring on the side of wider ranges.
 
 ::: {note} Definition
 The **exponential distribution** returns
-$$u = 1 - \exp{-\lambda\cdot x}$$
+$$u = 1 - e^{-\lambda\cdot x}$$
 where $x$ is exponentially distributed, that is with a probability 
 density function 
-$$f(x;\lambda) = \lambda\exp{-\lambda x}$$
-for positive $x$.  
+$$f(x;\lambda) = \lambda e^{-\lambda x}$$
+for positive $x$.
 This $u$ is scaled to within the given range.
 :::
 
@@ -160,21 +161,36 @@ plt.axis("off")
 
 ## Sampling
 
+To create a small set of images and get an impression of the 
+distribution, we make a quick function to generate a single
+random distorted image.
 
 ```{code-cell} ipython3
-sims = [ csg.SimImage( param, verbose=9 ) for _ in range(8) ]
-ims = [ sim.getImage() for sim in sims ]
+def getImage(cfg):
+    ob = csd.getline( cfg ) 
+    param = cs.Parameters()
+    param.setRow( ob )
+    sim = csg.SimImage( param, verbose=0 )
+    im = sim.getImage() 
+    csimg.crop( im, param.get( "imagesize" ) )
+    return im
 ```
+
+Each line of the function is as used above in the document.
+Now we can quickly generate a list of images and display them.
 
 ```{code-cell} ipython3
 import CosmoSim.Image as csimg
+
+ims = [ getImage(cfg) for _ in range(8) ]
 
 fig = plt.figure(figsize=(20, 10))
 fig.tight_layout(pad=0.0)
 plt.subplots_adjust(hspace=0.1, wspace=0.1) 
 
-for im in ims:
-   csimg.imshow( im )
+for idx,im in enumerate(ims):
+    fig.add_subplot(2, 4, idx+1)
+    csimg.imshow( im )
 ```
 
 ## Bulk generation
