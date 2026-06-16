@@ -201,6 +201,20 @@ for idx,im in enumerate(ims):
     csimg.imshow( im )
 ```
 
+::: {warning}
+There is a memory leak in the C++ code which threatens to crash
+the computer if the simulator is instantiated several hundred times.
+This can be avoided by instantiating the backend simulator only once.
+and pass it as an argument
+```
+sim = CosmoSim.CosmoSim()
+imsim = csg.SimImage( param, sim=sim, verbose=0 )
+```
+This is of course a bug that we will try to resolve.  It is however.
+not an issue with the scripts (see below), and it is unlikely to 
+become an issue in interactive applications.  
+:::
+
 ## Bulk generation
 
 In most cases, one will want to generate the dataset from the command line
