@@ -56,7 +56,7 @@ Other names are defined, but will be deprecated.
 
 
 | Display name | Lens | Simulation | Sampled | Alias |
-| :-           |  :-  |   :-       |  :-     | Alias |
+| :-           |  :-  |   :-       |  :-     | :- |
 | `"Point Mass (exact)"` | Point Mass | Exact (PM) | No | `"p"` |
 | `"Point Mass (roulettes)"` | Point Mass | Roulette (PM)[^pm] | No | `"r"` |
 | `"Sampled Roulette SIS"` | SIS | Roulette | Yes | `"ss"` |
