@@ -175,11 +175,11 @@ To create the images we make a quick function to generate a each one.
 
 ```{code-cell} ipython3
 def getImage(ob):
-    param = cs.Parameters()
+    param = cs.Parameters(cliconfig=cfg)
     param.setRow( ob )
     sim = csg.SimImage( param, verbose=0 )
     im = sim.getImage() 
-    csimg.crop( im, param.get( "imagesize" ), verbose=0 )
+    csimg.crop( im, param.get( "cropsize" ), verbose=0 )
     return im
 ```
 
