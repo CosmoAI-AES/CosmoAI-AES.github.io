@@ -5,7 +5,21 @@ usemathjax: true
 
 # Lens Models
 
+At present, CosmoSim provides three analytic lens models:
+Point Mass, SIS, and SIE.
+The critical point is to provide the lens potential $\psi$
+and compute derivatives so that the roulette amplitudes can
+be computed.
+
+::: {note} Implementasjon
+Lens models with a known computable and algebraic expression for $\psi$,
+are implemented as subclasses of `PsiFunctionLens`.  
+Each such lens also need algebraic formulæ for the roulette amplitudes
+and for the derivatives.
+:::
+
 ## Point Mass
+
 Stars and other celestial objects may sometimes be modelled as so-called point-masses.
 The gravitational potential is in this case  
 $$
