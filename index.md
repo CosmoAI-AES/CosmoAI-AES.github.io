@@ -43,12 +43,10 @@ errors and inconsistencies.
 To understand the software, it will be necessary to have at least
 a superficial understanding of the [](math/math).
 
-## Dokumentasjon
+## Dokumentation
 
 + [](math/math).
-+ [User Tools](/docs/scripts/Overview.md)
-
-
++ [](/docs/user)
 
 ## Other information
 
