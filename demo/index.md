@@ -16,6 +16,8 @@ pip install CosmoSim>=3.0.1b1 --upgrade
       roulette amplitudes.
 + Applications for machine learning 
     + [](Dataset.ipynb) shows how to generate datasets for machine learning.
+    + [](ML/Testing.ipynb) shows how to generate datasets for machine learning.
+    + See also [](/docs/ML/Pipeline).
 
 ## Work in progress
 
