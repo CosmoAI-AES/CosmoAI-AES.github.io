@@ -25,11 +25,18 @@ test set as we use here.
 
 We use three datafiles, which must be downloaded if this
 document is to be executed.
-+ [testing.csv]() is ground truth for model training
-+ [test.csv]() is the predicted amplitudes from machine learning.
-+ [dataset.csv]() is the original lens parameters used to generate
++ [testing.csv](testing.csv) is ground truth for model training
++ [test.csv](test.csv) is the predicted amplitudes from machine learning.
++ [dataset.csv](dataset.csv) is the original lens parameters used to generate
   the training, testing, and validation data, i.e. it has more
   rows than the other two sets.
+
+The neural network used for machine learning is almost arbitrarily
+chosen and has not been tuned.  The architecture is one of the
+best performing in Nicolò's experiments on other datasets from
+CosmoSim, but the hyperparameters are arbitrarily chosen.
+The training set used is 16000 images.  The specification of the
+distribution can be downloaded ([toml.csv](toml.csv)).
 
 +++
 
