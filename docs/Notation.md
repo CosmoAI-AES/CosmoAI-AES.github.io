@@ -2,7 +2,7 @@
 usemathjax: true
 ---
 
-# Notattion in the Implementation
+# Notation in the Implementation
 
 THe notation in the implementation differs from the one used in the mathemaical
 descriptions.

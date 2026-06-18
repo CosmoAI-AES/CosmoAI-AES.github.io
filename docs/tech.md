@@ -3,7 +3,7 @@
 
 ## Outline
 
-+ [Test Scripts](/docs/test/)
++ [Test Scripts](/docs/test/Test)
 + [Software Model](/docs/Software) - technical documentation
 + [Simulation Model](/docs/model/) -
   technical documentation of the simulator library

@@ -71,7 +71,7 @@ project:
             - file: docs/model/Roulette.md
             - file: docs/model/Simulator.md
             - file: docs/model/Source.md
-        - title: Testing
+        - file: docs/test/Test.md
           children:
             - file: docs/test/Cluster Lens.md
             - file: docs/test/Model Comparison.md
@@ -81,7 +81,6 @@ project:
             - file: docs/test/Roulette Resimulation Test.md
             - file: docs/test/Roulette Statistics.md
             - file: docs/test/Source Constellation Test.md
-            - file: docs/test/Test.md
     - title: Demoes
       file: demo/index.md
       children:
