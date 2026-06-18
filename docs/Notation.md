@@ -43,7 +43,7 @@ systems: one for calculation and one for presentation.
 + The CSV outfile gives
     + `centreX`, `centreY`   ($\xi'$)
     + `reletaX`, `reletaY`   ($\xi' \mapsto \eta - \xi'$)
-    + `xiX`, `xiY`  (`xioffset` internally: $\xi'\mapsto\nu-\xi'$
+    + `xiX`, `xiY`  (`xioffset` internally): $\xi'\mapsto\nu-\xi'$
     + `offsetX`, `offsetY`   ($\xi' \mapsto \xi' - \nabla\psi(\xi') - \eta$)
 
 Here $\xi'$ is the origin of the new co-ordinate system, so that
