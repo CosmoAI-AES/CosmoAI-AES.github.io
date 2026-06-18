@@ -1,4 +1,4 @@
-# See docs at: https://mystmd.org/guide/frontmatter
+  # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
   id: a77fa618-d81f-4358-9d99-f3bac57b2b7f
@@ -53,20 +53,15 @@ project:
             - file: docs/ML/Pipeline.md
             - file: docs/Dataset.md
         - file: docs/scripts/GUI.md
-    - file: docs/tech.md
+    - file: docs/Software.md
       children:
         - file: docs/Notation
-        - file: docs/Software.md
-          children:
-          - file: docs/Software v2.5.0.md
         - file: docs/CosmoSimPy.md
         - file: docs/Lens API.md
-        - file: docs/Roulette.md
-        - title: Model
+        - file: docs/model/Overview
           children:
             - file: docs/model/Constellation.md
             - file: docs/model/Lens.md
-            - file: docs/model/Overview.md
             - file: docs/model/Raytrace.md
             - file: docs/model/Roulette.md
             - file: docs/model/Simulator.md
@@ -81,6 +76,9 @@ project:
             - file: docs/test/Roulette Resimulation Test.md
             - file: docs/test/Roulette Statistics.md
             - file: docs/test/Source Constellation Test.md
+        - title: Legacy documentation
+          children:
+          - file: docs/Software v2.5.0.md
     - title: Demoes
       file: demo/index.md
       children:
