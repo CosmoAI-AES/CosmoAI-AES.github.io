@@ -90,6 +90,7 @@ project:
       - file: demo/Demo02Annotation.ipynb
       - file: demo/Demo03Resimulation.ipynb
       - file: demo/Dataset.ipynb
+      - file: demo/ML/Testing.ipynb
       - file: demo/RouletteML01.ipynb
     - title: Development
       children:
