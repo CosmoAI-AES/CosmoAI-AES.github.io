@@ -43,11 +43,10 @@ project:
           - file: math/Legacy Notes on SIE.md
     - file: docs/user.md
       children:
-        - title: Scripts
+        - file: docs/scripts/Overview.md
           children:
-            - file: docs/scripts/datagen script.md
-            - file: docs/scripts/Overview.md
-            - file: docs/scripts/Roulette Resimulation.md
+            - file: docs/scripts/datagen.md
+            - file: docs/scripts/Resimulation.md
         - file: docs/droulette.md
           children:
             - file: docs/ML/MachineLearning.md

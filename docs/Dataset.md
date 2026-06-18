@@ -4,6 +4,11 @@ title: Sample Datasets
 
 # Sample Datasets
 
+::: {warning}
+This is old sketches presenting the initial considerations that
+led to the demo on [](/demo/Dataset.ipynb).
+:::
+
 Hezaveh uses $192\times192$ image size with a pixel size of 0.04"
 (seconds of arc).
 This seems to be a reasonable choice to follow.

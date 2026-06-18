@@ -121,4 +121,4 @@ plt.axis("off")
 
 ## Closure
 
-Annotation is work in process, and 
+Annotation is work in process, and

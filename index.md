@@ -34,24 +34,23 @@ errors and inconsistencies.
   and can be installed with `pip install CosmoSim`.
 + [CosmoSim GUI](/docs/scripts/GUI),
   which is run as `python -m CosmoSim.GUI`.
-+ [CosmoSim Demo](/demo/index) showing API operation in Jupyter Notebook
-+ [](/docs/ML/Pipeline) with `droulette`
-    + other details on [](/docs/droulette)
-+ [User Tools](/docs/scripts/Overview.md) for command line operation.
++ [CosmoSim Demos](/demo/index) exemplify intended workflows for
+  testing the simulator, comparing simulation and lens models, and
+  training and testing of machine learning models.
+  Most of the demos use the API in  Jupyter Notebook.  Some depend
+  on command line operation.
 
 To understand the software, it will be necessary to have at least
 a superficial understanding of the [](math/math).
 
+## Dokumentasjon
 
-## Publications
++ [](math/math).
++ [User Tools](/docs/scripts/Overview.md)
 
-If you build on our work, please cite one of our  [](docs/Publications):
 
-1. Hans Georg Schaathun, Ben David Normann, and Kenny Solevåg-Hoti. 
-    [Om å kartleggja mørk materie med maskinlæring](https://www.ntnu.no/ojs/index.php/nikt/article/view/5666). 
-    In *Norsk IKT-konferanse for forskning og utdanning*, number 1, 2023. 
-2. Hans Georg Schaathun, Ben David Normann, Einar Leite Austnes, Simon Ingebrigtsen, Sondre Westbø Remøy, and Simon Nedreberg Runde. 
-    [On the simulation of gravitational lensing](https://www.scs-europe.net/dlib/2023/2023-0141.html). 
-    In Enrico Vicario, Romeo Bandinelli, Virginia Fani, and Michele Mastroianni, editors, 
-    *Proceedings of the 30th European Conference on Modelling and Simulation*.
-    ECMS - European Council for Modelling and Simulation, 2023. Florence, Italy, 21-23 June 2023. 
+
+## Other information
+
++ [](docs/Publications)
+

@@ -4,7 +4,20 @@ theme: minima
 usemathjax: true
 ---
 
-# CosmoSim on the Command Line 
+# User tools
+
+CosmoSim is a suite of tools.  The page below document
+the main command line utilities.  In addition, we have
+the following:
++ [](./GUI)
++ [](/docs/droulette) (not yet published)
++ Additional documentation which is out of date
+    + [](./datagen)
+    + [](./Resimulation)
+
+See also [](/demo/index).
+
+## CosmoSim on the Command Line 
 
 The CosmoSim module is executable (as of version 3.0.0),
 providing several modes of operation.
