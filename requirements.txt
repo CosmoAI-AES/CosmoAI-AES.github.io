@@ -1,0 +1,8 @@
+CosmoSim>=3.0.1b1
+numpy 
+matplotlib
+opencv-python
+pandas 
+jupytext
+jupyter-book
+jupyterlab-myst

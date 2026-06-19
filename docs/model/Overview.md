@@ -5,7 +5,6 @@ permalink: /docs/model/
 usemathjax: true
 ---
 
-
 # Simulator Library
 
 At the highest level, the simulator consists of three components.
@@ -15,10 +14,14 @@ At the highest level, the simulator consists of three components.
     of the source and produce undistorted images of it.
 3.  [simulation model](Simulator) (SimulatorModel) which calculates distorted images
     by using the lens and source models.
-    Some simulation models are couples the lens model for various reasons. 
     Two generic simulation models are supported.
     + [Raytrace Simulation](Raytrace) 
-    + [Roulette Model](../Roulette)
+    + [Roulette Model](Roulette)
+
+For pointmass lenses, the lens model is coupled with the simulator model.
+This is due to early implementation based on special cases of the mathematical
+models.  Because pointmass lesses are little used for our research, this has
+never changed.
 
 ## Modelling the Lens 
 

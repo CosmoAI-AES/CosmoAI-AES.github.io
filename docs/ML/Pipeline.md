@@ -14,6 +14,8 @@ using `CosmoSim` data.  The codebase has not been made public yet.
 
 The main principle for the pipeline is to use a TOML file for each
 step, to define the data and parameters used.
+Examples of the TOML files in this pipeline are found under `Datasets`
+in the source repo.
 
 
 The following pipeline trains and compares machine learning
@@ -32,7 +34,7 @@ Installation of droulette implies CosmoSim as a dependency.
 The dataset is randomly generated from a TOML file describing
 the distribution.  This is done using CosmoSim as follows:
 ```sh
-python3 -m CosmoSim.datagen --toml dataset.toml --csvfile dataset.csv \
+python3 -m CosmoSim --rnd --toml dataset.toml --csvfile dataset.csv \
         --outfile roulette.csv --directory images -C
 ```
 
@@ -49,15 +51,14 @@ Two CSV files are produced.
 + dataset.csv gives lens and source parameters
 + roulette.csv gives roulette parameters
 
-**Note**
-that the `-C` flag is critical.
+::: {warning}
+The `-C` flag is critical.
 It centres the image to avoid leaking information
 through the choice of origin.
+:::
 
 **See also** discussion of
 [Parameter ranges](../Dataset).
-
-
 
 ### (3) Prepare roulette data for machine learning
 

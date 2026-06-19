@@ -2,14 +2,12 @@
 
 The easiest tool to get started with is the [](scripts/GUI).
 
-The other tools are under constant development and the documentation
-is lagging behind.
 The proposed pipeline for [](ML/MachineLearning) is probably the best
-starting point.
+starting point for using the command line interface and batch simulation.
 
-Version 3.0.0 provides an API to use the simulator from Jupyter
-Notebook or custom scripts.  There is a demo of this
-+ [](demo/Demo01)
+Version 3.0 provides an API to use the simulator from Jupyter
+Notebook or custom scripts.
+See [](/demo/index).
 
 ## Physical interpretation
 

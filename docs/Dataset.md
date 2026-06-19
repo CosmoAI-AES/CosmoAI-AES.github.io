@@ -4,9 +4,23 @@ title: Sample Datasets
 
 # Sample Datasets
 
+::: {warning}
+This is old sketches presenting the initial considerations that
+led to the demo on [](/demo/Dataset.ipynb).
+:::
+
 Hezaveh uses $192\times192$ image size with a pixel size of 0.04"
 (seconds of arc).
 This seems to be a reasonable choice to follow.
+
+::: {note} Units in CosmoSim
+As of v3.0.0 CosmoSim assumes angular units for all parameters, so that
+the source position and the Einstein radius are on the same scale in angular
+terms.
+
+In past versions, the Einstein radius was measured as a length in the lens
+plane, and would thus be scaled to be compared to units in the source plane.
+:::
 
 ::: {note} Image Size
 In early experiments, we used an image size of $512\times512$
@@ -26,15 +40,25 @@ This is based on a sketch by Ben David March 2026.
     For example, choose the polar coordinates $(R,\phi)$ 
     + so that $R\le c\theta_E$ for some constant $C$, e.g. $c=1.2$.
     + $\phi$ chosen uniformly at random
-4.  Choose the orientation of the elliptical lens uniformly at random.
-5.  Choose the orientation of the elliptical source uniformly at random.
+4.  Choose the orientation of the elliptical lens uniformly at random
+    from a half-circle.
+5.  Choose the orientation of the elliptical source uniformly at random
+    from a half-circle.
 6.  CHoose the ellipticity $f$ of the lens uniformly at random, so
-    that $0.6\le f\le 0.9$.
-7.  Source parameters - sersic profiel
-    + size: $2\le\sigma\le5$
+    that $0.1\le f\le 0.9$.
+7.  Source parameters - sersic profile
+    + size: $0.04"\le\sigma\le0.2"$
     + sersic index  $1\le n_s\le 5$
     + luminosity  $10\le l\le 20$, exponentially distributed
       with $\lambda=2.0$ (see below)
+
+## Cluster lenses
+
+1. For cluster lenses, each constituent lens is placed in the same way as 
+   the source, relative to the origin, in polar co-ordinates $(R_L,\phi_L)$.
+    + select random distance $R_L\le2\theta_E$, where $\theta_E$ is the
+      Einstein radius of the constituent lens
+    + select random angle $\phi_L$ 
 
 ## Proposal from Oda
 
