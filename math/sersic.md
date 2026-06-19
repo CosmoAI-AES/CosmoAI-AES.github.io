@@ -7,7 +7,7 @@ title: Sersic profiles
 The following is the actual implementation as of v3.0.0.
 It calculates the value at pixel `(row,col)`.
 
-```c++
+```cpp
 float re = sigma; // effective radius
 float r = std::sqrt(std::pow(x, 2)+std::pow(y, 2)); //source position
 float bn = 1.992*n_sersic - 0.3271;
@@ -71,3 +71,17 @@ The pixel value is given as
 $$v = \exp -b\cdot\bigg( \big(\frac{r}{r_e}\big)^{\frac{1}{n}} - 1\bigg)$$
 
 The model is taken from [](https://arxiv.org/pdf/astro-ph/0503176).
+
+The code is given as
+
+```cpp
+auto q = sigma2/sigma1;
+int n = 4;  // Sersic index
+auto re = 10*sigma1; // effective radius
+auto r = std::sqrt(std::pow(x/q, 2)+std::pow(y, 2));
+auto bn = 1.992*n - 0.3271;
+auto value = round(std::exp(-bn*((std::pow(r/re, 1.0/n))-1.0)));
+if (value > 255) { value = 255; }
+dst.at<uchar>(row, col) = (uchar)value;
+```
+
