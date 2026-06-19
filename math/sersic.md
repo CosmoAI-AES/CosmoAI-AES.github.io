@@ -32,7 +32,7 @@ The lumonosity is given here as $L$ which is 1000 times the
 input parameter `luminosity`.
 We can then define the value of pixel $(x,y)$ as
 $$v_{x,y} = I_{\mathrm{eff}}\cdot
-    \text{e}^{-\big(b_n\cdot\big(\frac{r}{\sigma}\big)^{\frac{1}{n_s}}-1\big)}$$
+    \text{e}^{-b_n\big(\big(\frac{r}{\sigma}\big)^{\frac{1}{n_s}}-1\big)}$$
 where
 $$
 \begin{align}
