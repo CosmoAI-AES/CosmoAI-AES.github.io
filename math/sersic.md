@@ -54,9 +54,8 @@ The parameter *n* is the key to the profile's flexibility — since it controls 
 
 ## Ellipsoid Source with Sersic profile
 
-One of the most popular source models is an ellipsoid with
-sersic profile.
-In our implementation, this individual sources are defined by
+We have hardcoded an implementation of an elliptic profile, namely the de Vaucouleurs' profile.
+In our implementation, this individual source is defined by
 two size parameters, $\sigma_1$ and $\sigma_2$, for the minor
 and major axes of the ellipsoid.
 
