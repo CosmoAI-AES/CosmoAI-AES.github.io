@@ -27,11 +27,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import json
-from CosmoSim import CosmoSim
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
 import CosmoSim.dataset as csd
-from CosmoSim import Parameters
+from CosmoSim import CosmoSim, Parameters
 ```
 
 ## First test of Cluster Lenses
@@ -99,7 +98,7 @@ display( ob )
 ```
 
 ```{code-cell} ipython3
-param = cs.Parameters( )
+param = Parameters( )
 param.setRow( ob )
 imsim = csg.SimImage( param, verbose=0 )
 im = imsim.getImage()
@@ -111,7 +110,7 @@ csimg.imshow( im )
 ```{code-cell} ipython3
 def mkimg(cfg):
       ob0 = csd.getline( cfg, fn="test.png" )
-      p0 = cs.Parameters( )
+      p0 = Parameters( )
       p0.setRow( ob0 )
       sim = csg.SimImage( p0, verbose=0 )
       return imsim.getImage()
