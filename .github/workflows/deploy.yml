@@ -53,9 +53,7 @@ jobs:
       - name: Execute Notebooks 
         run: |
           cd demo
-          jupytext --sync --execute *.md
-          cd ML
-          jupytext --sync --execute *.md
+          jupytext --sync --execute *.md */*.md
       - name: Build HTML Assets
         run: jupyter book build --html
       - name: Upload artifact
