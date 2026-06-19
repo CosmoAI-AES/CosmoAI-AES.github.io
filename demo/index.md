@@ -14,6 +14,7 @@ pip install CosmoSim>=3.0.1b1 --upgrade
       critical curves and key points. 
     + [](./Demo03Resimulation.ipynb) sbows the principles of simulation from 
       roulette amplitudes.
+    + [](./Cluster/Cluster01.ipynb) is the first test of cluster lenses
 + Applications for machine learning 
     + [](Dataset.ipynb) shows how to generate datasets for machine learning.
     + [](ML/Testing.ipynb) shows how to generate datasets for machine learning.
