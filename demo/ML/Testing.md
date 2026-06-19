@@ -19,9 +19,6 @@ This document evaluates one trained machine learning model,
 see details below.
 We use both conventional metrics and comparison with a 
 resimulated image.
-There is one methodological flaw in the model training.
-The early stopping criterion is based on testing on the same
-test set as we use here.
 
 We use three datafiles, which must be downloaded if this
 document is to be executed.
