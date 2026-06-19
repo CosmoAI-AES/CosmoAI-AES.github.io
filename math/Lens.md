@@ -75,7 +75,7 @@ $$
 $$
 
 The deflection may now be calculated using that
-
+$$
 \begin{aligned}
   \frac{\partial\psi}{\partial \theta_1} &=
      \theta_E\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}\cdot\big(
@@ -89,15 +89,16 @@ The deflection may now be calculated using that
         + \cos\lambda\cdot\sin^{-1}(\sqrt{1-f^2}\frac{\theta_2^\prime}{\theta})
         \big)
 \end{aligned}
-
+$$
 where
 
+$$
 \begin{aligned}
   \theta_1^\prime &= \cos\lambda\cdot \theta_1 + \sin\lambda\cdot \theta_2
   \\
   \theta_2^\prime &= -\sin\lambda\cdot \theta_1 + \cos\lambda\cdot \theta_2
 \end{aligned}
-
+$$
 and $\theta = \sqrt{\theta_1^2+\theta_2^2}$ as before.
 As for SIS, $\theta_E$ is called `einsteinR` in the code.
 See `psiXvalue` and `psiYvalue` in `SIE.cpp`.
