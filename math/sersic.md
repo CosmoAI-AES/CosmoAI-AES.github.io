@@ -13,7 +13,9 @@ float r = std::sqrt(std::pow(x, 2)+std::pow(y, 2)); //source position
 float bn = 1.992*n_sersic - 0.3271;
 float F = luminosity * std::pow(10, 3);
 float pi = 3.141592;
-float I_eff = F*std::pow(bn, 2.0 * n_sersic)/(2 * pi * std::pow(re, 2.0) * n_sersic * std::exp(bn) * std::tgamma(2.0 * n_sersic));
+float I_eff = F*std::pow(bn, 2.0 * n_sersic)
+            / ( 2 * pi * std::pow(re, 2.0) * n_sersic * std::exp(bn) 
+              * std::tgamma(2.0 * n_sersic));
 float value = round(I_eff*std::exp(-bn*((std::pow(r/re, 1.0/n_sersic))-1.0)));
 if (value > 255) { value = 255; }
 dst.at<uchar>(row, col) = (uchar)value;
@@ -27,19 +29,17 @@ The translation between the two is not shown here, and we
 will refer only to $(x,y)$ when we translate the code into
 algenbra.
 
-The lumonosity is given here as $L$ which is 1000 times the
-input parameter `luminosity`.
+The lumonosity is given here as $L$ (`F` in the code) which 
+is 1000 times the input parameter `luminosity`.
 We can then define the value of pixel $(x,y)$ as
 $$v_{x,y} = I_{\mathrm{eff}}\cdot
     \text{e}^{-b_n\big(\big(\frac{r}{\sigma}\big)^{\frac{1}{n_s}}-1\big)}$$
 where
-$$
 \begin{align}
   b_n & = 1.992n_s - 0.3271 \\
     r & = \sqrt{x^2+y^2}  \\
 I_{\mathrm{eff}} & =  L\cdot \frac{b_n^{2n_s}}{2\pi\sigma^2n_s\text{e}^{b_n}\cdot \Gamma(2n_s)}
 \end{align}
-$$
 
 The parameter *n* is the key to the profile's flexibility — since it controls the shape of the light distribution:
 
