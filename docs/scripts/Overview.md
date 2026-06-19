@@ -37,9 +37,9 @@ The dataset generation (`rnd`) can also be accessed separately:
     + **TODO** further documentation
 
 + In version 2.x, the main functionality was split between two scripts
-    + [`CosmoSim.datagen`](datagen%20script) is the main CLI tool 
+    + [`CosmoSim.datagen`](datagen) is the main CLI tool 
         + bulk generation of images
-    + `CosmoSim.roulettegen`  [](Roulette%20Resimulation)
+    + `CosmoSim.roulettegen`  [](Resimulation)
         + generate images from a set of roulette amplitudes
 
 ## Other scripts
