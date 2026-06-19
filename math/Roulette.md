@@ -96,7 +96,7 @@ $$
    \begin{bmatrix} \beta_1 \\\\ \beta_2 \end{bmatrix} &=
    \theta\cdot\begin{bmatrix} \cos\phi \\\\ \sin\phi \end{bmatrix} 
       + \sum_{m=1}^{\infty} \frac{\theta^m}{m!}
-      \cdot\sum\_{s=0}^{m+1} c\_{m+s}
+      \cdot\sum_{s=0}^{m+1} c_{m+s}
        \left(\alpha_s^m \boldsymbol{A}\_{s} + \beta\_s^m \boldsymbol{B}\_{s} \right) 
        \begin{bmatrix} C^+ \\\\ C^- \end{bmatrix}
    \\\\\\\\
