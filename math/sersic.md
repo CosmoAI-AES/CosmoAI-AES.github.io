@@ -28,7 +28,7 @@ The translation between the two is not shown here, and we
 will refer only to $(x,y)$ when we translate the code into
 algenbra.
 
-The lumonosity is given here as $F$ which is 1000 times the
+The lumonosity is given here as $L$ which is 1000 times the
 input parameter `luminosity`.
 We can then define the value of pixel $(x,y)$ as
 $$v_{x,y} = I_{\mathrm{eff}}\cdot
@@ -38,8 +38,7 @@ $$
 \begin{align}
   b_n & = 1.992n_s - 0.3271 \\
     r & = \sqrt{x^2+y^2}  \\
-I_{\mathrm{eff}} & =  F\cdot \frac{b_n^{2n_s}}{2\pi\sigma^2}
-  \cdot n_s \cdot \text{e}^{b_n} \cdot \gamma(2n_s)
+I_{\mathrm{eff}} & =  L\cdot \frac{b_n^{2n_s}}{2\pi\sigma^2n_s\text{e}^{b_n}\cdot \gamma(2n_s)}
 \end{align}
 $$
 
