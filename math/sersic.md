@@ -32,14 +32,23 @@ The lumonosity is given here as $F$ which is 1000 times the
 input parameter `luminosity`.
 We can then define the value of pixel $(x,y)$ as
 $$v_{x,y} = I_{\mathrm{eff}}\cdot
-    \exp -b_n\cdot\left(\frac{r}{\sigma}\right)^{\frac{1}{n_s}}-1$$
+    \text{e}^{-\big(b_n\cdot\big(\frac{r}{\sigma}\big)^{\frac{1}{n_s}}-1\big)}$$
 where
+$$
 \begin{align}
   b_n & = 1.992n_s - 0.3271 \\
     r & = \sqrt{x^2+y^2}  \\
-I_{\mathrm{eff}} & =  F*frac{ b_n^{2n_s} }{2\pi\sigma^2}
-  \cdot n_s \cdot e^{b_n} \cdot \gamma(2n_s)
+I_{\mathrm{eff}} & =  F\cdot \frac{b_n^{2n_s}}{2\pi\sigma^2}
+  \cdot n_s \cdot \text{e}^{b_n} \cdot \gamma(2n_s)
 \end{align}
+$$
+
+The parameter *n* is the key to the profile's flexibility — since it controls the shape of the light distribution:
+
+* **n = 1**: reduces to an **exponential profile**, typical of galactic disks (like spiral galaxy disks)
+* **n = 4**: reduces to the **de Vaucouleurs profile**, which closely matches the light distribution of elliptical galaxies and bulges
+* **Higher n**: profile has a steep central peak (cuspy core) but very extended, faint outer wings
+* **Lower n**: profile is flatter and more uniform, dropping off more sharply at large radii.
 
 
 
