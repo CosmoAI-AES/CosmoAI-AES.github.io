@@ -1,12 +1,11 @@
 ---
 title: Critical Curves for The SIE Lens
-usemathjax: true
 ---
 
 
 # Critical Curves for The SIE Lens
 
-The [SIE](SIE) lens is defined by the convergence
+The [SIE](./SIE) lens is defined by the convergence
 \begin{equation}
   \kappa(\xi_1,\xi_2)=\frac{\sqrt{f}\xi_0}{2\sqrt{\xi_1^2+f^2\xi_2^2}},
 \end{equation}

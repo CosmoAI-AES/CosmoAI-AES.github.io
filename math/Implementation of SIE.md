@@ -1,6 +1,5 @@
 ---
 title: Implementation of SIE
-usemathjax: true
 ---
 
 # Implementation of SIE
@@ -12,7 +11,7 @@ This is implemented in the SIE class (`src/simlib/SIE.cpp`).
 ### Evaluation of the lens potential.
 
 To evaluate the lens potential $\psi^{\mathrm{R}}(x,y)$, we calculate the polar coordinates
-$R$ and $\phi$, and use the formula (see [SIE](SIE)) for 
+$R$ and $\phi$, and use the formula (see [SIE](./SIE)) for 
 $\psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(R,\phi)$.
 
 ### Evaluation of the Deflection.

@@ -1,6 +1,5 @@
 ---
 title: Differentiation of SIE
-usemathjax: true
 ---
 
 # Differentiation of SIE (Approach 2)
@@ -28,7 +27,7 @@ where
 \begin{equation}
   R=\sqrt{x'^2+y'^2}
 \end{equation}
-The first order derivatives (see [SIE](SIE)) are given as
+The first order derivatives (see [SIE](./SIE)) are given as
 \begin{equation}
   \frac{d}{dx'}\psi^{\mathrm{R}}(x',y') = 
   C_0\frac{\sqrt{f}}{f'}

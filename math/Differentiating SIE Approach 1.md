@@ -1,11 +1,10 @@
 ---
 title: Differenting SIE APproach 1
-usemathjax: true
 ---
 
 
 This is one of several approaches suggested for
-differentiation of the lens potential for [SIE](SIE).
+differentiation of the lens potential for [SIE](./SIE).
 
 # Approach 1. Rotation of the Coordinate System
 

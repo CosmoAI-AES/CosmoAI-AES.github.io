@@ -1,6 +1,5 @@
 ---
 title: Lens Models
-usemathjax: true
 ---
 
 # Lens Models

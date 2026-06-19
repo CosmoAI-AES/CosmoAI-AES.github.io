@@ -1,6 +1,5 @@
 ---
 title: Sersic profiles
-usemathjax: true
 ---
 
 ## Spherical Source with Sersic profile
