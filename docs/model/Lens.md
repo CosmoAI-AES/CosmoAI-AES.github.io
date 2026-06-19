@@ -1,7 +1,5 @@
 ---
 title: Lens Models
-theme: minima
-usemathjax: true
 ---
 
 # Lens Models

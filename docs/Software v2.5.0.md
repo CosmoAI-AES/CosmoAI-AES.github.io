@@ -1,8 +1,5 @@
 ---
 title: CosmoSim v2.5.0
-theme: minima
-permalink: /docs/Software
-usemathjax: true
 ---
 
 # CosmoSim v2.5.0

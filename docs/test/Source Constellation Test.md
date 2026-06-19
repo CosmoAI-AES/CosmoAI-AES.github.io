@@ -1,6 +1,5 @@
 ---
 title: Point Mass Tests
-usemathjax: true
 date: 2024-10-17
 ---
 
