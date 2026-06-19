@@ -118,7 +118,8 @@ def mkimg(cfg):
 
 ```{code-cell} ipython3
 ims = [ mkimg(cfg) for i in range(6) ]
-csimg.showImages( ims )
+ts = [ f"Image {i}" for i in range(6) ]
+csimg.showImages( ims, ts )
 ```
 
 ## Closure
