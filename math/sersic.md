@@ -38,7 +38,7 @@ $$
 \begin{align}
   b_n & = 1.992n_s - 0.3271 \\
     r & = \sqrt{x^2+y^2}  \\
-I_{\mathrm{eff}} & =  L\cdot \frac{b_n^{2n_s}}{2\pi\sigma^2n_s\text{e}^{b_n}\cdot \gamma(2n_s)}
+I_{\mathrm{eff}} & =  L\cdot \frac{b_n^{2n_s}}{2\pi\sigma^2n_s\text{e}^{b_n}\cdot \Gamma(2n_s)}
 \end{align}
 $$
 
