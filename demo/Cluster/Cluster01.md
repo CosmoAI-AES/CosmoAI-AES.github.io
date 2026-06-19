@@ -15,8 +15,9 @@ kernelspec:
 
 # Cluster Lenses (Demo n° 1)
 
-This demo follows the pattern from [](/demo/Demo01.ipynb),
-and we will not explain constructs known therefrom.
+This demo follows the pattern from [](/demo/Demo01.ipynb) 
+and [](/demo/Dataset.ipynb),
+and we will not take up space to explain constructs known therefrom.
 
 ## Preparation
 
@@ -25,9 +26,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
+import json
 from CosmoSim import CosmoSim
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
+import CosmoSim.dataset as csd
 from CosmoSim import Parameters
 ```
 
@@ -58,9 +61,65 @@ ellipticity, and orientation.
 Given the parameters, the simulation is as before.
 
 ```{code-cell} ipython3
-imsim = SimImage( param )
+imsim = SimImage( param, verbose=0 )
 im = imsim.getImage()
 csimg.imshow( im, title="First example of a cluster lens" )
+```
+
+## Random dataset
+
+We can also generate random datasets.
+
+```{code-cell} ipython3
+cfg = csd.readtoml( "cluster.toml" )
+display( json.dumps( cfg ) )
+```
+
+::: {tip}
+Download [cluster.toml](./dataset.toml).
+:::
+
+::: {note} Remark
+The TOML file is similar to the one used in [](/demo/Dataset.ipynb).
+The most notable difference is the `[cluster]`.
+We also have to specify the lens model for the constuent lenses with the
+`lens.model` parameter.
+It cannot be inferred from `simulator.config`.
+:::
+
+Each constituent lens is placed in a random direction from the origin,
+at a random distance upper bounded as $c\theta_E$ where $\theta_E$ is
+the Einstein radius and $c$ is the constant given as `cluster.maxrelativelocation`.
+
+We can draw a random object as before.
+
+```{code-cell} ipython3
+ob = csd.getline( cfg, fn="test.png" )
+display( ob )
+```
+
+```{code-cell} ipython3
+param = cs.Parameters( )
+param.setRow( ob )
+imsim = csg.SimImage( param, verbose=0 )
+im = imsim.getImage()
+csimg.imshow( im )
+```
+
+## A sample
+
+```{code-cell} ipython3
+def mkimg(cfg):
+      ob0 = csd.getline( cfg, fn="test.png" )
+      p0 = cs.Parameters( )
+      p0.setRow( ob0 )
+      sim = csg.SimImage( p0, verbose=0 )
+      return imsim.getImage()
+```
+
+```{code-cell} ipython3
+ims = [ mkimg(cfg) for i in range(6) ]
+showImages( ims )
 ```
 
 ## Closure
