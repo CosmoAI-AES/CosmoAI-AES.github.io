@@ -100,7 +100,7 @@ display( ob )
 ```{code-cell} ipython3
 param = Parameters( )
 param.setRow( ob )
-imsim = csg.SimImage( param, verbose=0 )
+imsim = SimImage( param, verbose=0 )
 im = imsim.getImage()
 csimg.imshow( im )
 ```
@@ -112,7 +112,7 @@ def mkimg(cfg):
       ob0 = csd.getline( cfg, fn="test.png" )
       p0 = Parameters( )
       p0.setRow( ob0 )
-      sim = csg.SimImage( p0, verbose=0 )
+      sim = SimImage( p0, verbose=0 )
       return imsim.getImage()
 ```
 
