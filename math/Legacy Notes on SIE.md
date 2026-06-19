@@ -1,6 +1,5 @@
 ---
 title: Legacy Notes for the SIE Lens
-usemathjax: true
 ---
 
 ## In Polar Co-ordinates

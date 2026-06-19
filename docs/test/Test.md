@@ -1,6 +1,5 @@
 ---
 title: CosmoSim Test Scripts
-usemathjax: true
 ---
 
 # CosmoSim Test Scripts

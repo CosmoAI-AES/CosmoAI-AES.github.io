@@ -1,6 +1,5 @@
 ---
 title: Basic Notation
-usemathjax: true
 ---
 
 # Basic Notation
@@ -96,7 +95,7 @@ we get there, let us also introduce the standard way of normalizing.
 The implementation uses the angular distances $\beta$ and $\theta$,
 but for historical reasons, $\beta$ is called `eta` and $\theta$
 either `xi` or `nu`.  This reflects linear units being used in the past.
-See [](/docs/Notation)
+See [](/docs/Notation.md)
 :::
 
 ## Normalisation
@@ -216,7 +215,7 @@ they will require different lens models in the implementation.
 
 ::: {note} Implementation
 An overview of how the model parameters are represented in the code,
-see [](/docs/Notation).
+see [](/docs/Notation.md).
 :::
 
 ## Surface Mass Density

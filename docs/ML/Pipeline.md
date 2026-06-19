@@ -1,6 +1,5 @@
 ---
 title: Machine Learning Pipeline 
-usemathjax: true
 ---
 
 # Machine Learning Pipeline

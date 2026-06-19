@@ -14,7 +14,7 @@ We will try to explain the architecure as
 ## Architecture
 
 The CosmoSim software suite consists of three layers.
-1.  The [simulator library](model/Overview), *simlib*,
+1.  The [simulator library](model/Overview.md), *simlib*,
     implemented in C++
 1.  The python wrapper, [CosmoSimPy](CosmoSimPy),
     implemented in C++ and python.
@@ -44,5 +44,5 @@ amplitudes during simulation.
 
 ## More information
 
-+ [](/docs/Notation) and relationship between the software and the mathemaical model.
++ [](/docs/Notation.md) and relationship between the software and the mathemaical model.
 + [](/docs/test/Test)

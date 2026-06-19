@@ -1,6 +1,5 @@
 ---
 title: Point Mass Cloud
-usemathjax: true
 ---
 
 **work in progress**
