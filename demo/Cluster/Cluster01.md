@@ -108,15 +108,15 @@ csimg.imshow( im )
 ## A sample
 
 ```{code-cell} ipython3
-def mkimg(cfg):
-      ob0 = csd.getline( cfg )
+def mkimg(ob):
       p0 = Parameters( )
-      p0.setRow( ob0 )
+      p0.setRow( ob )
       sim = SimImage( p0, verbose=0 )
       return sim.getImage()
 ```
 
 ```{code-cell} ipython3
+obs = [ csd.getline( cfg ) for _ in range(8) ]
 ims = [ mkimg(cfg) for i in range(8) ]
 ts = [ f"Image {i}" for i in range(8) ]
 csimg.showImages( ims, size=(2,4), titles=ts )
