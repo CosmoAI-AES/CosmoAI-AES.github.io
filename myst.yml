@@ -86,7 +86,7 @@ project:
       - file: demo/Demo01.ipynb
       - file: demo/Demo02Annotation.ipynb
       - file: demo/Demo03Resimulation.ipynb
-      - file: demo/PointMass.ipynb
+      - file: demo/Pointmass.ipynb
       - file: demo/Dataset.ipynb
       - file: demo/ML/Testing.ipynb
       - file: demo/Cluster/Cluster01.ipynb
