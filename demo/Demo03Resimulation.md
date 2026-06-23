@@ -251,3 +251,7 @@ I hope we have managed to demonstrate some of the caveats.
 There is some work in progress here.  We should aim to improve the naming
 conventions and document the different co-ordinate systems to make it more
 transparent.
+
+```{code-cell} ipython3
+
+```

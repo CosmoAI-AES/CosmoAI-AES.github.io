@@ -177,6 +177,7 @@ To test different models, we can set `simulator.model`, which will override
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Roulette"
+param["simulator"]["nterms"] = 5
 imsimRoulette = SimImage( param, verbose=0 )
 imRoulette = imsimRoulette.getImage()
 plt.imshow( imRoulette, cmap='gray')
@@ -499,3 +500,7 @@ what makes reasonable parameters for lenses and sources.
 The only lens we have considered is SIE.  The other main alternative is SIS.
 Point Mass lenses are also implemented but not as thoroughly tested with newer
 features of CosmoSim. (As of 15 June 2026.)
+
+```{code-cell} ipython3
+
+```
