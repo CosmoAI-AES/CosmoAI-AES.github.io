@@ -1,8 +1,5 @@
 ---
 title: CosmoSim GUI
-theme: minima
-permalink: /docs/scripts/
-usemathjax: true
 ---
 
 # CosmoSim GUI

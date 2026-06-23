@@ -1,7 +1,5 @@
 ---
 title: CosmoSim Test Scripts
-permalink: /docs/test/
-usemathjax: true
 ---
 
 # CosmoSim Test Scripts

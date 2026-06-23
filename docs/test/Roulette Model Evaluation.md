@@ -1,6 +1,5 @@
 ---
 title: Roulette Modelling Tests
-usemathjax: true
 date: 2024-07-02
 ---
 

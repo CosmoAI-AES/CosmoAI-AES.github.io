@@ -4,7 +4,20 @@ theme: minima
 usemathjax: true
 ---
 
-# CosmoSim on the Command Line 
+# User tools
+
+CosmoSim is a suite of tools.  The page below document
+the main command line utilities.  In addition, we have
+the following:
++ [](./GUI)
++ [](/docs/droulette) (not yet published)
++ Additional documentation which is out of date
+    + [](./datagen)
+    + [](./Resimulation)
+
+See also [](/demo/index).
+
+## CosmoSim on the Command Line 
 
 The CosmoSim module is executable (as of version 3.0.0),
 providing several modes of operation.
@@ -24,9 +37,9 @@ The dataset generation (`rnd`) can also be accessed separately:
     + **TODO** further documentation
 
 + In version 2.x, the main functionality was split between two scripts
-    + [`CosmoSim.datagen`](datagen%20script) is the main CLI tool 
+    + [`CosmoSim.datagen`](datagen) is the main CLI tool 
         + bulk generation of images
-    + `CosmoSim.roulettegen`  [](Roulette%20Resimulation)
+    + `CosmoSim.roulettegen`  [](Resimulation)
         + generate images from a set of roulette amplitudes
 
 ## Other scripts

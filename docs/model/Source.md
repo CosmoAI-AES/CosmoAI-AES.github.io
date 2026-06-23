@@ -1,7 +1,5 @@
 ---
 title: Source Models
-theme: minima
-usemathjax: true
 ---
 
 # Source Models

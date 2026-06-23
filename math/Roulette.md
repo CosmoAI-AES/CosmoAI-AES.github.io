@@ -93,16 +93,15 @@ the mapping $\mathcal{D}$ is given as
 
 $$
 \begin{aligned}
-      \frac{D_{\mathrm{L}}}{D_{\mathrm{S}}}\cdot
-   \begin{bmatrix} x' \\ y' \end{bmatrix} &=
-   r\cdot\begin{bmatrix} \cos\phi \\ \sin\phi \end{bmatrix} 
-      + \sum_{m=1}^{\infty} \frac{r^m}{m!\cdot D_{\mathrm{L}}^{m-1}}
+   \begin{bmatrix} \beta_1 \\\\ \beta_2 \end{bmatrix} &=
+   \theta\cdot\begin{bmatrix} \cos\phi \\\\ \sin\phi \end{bmatrix} 
+      + \sum_{m=1}^{\infty} \frac{\theta^m}{m!}
       \cdot\sum_{s=0}^{m+1} c_{m+s}
-       \left(\alpha_s^m \boldsymbol{A}_{s} + \beta_s^m \boldsymbol{B}_{s} \right) 
-       \begin{bmatrix} C^+ \\ C^- \end{bmatrix}
-   \\
-   C^\pm &= \pm \frac{s}{m+1},\\
-   c_{m+s} &= 
+       \left(\alpha_s^m \boldsymbol{A}\_{s} + \beta\_s^m \boldsymbol{B}\_{s} \right) 
+       \begin{bmatrix} C^+ \\\\ C^- \end{bmatrix}
+   \\\\\\\\
+   C^\pm &= \pm \frac{s}{m+1},\\\\\\\\
+   c\_{m+s} &= 
       \frac{1 - (-1)^{m+s}}{4} =
    \begin{cases}
       0, \quad m+s \text{ is even},\\
@@ -120,9 +119,8 @@ $$
     \end{bmatrix}.
 \end{aligned}
 $$
-
-The coefficients $\alpha_m^s$ and $\beta\_m^s$ depend on the lens potential
-$\psi(\xi_1,\xi_2)$, from which one may derive the physical properties of the lens.
+The coefficients $\alpha\_m^s$ and $\beta\_m^s$ depend on the lens potential
+$\psi(\theta_1,\theta_2)$, from which one may derive the physical properties of the lens.
 
 In practice the sum has to be truncated by limiting $m\le m_0$ for some $m_0$.
 

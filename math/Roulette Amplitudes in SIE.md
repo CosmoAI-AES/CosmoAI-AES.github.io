@@ -1,6 +1,5 @@
 ---
 title: Roulette Amplitudes for the SIE Lens
-usemathjax: true
 ---
 
 # Roulette Amplitudes for the SIE Lens

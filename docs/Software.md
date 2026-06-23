@@ -5,37 +5,44 @@ permalink: /docs/Software
 usemathjax: true
 ---
 
-# CosmoSim
+# CosmoSim Software Model
 
-![Model 3D](Model_3D.jpeg)
-
-The purpose of CosmoSim is to simulate gravitation lenses.
-In other words, giving a model of a lens and a model of a source,
-it can generate the distorted image of the source as seen through
-the lens.
+CosmoSim is written in C++ and Python.  
+It has evolved over quite some time and there is some technical debt.
+We will try to explain the architecure as 
 
 ## Architecture
 
-![CosmoSim Modules](software-v2-5-1.svg)
-
 The CosmoSim software suite consists of three layers.
-1.  The [simulator library](model/), *simlib*
-1.  The python wrapper, [CosmoSimPy](CosmoSimPy)
-1.  A range of [executable python scripts](scripts/), including the GUI
-   `CosmoGUI.py` and the batch generator `datagen.py`.
+1.  The [simulator library](model/Overview.md), *simlib*,
+    implemented in C++
+1.  The python wrapper, [CosmoSimPy](CosmoSimPy),
+    implemented in C++ and python.
+1.  The python module which several [scripts](scripts/Overview), 
+    [GUI](scripts/GUI) and an API.
+
+![CosmoSim Modules](software-v2-5-1.svg)
 
 The mathematical model is implemented in the simulator library, which
 is consequently the most important part to document properly.
 
-(Architecture updated in version 2.5.1.  See also
-[v2.5.0](Software v2.5.0).)
-
-
 ## Python modules
 
-All python code is collected in the `CosmoSimPy` directory
+Most of the code is packaged as a python module.
+The only exception is the scripts to generate the formulæ for roulette
+amplitudes (directory `python`).  
 
-+ CosmoSim
-    + Python package wrapping the simulator library.
-+ Arguments.py
-    + Argument parser and other shared functions for the scripts.
+### Calculation of roulette amplitudes
+
+For the SIS and SIE lenses, we have analytic formulas for the roulette
+amplitudes.  The python scripts under the `python` directory compute
+these formulas by symbolic algebra, and produce the files sie05.txt and
+sis50.txt which are included in the distribution.
+
+These formulas are imported by the C++ library (simlib) to compute
+amplitudes during simulation.
+
+## More information
+
++ [](/docs/Notation.md) and relationship between the software and the mathemaical model.
++ [](/docs/test/Test)

@@ -1,6 +1,5 @@
 ---
 title: Basic Notation
-usemathjax: true
 ---
 
 # Basic Notation
@@ -42,7 +41,7 @@ Such considerations are spared for a later section, and we suffice it for now
 to mention that such distances are not additive in the ordinary sense.
 Let $D_{LS}(z)$ be 
 the distance between the lens plane and the source plane.
-Then $D_S(z)\,\neq\,D_{L}(z)+D_{S}(z).$
+Then $D_S(z)\,\neq\,D_{L}(z)+D_{LS}(z).$
 We come back to this in due time.
 :::
 
@@ -69,9 +68,6 @@ $$
 \boldsymbol{\eta} = \frac{D_S}{D_L}\boldsymbol{\xi} - D_{LS}\boldsymbol{\hat\alpha}
 $$ (raytracePhys)
 
-::: {note} Implementation
-The implementation uses the angular distances $\alpha$ and $\beta$.
-:::
 
 It is noteworthy that if we consider spherical geometries (a source sphere and a lens sphere),
 we may also write down the equation
@@ -95,17 +91,26 @@ we get there, let us also introduce the standard way of normalizing.
     angles they are both approximately equal to the straight line
     $\Delta\boldsymbol{\eta}_S$.
 
+::: {note} Implementation
+The implementation uses the angular distances $\beta$ and $\theta$,
+but for historical reasons, $\beta$ is called `eta` and $\theta$
+either `xi` or `nu`.  This reflects linear units being used in the past.
+See [](/docs/Notation.md)
+:::
+
 ## Normalisation
 
-It is customary to normalise using a constant factor $\xi_0$. This gives the following entities, following Kormann 1994
+It is customary to normalise using a constant factor $\xi_0$.
+This gives the following entities, following Kormann 1994
 
-$$
 \begin{align}
-  \mathbf{x}= \frac{\boldsymbol{\xi}}{\xi_0}\quad,\quad\mathbf{y} = \frac{\boldsymbol{\eta}}{\eta_0}
-     \quad\text{where } \eta_0 = \frac{D_S}{D_L}\xi_0\quad,\quad
-  \mathbf{a} = \frac{D_L}{\xi_0}\alpha=\frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
+  \mathbf{x} &= \frac{\boldsymbol{\xi}}{\xi_0}\\
+  \mathbf{y} &= \frac{\boldsymbol{\eta}}{\eta_0}
+     \quad\text{where } \eta_0 = \frac{D_S}{D_L}\xi_0
+\\
+  \mathbf{a} &= \frac{D_L}{\xi_0}\alpha=\frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
 \end{align}
-$$
+
 In addition to the previously mentioned (cosmological) distances $D_L$, $D_S$ and $D_{LS}$ we must thus
 find a proper length scale $\xi_0$ from which we normalize everything else. In SEF, Kormann1994 and other
 standard sources one typically takes $\xi_0$ to be the so-called Einstein radius. This is the radius at which
@@ -141,20 +146,22 @@ Id est: The normalization constant $\xi_0$ is the Einstein radius.
 ## The lens-potential $\psi$  
 
 Considering a thin lens, it is customary to define the lens potential as the projection of the 3D gravitaitonal lens
-potential down on the lens plane. Such a simplification is typically warranted, due to $D_L \gt\gt \xi_0$.
+potential down on the lens plane. Such a simplification is typically warranted,
+due to $D_L \gg \xi_0$.
 
-To connect with SEF and other standard literature we will start by defining the lensing potential so that its gradient is the so-called reduced deflection angle $\mathbf{a}$ 
+To connect with SEF and other standard literature we will start by defining the lensing potential so that its gradient is the so-called reduced 
+deflection angle $\mathbf{a}$ 
 the gradient of $\psi$, i.e.
 \begin{equation}
   \mathbf{a} 
   = \nabla_{\mathbf{x}}\psi.
 \end{equation}
 In angular coordintes, which we prefer here, the chain rule gives[^nabla],
-\begin{align}
+\begin{equation}
   \boldsymbol{\alpha} 
   = \xi_0\cdot\nabla_{\xi}\psi
   = \frac{\xi_0}{D_L}\cdot\nabla_{\theta}\psi
-\end{align}
+\end{equation}
 
 [^nabla]:
     We use here the chain rule with $\boldsymbol{\xi}= \xi_0\mathbf{x} $
@@ -162,9 +169,9 @@ In angular coordintes, which we prefer here, the chain rule gives[^nabla],
 
 
 The normalised raytrace equation~{eq}`raytraceNorm` is thus rewritten to
-\begin{align}
+$$
   \mathbf{y}  = \mathbf{x}  - \nabla_{\mathbf{x}}\psi
-\end{align}
+$$
 Working on the sphere we also had 
 gives
 \begin{equation}
@@ -183,14 +190,17 @@ ever so slightly. Let $\psi$ be the usual lensing potential. Then we define
 
 In this notation, we find the following pleasing expression for the 
 angular version of the ray-trace equation:
-$$
+```{math}
+:label: raytraceeq
 \boxed{\boldsymbol{\beta} = \theta - \nabla_{\theta}\psi^R(\theta).}
-$$ (raytraceeq)
+```
 It follows that 
 $$\boxed{\boldsymbol{\alpha}=\theta_E\mathbf{a}=\nabla_\theta\psi^R}$$
 
+::: {note} Implementation
 The raytrace equation {eq}`raytraceeq` is implemented as 
 `RaytraceModel::calculateEta()` in CosmoSim.
+:::
 
 ::: {warning}
 The model may give the impression that the distortion is independent
@@ -205,7 +215,7 @@ they will require different lens models in the implementation.
 
 ::: {note} Implementation
 An overview of how the model parameters are represented in the code,
-see [](/docs/Notation).
+see [](/docs/Notation.md).
 :::
 
 ## Surface Mass Density
