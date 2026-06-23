@@ -95,11 +95,19 @@ This looks perfect inside the convergence ring, as it should.
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Roulette"
-imsim04 = SimImage( param, verbose=0 )
+imsim04 = SimImage( param, verbose=2 )
 im04 = imsim04.getImage()
 csimg.imageCompare( im02, im04, "Modular Raytrace", 'Modular Roulette')
 ```
 
+```{code-cell} ipython3
 
+```
 
+```{code-cell} ipython3
+csimg.imageCompare( im03, im04, "Legacy Roulette", 'Modular Roulette')
+```
 
+```{code-cell} ipython3
+
+```
