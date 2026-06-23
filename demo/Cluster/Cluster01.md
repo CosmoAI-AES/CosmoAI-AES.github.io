@@ -100,7 +100,7 @@ display( ob )
 ```{code-cell} ipython3
 param = Parameters( )
 param.setRow( ob )
-imsim = SimImage( param, verbose=0 )
+imsim = SimImage( param, verbose=2 )
 im = imsim.getImage()
 csimg.imshow( im )
 ```
