@@ -12,9 +12,9 @@ pip install CosmoSim>=3.0.1b1 --upgrade
     + [](Demo01.ipynb) shows the basic operation of the simulator.
     + [](Demo02Annotation.ipynb) shows how to annotate the simulated images with
       critical curves and key points. 
-    + [](./Demo03Resimulation.ipynb) sbows the principles of simulation from 
+    + [](Demo03Resimulation.ipynb) sbows the principles of simulation from 
       roulette amplitudes.
-    + [](./PointMass.ipynb) compares the different models for
+    + [](PointMass.ipynb) compares the different models for
       roulette simulation
 + Applications for machine learning 
     + [](Dataset.ipynb) shows how to generate datasets for machine learning.
