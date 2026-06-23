@@ -79,6 +79,7 @@ project:
         - title: Legacy documentation
           children:
           - file: docs/Software v2.5.0.md
+          - file: docs/History.md
     - title: Demoes
       file: demo/index.md
       children:
