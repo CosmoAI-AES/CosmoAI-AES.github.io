@@ -38,7 +38,8 @@ import toml
 from CosmoSim import CosmoSim
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
-from CosmoSim import Parameters
+from CosmoSim import Parameters,__version__
+print(__version__)
 ```
 
 ## The exact models
@@ -95,13 +96,10 @@ This looks perfect inside the convergence ring, as it should.
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Roulette"
-imsim04 = SimImage( param, verbose=2 )
+param["simulator"]["nterms"] = 4
+imsim04 = SimImage( param, verbose=0 )
 im04 = imsim04.getImage()
 csimg.imageCompare( im02, im04, "Modular Raytrace", 'Modular Roulette')
-```
-
-```{code-cell} ipython3
-
 ```
 
 ```{code-cell} ipython3
