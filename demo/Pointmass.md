@@ -41,7 +41,7 @@ import CosmoSim.Image as csimg
 from CosmoSim import Parameters
 ```
 
-## First test of the API
+## The exact models
 
 We can define the configuration as a dict using the nested (TOML) structure.
 
@@ -66,38 +66,40 @@ cfg = { 'simulator' : { "model" : "Raytrace" }
 param = Parameters( cfg )
 imsim01 = SimImage( param, verbose=0 )
 im01 = imsim01.getImage()
-csimg.imshow( im01, title='Modular Raytrace Point Mass')
 ```
 
-```{code-cell} ipython3
-param["simulator"]["model"] = "Roulette"
-imsim02 = SimImage( param, verbose=0 )
-im02 = imsim02.getImage()
-csimg.imshow( im02, title='Modular Roulette Point Mass')
-```
+To run the same simulation with the legacy, exact model, we simply change the
+simulator setting and rerun.
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Point Mass (exact)" 
-imsim03 = SimImage( param, verbose=0 )
-im03 = imsim03.getImage()
-csimg.imshow( im03, title='Exact Point Mass')
+imsim02 = SimImage( param, verbose=0 )
+im02 = imsim02.getImage()
+csimg.imageCompare( im01, im02, "Modular Raytrace", 'Exact Point Mass')
 ```
+
+Visually, this is perfect.
+
+## The original roulette
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Point Mass (roulettes)"
+imsim03 = SimImage( param, verbose=0 )
+im03 = imsim03.getImage()
+csimg.imageCompare( im02, im03, "Exact Point Mass", 'Legacy Roulette')
+```
+
+This looks perfect inside the convergence ring, as it should.
+
+## Modular roulette
+
+```{code-cell} ipython3
+param["simulator"]["model"] = "Roulette"
 imsim04 = SimImage( param, verbose=0 )
 im04 = imsim04.getImage()
-csimg.imshow( im04, title='Non-modular Roulette Point Mass')
+csimg.imageCompare( im02, im04, "Modular Raytrace", 'Modular Roulette')
 ```
 
-```{code-cell} ipython3
-csimg.showImages( [ im01, im02, im03, im04 ], size=(2,2), titles=
-           [ 'Modular Raytrace Point Mass'
-           , 'Modular Roulette Point Mass'
-           , 'Exact Point Mass'
-           , 'Non-modular Roulette Point Mass' ] )
-```
 
-```{code-cell} ipython3
 
-```
+
