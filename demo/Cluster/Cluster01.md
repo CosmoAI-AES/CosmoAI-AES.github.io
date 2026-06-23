@@ -117,7 +117,7 @@ def mkimg(ob):
 
 ```{code-cell} ipython3
 obs = [ csd.getline( cfg ) for _ in range(8) ]
-ims = [ mkimg(cfg) for i in range(8) ]
+ims = [ mkimg(ob) for ob in obs ]
 ts = [ f"Image {i}" for i in range(8) ]
 csimg.showImages( ims, size=(2,4), titles=ts )
 ```
