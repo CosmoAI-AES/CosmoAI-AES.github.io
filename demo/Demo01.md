@@ -74,12 +74,10 @@ We can define the configuration as a dict using the nested (TOML) structure.
 cfg = { 'lens': { 
             'einsteinR': 46,
             'ellipseratio': 0.34,
-            'orientation': 107,
-            'chi': 50}
+            'orientation': 107 }
       , 'source': {
             'mode': 'Spherical',
             'sigma': 20,
-            'theta': 45,
             'position': 'cartesian'}
       , 'position': {'x': 11.01, 'y': 0.31}
       }
