@@ -122,4 +122,20 @@ ts = [ f"Image {i}" for i in range(8) ]
 csimg.showImages( ims, size=(2,4), titles=ts )
 ```
 
+If we take a particular  interest in one particular image, say no 1, we can easily inspect its parameters.
+
+```{code-cell} ipython3
+print( obs[1] )
+```
+
+The cluser specification does not show in the row view, but we can single that one out to see properly.
+
+```{code-cell} ipython3
+print( obs[1]["cluster"] )
+```
+
+```{code-cell} ipython3
+
+```
+
 ## Closure
