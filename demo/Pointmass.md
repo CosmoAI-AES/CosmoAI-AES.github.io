@@ -86,7 +86,7 @@ Visually, this is perfect.
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Point Mass (roulettes)"
-param["simulator"]["nterms"] = 5
+param["simulator"]["nterms"] = 10
 imsim03 = SimImage( param, verbose=0 )
 im03 = imsim03.getImage()
 csimg.imageCompare( im02, im03, "Exact Point Mass", 'Legacy Roulette')
