@@ -35,10 +35,12 @@ import numpy as np
 from PIL import Image
 import toml
 
+import CosmoSim as cs
 from CosmoSim import CosmoSim
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
 from CosmoSim import Parameters
+print( "Version:", cs.__version__ )
 ```
 
 ## The exact models
