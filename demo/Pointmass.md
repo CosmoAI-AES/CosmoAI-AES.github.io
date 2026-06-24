@@ -106,6 +106,13 @@ csimg.imageCompare( im02, im04, "Modular Raytrace", 'Modular Roulette')
 csimg.imageCompare( im03, im04, "Legacy Roulette", 'Modular Roulette')
 ```
 
-```{code-cell} ipython3
 
+## Sampling
+
+```{code-cell} ipython3
+param["simulator"]["sampled"] = True
+imsim05 = SimImage( param, verbose=0 )
+im05 = imsim05.getImage()
+csimg.imageCompare( im02, im05, "Modular Raytrace", 'Modular Sampled Roulette')
+csimg.imageCompare( im03, im05, "Legacy Roulette", 'Modular Sampled Roulette')
 ```
