@@ -36,11 +36,11 @@ from PIL import Image
 import toml
 
 import CosmoSim as cs
-from CosmoSim import CosmoSim
+from CosmoSim import CosmoSim, Parameters
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
-from CosmoSim import Parameters
-print( "Version:", cs.__version__ )
+
+print( "CosmoSim version:", cs.__version__ )
 ```
 
 ## The exact models
@@ -86,6 +86,7 @@ Visually, this is perfect.
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Point Mass (roulettes)"
+param["simulator"]["nterms"] = 5
 imsim03 = SimImage( param, verbose=0 )
 im03 = imsim03.getImage()
 csimg.imageCompare( im02, im03, "Exact Point Mass", 'Legacy Roulette')
@@ -97,17 +98,23 @@ This looks perfect inside the convergence ring, as it should.
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Roulette"
-imsim04 = SimImage( param, verbose=2 )
+imsim04 = SimImage( param, verbose=0 )
 im04 = imsim04.getImage()
 csimg.imageCompare( im02, im04, "Modular Raytrace", 'Modular Roulette')
 ```
 
 ```{code-cell} ipython3
-
+csimg.imageCompare( im03, im04, "Legacy Roulette", 'Modular Roulette')
 ```
 
+## Sampling
+
 ```{code-cell} ipython3
-csimg.imageCompare( im03, im04, "Legacy Roulette", 'Modular Roulette')
+param["simulator"]["sampled"] = True
+imsim05 = SimImage( param, verbose=0 )
+im05 = imsim05.getImage()
+csimg.imageCompare( im02, im05, "Modular Raytrace", 'Modular Sampled Roulette')
+csimg.imageCompare( im03, im05, "Legacy Roulette", 'Modular Sampled Roulette')
 ```
 
 ```{code-cell} ipython3
