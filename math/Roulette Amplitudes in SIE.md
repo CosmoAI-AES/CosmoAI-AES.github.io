@@ -17,6 +17,11 @@ The calculation of roulette amplitudes takes three steps.
     $x$ and $y$ up to required order, using the chain rule.
 3.  Calculate the roulette amplitudes $\alpha_s^m$ and $\beta_s^m$.
 
+::: {note} Implementation
+These three steps correspond to `firstworker`, `secondworker`, and
+`thirdworker` in `CosmoSim.Roulettes.sie`.
+:::
+
 ## First-order derivatives
 
 In the implementation, we calculate the first order derivatives of $\psi$ as

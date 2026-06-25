@@ -13,7 +13,7 @@ kernelspec:
   language: python
 ---
 
-# CosmoSim SIS Demo
+# CosmoSim SIE Demo
 
 ::: {warning} Work in Progress
 :::
@@ -42,7 +42,7 @@ We can define the configuration as a dict using the nested (TOML) structure.
 ```{code-cell} ipython3
 cfg = { 'simulator' : { "model" : "Raytrace", "nterms" : 10, "cropsize" : 256 }
       , 'lens': { 
-            'lens' : "SIS",
+            'lens' : "SIE",
             'einsteinR': 46 }
       , 'source': {
             'mode': 'SersicSphere',
@@ -58,11 +58,11 @@ param = Parameters(cfg)
 ```{code-cell} ipython3
 raysim = SimImage( param, verbose=0 )
 rayim = raysim.getImage()
-csimg.imshow( rayim, title="Raytrace SIS")
+csimg.imshow( rayim, title="Raytrace SIE")
 ```
 
 ```{code-cell} ipython3
-cfg1 = { 'simulator' : { "config" : "rs", "nterms" : 10, "cropsize" : 256 }
+cfg1 = { 'simulator' : { "config" : "raysie", "nterms" : 10, "cropsize" : 256 }
       , 'lens': { 
             'einsteinR': 46 }
       , 'source': {
@@ -86,13 +86,13 @@ csimg.imageCompare( rayim1, rayim, "Config setting", "Model setting" )
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Roulette"
-param1["simulator"]["config"] = "fs"
+param1["simulator"]["config"] = "rousie"
 
 rousim = SimImage( param, verbose=0 )
 rouim = rousim.getImage()
 rousim1 = SimImage( param1, verbose=0 )
 rouim1 = rousim1.getImage()
-csimg.imageCompare( rouim, rouim1, "Roulette model", 'Roulette config')
+csimg.imageCompare( rouim, rouim1, "Rorousie model", 'Roulette config')
 ```
 
 This looks perfect inside the convergence ring, as it should.

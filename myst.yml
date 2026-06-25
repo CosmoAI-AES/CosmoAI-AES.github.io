@@ -66,6 +66,7 @@ project:
             - file: docs/model/Roulette.md
             - file: docs/model/Simulator.md
             - file: docs/model/Source.md
+        - file: tech/Roulette Implementation.md
         - file: docs/test/Test.md
           children:
             - file: docs/test/Cluster Lens.md

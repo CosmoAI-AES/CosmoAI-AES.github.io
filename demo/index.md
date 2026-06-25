@@ -14,8 +14,11 @@ pip install CosmoSim>=3.0.1b1 --upgrade
       critical curves and key points. 
     + [](Demo03Resimulation.ipynb) sbows the principles of simulation from 
       roulette amplitudes.
-    + [](Pointmass.ipynb) compares the different models for
-      roulette simulation
++ Test of individual models.  These demos will primarily test that the different
+  simulation models and implementations of the same lens give consistent results.
+    + [](Pointmass.ipynb) 
+    + [](SIS.ipynb) 
+    + [](SIE.ipynb) 
 + Applications for machine learning 
     + [](Dataset.ipynb) shows how to generate datasets for machine learning.
     + [](ML/Testing.ipynb) shows how to generate datasets for machine learning.
