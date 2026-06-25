@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -92,7 +92,7 @@ rousim = SimImage( param, verbose=0 )
 rouim = rousim.getImage()
 rousim1 = SimImage( param1, verbose=0 )
 rouim1 = rousim1.getImage()
-csimg.imageCompare( rouim, rouim1, "Rorousie model", 'Roulette config')
+csimg.imageCompare( rouim, rouim1, "Roulette model", 'Roulette config')
 ```
 
 This looks perfect inside the convergence ring, as it should.
