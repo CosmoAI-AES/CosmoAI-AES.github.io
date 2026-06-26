@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -132,10 +132,6 @@ The cluser specification does not show in the row view, but we can single that o
 
 ```{code-cell} ipython3
 print( obs[1]["cluster"] )
-```
-
-```{code-cell} ipython3
-
 ```
 
 ## Closure
