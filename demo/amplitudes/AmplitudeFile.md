@@ -23,7 +23,7 @@ simulated.
 Default files are included in the package, but it is possible to supply
 custom file, as we will demonstrate below.
 
-See [](/tech/Roulette Implementation) for more information about the
+See [](/tech/Roulette%20Implementation.md) for more information about the
 calculation.
 
 ## Preparation
@@ -44,7 +44,7 @@ import CosmoSim.Image as csimg
 print( "CosmoSim version:", cs.__version__ )
 ```
 
-## Baseline
+## The SIS Lens
 
 We can define the configuration as a dict using the nested (TOML) structure.
 We will use the standard roulette simulator and the SIS lens with the same
@@ -89,7 +89,7 @@ as floating point numbers, and not rational numbers.
 The first thing we want to check is if a change to rational numbers
 will change or improve the simulation.
 
-+ [sis20.txt](./sis20.txt)
++ [sis20.txt](./sis20.txt) is calculated using `CosmoSim.Roulettes` v3.0.5
 
 ```{code-cell} ipython3
 param["lens"]["amplitudefile"] = "sis20.txt"
@@ -108,7 +108,7 @@ print( sum( (im01-im02).flatten()**2 ) )
 
 ## SIE style calculation
 
-+ [sis10sie.txt](./sis10sie.txt)
++ [sis10sie.txt](./sis10sie.txt) is calculated using the same logic as the amplitudes for the SIE lens.
 
 ```{code-cell} ipython3
 param["lens"]["amplitudefile"] = "sis10sie.txt"
@@ -128,10 +128,81 @@ You can change `nterms` to 8 in the original definition of `cfg` and rerun, to f
 print( sum( (im01.astype(np.double)-im03.astype(np.double)).flatten()**2 ) )
 ```
 
-## Conclusion
+## The Point Mass Lens
 
-Apparently, we have a bug to fix.
+We use the same configuration as for the SIS lens, changing only the lens mode.
 
 ```{code-cell} ipython3
-
+pmcfg = { 'simulator' : { "model" : "Roulette", "nterms" : 10, "cropsize" : 256 }
+      , 'lens': { 
+            'mode' : "PM",
+            'einsteinR': 46 }
+      , 'source': {
+            'mode': 'SersicSphere',
+            'sigma': 20,
+            'theta': 45,
+            'luminosity' : 70,
+            'position': 'cartesian'}
+      , 'position': {'x': 11.01, 'y': 0.31}
+      }
+pmparam = Parameters(pmcfg)
 ```
+
+```{code-cell} ipython3
+pmsim01 = SimImage( pmparam, verbose=0 )
+pm01 = pmsim01.getImage()
+csimg.imshow( pm01, title="Default Point Mass")
+```
+
+```{code-cell} ipython3
+pmrcfg = deepcopy(pmcfg)
+pmrcfg["simulator"]["model"] = "Raytrace"
+pmrparam = Parameters( pmrcfg )
+pmraysim = SimImage( pmrparam, verbose=0 )
+pmray = pmraysim.getImage()
+csimg.imageCompare( pm01, pmray, "Baseline", 'Raytrace')
+```
+
+This is disconcerting.  The roulette simulation gives an image much too faint.
+
++++
+
+## Rational numbers
+
++ [pm20.txt](./pm20.txt) is calculated using `CosmoSim.Roulettes` v3.0.5
+
+```{code-cell} ipython3
+pmparam["lens"]["amplitudefile"] = "pm20.txt"
+
+pmsim02 = SimImage( pmparam, verbose=0 )
+pm02 = pmsim02.getImage()
+csimg.imageCompare( pm02, pm01, "Rational numbers", 'Baseline')
+csimg.imageCompare( pm02, pmray, "Rational numbers", 'Raytrace')
+```
+
+There is no visual discrepancy between the two implementations, but we can check it numerically as well, by taking the Euclidean distance between the two images.
+
+```{code-cell} ipython3
+print( sum( (pm01-pm02).astype(np.double).flatten()**2 ) )
+```
+
+## SIE style calculation
+
++ [pm10sie.txt](./pm10sie.txt) is calculated using the same logic as the amplitudes for the SIE lens.
+
+```{code-cell} ipython3
+param["lens"]["amplitudefile"] = "pm10sie.txt"
+
+pmsim03 = SimImage( param, verbose=0 )
+pm03 = pmsim03.getImage()
+csimg.imageCompare( pm03, pm01, "SIE style", 'Baseline')
+csimg.imageCompare( pm03, pmray, "SIE style", 'Raytrace')
+```
+
+This looks better, but not good enough.
+
+```{code-cell} ipython3
+print( sum( (im01.astype(np.double)-im03.astype(np.double)).flatten()**2 ) )
+```
+
+## Conclusion
