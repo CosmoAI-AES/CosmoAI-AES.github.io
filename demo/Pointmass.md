@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -50,7 +50,7 @@ We can define the configuration as a dict using the nested (TOML) structure.
 ```{code-cell} ipython3
 cfg = { 'simulator' : { "model" : "Raytrace" }
       , 'lens': { 
-            'lens' : "PointMass",
+            'mode' : "PM",
             'einsteinR': 46,
             'ellipseratio': 0.34,
             'orientation': 107,
