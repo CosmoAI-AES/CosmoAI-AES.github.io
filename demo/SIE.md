@@ -26,6 +26,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import toml
+from copy import deepcopy
 
 import CosmoSim as cs
 from CosmoSim import CosmoSim, Parameters
@@ -40,9 +41,9 @@ print( "CosmoSim version:", cs.__version__ )
 We can define the configuration as a dict using the nested (TOML) structure.
 
 ```{code-cell} ipython3
-cfg = { 'simulator' : { "model" : "Raytrace", "nterms" : 10, "cropsize" : 256 }
+cfg = { 'simulator' : { "model" : "Raytrace", "nterms" : 5, "cropsize" : 256 }
       , 'lens': { 
-            'lens' : "SIE",
+            'mode' : "SIE",
             'einsteinR': 46 }
       , 'source': {
             'mode': 'SersicSphere',
@@ -62,17 +63,9 @@ csimg.imshow( rayim, title="Raytrace SIE")
 ```
 
 ```{code-cell} ipython3
-cfg1 = { 'simulator' : { "config" : "raysie", "nterms" : 10, "cropsize" : 256 }
-      , 'lens': { 
-            'einsteinR': 46 }
-      , 'source': {
-            'mode': 'SersicSphere',
-            'sigma': 20,
-            'theta': 45,
-            'luminosity' : 70,
-            'position': 'cartesian'}
-      , 'position': {'x': 11.01, 'y': 0.31}
-      }
+cfg1 = deepcopy( cfg )
+cfg1['simulator']["config"] = "raysie"
+del cfg1['lens']["mode"]
 param1 = Parameters(cfg)
 ```
 
