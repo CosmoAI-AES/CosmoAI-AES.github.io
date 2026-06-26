@@ -90,6 +90,8 @@ as floating point numbers, and not rational numbers.
 The first thing we want to check is if a change to rational numbers
 will change or improve the simulation.
 
++ [sis20.txt](./sis20.txt)
+
 ```{code-cell} ipython3
 param["lens"]["amplitudefile"] = "sis20.txt"
 
@@ -101,9 +103,10 @@ csimg.imageCompare( im02, rayim, "Rational numbers", 'Raytrace')
 
 ## SIE style calculation
 
++ [sis10sie.txt](./sis10sie.txt)
 
 ```{code-cell} ipython3
-param["lens"]["amplitudefile"] = "sis20.txt"
+param["lens"]["amplitudefile"] = "sis10sie.txt"
 
 sim03 = SimImage( param, verbose=0 )
 im03 = sim03.getImage()
