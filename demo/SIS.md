@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -15,8 +15,7 @@ kernelspec:
 
 # CosmoSim SIS Demo
 
-::: {warning} Work in Progress
-:::
+This demo will demonstrate that the different simulation modes for SIS lenses are consistent.
 
 ## Preparation
 
@@ -26,6 +25,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 import toml
+from copy import deepcopy
 
 import CosmoSim as cs
 from CosmoSim import CosmoSim, Parameters
@@ -42,7 +42,7 @@ We can define the configuration as a dict using the nested (TOML) structure.
 ```{code-cell} ipython3
 cfg = { 'simulator' : { "model" : "Raytrace", "nterms" : 10, "cropsize" : 256 }
       , 'lens': { 
-            'lens' : "SIS",
+            'mode' : "SIS",
             'einsteinR': 46 }
       , 'source': {
             'mode': 'SersicSphere',
@@ -62,17 +62,9 @@ csimg.imshow( rayim, title="Raytrace SIS")
 ```
 
 ```{code-cell} ipython3
-cfg1 = { 'simulator' : { "config" : "rs", "nterms" : 10, "cropsize" : 256 }
-      , 'lens': { 
-            'einsteinR': 46 }
-      , 'source': {
-            'mode': 'SersicSphere',
-            'sigma': 20,
-            'theta': 45,
-            'luminosity' : 70,
-            'position': 'cartesian'}
-      , 'position': {'x': 11.01, 'y': 0.31}
-      }
+cfg1 = deepcopy( cfg )
+cfg1['simulator']["config"] = "rs"
+del cfg1['lens']["mode"]
 param1 = Parameters(cfg)
 ```
 

@@ -15,8 +15,7 @@ kernelspec:
 
 # CosmoSim SIE Demo
 
-::: {warning} Work in Progress
-:::
+This demo will demonstrate that the different simulation modes for SIE lenses are consistent.
 
 ## Preparation
 
