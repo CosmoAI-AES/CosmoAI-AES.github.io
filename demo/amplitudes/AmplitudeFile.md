@@ -82,7 +82,6 @@ rayim = raysim.getImage()
 csimg.imageCompare( im01, rayim, "Baseline", 'Raytrace')
 ```
 
-
 ## Rational numbers
 
 There is a bug up until v3.0 where certain constants are computed
@@ -101,6 +100,12 @@ csimg.imageCompare( im02, im01, "Rational numbers", 'Baseline')
 csimg.imageCompare( im02, rayim, "Rational numbers", 'Raytrace')
 ```
 
+There is no visual discrepancy between the two implementations, but we can check it numerically as well, by taking the Euclidean distance between the two images.
+
+```{code-cell} ipython3
+print( sum( (im01-im02).flatten()**2 ) )
+```
+
 ## SIE style calculation
 
 + [sis10sie.txt](./sis10sie.txt)
@@ -114,3 +119,16 @@ csimg.imageCompare( im03, im01, "SIE style", 'Baseline')
 csimg.imageCompare( im03, rayim, "SIE style", 'Raytrace')
 ```
 
+Here we do see a significant although the only visibly discernible difference is in the spurious images.
+
+```{code-cell} ipython3
+print( sum( (im01.astype(np.double)-im03.astype(np.double)).flatten()**2 ) )
+```
+
+## Conclusion
+
+This may require further research.  The two implementations of the amplitudes are supposed to be equivalent.
+
+```{code-cell} ipython3
+
+```
