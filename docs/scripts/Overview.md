@@ -46,11 +46,14 @@ The dataset generation (`rnd`) can also be accessed separately:
 
 + compare.py
     + Quantitatively compare two batches of images, intended for regression testing.
-+ amplitudes.py
-    + Generate a file with roulette amplitudes for the SIS lens.
++ `python -m CosmoSim.Roulettes`
+    + Generate a file with roulette amplitudes for the SIS and pointmass
+      lensese.
     + For **development use** only
     + The generated files are included in the release packages and found by the
       library.
+    + `python -m CosmoSim.Roulettes.sie` for the SIE lens
+
 
 ## Source Models Supported
 
