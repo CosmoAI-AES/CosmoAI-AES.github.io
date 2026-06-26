@@ -120,6 +120,9 @@ csimg.imageCompare( im03, rayim, "SIE style", 'Raytrace')
 ```
 
 Here we do see a significant although the only visibly discernible difference is in the spurious images.
+This is probably due to a bug in the SIE style calculation, halting prematurely leaving some of the high order amplitudes blank.
+
+You can change `nterms` to 8 in the original definition of `cfg` and rerun, to find no discrepancy.
 
 ```{code-cell} ipython3
 print( sum( (im01.astype(np.double)-im03.astype(np.double)).flatten()**2 ) )
@@ -127,7 +130,7 @@ print( sum( (im01.astype(np.double)-im03.astype(np.double)).flatten()**2 ) )
 
 ## Conclusion
 
-This may require further research.  The two implementations of the amplitudes are supposed to be equivalent.
+Apparently, we have a bug to fix.
 
 ```{code-cell} ipython3
 
