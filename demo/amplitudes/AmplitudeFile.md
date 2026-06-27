@@ -205,14 +205,21 @@ Again, it is identical, and wrong.
 print( sum( (im01.astype(np.double)-im03.astype(np.double)).flatten()**2 ) )
 ```
 
+Since the point mass is circular symmetric, the orientation parameter for SIE
+is redundant, and makes the above formulæ unnecessarily complicated.
+Using the `--circular` argument to `CosmoSim.Roulettes.sie`, we get the following
+amplitudes formulæ.
+
 ```{code-cell} ipython3
-pmparam["lens"]["amplitudefile"] = "pm08sie2.txt"
+pmparam["lens"]["amplitudefile"] = "pm09sie2.txt"
 
 pmsim04 = SimImage( pmparam, verbose=0 )
 pm04 = pmsim04.getImage()
 csimg.imageCompare( pm04, pm01, "SIE style", 'Baseline')
 csimg.imageCompare( pm04, pmray, "SIE style", 'Raytrace')
 ```
+
+It does not make a difference to the simulation, but it is simpler.
 
 ## Some more examples
 
