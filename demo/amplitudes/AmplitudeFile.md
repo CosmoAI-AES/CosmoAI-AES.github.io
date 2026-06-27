@@ -133,7 +133,7 @@ print( sum( (im01.astype(np.double)-im03.astype(np.double)).flatten()**2 ) )
 We use the same configuration as for the SIS lens, changing only the lens mode.
 
 ```{code-cell} ipython3
-pmcfg = { 'simulator' : { "model" : "Roulette", "nterms" : 10, "cropsize" : 256 }
+pmcfg = { 'simulator' : { "model" : "Roulette", "nterms" : 8, "cropsize" : 256 }
       , 'lens': { 
             'mode' : "PM",
             'einsteinR': 46 }
@@ -206,3 +206,7 @@ print( sum( (im01.astype(np.double)-im03.astype(np.double)).flatten()**2 ) )
 ```
 
 ## Conclusion
+
+```{code-cell} ipython3
+
+```
