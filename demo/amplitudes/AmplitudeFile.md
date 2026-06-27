@@ -133,7 +133,7 @@ print( sum( (im01.astype(np.double)-im03.astype(np.double)).flatten()**2 ) )
 We use the same configuration as for the SIS lens, changing only the lens mode.
 
 ```{code-cell} ipython3
-pmcfg = { 'simulator' : { "model" : "Roulette", "nterms" : 10, "cropsize" : 256 }
+pmcfg = { 'simulator' : { "model" : "Roulette", "nterms" : 8, "cropsize" : 256 }
       , 'lens': { 
             'mode' : "PM",
             'einsteinR': 46 }
@@ -191,18 +191,51 @@ print( sum( (pm01-pm02).astype(np.double).flatten()**2 ) )
 + [pm10sie.txt](./pm10sie.txt) is calculated using the same logic as the amplitudes for the SIE lens.
 
 ```{code-cell} ipython3
-param["lens"]["amplitudefile"] = "pm10sie.txt"
+pmparam["lens"]["amplitudefile"] = "pm10sie.txt"
 
-pmsim03 = SimImage( param, verbose=0 )
+pmsim03 = SimImage( pmparam, verbose=0 )
 pm03 = pmsim03.getImage()
 csimg.imageCompare( pm03, pm01, "SIE style", 'Baseline')
 csimg.imageCompare( pm03, pmray, "SIE style", 'Raytrace')
 ```
 
-This looks better, but not good enough.
+Again, it is identical, and wrong.
 
 ```{code-cell} ipython3
 print( sum( (im01.astype(np.double)-im03.astype(np.double)).flatten()**2 ) )
 ```
 
+```{code-cell} ipython3
+pmparam["lens"]["amplitudefile"] = "pm08sie2.txt"
+
+pmsim04 = SimImage( pmparam, verbose=0 )
+pm04 = pmsim04.getImage()
+csimg.imageCompare( pm04, pm01, "SIE style", 'Baseline')
+csimg.imageCompare( pm04, pmray, "SIE style", 'Raytrace')
+```
+
+## Some more examples
+
+```{code-cell} ipython3
+pmparam["position"]["y"] = 10
+pmparam["simulator"]["model"] = "Raytrace"
+a1 = SimImage( pmparam, verbose=0 ).getImage()
+pmparam["simulator"]["model"] = "Roulette"
+a2 = SimImage( pmparam, verbose=0 ).getImage()
+csimg.imageCompare( a2, a1, "SIE style", 'Raytrace')
+```
+
+```{code-cell} ipython3
+pmparam["position"]["y"] = 20
+pmparam["simulator"]["model"] = "Raytrace"
+a1 = SimImage( pmparam, verbose=0 ).getImage()
+pmparam["simulator"]["model"] = "Roulette"
+a2 = SimImage( pmparam, verbose=0 ).getImage()
+csimg.imageCompare( a2, a1, "SIE style", 'Raytrace')
+```
+
 ## Conclusion
+
+```{code-cell} ipython3
+
+```
