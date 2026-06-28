@@ -54,20 +54,19 @@ cfg = { 'simulator' : {
       , 'source': {
             'mode': 'SersicSphere',
             'sigma': 20,
-            'theta': 45,
             'luminosity' : 70,
             'position': 'cartesian'}
-      , 'position': {'x': 11.01, 'y': 0.31}
+      , 'position': {'x': 10, 'y': 5 }
       }
 param = Parameters(cfg)
-rcfg = deepcopy(cfg)
-rcfg["simulator"]["model"] = "Raytrace"
-rparam = Parameters( rcfg )
 ```
 
-We set up two simulators. We show only the raytrace simulation for now.  This will be used as a reference to assess the fidelity of other simulations.
-Even though the simulator is set up for raytrace, it will also compute the roulette amplitudes for us.
-We centre the image, as this is the standard mode of operation in practice, and thus best tested.
+We set up two simulators. We show only the raytrace simulation for now.
+This will be used as a reference to assess the fidelity of other simulations.
+Even though the simulator is set up for raytrace,
+it will also compute the roulette amplitudes for us.
+We centre the image, as this is the standard mode of operation in practice,
+and thus best tested.
 
 ```{code-cell} ipython3
 sim = SimImage( param, verbose=1 )
