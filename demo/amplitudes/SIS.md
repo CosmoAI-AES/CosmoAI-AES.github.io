@@ -48,8 +48,8 @@ cfg = { 'simulator' : {
              "nterms" : 8, 
              "cropsize" : 256 }
       , 'lens': { 
-            'mode' : "PM",
-            "amplitudefile" : "pm50.txt",
+            'mode' : "SIS",
+            "amplitudefile" : "sis50.txt",
             'einsteinR': 46 }
       , 'source': {
             'mode': 'SersicSphere',
@@ -113,23 +113,6 @@ print( diff.abs().max() )
 ```{code-cell} ipython3
 xi = sim.sim.getNu()
 print(np.array(xi))
-```
-
-```{code-cell} ipython3
-df03 = sim.getRoulette(fn="pm09sie2.txt")
-df03 = df03.drop("source")
-display(df03)
-```
-
-```{code-cell} ipython3
-maxerror = max( df02-df03 ) 
-print( maxerror )
-```
-
-This error is much smaller, maybe negligible, even though it *is* within double precision.
-
-```{code-cell} ipython3
-print( np.double( maxerror ) )
 ```
 
 We ignore the last amplitudes file that we have used, because it depends on the redundant orientation parameter, and the library does not currently handle this.
