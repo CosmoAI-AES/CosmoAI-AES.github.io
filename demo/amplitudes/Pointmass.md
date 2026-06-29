@@ -122,19 +122,34 @@ We ignore the last amplitudes file that we have used, because it depends on the 
 ## Resimulation
 
 ```{code-cell} ipython3
-param1 = deepcopy( param )
-resim1 = Resim( df01, param=param1, verbose=1 )
+resim1 = Resim( df01, param=param, verbose=1 )
 im01 = resim1.getImage()
-csimg.drawAxes( im01 )
-csimg.drawAxes( im01 )
 csimg.imageCompare( im01, ray, "Resimulation", "Raytrace" )
 ```
 
 ```{code-cell} ipython3
-param2 = deepcopy( param )
-resim2 = Resim( df02, param=param1, verbose=0 )
+resim2 = Resim( df02, param=param, verbose=0 )
 im02 = resim2.getImage()
 csimg.imageCompare( im02, ray, "Resimulation", "Raytrace" )
+```
+
+```{code-cell} ipython3
+csimg.imageCompare( im02, im01, "Resimulation high precision", "Resimulation double precision" )
+```
+
+```{code-cell} ipython3
+rparam = deepcopy( param )
+rparam["simulator"]["model"] = "Point Mass (roulettes)"
+rsim = SimImage( rparam, verbose=1 )
+rou = rsim.getImage()
+csimg.imageCompare( rou, im01, "Original Roulette", "Resimulation" )
+```
+
+```{code-cell} ipython3
+rparam["simulator"]["model"] = "Roulette"
+rsim = SimImage( rparam, verbose=1 )
+rou = rsim.getImage()
+csimg.imageCompare( rou, im01, "Modular Roulette", "Resimulation" )
 ```
 
 ## Further inspection
