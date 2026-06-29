@@ -69,7 +69,7 @@ We centre the image, as this is the standard mode of operation in practice,
 and thus best tested.
 
 ```{code-cell} ipython3
-sim = SimImage( param, verbose=1 )
+sim = SimImage( param, verbose=0 )
 ray = sim.getImage()
 csimg.imshow( ray, 'Raytrace')
 ```
@@ -88,7 +88,7 @@ The default is 64 digits at present.
 This computation is slow, so do not worry if you do not see the results immediately.
 
 ```{code-cell} ipython3
-df02 = sim.getRoulette(precision=64,verbose=1)
+df02 = sim.getRoulette(precision=64,verbose=0)
 ```
 
 ```{code-cell} ipython3
@@ -123,7 +123,7 @@ We ignore the last amplitudes file that we have used, because it depends on the 
 
 ```{code-cell} ipython3
 param1 = deepcopy( param )
-resim1 = Resim( df01, param=param1, verbose=1 )
+resim1 = Resim( df01, param=param1, verbose=0 )
 im01 = resim1.getImage()
 csimg.drawAxes( im01 )
 csimg.drawAxes( im01 )

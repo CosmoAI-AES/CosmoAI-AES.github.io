@@ -88,7 +88,7 @@ The default is 64 digits at present.
 This computation is slow, so do not worry if you do not see the results immediately.
 
 ```{code-cell} ipython3
-df02 = sim.getRoulette(precision=64,verbose=1)
+df02 = sim.getRoulette(precision=64,verbose=0)
 ```
 
 ```{code-cell} ipython3
