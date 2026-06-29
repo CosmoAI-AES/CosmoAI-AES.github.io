@@ -98,8 +98,7 @@ project:
       - file: demo/amplitudes/index.md
         children:
         - file: demo/amplitudes/SIS.ipynb
-        - file: demo/amplitudes/SIE.ipynb
-        - file: demo/amplitudes/PointMass.ipynb
+        - file: demo/amplitudes/Pointmass.ipynb
     - title: Development
       children:
       - file: docs/devel/Release.md
