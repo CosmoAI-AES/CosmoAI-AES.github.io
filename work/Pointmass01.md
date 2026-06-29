@@ -13,7 +13,7 @@ kernelspec:
   language: python
 ---
 
-# SIS Amplitudes
+# Point Mass Amplitudes
 
 This test follows up on problems arising from [](./AmplitudeFile.ipynb)
 and tests calculation of roulette amplitudes from python.
@@ -43,33 +43,34 @@ We use the same configuration as we have used before.
 ```{code-cell} ipython3
 cfg = { 'simulator' : {
              "model" : "Raytrace",
-             "centred" : False,
+             "centred" : True,
              "xireference" : True,
-             "nterms" : 5, 
+             "nterms" : 8, 
              "cropsize" : 256 }
       , 'lens': { 
-            'mode' : "SIS",
-            "amplitudefile" : "sis50.txt",
-            'einsteinradius': 46 }
+            'mode' : "PM",
+            "amplitudefile" : "pm50.txt",
+            'einsteinR': 46 }
       , 'source': {
             'mode': 'SersicSphere',
             'sigma': 20,
+            'theta': 45,
             'luminosity' : 70,
             'position': 'cartesian'}
-      , 'position': {'x': 10, 'y': 5 }
+      , 'position': {'x': 11.01, 'y': 0.31}
       }
 param = Parameters(cfg)
+rcfg = deepcopy(cfg)
+rcfg["simulator"]["model"] = "Raytrace"
+rparam = Parameters( rcfg )
 ```
 
-We set up two simulators. We show only the raytrace simulation for now.
-This will be used as a reference to assess the fidelity of other simulations.
-Even though the simulator is set up for raytrace,
-it will also compute the roulette amplitudes for us.
-We centre the image, as this is the standard mode of operation in practice,
-and thus best tested.
+We set up two simulators. We show only the raytrace simulation for now.  This will be used as a reference to assess the fidelity of other simulations.
+Even though the simulator is set up for raytrace, it will also compute the roulette amplitudes for us.
+We centre the image, as this is the standard mode of operation in practice, and thus best tested.
 
 ```{code-cell} ipython3
-sim = SimImage( param, verbose=0 )
+sim = SimImage( param, verbose=1 )
 ray = sim.getImage()
 csimg.imshow( ray, 'Raytrace')
 ```
@@ -80,6 +81,7 @@ As we have shown in previous demos, we can retrieve all the amplitudes as a pand
 
 ```{code-cell} ipython3
 df01 = sim.getData()
+display(df01)
 ```
 
 This calculation is made in double precision in the C+= library.
@@ -88,31 +90,46 @@ The default is 64 digits at present.
 This computation is slow, so do not worry if you do not see the results immediately.
 
 ```{code-cell} ipython3
-df02 = sim.getRoulette(precision=64,verbose=0)
+df02 = sim.getRoulette(precision=64)
+display(df02)
+```
+
+We remove non-numeric entries before we take the difference between the two calculations.
+
+```{code-cell} ipython3
+df01 = df01.drop( "source" )
+df02 = df02.drop( "source" )
 ```
 
 ```{code-cell} ipython3
-df = pd.DataFrame( [ df01, df02, df02.drop("source")-df01 ], index=[ "C++", "Python", "Difference" ] ).transpose()
-display(df)
-```
-
-We can quickly check the worst discrepancy:
-
-```{code-cell} ipython3
-dfnumeric = df.drop( [ "source", "filename" ] )
-display(dfnumeric.head())
+diff = df01-df02
+print(diff)
 ```
 
 ```{code-cell} ipython3
-diff = dfnumeric["Difference"].abs()
-print( "Absolute error:", diff.max() )
+print( diff.abs().max() )
 ```
 
 ```{code-cell} ipython3
-py = dfnumeric["Python"].abs()
-py = py.mask( py == 0 )
-df["Relative difference"] = diff/py
-display( df )
+xi = sim.sim.getNu()
+print(np.array(xi))
+```
+
+```{code-cell} ipython3
+df03 = sim.getRoulette(fn="pm09sie2.txt")
+df03 = df03.drop("source")
+display(df03)
+```
+
+```{code-cell} ipython3
+maxerror = max( df02-df03 ) 
+print( maxerror )
+```
+
+This error is much smaller, maybe negligible, even though it *is* within double precision.
+
+```{code-cell} ipython3
+print( np.double( maxerror ) )
 ```
 
 We ignore the last amplitudes file that we have used, because it depends on the redundant orientation parameter, and the library does not currently handle this.
@@ -123,9 +140,9 @@ We ignore the last amplitudes file that we have used, because it depends on the 
 
 ```{code-cell} ipython3
 param1 = deepcopy( param )
-resim1 = Resim( df01, param=param1, verbose=0 )
+param["simulator"]["centred"] = False
+resim1 = Resim( df01, param=param1, verbose=1 )
 im01 = resim1.getImage()
-csimg.drawAxes( im01 )
 csimg.drawAxes( im01 )
 csimg.imageCompare( im01, ray, "Resimulation", "Raytrace" )
 ```
@@ -137,11 +154,11 @@ im02 = resim2.getImage()
 csimg.imageCompare( im02, ray, "Resimulation", "Raytrace" )
 ```
 
-## Further inspection
-
 ```{code-cell} ipython3
-xi = sim.sim.getNu()
-print(np.array(xi))
+param3 = deepcopy( param )
+resim3 = Resim( df03, param=param1, verbose=0 )
+im03 = resim3.getImage()
+csimg.imageCompare( im03, ray, "Resimulation", "Raytrace" )
 ```
 
 ## Conclusion

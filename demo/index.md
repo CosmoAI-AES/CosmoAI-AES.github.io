@@ -14,6 +14,8 @@ pip install CosmoSim>=3.0.1b1 --upgrade
       critical curves and key points. 
     + [](Demo03Resimulation.ipynb) sbows the principles of simulation from 
       roulette amplitudes.
+        + [](ResimulationTemplate.ipynb) gives a simplified template
+          for reuse, removing most of the discussion.
 + Test of individual models.  These demos will primarily test that the different
   simulation models and implementations of the same lens give consistent results.
     + [](Pointmass.ipynb) 
@@ -26,6 +28,7 @@ pip install CosmoSim>=3.0.1b1 --upgrade
 + Cluster lenses
     + [](./Cluster/Cluster01.ipynb) is the first test of cluster lenses
     + [](./Cluster/Testing.ipynb) tests machine learning on the cluster lenses
++ [](amplitudes/index.md)
 
 ## Work in progress
 
