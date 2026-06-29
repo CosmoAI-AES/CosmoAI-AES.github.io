@@ -53,6 +53,3 @@ a superficial understanding of the [](math/math).
 We presented the first prototype at ECMS in 2023 [@hgs2023ecms], and a white paper
 on the overall approach later the same year, in Norwgian [@schaathun2023].
 More recently we have made a survey on gravitational lensing [@normann2025short].
-
-+ [](docs/Publications)
-
