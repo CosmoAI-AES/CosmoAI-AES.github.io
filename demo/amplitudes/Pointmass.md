@@ -69,7 +69,7 @@ We centre the image, as this is the standard mode of operation in practice,
 and thus best tested.
 
 ```{code-cell} ipython3
-sim = SimImage( param, verbose=1 )
+sim = SimImage( param, verbose=0 )
 ray = sim.getImage()
 csimg.imshow( ray, 'Raytrace')
 ```
@@ -115,14 +115,18 @@ df["Relative difference"] = diff/py
 display( df )
 ```
 
-We ignore the last amplitudes file that we have used, because it depends on the redundant orientation parameter, and the library does not currently handle this.
+It is impossible to read the high precision numbers in this display format.
+For instance $\beta^4_1$ seems to have a differance greater than one.
+We can check this by converting to double, or otherwise print in scientific notation.
 
-+++
+```{code-cell} ipython3
+print( df.loc["beta[4][1]"].astype(np.double) )
+```
 
 ## Resimulation
 
 ```{code-cell} ipython3
-resim1 = Resim( df01, param=param, verbose=1 )
+resim1 = Resim( df01, param=param, verbose=0 )
 im01 = resim1.getImage()
 csimg.imageCompare( im01, ray, "Resimulation", "Raytrace" )
 ```
@@ -140,14 +144,14 @@ csimg.imageCompare( im02, im01, "Resimulation high precision", "Resimulation dou
 ```{code-cell} ipython3
 rparam = deepcopy( param )
 rparam["simulator"]["model"] = "Point Mass (roulettes)"
-rsim = SimImage( rparam, verbose=1 )
+rsim = SimImage( rparam, verbose=0 )
 rou = rsim.getImage()
 csimg.imageCompare( rou, im01, "Original Roulette", "Resimulation" )
 ```
 
 ```{code-cell} ipython3
 rparam["simulator"]["model"] = "Roulette"
-rsim = SimImage( rparam, verbose=1 )
+rsim = SimImage( rparam, verbose=0 )
 rou = rsim.getImage()
 csimg.imageCompare( rou, im01, "Modular Roulette", "Resimulation" )
 ```

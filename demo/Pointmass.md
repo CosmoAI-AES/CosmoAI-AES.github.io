@@ -48,7 +48,7 @@ print( "CosmoSim version:", cs.__version__ )
 We can define the configuration as a dict using the nested (TOML) structure.
 
 ```{code-cell} ipython3
-cfg = { 'simulator' : { "model" : "Raytrace" }
+cfg = { 'simulator' : { "model" : "Raytrace", "cropsize" : 256 }
       , 'lens': { 
             'mode' : "PM",
             'einsteinR': 46,
@@ -57,10 +57,9 @@ cfg = { 'simulator' : { "model" : "Raytrace" }
             'chi': 50}
       , 'source': {
             'mode': 'Spherical',
-            'sigma': 20,
-            'theta': 45,
+            'sigma': 7,
             'position': 'cartesian'}
-      , 'position': {'x': 11.01, 'y': 0.31}
+      , 'position': {'x': 35, 'y': 15}
       }
 ```
 
@@ -86,7 +85,7 @@ Visually, this is perfect.
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Point Mass (roulettes)"
-param["simulator"]["nterms"] = 10
+param["simulator"]["nterms"] = 8
 imsim03 = SimImage( param, verbose=0 )
 im03 = imsim03.getImage()
 csimg.imageCompare( im02, im03, "Exact Point Mass", 'Legacy Roulette')
