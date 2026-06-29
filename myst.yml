@@ -87,12 +87,19 @@ project:
       - file: demo/Demo01.ipynb
       - file: demo/Demo02Annotation.ipynb
       - file: demo/Demo03Resimulation.ipynb
+        children:
+        - file: demo/ResimulationTemplate.ipynb
       - file: demo/Pointmass.ipynb
       - file: demo/Dataset.ipynb
       - file: demo/ML/Testing.ipynb
       - file: demo/Cluster/Cluster01.ipynb
       - file: demo/Cluster/Testing.ipynb
       - file: demo/RouletteML01.ipynb
+      - file: demo/amplitudes/index.md
+        children:
+        - file: demo/amplitudes/SIS.ipynb
+        - file: demo/amplitudes/SIE.ipynb
+        - file: demo/amplitudes/PointMass.ipynb
     - title: Development
       children:
       - file: docs/devel/Release.md
