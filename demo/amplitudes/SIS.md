@@ -43,9 +43,9 @@ We use the same configuration as we have used before.
 ```{code-cell} ipython3
 cfg = { 'simulator' : {
              "model" : "Raytrace",
-             "centred" : True,
+             "centred" : False,
              "xireference" : True,
-             "nterms" : 8, 
+             "nterms" : 5, 
              "cropsize" : 256 }
       , 'lens': { 
             'mode' : "SIS",
@@ -60,9 +60,6 @@ cfg = { 'simulator' : {
       , 'position': {'x': 11.01, 'y': 0.31}
       }
 param = Parameters(cfg)
-rcfg = deepcopy(cfg)
-rcfg["simulator"]["model"] = "Raytrace"
-rparam = Parameters( rcfg )
 ```
 
 We set up two simulators. We show only the raytrace simulation for now.  This will be used as a reference to assess the fidelity of other simulations.
@@ -70,7 +67,7 @@ Even though the simulator is set up for raytrace, it will also compute the roule
 We centre the image, as this is the standard mode of operation in practice, and thus best tested.
 
 ```{code-cell} ipython3
-sim = SimImage( param, verbose=1 )
+sim = SimImage( param, verbose=0 )
 ray = sim.getImage()
 csimg.imshow( ray, 'Raytrace')
 ```
@@ -81,7 +78,6 @@ As we have shown in previous demos, we can retrieve all the amplitudes as a pand
 
 ```{code-cell} ipython3
 df01 = sim.getData()
-display(df01)
 ```
 
 This calculation is made in double precision in the C+= library.
@@ -91,23 +87,15 @@ This computation is slow, so do not worry if you do not see the results immediat
 
 ```{code-cell} ipython3
 df02 = sim.getRoulette(precision=64)
-display(df02)
-```
-
-We remove non-numeric entries before we take the difference between the two calculations.
-
-```{code-cell} ipython3
-df01 = df01.drop( "source" )
-df02 = df02.drop( "source" )
 ```
 
 ```{code-cell} ipython3
-diff = df01-df02
-print(diff)
+df = pd.DataFrame( [ df01, df02, df02.drop("source")-df01 ], index=[ "C++", "Python", "Difference" ] ).transpose()
+display(df)
 ```
 
 ```{code-cell} ipython3
-print( diff.abs().max() )
+print( df["Difference"].abs().max() )
 ```
 
 ```{code-cell} ipython3
@@ -123,9 +111,9 @@ We ignore the last amplitudes file that we have used, because it depends on the 
 
 ```{code-cell} ipython3
 param1 = deepcopy( param )
-param["simulator"]["centred"] = False
 resim1 = Resim( df01, param=param1, verbose=1 )
 im01 = resim1.getImage()
+csimg.drawAxes( im01 )
 csimg.drawAxes( im01 )
 csimg.imageCompare( im01, ray, "Resimulation", "Raytrace" )
 ```
