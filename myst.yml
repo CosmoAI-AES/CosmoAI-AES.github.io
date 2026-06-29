@@ -97,7 +97,6 @@ project:
       children:
       - file: docs/devel/Release.md
       - file: docs/devel/Workflows.md
-    - file: docs/Publications.md
     - file: about.md
     
 site:
