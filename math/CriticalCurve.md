@@ -6,8 +6,7 @@ usemathjax: true
 # Critical Curves
 
 We build on the notation defined in [Lens Potential](LensPotential).
-The derivation is based on
-[Principles of Gravitational Lensing](https://link.springer.com/book/10.1007/978-3-030-02122-1) by Congdon and Keeton 2018.
+The derivation is based on @Congdon_2018.
 
 
 ## Basic Notation

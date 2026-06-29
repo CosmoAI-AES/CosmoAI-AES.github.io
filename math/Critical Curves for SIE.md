@@ -11,7 +11,8 @@ The [SIE](./SIE) lens is defined by the convergence
 \end{equation}
 where $f$ is the ratio between the minor and major axes.
 
-The magnification matrix for SIE may now be calculated [Kormann 1994](https://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?1994A&A...284..285K&classic=YES)
+The magnification matrix for SIE may now be calculated 
+following @kormann1994isothermal.
 
 and becomes
 ```{math}
