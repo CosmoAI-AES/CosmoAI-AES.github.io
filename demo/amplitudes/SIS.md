@@ -13,7 +13,7 @@ kernelspec:
   language: python
 ---
 
-# Point Mass Amplitudes
+# SIS Amplitudes
 
 This test follows up on problems arising from [](./AmplitudeFile.ipynb)
 and tests calculation of roulette amplitudes from python.
