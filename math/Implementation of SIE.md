@@ -47,7 +47,7 @@ respectively, and find that $\nabla\psi$ is constant in $R$.
 
 **Under Construction**
 
-+ Step 1.  [Differentiation of SIE](Differentiation of SIE)
++ Step 1.  [Differentiation of SIE](Differentiation%20of%20SIE.md)
 
 \begin{align}
   \alpha^m_s & = 

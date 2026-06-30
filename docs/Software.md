@@ -44,5 +44,5 @@ amplitudes during simulation.
 
 ## More information
 
-+ [](/docs/Notation.md) and relationship between the software and the mathemaical model.
++ [](/tech/Notation.md) and relationship between the software and the mathemaical model.
 + [](/docs/test/Test)

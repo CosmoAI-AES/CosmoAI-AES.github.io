@@ -20,17 +20,12 @@ project:
       children:
         - file: math/LensPotential.md
         - file: math/Lens.md
+          children:
+          - file: math/SIE.md
         - file: math/CosmologicalDistances.md
         - file: math/Roulette.md
           children:
           - file: math/getXi.md
-        - title: The SIE Lens
-          children:
-          - file: math/SIE.md
-          - file: math/Differentiation of SIE.md
-          - file: math/Differentiating SIE Approach 1.md
-          - file: math/Implementation of SIE.md
-          - file: math/Roulette Amplitudes in SIE.md
         - file: math/sersic.md
         - file: math/CriticalCurve.md
           children:
@@ -56,7 +51,6 @@ project:
         - file: docs/scripts/GUI.md
     - file: docs/Software.md
       children:
-        - file: docs/Notation.md
         - file: docs/CosmoSimPy.md
         - file: docs/Lens API.md
         - file: docs/model/Overview.md
@@ -82,6 +76,12 @@ project:
           children:
           - file: docs/Software v2.5.0.md
           - file: docs/History.md
+    - file: tech/Notation.md
+      children:
+      - file: math/Differentiation of SIE.md
+      - file: math/Differentiating SIE Approach 1.md
+      - file: math/Implementation of SIE.md
+      - file: math/Roulette Amplitudes in SIE.md
     - title: Demoes
       file: demo/index.md
       children:

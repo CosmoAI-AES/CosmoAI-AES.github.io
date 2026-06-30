@@ -21,14 +21,15 @@ and becomes
   \begin{bmatrix}
     1 - 2\kappa\sin^2\phi &
     \kappa\sin(2\phi) 
-    \\\\\\\\
+    \\
     \kappa\sin(2\phi) &
     1 - 2\kappa\cos^2\phi &
   \end{bmatrix}
 ```
-where $(\xi,\phi)$ are the polar coordinates of the normalised screen space point
-$\mathbf{x}$.
-Now the critical curve is given as the points $(\xi_{\mathrm{crit}},\phi)$ given as
+where $(\xi,\phi)$ are the polar coordinates of the normalised
+screen space point $\mathbf{x}$.
+Now the critical curve is given as the points 
+$(\xi_{\mathrm{crit}},\phi)$ given as
 $$
    \xi_{\mathrm{crit}} =
   \frac{\sqrt{f}\xi_0}{\sqrt{\cos^2\phi+f^2\sin^2\phi}},

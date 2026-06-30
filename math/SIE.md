@@ -54,7 +54,7 @@ $$
 \end{aligned}
 $$
 Now the standard normalisation reads
-$$
+```{math}
 \begin{aligned}
 \begin{split}
   \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(r,\phi) =
@@ -64,8 +64,9 @@ $$
   +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
 \end{split}
 \end{aligned}
-$$
+```
 Now the standard normalisation reads
+```{math}
 \begin{split}
   \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(r,\phi) =
   \sqrt{\frac{f}{1-f^2}}\cdot r\cdot
@@ -73,9 +74,10 @@ Now the standard normalisation reads
   \\\\&
   +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
 \end{split}
-\end{aligned}
-$$
+```
 
+```{math}
+\begin{aligned}
 \begin{split}
   \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(r,\phi) =
   \sqrt{\frac{f}{1-f^2}}\cdot r\cdot
@@ -84,7 +86,7 @@ $$
   +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
 \end{split}
 \end{aligned}
-$$
+```
 
 ## Derivation with $\theta=0$ 
 
@@ -229,7 +231,7 @@ For Raytrace simulation, we only require the first order derivatives.
 We find it easiest to calculate the deflection vector in a local
 co-ordinate system where $\theta=0$, and then rotate the deflection
 vector to get the deflectio in the global co-ordinate system.
-This is derived as [Approach 1](Differentiating SIE Approach 1).
+This is derived as [Approach 1](Differentiating%20SIE%20Approach%201).
 
 In Roulette simulation, we require higher order derivatives.
 The recursive formulæ for roulette amplitudes proved intractible,
