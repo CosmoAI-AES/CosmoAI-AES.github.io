@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -32,8 +32,11 @@ The neural network used for machine learning is almost arbitrarily
 chosen and has not been tuned.  The architecture is one of the
 best performing in Nicolò's experiments on other datasets from
 CosmoSim, but the hyperparameters are arbitrarily chosen.
-The training set used is 16000 images.  The specification of the
-distribution can be downloaded ([toml.csv](toml.csv)).
+The training set used is 16000 images.
+
+The specification of the distribution is discussed in
+[](Dataset.ipynb) and
+can be downloaded ([dataset.toml](dataset.toml)).
 
 +++
 
@@ -61,7 +64,7 @@ This gives the neural network and hyperparameters used.
 cfg = toml.load( "ml.toml" )
 print( "CosmoSim version is", cs.__version__ )
 print( "Data from directory", cfg["output"]["directory"] )
-print( "Nerual network used:", cfg["settings"]["model"] )
+print( "Neural network used:", cfg["settings"]["model"] )
 print( json.dumps( cfg["hyperparameters"], indent=4 ) )
 ```
 
