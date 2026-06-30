@@ -65,18 +65,22 @@ See `psiXvalue` and `psiYvalue` in `SIS.cpp`.
 Roulette amplitudes are calculated using the recursive formulæ.
 
 ## SIE
-The extension of the SIS to an ellipsoide is well described in KORMAANN 1994, and referred to as
- the _Singular Isothermal Ellipsoid_, or SIE-lens for short. It is a three-parameter family of lens models: 
-The Einstein radius ($\theta_E$), the excentricity factor $f$ and the orientation $\lambda$ of the lens relative to the 
-polar axis. Given these parameters, the lens profile is given as:
+The extension of the SIS to an ellipsoide is well described in 
+@kormann1994isothermal, and referred to as the
+_Singular Isothermal Ellipsoid_, or SIE-lens for short.
+It is a three-parameter family of lens models: 
+The Einstein radius ($\theta_E$), the excentricity factor $f$ and the
+orientation $\lambda_L$ of the lens relative to the polar axis.
+Given these parameters, the lens profile is given as:
 $$
 \begin{aligned}
 \begin{split}
-  \psi^R_\textrm{SIE}(\theta_E,f,\lambda;\theta,\phi) =
-  \theta_E\sqrt{\frac{f}{1-f^2}}\theta\cdot
-  &\Bigg([\sin(\phi-\lambda)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\lambda)}\right)
-  \\\\&
-  +[\cos(\phi-\lambda)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\lambda)\right)\Bigg).
+  \psi^R_\textrm{SIE}(\theta_E,f,\lambda_L;\theta,\phi) & =
+  \theta_E\sqrt{\frac{f}{1-f^2}}\theta
+  \\
+  & \cdot \Bigg([\sin(\phi-\lambda_L)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\lambda_L)}\right)
+  \\&
+  +[\cos(\phi-\lambda_L)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\lambda_L)\right)\Bigg).
 \end{split}
 \end{aligned}
 $$
@@ -91,16 +95,20 @@ The deflection may now be calculated using that
 $$
 \begin{aligned}
   \frac{\partial\psi}{\partial \theta_1} &=
-     \theta_E\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}\cdot\big(
-        \cos\lambda\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{\theta_1^\prime}{\theta})
-        - \sin\lambda\cdot\sin^{-1}(\sqrt{1-f^2}\frac{\theta_2^\prime}{\theta})
-        \big)
-  \\\\\\\\
+     \theta_E\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}
+     \\&
+     \cdot\left(
+        \cos\lambda_L\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{\theta_1^\prime}{\theta})
+        - \sin\lambda_L\cdot\sin^{-1}(\sqrt{1-f^2}\frac{\theta_2^\prime}{\theta})
+        \right)
+  \\
   \frac{\partial\psi}{\partial \theta_2} &=
-     \theta_E\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}\cdot\big(
-        \sin\lambda\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{\theta_1^\prime}{\theta})
-        + \cos\lambda\cdot\sin^{-1}(\sqrt{1-f^2}\frac{\theta_2^\prime}{\theta})
-        \big)
+     \theta_E\cdot\frac{\sqrt{f}}{\sqrt{1-f^2}}
+     \\&
+     \cdot\left(
+        \sin\lambda_L\cdot\sinh^{-1}(\frac{\sqrt{1-f^2}}{f}\frac{\theta_1^\prime}{\theta})
+        + \cos\lambda_L\cdot\sin^{-1}(\sqrt{1-f^2}\frac{\theta_2^\prime}{\theta})
+        \right)
 \end{aligned}
 $$
 
@@ -108,9 +116,9 @@ where
 
 $$
 \begin{aligned}
-  \theta_1^\prime &= \cos\lambda\cdot \theta_1 + \sin\lambda\cdot \theta_2
+  \theta_1^\prime &= \cos\lambda_L\cdot \theta_1 + \sin\lambda_L\cdot \theta_2
   \\
-  \theta_2^\prime &= -\sin\lambda\cdot \theta_1 + \cos\lambda\cdot \theta_2
+  \theta_2^\prime &= -\sin\lambda_L\cdot \theta_1 + \cos\lambda_L\cdot \theta_2
 \end{aligned}
 $$
 

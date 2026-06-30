@@ -218,22 +218,13 @@ An overview of how the model parameters are represented in the code,
 see [](/docs/Notation.md).
 :::
 
-## Surface Mass Density
+## Polar and Cartesian Coordinates
 
-A final, very central concept in lensing, is the convergence $\kappa$.
-This is the dimensionless,
-projected surface-mass density, which is related to $\psi$ through the Poisson equation. In our 
-coordinates this gives
-\begin{equation}
-  \boxed{\kappa(\boldsymbol{\theta})= \frac12\nabla_\theta\psi^R}
-\end{equation}
+Refering to two-dimensional points we will need both Cartesian
+and Polar co-ordinates.  
+For the apparent position $\theta$ we will write $(\theta_1,\theta_2)$ 
+for the Cartesian co-ordinates, and $(\theta,\phi)$ for the polar
+co-ordinates.
+For $\beta$ we will write
+$(\beta_1,\beta_2)$ and $(\beta,\phi_\beta)$ respectively.
 
-Writing it out more explicitely, we find 
-\begin{equation}
-\kappa(\boldsymbol{\theta})= \frac12\left(
-     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\theta_1^2} + 
-     \frac{\partial^2\psi^{\mathrm{R}}}{\partial\theta_2^2}
-     \right)
-\end{equation}
-
-## Notes

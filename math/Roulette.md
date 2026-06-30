@@ -17,9 +17,25 @@ It would be convenient if we could avoid the scaling
 and still get consistent nomenclature.
 
 
-![The figure shows the set-up for the flat-sky approximation, with the source plane (the lens plane) a distance $D_{\mathrm{S}}$ ($D_{\mathrm{L}}$) from the observer.](Model_2Db.jpeg)
+```{figure} Model_2Db.jpeg
+---
+scale: 50%
+float: right
+---
+The figure shows the set-up for the flat-sky approximation,
+with the source plane (the lens plane) a distance $D_{\mathrm{S}}$
+($D_{\mathrm{L}}$) from the observer.
+```
 
-![The figure shows the set-up for the model used. In particular, the local coordinate systems used in the source plane and lens plane are shown.](/docs/Model_3D.jpeg)
+```{figure} /docs/Model_3D.jpeg
+---
+scale: 50%
+float: right
+---
+The figure shows the set-up for the model used.
+In particular, the local coordinate systems used in the source plane 
+and lens plane are shown.
+```
 
 Using angular coordinates, such that 
 $$
