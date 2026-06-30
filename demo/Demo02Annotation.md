@@ -13,7 +13,7 @@ kernelspec:
   language: python
 ---
 
-# CosmoSim Annotation Demo 
+# CosmoSim Demo II Annotation
 
 CosmoSim can add several annotations to generated images.
 This tutorial will show the ones available as of v3.0.0.

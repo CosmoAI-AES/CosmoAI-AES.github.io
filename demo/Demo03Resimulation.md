@@ -13,7 +13,7 @@ kernelspec:
   language: python
 ---
 
-# CosmoSim Roulette Resimulation Demo 
+# CosmoSim Demo III Roulette Resimulation 
 
 This Demo assumes that you are familiar with the principles from
 [](./Demo01).  We start with the same imports

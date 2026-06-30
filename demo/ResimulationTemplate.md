@@ -6,14 +6,14 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
   language: python
 ---
 
-# CosmoSim Roulette Resimulation Demo 
+# Resimulation Template 
 
 This Demo assumes that you are familiar with the principles from
 [](./Demo01).  We start with the same imports
@@ -77,7 +77,6 @@ csimg.imshow( im, "Baseline simulation" )
 
 We can retrieve the roulette amplitudes with the `getData()` method.
 The resulting data is a pandas `Series`.
-
 
 ```{code-cell} ipython3
 row = imsim.getData()

@@ -8,8 +8,8 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.19.3
 kernelspec:
-  name: dataprog
-  display_name: dataprog
+  name: python3
+  display_name: Python 3 (ipykernel)
   language: python
 ---
 

@@ -13,7 +13,7 @@ kernelspec:
   language: python
 ---
 
-# CosmoSim Demo Part I
+# CosmoSim Demo I
 
 
 ## Preparation
