@@ -2,5 +2,5 @@
 
 # Cluster Lenses
 
-+ [](Cluster01.md)
-+ [](Testing.md)
++ [](Cluster01.ipynb)
++ [](Testing.ipynb)

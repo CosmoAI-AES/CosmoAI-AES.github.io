@@ -1,5 +1,5 @@
 
 # Dataset Generation and Machine Learning
 
-+ [](Dataset.md)
-+ [](Testing.md)
++ [](Dataset.ipynb)
++ [](Testing.ipynb)
