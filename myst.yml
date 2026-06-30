@@ -105,6 +105,7 @@ project:
         - file: demo/Cluster/Testing.ipynb
       - file: demo/amplitudes/index.md
         children:
+        - file: demo/amplitudes/AmplitudeFiles.ipynb
         - file: demo/amplitudes/SIS.ipynb
         - file: demo/amplitudes/Pointmass.ipynb
       - file: demo/RouletteML01.ipynb
