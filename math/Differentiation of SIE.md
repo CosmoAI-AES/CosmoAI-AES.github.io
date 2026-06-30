@@ -44,10 +44,10 @@ origin, the $(x,y)$-system is obtained by rotating
 the $(x',y')$-system by an angle $\theta$.
 Hence
 \begin{aligned}
-   \begin{bmatrix} x' \\\\\\\\ y' \end{bmatrix}
+   \begin{bmatrix} x' \\ y' \end{bmatrix}
    &=
    \begin{bmatrix}
-     \cos\theta & \sin\theta \\\\\\\\
+     \cos\theta & \sin\theta \\
      -\sin\theta & \cos\theta 
    \end{bmatrix}
    \cdot

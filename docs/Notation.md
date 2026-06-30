@@ -10,7 +10,7 @@ descriptions.
 + `alpha` and `beta` refer to the roulette amplitudes.
 + The actual source position $\beta$ is denoted `eta` in the C++ code.
     + the value is retrieved as `SimulatorModel::getEta()`.
-+ `einsteinR` refers to the Einstein radius $\theta_E$.
++ `einsteinration` refers to the Einstein radius $\theta_E$.
     + `theta` refers to the rotation of an elliptic source.
 + The actual position $\theta$ is denoted `nu` 
     + using angular co-ordinates, we identify $\nu$ and $\xi$ with $\theta$,

@@ -6,68 +6,65 @@ usemathjax: true
 
 # SIE (Singular isothermal ellipsoid)
 
-The singular isothermal ellipsoid is a simple example of a non-spherical source.
-
-The dimensionless projected surface-mass density $\kappa$ is given as
-\begin{equation}
-  \kappa(\xi_1,\xi_2)=\frac{\sqrt{f}\xi_0}{2\sqrt{\xi_1^2+f^2\xi_2^2}},
-\end{equation}
-where the axis ratio $f$ obeys $0\lt f\le1$ and $\xi_0$ is a constant parameter related to the total
-mass (analogous to the Einstein radius $R_E$).
-
-**Remark**
-The relationship between $\kappa$ and the lens potential $\psi^{\mathrm{R}}$ is
-\begin{equation}
-  \kappa(\xi_1,\xi_2) = 
-     \frac12D_L^2\left(
-     \psi_{\xi_1\xi_1}^{\mathrm{R}}(\xi_1,\xi_2) 
-     +
-     \psi_{\xi_2\xi_2}^{\mathrm{R}}(\xi_1,\xi_2)
-     \right)
-\end{equation}
-where $\psi^{\mathrm{R}}$ is defined in [Lens Potential](LensPotential).
-
-**Remark**
-Note that the normalization is chosen such that the mass inside an elliptical iso-density contour for 
-fixed $\Sigma$ is independent of the axis ratio $f$.
-
-Solving the Poisson equation, this gives, according to Kormann (1994) the following.
+The lens potential of SIE is given as (see [](#sie)):
+$$
 \begin{aligned}
 \begin{split}
-  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(R,\phi) =
-  \frac{\xi_0}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}R\cdot
-  &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
-  \\\\&
-  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
+  \psi^R_\textrm{SIE}(\theta_E,f,\lambda_L;\theta,\phi) & =
+  \theta_E\sqrt{\frac{f}{1-f^2}}\theta
+  \\
+  & \cdot \Bigg([\sin(\phi-\lambda_L)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\lambda_L)}\right)
+  \\&
+  +[\cos(\phi-\lambda_L)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\lambda_L)\right)\Bigg).
 \end{split}
 \end{aligned}
-where $(R,\phi)$ are the polar coordinates in the lens plane,
-whereas $\theta$ is the orientation of the ellipse.
-That is, the major axis of the ellipse is $\theta$ from the $x$-axis, counter-clockwise.
-Thus $\phi$ should take a constant value across the image. Note the co-ordinate relation
-\begin{equation}
-    \boldsymbol{\xi}= R\cdot (\sin\phi,\cos\phi).
-\end{equation}
+$$
+where $(\theta,\phi)$ are the polar coordinates in the lens plane,
+whereas $\lambda_L$ is the orientation of the ellipse.
+That is, the major axis of the ellipse is $\theta$ from the $x$-axis,
+counter-clockwise.
+Thus $\lambda_L$ is constant across the image.
+
 In the following, we use the following shorthands:
+$$
 \begin{aligned}
   f' & =\sqrt{1-f^2}, 
-\\\\\\\\
+\\
   C_0 & = \frac{\xi_0}{D_L^2}
 \end{aligned}
+$$
 
 ### Normalisation of the Lens Potential
 
-Recall from [Lens Potential](LensPotential) that the lens potential $\psi^{\mathrm{R}}$
+Recall from [Lens Potential](LensPotential) that the lens potential 
+$\psi^{\mathrm{R}}$
 used in the Roulette formalism differs from the more standard normalisation by a
-factor of $\xi_0^2/D_L^2$ or $C_0\xi_0$.  If we also mormalise $R$, and write
-$R=\xi_0r$, we can rewrite $\psi$ as
+factor of $\xi_0^2/D_L^2$ or $C_0\xi_0$.
+If we also mormalise $R$, and write $R=\xi_0r$, we can rewrite $\psi$ as
+$$
+\begin{aligned}
+\begin{split}
+  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(r,\phi) &=
+  \frac{\xi_0^2}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}\cdot r
+  \\&\cdot
+  \Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
+  \\&
+  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
+\end{split}
+\end{aligned}
+$$
+Now the standard normalisation reads
+$$
+\begin{aligned}
 \begin{split}
   \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(r,\phi) =
   \frac{\xi_0^2}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}\cdot r\cdot
   &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
-  \\\\&
+  \\&
   +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
 \end{split}
+\end{aligned}
+$$
 Now the standard normalisation reads
 \begin{split}
   \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(r,\phi) =
@@ -76,6 +73,18 @@ Now the standard normalisation reads
   \\\\&
   +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
 \end{split}
+\end{aligned}
+$$
+
+\begin{split}
+  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(r,\phi) =
+  \sqrt{\frac{f}{1-f^2}}\cdot r\cdot
+  &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
+  \\\\&
+  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
+\end{split}
+\end{aligned}
+$$
 
 ## Derivation with $\theta=0$ 
 
@@ -109,6 +118,7 @@ We need the following basic rules.
 ### Differentiation with respect to $x$
 
 Firstly, we differentiate the $\sin^{-1}$-term
+$$
 \begin{aligned}
 \begin{split}
   t_1 = \frac{d}{dx}
@@ -131,7 +141,9 @@ Firstly, we differentiate the $\sin^{-1}$-term
     \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}}
 \end{split}
 \end{aligned}
+$$
 Secondly, we differentiate the $\sinh^{-1}$-term
+$$
 \begin{aligned}
 \begin{split}
   \frac{d}{dx}
@@ -139,28 +151,31 @@ Secondly, we differentiate the $\sinh^{-1}$-term
     &= \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     + \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
      \cdot \frac{d}{dx}\frac{x}{R}
-    \\\\&
+    \\&
     = \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right) + t_2
 \end{split}
 \end{aligned}
+$$
 where 
+$$
 \begin{aligned}
 \begin{split}
     t_2 &= \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
      \cdot \frac{d}{dx}\frac{x}{R}
-    \\\\&
+    \\&
     = \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
      \cdot \left[ \frac{1}{R} - x\frac{1}{R^2}\frac{x}{R} \right] 
-    \\\\&
+    \\&
     = \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
      \cdot \frac{x^2+y^2 - x^2}{R^3}
-    \\\\&
+    \\&
     = \frac{f'}{f}\cdot\frac{xy^2}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}
      \cdot \frac{1}{R^3}
-    \\\\&
+    \\&
     = \frac{f'xy^2}{R^3} \cdot \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
 \end{split}
 \end{aligned}
+$$
 The partial derivative of the lens potential is then
 \begin{equation}
   \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
@@ -233,5 +248,11 @@ we have not developed this any further.
 
 ## Other properties 
 
-+ [Critical Curves for SIE](Critical Curves for SIE)
-+ [Implementation of SIE](Implementation of SIE)
++ [Critical Curves for SIE](Critical%20Curves%20for%20SIE.md)
++ [Implementation of SIE](Implementation%20of%20SIE.md)
+
+## Calculations
+
++ [Calculation of the SIE Deflection](/math/SIE)
++ [](/math/Roulette%20Amplitudes%20in%20SIE)
++ [](/math/Legacy%20Notes%20on%20SIE)
