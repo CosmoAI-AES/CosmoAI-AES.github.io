@@ -25,6 +25,8 @@ project:
         - file: math/CosmologicalDistances.md
         - file: math/Roulette.md
           children:
+          - file: math/RouletteOriginal.md
+          - file: math/RouletteRecursive.md
           - file: math/getXi.md
         - file: math/sersic.md
         - file: math/CriticalCurve.md
@@ -78,6 +80,8 @@ project:
           - file: docs/History.md
     - file: tech/Notation.md
       children:
+      - file: tech/Raytrace.md
+      - file: tech/Roulette.md
       - file: math/Differentiation of SIE.md
       - file: math/Differentiating SIE Approach 1.md
       - file: math/Implementation of SIE.md

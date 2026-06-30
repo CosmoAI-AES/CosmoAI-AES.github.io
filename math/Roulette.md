@@ -6,6 +6,9 @@ usemathjax: true
 
 # The Roulette Formalism
 
++ [](#roulette-recursive)
++ [](#roulette-original)
+
 **DRAFT under construction**
 
 **TODO** 
@@ -43,32 +46,24 @@ $$
 $$ 
 we find the following expressions for the so-called Roulette amplitudes.
 
-$$
 \begin{equation}
 \alpha_s^m = - \frac{1}{2^{\delta_{0s}}}
 \sum_{k=0}^m\binom{m}{k}
   \left(\mathcal{C}_s^{m(k)}\partial_1+\mathcal{C}_s^{m(k+1)}\partial_2\right)
 \partial_1^{m-k}\partial_2^k\psi
 \end{equation}
-$$
 
-$$
 \begin{equation}
    \mathcal{C}_s^{m(k)}=\frac{1}{\pi}\int_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\cos s\phi
 \end{equation}
-$$
 
-$$
 \begin{equation}
    \beta_s^m=-\sum_{k=0}^m\binom{m}{k}\left({\mathcal{S}}_s^{m(k)}\partial_1+{\mathcal{S}}_s^{m(k+1)}\partial_2\right)\partial_1^{m-k}\partial_2^k\psi
 \end{equation}
-$$
 
-$$
 \begin{equation}
    \mathcal{S}_s^{m(k)}=\frac{1}{\pi}\int_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\sin s\phi.
 \end{equation}
-$$
 
 The observed lensing is decomposed into two steps, as shown the figure.
 The first step is a translation (deflection), corresponding to the difference 

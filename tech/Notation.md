@@ -4,11 +4,24 @@ usemathjax: true
 
 # Implementation
 
+One of the critical challenges in CosmoSim is to represent the
+lens potential and to compute the distortion in both the 
+raytrace model and the roulette model.
+
++ [](#raytrace-implementation)
++ [](#roulette-implementation)
+
+
 (notation)=
 ## Notation in the Implementation
 
-THe notation in the implementation differs from the one used in the mathemaical
-descriptions.
+While the implementation aims to stay true to the 
+[mathematical models](/math/math.md), the notation sometimes differs.
+Some discrepancies are part of the technical debt, where the code has
+not been updated to match evolving notation.
+Other discrepancies are due to ambiguities, reused symbols, and
+subscripts which are hard to represent in ASCII.
+We will try to define the mapping between the two systems of notation.
 
 + `alpha` and `beta` refer to the roulette amplitudes.
 + The actual source position $\beta$ is denoted `eta` in the C++ code.
