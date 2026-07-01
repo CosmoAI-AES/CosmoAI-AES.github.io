@@ -14,6 +14,18 @@
 \definecolor{anglecol}{RGB}{170,95,200}
 \definecolor{obscol}{RGB}{95,150,220}
 
+% a kidney/banana shaped blob used for the distorted lensed images,
+% drawn as a single closed outline (convex outer edge, concave inner edge)
+\tikzset{
+  kidney/.pic={
+    \fill[imgcol]
+      (0,1) .. controls (0.55,0.95) and (1.0,0.4)  .. (1.0,0)
+            .. controls (1.0,-0.4)  and (0.55,-0.95) .. (0,-1)
+            .. controls (0.15,-0.75) and (0.35,-0.3) .. (0.35,0)
+            .. controls (0.35,0.3)  and (0.15,0.75) .. cycle;
+  }
+}
+
 \begin{document}
 \begin{tikzpicture}[
     >=Latex,
@@ -58,8 +70,8 @@
   % --- angular markers at the observer: beta (axis to true source direction),
   % alpha = theta-beta (true source direction to bent ray), theta (axis to bent ray) ---
   \draw[anglecol, thick, -{Latex[length=2mm]}]
-    ({0.5*cos(90)},{0.5*sin(90)}) arc [start angle=90, end angle=76.26, radius=0.5];
-  \node[anglecol, font=\sffamily] at ({0.85*cos(83.1)},{0.85*sin(83.1)}) {$\boldsymbol{\beta}$};
+    ({1.4*cos(90)},{1.4*sin(90)}) arc [start angle=90, end angle=76.26, radius=1.4];
+  \node[anglecol, font=\sffamily] at ({1.75*cos(83.1)},{1.75*sin(83.1)}) {$\boldsymbol{\beta}$};
 
   % alpha = theta-beta: the angle between the true source direction and the bent ray
   \draw[anglecol, thick, -{Latex[length=2mm]}]
@@ -74,17 +86,23 @@
   \fill[lenscol] (Lens) circle (0.22);
   \node[lenscol, font=\sffamily\bfseries, anchor=south] at ($(Lens)+(0,0.3)$) {LENS};
 
-  \fill[imgcol] (LensImg) circle (0.2);
-  \node[inkcol, font=\sffamily, anchor=south] at ($(LensImg)+(0,0.3)$) {IMAGE};
+  \pic[scale=0.22] at (LensImg) {kidney};
+  \node[inkcol, font=\sffamily, anchor=south] at ($(LensImg)+(0,0.32)$) {IMAGE};
 
-  \fill[imgcol] (SourceImg) circle (0.22);
-  \node[inkcol, font=\sffamily, anchor=south] at ($(SourceImg)+(0,0.3)$) {IMAGE};
+  \pic[scale=0.24] at (SourceImg) {kidney};
+  \node[inkcol, font=\sffamily, anchor=south] at ($(SourceImg)+(0,0.34)$) {IMAGE};
 
   \node[inkcol, font=\sffamily] at (Source) {$\times$};
   \node[inkcol, font=\sffamily\bfseries, anchor=south] at ($(Source)+(0,0.35)$) {SOURCE};
 
-  % --- observer icon ---------------------------------------------------
+  % --- observer icon (a smiley face) ------------------------------------
   \draw[obscol, thick] (Observer) circle (0.28);
+  \fill[obscol] ($(Observer)+(-0.09,0.08)$) circle (0.032);
+  \fill[obscol] ($(Observer)+(0.09,0.08)$) circle (0.032);
+  \draw[obscol, thick]
+    ($(Observer)+(-0.13,-0.02)$)
+      .. controls ($(Observer)+(-0.05,-0.16)$) and ($(Observer)+(0.05,-0.16)$) ..
+    ($(Observer)+(0.13,-0.02)$);
   \node[obscol, font=\sffamily] at (0.75,-0.55) {observer};
 
 \end{tikzpicture}
