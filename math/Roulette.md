@@ -21,15 +21,6 @@ with the source plane (the lens plane) a distance $D_{\mathrm{S}}$
 ($D_{\mathrm{L}}$) from the observer.
 ```
 
-```{figure} /docs/Model_3D.jpeg
----
-scale: 50%
-float: right
----
-The figure shows the set-up for the model used.
-In particular, the local coordinate systems used in the source plane 
-and lens plane are shown.
-```
 
 The observed lensing is decomposed into two steps, as shown by the figure.
 The first step is a translation (deflection), corresponding to the difference between apparent ($\boldsymbol{\theta}$)
