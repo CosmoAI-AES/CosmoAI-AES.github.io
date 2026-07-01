@@ -47,20 +47,33 @@ defined above.
 The second step is the actual, non-linear distortion, and may be expresed through higher-order derivatives of the lensing potential. The distorted image is drawn in a local co-ordinate system in the lens
 plane, centred at $\boldsymbol{\theta}=(\theta_1,\theta_2)$. Following Clarkson, we use polar co-ordinates for the distorted image. While Clarkson used $(r,\phi)$ we will use $(\tilde{\theta},\phi)$, since we use angular units.
 
-```{figure} Model_LocalPolar.svg
----
-scale: 50%
-float: right
----
+The source image is described in Cartesian co-ordinates $(\tilde{\beta}_1,\tilde{\beta}_2)^\textrm{T}$ centered
+at $\boldsymbol{\beta}$ in the source plane.
+
+::::{grid} 1 1 2 2
+
+:::{figure} Model_LocalPolar.svg
+:label: fig-local-polar
+:width: 100%
 The lens plane, viewed face-on. The local polar co-ordinate system
 $(\tilde{\theta},\phi)$ is centred on the image, with $\tilde\theta$
 the (angular) radius and $\phi$ the angle from the local polar axis
 (parallel to the global $\theta_1$ direction). The global coordinate
 directions $\theta_1,\theta_2$, centred on the lens, are shown for
 reference.
-```
-The source image is described in Cartesian co-ordinates $(\tilde{\beta}_1,\tilde{\beta}_2)^\textrm{T}$ centered
-at $\boldsymbol{\beta}$ in the source plane.
+:::
+
+:::{figure} Model_LocalCartesian.svg
+:label: fig-local-cartesian
+:width: 100%
+The source plane, viewed face-on. The local Cartesian co-ordinate
+system $(\tilde{\beta}_1,\tilde{\beta}_2)$ is centred on the source
+(its "light centre"), parallel to the global $\beta_1,\beta_2$ axes.
+The global coordinate directions $\beta_1,\beta_2$, centred on the
+optical axis, are shown for reference.
+:::
+
+::::
 Thus the light observed at a position (pixel) $(\tilde{\theta},\phi)$ is drawn from
 a different position (pixel) $(\tilde{\beta}_1,\tilde{\beta}_2)=\mathcal{D}(\tilde{\theta},\phi)$ in the source image.
 From Eq. (48) in [](doi:10.1088/0264-9381/33/24/245003)
