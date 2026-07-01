@@ -15,14 +15,17 @@
 \definecolor{imgcol}{RGB}{205,165,45}
 \definecolor{anglecol}{RGB}{170,95,200}
 
-% the kidney/banana shaped blob used for the distorted lensed image
+% the kidney/banana shaped blob used for the distorted lensed image.
+% Shifted so that the pic's local origin (0,0) -- which is where the
+% polar coordinate system below is centred -- falls inside the filled
+% shape, roughly at its "light centre", rather than in the concave notch.
 \tikzset{
   kidney/.pic={
     \fill[imgcol]
-      (0,1) .. controls (0.55,0.95) and (1.0,0.4)  .. (1.0,0)
-            .. controls (1.0,-0.4)  and (0.55,-0.95) .. (0,-1)
-            .. controls (0.15,-0.75) and (0.35,-0.3) .. (0.35,0)
-            .. controls (0.35,0.3)  and (0.15,0.75) .. cycle;
+      (-0.6,1) .. controls (-0.05,0.95) and (0.4,0.4)  .. (0.4,0)
+               .. controls (0.4,-0.4)  and (-0.05,-0.95) .. (-0.6,-1)
+               .. controls (-0.45,-0.75) and (-0.25,-0.3) .. (-0.25,0)
+               .. controls (-0.25,0.3)  and (-0.45,0.75) .. cycle;
   }
 }
 
@@ -42,31 +45,27 @@
   \node[inkcol, font=\sffamily\bfseries, anchor=north west] at (-1.05,6.05) {LENS PLANE (face-on)};
 
   % --- global coordinate axes, centred on the lens ------------------------
-  \draw[inkcol, thick, -{Latex[length=3mm]}] (Origin) -- (6.3,0) node[right, font=\sffamily] {$\theta_1$};
-  \draw[inkcol, thick, -{Latex[length=3mm]}] (Origin) -- (0,4.6) node[above, font=\sffamily] {$\theta_2$};
-  \fill[lenscol] (Origin) circle (0.09);
-  \node[lenscol, font=\sffamily\bfseries, anchor=north east] at (-0.12,-0.12) {LENS};
-
-  % --- position vector of the image, theta = (theta_1,theta_2) -----------
-  \draw[inkcol, thick, dashed, -{Latex[length=2.5mm]}] (Origin) -- (ImgPos);
-  \node[inkcol, font=\sffamily] at ($(Origin)+(2.55,1.75)$) {$\boldsymbol{\theta}=(\theta_1,\theta_2)$};
+  \draw[inkcol, thick, -{Latex[length=3mm]}] (Origin) -- (6.3,0) node[right, font=\sffamily\large] {$\theta_1$};
+  \draw[inkcol, thick, -{Latex[length=3mm]}] (Origin) -- (0,4.6) node[above, font=\sffamily\large] {$\theta_2$};
+  \fill[lenscol] (Origin) circle (0.18);
+  \node[lenscol, font=\sffamily\bfseries\large, anchor=north east] at (-0.15,-0.15) {LENS};
 
   % --- the image itself (kidney/banana shape), concave side facing the lens
-  \pic[scale=0.7, rotate=29.74] at (ImgPos) {kidney};
-  \node[inkcol, font=\sffamily, anchor=south] at ($(ImgPos)+(0,1.5)$) {IMAGE};
+  \pic[scale=1.3, rotate=29.74] at (ImgPos) {kidney};
+  \node[inkcol, font=\sffamily\large, anchor=south] at ($(ImgPos)+(0,1.7)$) {IMAGE};
 
   % --- local polar axis (phi = 0 reference direction, parallel to theta_1)
-  \draw[anglecol, dotted, thick] (ImgPos) -- ($(ImgPos)+(1.6,0)$);
+  \draw[anglecol, dotted, thick] (ImgPos) -- ($(ImgPos)+(1.9,0)$);
 
-  % --- radius theta-tilde, at a representative angle phi -----------------
-  \draw[anglecol, thick, -{Latex[length=2.5mm]}]
-    (ImgPos) -- ($(ImgPos)+(50:1.15)$);
-  \node[anglecol, font=\sffamily, anchor=west] at ($(ImgPos)+(50:1.0)$) {$\tilde{\theta}$};
+  % --- radius theta-tilde: the tip lands inside the image itself ---------
+  \draw[anglecol, thick, -{Latex[length=2mm]}]
+    (ImgPos) -- ($(ImgPos)+(50:0.5)$);
+  \node[anglecol, font=\sffamily\large, anchor=west] at ($(ImgPos)+(50:0.95)$) {$\tilde{\theta}$};
 
   % --- angle phi, measured from the local polar axis ----------------------
-  \draw[anglecol, thick, -{Latex[length=2mm]}]
-    ($(ImgPos)+(0:0.55)$) arc [start angle=0, end angle=50, radius=0.55];
-  \node[anglecol, font=\sffamily] at ($(ImgPos)+(25:0.85)$) {$\phi$};
+  \draw[anglecol, thick, -{Latex[length=1.5mm]}]
+    ($(ImgPos)+(0:0.24)$) arc [start angle=0, end angle=50, radius=0.24];
+  \node[anglecol, font=\sffamily\large] at ($(ImgPos)+(18:0.68)$) {$\phi$};
 
 \end{tikzpicture}
 \end{document}
