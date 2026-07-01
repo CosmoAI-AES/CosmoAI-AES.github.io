@@ -88,29 +88,20 @@ defined above.
 
 The second step is the actual, non-linear distortion.
 The distorted image is drawn in a local co-ordinate system in the lens
-plane, centred at $\boldsymbol{\xi}=(\xi_1,\xi_2)$, which corresponds to 
-$\boldsymbol{\eta}_\textrm{app}$ in the source plane.
-We write $\xi=|\boldsymbol{\xi}|$ for the distance between the distorted
-image and the lens in the lens plane.
-Since $\boldsymbol{\xi}$ and $\boldsymbol{\eta}_{\mathrm{app}}$ lie on the same
-line through the viewpoint (cf. figure), we have
-$$
-  \xi = |\boldsymbol{\xi}| = \frac{D_\textrm{L}}{D_\textrm{S}}\cdot|\boldsymbol{\eta}_{\mathrm{app}}|.
-$$
-Following Clarkson, we use polar co-ordinates $(r,\phi)$ for the
-distorted image.
-The source image is described in Cartesian co-ordinates $(x^\prime,y^\prime)$ centered
-at $\boldsymbol{\eta}_\textrm{act}$ in the source plane.
-Thus the light observed at a position (pixel) $(r,\phi)$ is drawn from
-a different position (pixel) $(x',y')=\mathcal{D}$$(r,\phi)$ in the source image.
+plane, centred at $\boldsymbol{\theta}=(\theta_1,\theta_2)$, 
+Following Clarkson, we use polar co-ordinates for the distorted image. While Clarkson used $(r,\phi)$ we will use $(\tilde{\theta},\phi)$, since we use angular units.
+The source image is described in Cartesian co-ordinates $(\tilde{\beta}_1,\tilde{\beta}_2)^\textrm{T}$ centered
+at $\boldsymbol{\beta}$ in the source plane.
+Thus the light observed at a position (pixel) $(\tilde{\theta},\phi)$ is drawn from
+a different position (pixel) $(\tilde{\beta}_1,\tilde{\beta}_2)=\mathcal{D}(\tilde{\theta},\phi)$ in the source image.
 From Eq. (48) in [](doi:10.1088/0264-9381/33/24/245003)
 it is possible to show that the mapping $\mathcal{D}$ is given as
 
 $$
 \begin{aligned}
-   \begin{bmatrix} \beta_1 \\\\ \beta_2 \end{bmatrix} &=
-   \theta\cdot\begin{bmatrix} \cos\phi \\\\ \sin\phi \end{bmatrix} 
-      + \sum_{m=1}^{\infty} \frac{\theta^m}{m!}
+   \begin{bmatrix} \tilde{\beta}_1 \\\\ \tilde{\beta}_2 \end{bmatrix} &=
+   \tilde{\theta}\cdot\begin{bmatrix} \cos\phi \\\\ \sin\phi \end{bmatrix} 
+      + \sum_{m=1}^{\infty} \frac{\tilde{\theta}^m}{m!}
       \cdot\sum_{s=0}^{m+1} c_{m+s}
        \left(\alpha_s^m \boldsymbol{A}_{s} + \beta_s^m \boldsymbol{B}_{s} \right) 
        \begin{bmatrix} C^+ \\\\ C^- \end{bmatrix}
