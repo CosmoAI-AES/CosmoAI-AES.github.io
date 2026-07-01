@@ -6,7 +6,11 @@
 A key element of the Roulettes formalism is recursive expressions developed in [](
 https://doi.org/10.1007/s10714-020-02677-z)
 for the amplitudes $\alpha_s^m$ and $\beta_s^m$.
-The base case is given as,
+As before, using angular coordinates $\theta_i$ in the lens plane, such that 
+$$
+\partial_i=\frac{\partial}{\partial\theta_i}
+$$ 
+one may show that the lowest-order amplitudes are given by
 $$
 \begin{equation*}
         \alpha_1^0 = -\partial_1 \psi^\textrm{R}
@@ -15,7 +19,7 @@ $$
         \beta_1^0 = -\partial_2 \psi^\textrm{R}
 \end{equation*}
 $$
-The recursive relations are given as
+The higher-order ones may now be obtained through  recursive relations, and are given as
 $$
 \begin{equation*}
    \alpha_{s+1}^{m+1} = (C_+^+)_{s+1}^{m+1} (\partial_1 \alpha_s^m
