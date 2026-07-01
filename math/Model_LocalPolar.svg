@@ -244,10 +244,10 @@
 <path style="fill:none;stroke-width:0.79701;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(66.665649%,37.255859%,78.431702%);stroke-opacity:1;stroke-miterlimit:10;" d="M 119.056479 68.031691 L 124.780797 74.853071 " transform="matrix(0.99698,0,0,-0.99698,46.650699,176.615314)"/>
 <path style="fill-rule:nonzero;fill:rgb(66.665649%,37.255859%,78.431702%);fill-opacity:1;stroke-width:0.79701;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(66.665649%,37.255859%,78.431702%);stroke-opacity:1;stroke-miterlimit:10;" d="M 3.628768 -0.000677768 C 3.182395 0.110672 1.224185 0.743607 0.00224916 1.431739 L 0.00202347 -1.432844 C 1.224764 -0.744369 3.182646 -0.109063 3.628768 -0.000677768 Z M 3.628768 -0.000677768 " transform="matrix(0.640849,-0.763687,-0.763687,-0.640849,171.052896,101.989558)"/>
 <g style="fill:rgb(66.665649%,37.255859%,78.431702%);fill-opacity:1;">
-  <use xlink:href="#glyph9-1" x="187.346544" y="90.606826"/>
+  <use xlink:href="#glyph9-1" x="181.351702" y="97.750189"/>
 </g>
 <g style="fill:rgb(66.665649%,37.255859%,78.431702%);fill-opacity:1;">
-  <use xlink:href="#glyph1-1" x="186.41038" y="93.751301"/>
+  <use xlink:href="#glyph1-1" x="180.415538" y="100.895662"/>
 </g>
 <path style="fill:none;stroke-width:0.79701;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(66.665649%,37.255859%,78.431702%);stroke-opacity:1;stroke-miterlimit:10;" d="M 125.858269 68.031691 C 125.858269 70.041667 124.968865 71.949773 126.383292 70.766512 " transform="matrix(0.99698,0,0,-0.99698,46.650699,176.615314)"/>
 <path style="fill-rule:nonzero;fill:rgb(66.665649%,37.255859%,78.431702%);fill-opacity:1;stroke-width:0.79701;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(66.665649%,37.255859%,78.431702%);stroke-opacity:1;stroke-miterlimit:10;" d="M 2.212304 0.000220337 C 1.937648 0.0715431 0.745839 0.467895 -0.000599812 0.900352 L 0.000404105 -0.899164 C 0.74446 -0.469245 1.939126 -0.0704269 2.212304 0.000220337 Z M 2.212304 0.000220337 " transform="matrix(-0.763737,-0.640789,-0.640789,0.763737,172.650697,106.061983)"/>
