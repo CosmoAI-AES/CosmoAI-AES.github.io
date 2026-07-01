@@ -81,6 +81,19 @@ The second step is the actual, non-linear distortion.
 The distorted image is drawn in a local co-ordinate system in the lens
 plane, centred at $\boldsymbol{\theta}=(\theta_1,\theta_2)$, 
 Following Clarkson, we use polar co-ordinates for the distorted image. While Clarkson used $(r,\phi)$ we will use $(\tilde{\theta},\phi)$, since we use angular units.
+
+```{figure} Model_LocalPolar.svg
+---
+scale: 50%
+float: right
+---
+The lens plane, viewed face-on. The local polar co-ordinate system
+$(\tilde{\theta},\phi)$ is centred on the image, with $\tilde\theta$
+the (angular) radius and $\phi$ the angle from the local polar axis
+(parallel to the global $\theta_1$ direction). The global coordinate
+directions $\theta_1,\theta_2$, centred on the lens, are shown for
+reference.
+```
 The source image is described in Cartesian co-ordinates $(\tilde{\beta}_1,\tilde{\beta}_2)^\textrm{T}$ centered
 at $\boldsymbol{\beta}$ in the source plane.
 Thus the light observed at a position (pixel) $(\tilde{\theta},\phi)$ is drawn from
