@@ -49,9 +49,16 @@
   \fill[inkcol] (Origin) circle (0.18);
   \node[inkcol, font=\sffamily\bfseries\large, anchor=north east] at (-0.15,-0.15) {AXIS};
 
+  % --- position vector of the light centre, beta = (beta_1,beta_2) -------
+  \draw[inkcol, thick, dashed, -{Latex[length=2.5mm]}] (Origin) -- (SrcPos);
+  \node[inkcol, font=\sffamily, anchor=south] at ($(Origin)+(1.88,1.6)$) {$\boldsymbol{\beta}=(\beta_1,\beta_2)$};
+
   % --- the source itself (kidney/banana shape) ----------------------------
   \pic[scale=1.3, rotate=29.74] at (SrcPos) {kidney};
   \node[inkcol, font=\sffamily\large, anchor=south] at ($(SrcPos)+(0,1.7)$) {SOURCE};
+
+  % --- small dot marking the light centre (local coordinate origin) ------
+  \fill[inkcol] (SrcPos) circle (0.05);
 
   % --- local Cartesian axes (beta-tilde_1, beta-tilde_2), parallel to the
   % global axes, centred on the source's "light centre"; both tips land

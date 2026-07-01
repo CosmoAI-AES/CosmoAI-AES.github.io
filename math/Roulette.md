@@ -55,22 +55,27 @@ at $\boldsymbol{\beta}$ in the source plane.
 :::{figure} Model_LocalPolar.svg
 :label: fig-local-polar
 :width: 100%
-The lens plane, viewed face-on. The local polar co-ordinate system
-$(\tilde{\theta},\phi)$ is centred on the image, with $\tilde\theta$
-the (angular) radius and $\phi$ the angle from the local polar axis
-(parallel to the global $\theta_1$ direction). The global coordinate
-directions $\theta_1,\theta_2$, centred on the lens, are shown for
-reference.
+The lens plane, viewed face-on. The dashed vector
+$\boldsymbol{\theta}=(\theta_1,\theta_2)$ gives the position of the
+image's light centre (the small dot) relative to the lens. The local
+polar co-ordinate system $(\tilde{\theta},\phi)$ is centred on this
+light centre, with $\tilde\theta$ the (angular) radius and $\phi$ the
+angle from the local polar axis (parallel to the global $\theta_1$
+direction). The global coordinate directions $\theta_1,\theta_2$,
+centred on the lens, are shown for reference.
 :::
 
 :::{figure} Model_LocalCartesian.svg
 :label: fig-local-cartesian
 :width: 100%
-The source plane, viewed face-on. The local Cartesian co-ordinate
-system $(\tilde{\beta}_1,\tilde{\beta}_2)$ is centred on the source
-(its "light centre"), parallel to the global $\beta_1,\beta_2$ axes.
-The global coordinate directions $\beta_1,\beta_2$, centred on the
-optical axis, are shown for reference.
+The source plane, viewed face-on. The dashed vector
+$\boldsymbol{\beta}=(\beta_1,\beta_2)$ gives the position of the
+source's light centre (the small dot) relative to the optical axis.
+The local Cartesian co-ordinate system $(\tilde{\beta}_1,\tilde{\beta}_2)$
+is centred on this light centre, parallel to the global
+$\beta_1,\beta_2$ axes. The global coordinate directions
+$\beta_1,\beta_2$, centred on the optical axis, are shown for
+reference.
 :::
 
 ::::

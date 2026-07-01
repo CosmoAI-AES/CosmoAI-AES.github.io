@@ -26,6 +26,7 @@ $$
     - \partial_2 \beta_s^m)
 \end{equation*}
 $$
+
 $$
 \begin{equation*}
      \beta_{s+1}^{m+1} = (C_+^+)_{s+1}^{m+1} (\partial_1 \beta_s^m
@@ -39,6 +40,7 @@ $$
     + \partial_2 \beta_s^m)
 \end{equation*}
 $$
+
 $$
 \begin{equation*}
      \beta_{s-1}^{m+1} = (C_-^+)_{s-1}^{m+1} (\partial_1 \beta_s^m
