@@ -9,15 +9,6 @@ usemathjax: true
 + [](#roulette-recursive)
 + [](#roulette-original)
 
-**DRAFT under construction**
-
-**TODO** 
-The formalism should be rewritten to use angular distances.
-In the implementation, the primary unit is pixels in the source plane.
-However, $\psi$ is a function of $\boldsymbol{\xi}$ in the lens plane,
-still measured by the same linear unit.
-It would be convenient if we could avoid the scaling
-and still get consistent nomenclature.
 
 
 ```{figure} Model_2Db.svg
