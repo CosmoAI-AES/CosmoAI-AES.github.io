@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -15,6 +15,9 @@ kernelspec:
 
 # CosmoSim Demo I
 
+::: {warning} Requirements
+This tutorial uses CosmoSim v3.1.  It will break in v3.2.
+:::
 
 ## Preparation
 
@@ -28,7 +31,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
-import toml
+import toml, json
 ```
 
 From CosmoSim, we will use the main simulator `CosmoSim` and
@@ -91,9 +94,14 @@ param = Parameters( cfg )
 print( param )
 ```
 
-::: {admonition} Remark
+::: {note} Parameters
+The `Parameter` print-out looks like a mess.  It is a cascading set of of dictionaries ([CascaDict](https://cascadict.readthedocs.io/en/latest/)), which makes it easy to process parameters from multiple sources and applying defaults. 
+The idea is to be able to replace a few settings in the top layer without affecting other permanent settings in the other layers, but we have not yet developed this idea fully.
+:::
+
+::: {note} Remark
 It is possible to define the config as a flat `dict` using the CSV labels, and
-the convert it to the nested structure with the `getConfig()` function.
+then convert it to the nested structure with the `getConfig()` function.
 :::
 
 We can simulate the configuration by merely instantiating a `SimImage` object, as follows.
@@ -135,10 +143,16 @@ The file is [Demo01.toml](./Demo01.toml), and we read it thus:
 import tomllib as tl
 with open( "Demo01.toml", 'rb') as f:
             toml = tl.load(f)
-print( toml )
+print( json.dumps( toml, indent=4 ) )
 ```
 
 The result is a nested python `dict` which we can import as we did before.
+
+::: {tip}
+Note the use of the `json` library to pretty-print a dictionary.
+:::
+
++++
 
 Most importantly, we are now defining `simulator.config=raysie`, which
 says raytrace simulation with a SIE lens, and `source.mode=SersicSphere`
@@ -203,11 +217,6 @@ param["simulator"]["sampled"] = True
 imsimRaytraceSampled = SimImage( param, verbose=0 )
 imRaytraceSampled = imsimRaytraceSampled.getImage()
 ```
-
-::: {admonition} Remark
-It is unfortunate that we cannot suppress diagnostic output from the C++
-modules at the moment.  This is on the bucket list.
-:::
 
 To better compare, we will show the four images side by side.
 
@@ -312,6 +321,13 @@ def imageDiff(im1,im2):
     return ( (im1.astype(float) - im2.astype(float) + 256)/2 ).astype(np.uint8)
 ```
 
+::: {tip}
+This function is also available in the `CosmoSim.Image` module.
+```python
+from CosmoSim.Image import imageDiff
+```
+:::
+
 Armed with the function, we can plot diff images.
 
 ```{code-cell} ipython3
@@ -366,11 +382,17 @@ plt.axis("off")
 ```
 
 This looks a great deal better.  The small triangles are obviously the spurious images forming around the convergence ring.
-To see better, we can add an axis cross, which also tells us exactly where the lens is, at the origin.
+To see better, we can add an axis cross, which also tells us exactly where the lens is, at the origin.:::
+
+::: {tip} imshow
+It takes a cumbersome few line to show an image neatly with `pyplot`.
+Let's switch to a convenience function from `CosmoSim` in the next block.
+:::
 
 ```{code-cell} ipython3
+import CosmoSim.Image as csimg
 csimg.drawAxes( imr )
-plt.imshow( imr, cmap="grey" )
+csimg.imshow( imr )
 ```
 
 To see it all, we can plot all the four simulations.
@@ -477,11 +499,11 @@ As we can see, different rotations make a massive difference to the observed
 image.  However, this source is extremely longated.
 
 ::: {tip}
-To change the source size, one uses
+To change the source size, we can use
 ```
 param["source"]["sigma"] = 20
 param["source"]["sigma2"] = 40
-:::
+```
 The parameter `sigma` refers to the standard deviation in a Gaussian
 light profile.  Ellipsoid spheres have a size parameter along each axis,
 hence `sigma` and `sigma2`.
@@ -497,7 +519,7 @@ what makes reasonable parameters for lenses and sources.
 
 The only lens we have considered is SIE.  The other main alternative is SIS.
 Point Mass lenses are also implemented but not as thoroughly tested with newer
-features of CosmoSim. (As of 15 June 2026.)
+features of CosmoSim. (As of 1 July 2026 with CosmoSim v3.1.0.)
 
 ```{code-cell} ipython3
 

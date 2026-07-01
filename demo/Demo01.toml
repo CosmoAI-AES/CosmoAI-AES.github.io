@@ -1,5 +1,6 @@
 [simulator]
 config="raysie"
+cropsize=256
 
 [lens]
 einsteinR=46

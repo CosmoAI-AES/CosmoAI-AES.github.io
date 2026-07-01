@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -21,7 +21,7 @@ This tutorial will show the ones available as of v3.0.0.
 ## Preparation
 
 We use the same basic setup and lens configuration as we used
-in [](./Demo01).  The following code is copied therefrom and trimmed.
+in [](./Demo01.ipynb).  The following code is copied therefrom and trimmed.
 
 ```{code-cell} ipython3
 import pandas as pd
@@ -41,9 +41,7 @@ with open( "Demo01.toml", 'rb') as f:
 param = Parameters( toml )
 imsim = SimImage( param, verbose=0 )
 im = imsim.getImage()
-plt.imshow( im, cmap='gray')
-plt.title( "Initial configuration" )
-plt.axis("off")
+csimg.imshow( im,  "Initial configuration" )
 ```
 
 ## Annotation
@@ -52,9 +50,7 @@ The cosmological annotations is retrieved with the `getAnnotated()` method.
 
 ```{code-cell} ipython3
 im = imsim.getAnnotated()
-plt.imshow( im, cmap='gray')
-plt.title( "Annotated image" )
-plt.axis("off")
+csimg.imshow( im,  "Annotated image" )
 ```
 
 The critical curve is shown in white and the convergence ring in blue.
