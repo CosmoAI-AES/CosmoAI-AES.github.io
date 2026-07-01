@@ -109,6 +109,12 @@ cfg = csd.readtoml( "dataset.toml" )
 display( cfg )
 ```
 
+We see that this configuration is set up to generate 24000 images in 256$\times$256 format.
+We can see the paremeter ranges for the lens and for the source, which is a sphere with sersic profile.
+As of CosmoSim v3.1 we can still use the config parameter for both the simulation model and the lens;
+"raysie" is raytrace simualation of a SIE lens.
+This will change in v3.2, to require separate settings for `simulator.model` and `lens.mode`.
+
 ::: {tip}
 Download [dataset.toml](./dataset.toml).
 :::
@@ -231,6 +237,7 @@ to make a problem.
 
 ## Bulk generation
 
+Managing thousands of images in a Jupyter Notebook is not very practical.
 In most cases, one will want to generate the dataset from the command line
 ```
 python -m CosmoSim.dataset config.toml dataset.csv
@@ -240,5 +247,9 @@ This generates a CSV file which can be used for image generation.
 It is also possible to generate the dataset and the images in one go,
 using
 ```
-python -m CosmoSim --toml config.toml --csvfile dataset.csv ...
+python -m CosmoSim --rnd --toml config.toml --csvfile dataset.csv \
+      --outfile roulette.csv --directory images
 ```
+This generates the random dataset (dataset.csv) and the images in
+the images directory, as well as a dataset of corresponding
+roulettes amplitudes (roulette.csv).

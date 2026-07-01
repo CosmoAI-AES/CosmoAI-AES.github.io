@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -16,7 +16,7 @@ kernelspec:
 # CosmoSim Demo III Roulette Resimulation 
 
 This Demo assumes that you are familiar with the principles from
-[](./Demo01).  We start with the same imports
+[](./Demo01.md).  We start with the same imports
 
 ```{code-cell} ipython3
 import pandas as pd
@@ -41,7 +41,7 @@ from CosmoSim.roulettegen import Resim
 ```
 
 The `Resim` class shares the `GenericSim` superclass with `SimImage`,
-which we used in [](./Demo01) but simulates from precomputed roulette
+which we used in [](./Demo01.md) but simulates from precomputed roulette
 parameters and not from a regular lens model. 
 
 ## Basic Configuration
@@ -247,10 +247,12 @@ centred raytrace image.
 
 ## Closure
 
-I hope we have managed to demonstrate some of the caveats.
-There is some work in progress here.  We should aim to improve the naming
-conventions and document the different co-ordinate systems to make it more
-transparent.
+Resmulation is going to be critical to evaluate machine learning models in practical scenarioes.
+The resimulated image can be compared to the observation without having a ground truth for the roulette amplitudes.
+
+There is some work in progress here.  
+I hope we have managed to demonstrate some of the caveats, particularly with respect to centring.
+Documentation of [](/tech/Notation.md) and the definitions of the different co-ordinate systems is ongoing work.
 
 ```{code-cell} ipython3
 
