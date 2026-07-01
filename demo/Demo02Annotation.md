@@ -75,6 +75,10 @@ plt.axis("off")
 Note that the convergence ring passes through the centre of the lens, as
 it always should.
 
+::: {note} Remark
+Annotations obviously clutters the image, and it is an ongoing project to make the annotations as flexible and unobtrusive as possible.
+:::
+
 ## The source
 
 The unlensed source can be displayed as follows.

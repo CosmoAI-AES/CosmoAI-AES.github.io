@@ -135,4 +135,4 @@ $\psi(\theta_1,\theta_2)$, from which one may derive the physical properties of 
 In practice the sum has to be truncated by limiting $m\le m_0$ for some $m_0$.
 
 The roulette amplitudes are always calculated in a specific 
-[Reference Point](ReferencePoint).
+[Reference Point](ReferencePoint.md).

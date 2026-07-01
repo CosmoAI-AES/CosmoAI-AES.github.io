@@ -63,7 +63,7 @@ Additionally some parameters are currently hard-coded.
 
 We define
 + elliptic ratio $q = \frac{\sigma_2}{\sigma_1}$
-+ effective radisu $r_e = 10\sigma_1$
++ effective radius $r_e = 10\sigma_1$
 + $r = \sqrt{(x/q)^2+y^2}$
 + $b = b_0 + b_1\cdot n$
 
