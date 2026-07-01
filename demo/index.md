@@ -30,6 +30,3 @@ pip install CosmoSim>=3.0.1b1 --upgrade
     + [](./Cluster/Testing.ipynb) tests machine learning on the cluster lenses
 + [](amplitudes/index.md)
 
-## Work in progress
-
-+ [](RouletteML01.ipynb) demonstrates resimulation from roulette parameters.
