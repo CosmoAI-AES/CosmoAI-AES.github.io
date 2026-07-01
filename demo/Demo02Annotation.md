@@ -103,9 +103,7 @@ to a manageable size.
 print( "Prior shape", im.shape )
 im = csimg.crop( im )
 print( "Posterior shape", im.shape )
-plt.imshow( im, cmap='gray')
-plt.title( "Cropped image" )
-plt.axis("off")
+csimg.imshow( im, "Cropped image" )
 ```
 
 The default cropsize is 256, but in the batch process, the sizes are read
@@ -121,4 +119,8 @@ plt.axis("off")
 
 ## Closure
 
-Annotation is work in process, and
+Annotation is work in process, as we mentioned.  Stay tuned.
+
+```{code-cell} ipython3
+
+```
