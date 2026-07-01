@@ -81,9 +81,7 @@ and apparent
 ($\boldsymbol{\eta}_\textrm{app}$) source-plane position.
 In the roulette formalism, this translational part of the lensing is given as
 $$\begin{equation}
-   \boldsymbol{\Delta\eta}
-   =\boldsymbol{\eta}_\textrm{app}-\boldsymbol{\eta}_\textrm{act}
-   =-D_\textrm{S}\cdot(\alpha^0_1,\beta^0_1),
+   \boldsymbol{\alpha}=\nabla_\theta\psi^\textrm{R}=-(\alpha^0_1,\beta^0_1),
 \end{equation}$$
 where $(\alpha_1^0,\beta_1^0)$ is a vector of roulette amplitudes, as
 defined above.
