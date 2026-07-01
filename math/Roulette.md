@@ -20,7 +20,7 @@ It would be convenient if we could avoid the scaling
 and still get consistent nomenclature.
 
 
-```{figure} Model_2Db.jpeg
+```{figure} Model_2Db.svg
 ---
 scale: 50%
 float: right
