@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.19.4
+  formats: ipynb,md:myst
+---
+
 # Training and testing a single model.
 
 It is possible to run machine learning through Jupyter Notebook,
@@ -29,12 +39,14 @@ with the `droulette` package.
 python -m droulette.split problem.toml
 ```
 The sample file is [problem.toml](./problem.toml). We can have a look at it:
+
 ```{code-cell} ipython3
 import tomllib as tl
 with open( "problem.toml", 'rb') as f:
             toml = tl.load(f)
 print( json.dumps( toml, indent=4 ) )
 ```
+
 Observe that file and directory names are specified in the config file.
 
 ::: {note} Optional: Download models.
