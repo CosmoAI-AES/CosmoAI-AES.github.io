@@ -54,9 +54,8 @@ $$
 	    (C_-^+)_s^m = 2^{-\delta_{0s}} \frac{m + 1}{m + 1 - s}
 \end{equation*}
 $$
+
 The astute reader may notice that amplitudes for even sums $s+m$
 cannot be found through these relations.
-However, the contribution from these terms are equal to zero,
-because of the factor $c_{m+s}$ in Equation \eqref{eqn:general mapping}.
-In other words, one can calculate all the amplitudes needed from the aforementioned relations.
+However, the contribution from these terms are equal to zero. In other words, one can calculate all the amplitudes needed from the aforementioned relations.
 
