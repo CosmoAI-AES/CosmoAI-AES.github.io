@@ -28,7 +28,7 @@ and actual ($\boldsymbol{\beta}$) source position:
 $$\begin{equation}
    \boldsymbol{\alpha}=\boldsymbol{\theta}-\boldsymbol{\beta}.
 \end{equation}$$
-We have already seen that the deflection angle $boldsymbol{\alpha}$ may be expressed as the gradient of the two-dimensional projected lensing potential. In the roulette formalism this translates into a set of so-called roulette amplitudes. In particular 
+We have already seen that the deflection angle $\boldsymbol{\alpha}$ may be expressed as the gradient of the two-dimensional projected lensing potential. In the roulette formalism this translates into a set of so-called roulette amplitudes. In particular 
 $$\begin{equation}
    \boldsymbol{\alpha}=\nabla_\theta\psi^\textrm{R}=-(\alpha^0_1,\beta^0_1),
 \end{equation}$$

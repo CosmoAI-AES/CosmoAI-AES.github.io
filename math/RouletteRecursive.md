@@ -1,8 +1,6 @@
 (roulette-recursive)=
 # Recursive definition of roulette amplitudes
 
-\subsection{General recursive formulae}
-
 A key element of the Roulettes formalism is recursive expressions developed in [](
 https://doi.org/10.1007/s10714-020-02677-z)
 for the amplitudes $\alpha_s^m$ and $\beta_s^m$.
@@ -11,14 +9,15 @@ $$
 \partial_i=\frac{\partial}{\partial\theta_i}
 $$ 
 one may show that the lowest-order amplitudes are given by
+
 $$
 \begin{equation*}
         \alpha_1^0 = -\partial_1 \psi^\textrm{R}
 	\quad\text{and}\quad
-
         \beta_1^0 = -\partial_2 \psi^\textrm{R}
 \end{equation*}
 $$
+
 The higher-order ones may now be obtained through  recursive relations, and are given as
 $$
 \begin{equation*}
