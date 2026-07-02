@@ -63,8 +63,10 @@ This may be excessive when we only want to train one model.
 
 **Step 3.** Train models.
 Finally we can train the models.
-The configuration for machine learning should be placed in a subdirectory
-and called `ml.toml`.  This could look like this
+
+The default format trains the model in a subdirectory, to allow multiple models
+of the same data.  Here we assume a subdirectory `experiment001`, containing
+a configuration file `ml.toml`.  The file may look like this:
 
 ```{code-cell} ipython3
 import tomllib as tl
@@ -73,10 +75,9 @@ with open( "experiment001/ml.toml", 'rb') as f:
 print( json.dumps( ml, indent=4 ) )
 ```
 
-To run the training in subdirectory `experiment001`, we run
-the command:
+To train the model, we run the command:
 ```sh
-python -m droulette.model --config experiment001
+python -m droulette.model --config experiment001/ml.toml
 ```
 
 All the results will be placed in this subdirectory.

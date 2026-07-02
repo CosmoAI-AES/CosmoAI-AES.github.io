@@ -22,9 +22,9 @@ resimulated image.
 
 We use three datafiles, which must be downloaded if this
 document is to be executed.
-+ [testing.csv](testing.csv) is ground truth for model training
++ [testing.csv](../testing.csv) is ground truth for model training
 + [test.csv](test.csv) is the predicted amplitudes from machine learning.
-+ [dataset.csv](dataset.csv) is the original lens parameters used to generate
++ [dataset.csv](../dataset.csv) is the original lens parameters used to generate
   the training, testing, and validation data, i.e. it has more
   rows than the other two sets.
 
@@ -71,7 +71,7 @@ print( json.dumps( cfg["hyperparameters"], indent=4 ) )
 Let's load the test set, both the ground truth (`gt`) and the predictions (`df`).
 
 ```{code-cell} ipython3
-gt = pd.read_csv( "testing.csv", index_col="filename" )
+gt = pd.read_csv( "../testing.csv", index_col="filename" )
 df = pd.read_csv( "test.csv", index_col="filename" )
 display( gt.head() )
 display( df.head() )
@@ -234,7 +234,7 @@ We can also load the original lens parameters, from which
 the ground truth was computed.
 
 ```{code-cell} ipython3
-orig = pd.read_csv( "dataset.csv", index_col="filename" )
+orig = pd.read_csv( "../dataset.csv", index_col="filename" )
 display( orig.head() )
 ```
 
@@ -279,3 +279,7 @@ We also gave the `axiscross` option to the plot, to have the axis cross showing 
 
 We see that this machine learning model make accurate prediction as far as optical perception goes.
 Other datasets may prove harder, but this dataset gives no room for further tuning.
+
+```{code-cell} ipython3
+
+```
