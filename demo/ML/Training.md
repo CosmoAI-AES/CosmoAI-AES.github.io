@@ -6,6 +6,10 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.19.4
   formats: ipynb,md:myst
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
 ---
 
 # Training and testing a single model.
