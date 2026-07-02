@@ -19,13 +19,21 @@ These pages present prototypes for two pieces of software.
 + [CosmoSim](https://github.com/CosmoAI-AES/CosmoSim) is a simulator of 
   gravitational lensing, supporting both an interactive and graphical 
   user interface, and a command line interface for bulk generation of images.
-+ [droulette](https://github.com/CosmoAI-AES/droulette) is not publicly
-  available as of March 2026, but will be made public in the future.
++ [droulette](https://github.com/CosmoAI-AES/droulette) is not yet open source,
+  but v0.1 has been released on PyPI.  It will become Open Source in the future.
   It provides the plumbing code to apply machine learning to 
   images from CosmoSim.
 
 **Warning!** These pages are under construction, and there will be
 errors and inconsistencies.
+
+## Current version
+
+The current stable version is v3.1.
+
+There are beta releases of v3.2, with simplified code, removing some 
+redundant legacy models.  However, the refactoring of the GUI is not
+complete, and at least the GUI is not stable.
 
 ## Using CosmoSim 
 
@@ -41,7 +49,7 @@ errors and inconsistencies.
   on command line operation.
 
 To understand the software, it will be necessary to have at least
-a superficial understanding of the [](math/math).
+a superficial understanding of the [](math/math.md).
 
 ## Dokumentation
 
