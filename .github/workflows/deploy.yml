@@ -54,6 +54,7 @@ jobs:
         run: |
           find demo -name "*.md" -print | grep -v index.md | grep -v README | grep -v checkpoints | xargs jupytext --sync --execute
       - name: Build HTML Assets
+        if: always()
         run: jupyter book build --html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
