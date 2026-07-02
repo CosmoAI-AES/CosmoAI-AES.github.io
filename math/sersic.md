@@ -159,7 +159,7 @@ $$
 $$
 
 
-:::{note}{Proof that $r_{\textrm{eff}}$ is still the half-light radius, for any axis ratio}
+:::{note}Proof that $r_{\textrm{eff}}$ is still the half-light radius, for any axis ratio
 
 Set $r_{\textrm{eff}}=\sigma_1$ and $q=\sigma_2/\sigma_1$ in $\tilde r$ above, so
 that the isophote $\tilde r=r_{\textrm{eff}}$ is exactly the ellipse with semi-axes
