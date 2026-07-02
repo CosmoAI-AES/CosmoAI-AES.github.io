@@ -63,12 +63,20 @@ Additionally some parameters are currently hard-coded.
 
 We define
 + elliptic ratio $q = \frac{\sigma_2}{\sigma_1}$
-+ effective radius $r_e = 10\sigma_1$
++ effective radius $r_e = 10\sigma_1$ (see `CHECK` in the code below)
 + $r = \sqrt{(x/q)^2+y^2}$
 + $b = b_0 + b_1\cdot n$
 
 The pixel value is given as
-$$v = \exp -b\cdot\bigg( \big(\frac{r}{r_e}\big)^{\frac{1}{n}} - 1\bigg)$$
+$$v = I_{\mathrm{eff}}\cdot\exp -b\cdot\bigg( \big(\frac{r}{r_e}\big)^{\frac{1}{n}} - 1\bigg)$$
+where, as in the spherical case but with $\sigma^2\to\sigma_1\sigma_2$,
+$$I_{\mathrm{eff}} = L\cdot \frac{b^{2n}}{2\pi\sigma_1\sigma_2\, n\,\text{e}^{b}\cdot \Gamma(2n)}.$$
+See [](#sersic-elliptic-general) for the derivation, including the proof
+that $r_e$ is the half-light radius for any axis ratio $q$ -- this
+holds for whatever value $r_e$ is actually given, including the
+current $r_e=10\sigma_1$; it just means the half-light ellipse
+currently has semi-axes $(10\sigma_2,10\sigma_1)$ rather than
+$(\sigma_1,\sigma_2)$.
 
 The model is taken from [](doi:10.1071/as05001).
 
@@ -78,10 +86,123 @@ The code is given as
 auto q = sigma2/sigma1;
 int n = 4;  // Sersic index
 auto re = 10*sigma1; // effective radius
+// CHECK: this factor of 10 means the half-light ellipse (where r==re)
+// actually has semi-axes (10*sigma2, 10*sigma1), not (sigma1, sigma2).
+// If sigma1/sigma2 are meant to *be* the half-light semi-axes, this
+// looks like a bug or a leftover unit conversion -- kept as-is for now
+// since it matches the current implementation; revisit once confirmed.
 auto r = std::sqrt(std::pow(x/q, 2)+std::pow(y, 2));
 auto bn = 1.992*n - 0.3271;
-auto value = round(std::exp(-bn*((std::pow(r/re, 1.0/n))-1.0)));
+auto F = luminosity * std::pow(10, 3);
+auto pi = 3.141592;
+auto I_eff = F*std::pow(bn, 2.0*n)
+           / (2*pi*sigma1*sigma2*n*std::exp(bn)*std::tgamma(2.0*n));
+auto value = round(I_eff*std::exp(-bn*((std::pow(r/re, 1.0/n))-1.0)));
 if (value > 255) { value = 255; }
 dst.at<uchar>(row, col) = (uchar)value;
 ```
+
+(sersic-elliptic-general)=
+## General elliptical Sersic profile
+
+The hard-coded implementation above fixes $n=4$ and only handles
+ellipses aligned with the $(x,y)$ axes. This section gives the general
+recipe: arbitrary Sersic index $n_s$, an arbitrary position angle, and a
+luminosity normalisation consistent with the spherical case.
+
+### Rotating into the ellipse's own axes
+
+If the ellipse is rotated by a position angle $\lambda$ relative to the
+$x$-axis (same convention as $\lambda_L$/$\theta$ in the
+[SIE lens](SIE.md)), first rotate into the ellipse's own frame:
+\begin{align}
+  x' &= (x-x_0)\cos\lambda + (y-y_0)\sin\lambda, \\
+  y' &= -(x-x_0)\sin\lambda + (y-y_0)\cos\lambda.
+\end{align}
+If the source is always axis-aligned, as in the current implementation,
+this step is skipped and $(x',y')=(x-x_0,y-y_0)$.
+
+### Elliptical radius, not a direction-dependent $R_e$
+
+Rather than making $R_e$ itself a function of direction, keep $R_e$ as a
+single scalar and replace the circular radius $r=\sqrt{x'^2+y'^2}$ with
+an *elliptical radius*, using the axis ratio $q=\sigma_2/\sigma_1\le 1$:
+\begin{equation}
+  \tilde r = \sqrt{x'^2+(y'/q)^2}.
+\end{equation}
+This is exactly what the hard-coded code above already does for the
+axis-aligned case (with $y'=y$ playing the role of the unscaled axis).
+The pixel value is then given by the *same* 1D formula as the
+spherical case, with $r\to\tilde r$ and general $n_s$:
+\begin{equation}
+  v(x,y) = I_{\mathrm{eff}}\cdot
+  \text{e}^{-b_{n_s}\left(\left(\tilde r/R_e\right)^{1/n_s}-1\right)},
+  \qquad b_{n_s}=1.992\,n_s-0.3271.
+\end{equation}
+
+If you prefer to think of it as a direction-dependent effective
+radius, the two pictures are equivalent: writing the point in polar
+form in the rotated frame, $x'=r\cos\phi$, $y'=r\sin\phi$, one finds
+$\tilde r/R_e = r/R(\phi)$ with
+\begin{equation}
+  R(\phi) = \frac{R_e}{\sqrt{\cos^2\phi+\sin^2\phi/q^2}}.
+\end{equation}
+This $R(\phi)$ traces out exactly the isophote $\tilde r=R_e$. It
+confirms the intuition that $R_e$ "depends on direction", but the
+elliptical-radius form above is simpler to implement (one
+multiplication instead of a $\cos$/$\sin$ evaluation per pixel).
+
+### $R_e$ is still the half-light radius, for any axis ratio
+
+Set $R_e=\sigma_1$ and $q=\sigma_2/\sigma_1$ in $\tilde r$ above, so
+that the isophote $\tilde r=R_e$ is exactly the ellipse with semi-axes
+$(\sigma_1,\sigma_2)$. Substituting $u=x'/\sigma_1$, $v=y'/\sigma_2$
+(Jacobian $\mathrm dx'\mathrm dy'=\sigma_1\sigma_2\,\mathrm du\,\mathrm dv$)
+turns $\tilde r$ into the ordinary circular radius $\rho=\sqrt{u^2+v^2}$
+in $(u,v)$-space, so
+\begin{equation}
+  L(\le R) = \iint_{\tilde r\le R} v(x,y)\,\mathrm dx\,\mathrm dy
+  = \sigma_1\sigma_2\iint_{\rho\le R} I_{\mathrm{eff}}\,
+    \text{e}^{-b_{n_s}(\rho^{1/n_s}-1)}\,\mathrm du\,\mathrm dv
+  = \sigma_1\sigma_2\cdot L_{\mathrm{circ}}(\le R).
+\end{equation}
+The factor $\sigma_1\sigma_2$ is common to $L(\le R)$ and to the total
+$L_{\mathrm{tot}}=\sigma_1\sigma_2\cdot L_{\mathrm{circ}}(\le\infty)$,
+so it cancels in the ratio:
+\begin{equation}
+  \frac{L(\le R)}{L_{\mathrm{tot}}} = \frac{L_{\mathrm{circ}}(\le R)}{L_{\mathrm{circ}}(\le\infty)}.
+\end{equation}
+This is exactly the same enclosed-flux fraction as in the spherical
+case at the same $R$ -- and since $b_{n_s}$ is defined so that this
+fraction is $1/2$ at $R=R_e$ in the circular case, it is also $1/2$ at
+$R=R_e$ here, **for every axis ratio $q$**. So yes: $\tilde r=R_e$
+(i.e. the ellipse with semi-axes $\sigma_1,\sigma_2$) always encloses
+exactly half of the total light, regardless of ellipticity. This only
+requires that $R_e$ and $q$ be used consistently in $\tilde r$ as
+above -- it is *not* a special property of one particular "$R_e$"
+convention.
+
+A single scalar is still convenient for describing "how big" a source
+is independent of orientation and axis ratio -- for that, the
+**circularised** effective radius
+$R_{e,\mathrm{circ}}=\sqrt{\sigma_1\sigma_2}$ is the natural choice: it
+is the radius of the circle with the same *area* as the half-light
+ellipse. Use it for reporting/logging a source's size, but note it is
+a *derived* quantity here, not a substitute for $\sigma_1$ inside
+$\tilde r$ -- plugging $R_{e,\mathrm{circ}}$ into $\tilde r$ in place
+of $\sigma_1$ (while keeping the same $q$) would trace a *different*
+ellipse, not $(\sigma_1,\sigma_2)$.
+
+### Luminosity normalisation
+
+An ellipse with semi-axes $\sigma_1,\sigma_2$ has area
+$\pi\sigma_1\sigma_2$, in place of the circle's $\pi\sigma^2$. The
+$I_{\mathrm{eff}}$ normalisation therefore becomes
+\begin{equation}
+  I_{\mathrm{eff}} = L\cdot\frac{b_{n_s}^{2n_s}}
+    {2\pi\,\sigma_1\sigma_2\, n_s\, \text{e}^{b_{n_s}}\,\Gamma(2n_s)},
+\end{equation}
+i.e. literally the spherical-case formula with $\sigma^2\to
+\sigma_1\sigma_2 = R_{e,\mathrm{circ}}^2$. This is the `I_eff` used in
+the corrected code above.
 
