@@ -121,7 +121,7 @@ luminosity normalisation consistent with the spherical case.
 
 ### Rotating into the ellipse's own axes
 
-If the ellipse is rotated by a position angle $\lambda$ relative to the
+[**TODO** Do we need this section HG?] If the ellipse is rotated by a position angle $\lambda$ relative to the
 $x$-axis (same convention as $\lambda_L$/$\theta$ in the
 [SIE lens](SIE.md)), first rotate into the ellipse's own frame:
 $$
