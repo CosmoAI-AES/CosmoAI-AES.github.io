@@ -1,11 +1,11 @@
 ---
 jupytext:
+  formats: ipynb,md:myst
   text_representation:
     extension: .md
     format_name: myst
     format_version: 0.13
     jupytext_version: 1.19.4
-  formats: ipynb,md:myst
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -45,7 +45,7 @@ python -m droulette.split problem.toml
 The sample file is [problem.toml](./problem.toml). We can have a look at it:
 
 ```{code-cell} ipython3
-import tomllib as tl
+import json, tomllib as tl
 with open( "problem.toml", 'rb') as f:
             toml = tl.load(f)
 print( json.dumps( toml, indent=4 ) )
