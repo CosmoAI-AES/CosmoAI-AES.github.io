@@ -35,13 +35,24 @@ We can then define the value of pixel $(x,y)$ as
 $$v_{x,y} = I_{\mathrm{eff}}\cdot
     \text{e}^{-b_n\big(\big(\frac{r}{\sigma}\big)^{\frac{1}{n_s}}-1\big)}$$
 where
-\begin{align}
-  b_n & = 1.992n_s - 0.3271 \\
-    r & = \sqrt{x^2+y^2}  \\
-I_{\mathrm{eff}} & =  L\cdot \frac{b_n^{2n_s}}{2\pi\sigma^2n_s\text{e}^{b_n}\cdot \Gamma(2n_s)}
-\end{align}
 
-The parameter *n* is the key to the profile's flexibility — since it controls the shape of the light distribution:
+$$
+\begin{equation*}
+  b_n  = 1.992n_s - 0.3271
+\end{equation*}
+$$
+$$
+\begin{equation*}
+    r  = \sqrt{x^2+y^2} 
+\end{equation*}
+$$
+$$
+\begin{equation*}
+I_{\mathrm{eff}} =  L\cdot \frac{b_n^{2n_s}}{2\pi\sigma^2n_s\text{e}^{b_n}\cdot \Gamma(2n_s)}
+\end{equation*}
+$$
+
+The model is taken from [](doi:10.1071/as05001). The parameter *n* is the key to the profile's flexibility — since it controls the shape of the light distribution:
 
 * **n = 1**: reduces to an **exponential profile**, typical of galactic disks (like spiral galaxy disks)
 * **n = 4**: reduces to the **de Vaucouleurs profile**, which closely matches the light distribution of elliptical galaxies and bulges
@@ -71,14 +82,12 @@ The pixel value is given as
 $$v = I_{\mathrm{eff}}\cdot\exp -b\cdot\bigg( \big(\frac{r}{r_e}\big)^{\frac{1}{n}} - 1\bigg)$$
 where, as in the spherical case but with $\sigma^2\to\sigma_1\sigma_2$,
 $$I_{\mathrm{eff}} = L\cdot \frac{b^{2n}}{2\pi\sigma_1\sigma_2\, n\,\text{e}^{b}\cdot \Gamma(2n)}.$$
-See [](#sersic-elliptic-general) for the derivation, including the proof
-that $r_e$ is the half-light radius for any axis ratio $q$ -- this
-holds for whatever value $r_e$ is actually given, including the
-current $r_e=10\sigma_1$; it just means the half-light ellipse
-currently has semi-axes $(10\sigma_2,10\sigma_1)$ rather than
-$(\sigma_1,\sigma_2)$.
-
-The model is taken from [](doi:10.1071/as05001).
+See [](#sersic-elliptic-general) for the general recipe (arbitrary $n$
+and position angle), including the proof that $r_e$ is the half-light
+radius for any axis ratio $q$ -- this holds for whatever value $r_e$
+is actually given, including the current $r_e=10\sigma_1$; it just
+means the half-light ellipse currently has semi-axes
+$(10\sigma_2,10\sigma_1)$ rather than $(\sigma_1,\sigma_2)$.
 
 The code is given as
 
@@ -115,18 +124,23 @@ luminosity normalisation consistent with the spherical case.
 If the ellipse is rotated by a position angle $\lambda$ relative to the
 $x$-axis (same convention as $\lambda_L$/$\theta$ in the
 [SIE lens](SIE.md)), first rotate into the ellipse's own frame:
-\begin{align}
-  x' &= (x-x_0)\cos\lambda + (y-y_0)\sin\lambda, \\
-  y' &= -(x-x_0)\sin\lambda + (y-y_0)\cos\lambda.
-\end{align}
+$$
+\begin{equation*}
+  x' = (x-x_0)\cos\lambda + (y-y_0)\sin\lambda
+\end{equation*}
+$$
+$$
+\begin{equation*}
+  y' = -(x-x_0)\sin\lambda + (y-y_0)\cos\lambda
+\end{equation*}
+$$
 If the source is always axis-aligned, as in the current implementation,
 this step is skipped and $(x',y')=(x-x_0,y-y_0)$.
 
-### Elliptical radius, not a direction-dependent $R_e$
+### Elliptical radius
 
-Rather than making $R_e$ itself a function of direction, keep $R_e$ as a
-single scalar and replace the circular radius $r=\sqrt{x'^2+y'^2}$ with
-an *elliptical radius*, using the axis ratio $q=\sigma_2/\sigma_1\le 1$:
+Replace the circular radius $r=\sqrt{x'^2+y'^2}$ with an *elliptical
+radius*, using the axis ratio $q=\sigma_2/\sigma_1\le 1$:
 \begin{equation}
   \tilde r = \sqrt{x'^2+(y'/q)^2}.
 \end{equation}
@@ -139,18 +153,9 @@ spherical case, with $r\to\tilde r$ and general $n_s$:
   \text{e}^{-b_{n_s}\left(\left(\tilde r/R_e\right)^{1/n_s}-1\right)},
   \qquad b_{n_s}=1.992\,n_s-0.3271.
 \end{equation}
-
-If you prefer to think of it as a direction-dependent effective
-radius, the two pictures are equivalent: writing the point in polar
-form in the rotated frame, $x'=r\cos\phi$, $y'=r\sin\phi$, one finds
-$\tilde r/R_e = r/R(\phi)$ with
-\begin{equation}
-  R(\phi) = \frac{R_e}{\sqrt{\cos^2\phi+\sin^2\phi/q^2}}.
-\end{equation}
-This $R(\phi)$ traces out exactly the isophote $\tilde r=R_e$. It
-confirms the intuition that $R_e$ "depends on direction", but the
-elliptical-radius form above is simpler to implement (one
-multiplication instead of a $\cos$/$\sin$ evaluation per pixel).
+(This amounts to the same thing as letting $R_e$ depend on direction,
+$R(\phi)=R_e/\sqrt{\cos^2\phi+\sin^2\phi/q^2}$ -- just simpler to
+implement as a coordinate rescaling.)
 
 ### $R_e$ is still the half-light radius, for any axis ratio
 
@@ -204,5 +209,5 @@ $I_{\mathrm{eff}}$ normalisation therefore becomes
 \end{equation}
 i.e. literally the spherical-case formula with $\sigma^2\to
 \sigma_1\sigma_2 = R_{e,\mathrm{circ}}^2$. This is the `I_eff` used in
-the corrected code above.
+the code above.
 
