@@ -5,6 +5,9 @@ but I would not recommend it.  It takes a long time, and it is
 generally better to run it in the background, from the command line.
 here, I will outline the process as I have used it.
 
+**Requirement**
+This demo requires CosmoSim v3.1 and droulette v0.1.
+
 **Step 1.** Generate a dataset
 This is discussed in detail in [](Dataset.ipynb).
 
@@ -16,10 +19,12 @@ time python -m CosmoSim --toml dataset.toml --rnd \
 ```
 This is the sample data dataset configuration: [dataset.toml](./dataset.toml).
 
-**Step 2.** Split the dataset.
-We have to split the dataset into separate sets and also create the roulette
-amplitudes for which we train the model.
-This is the command:
+**Step 2.** Prepare the dataset for machine learning.
+
+For machine learning, we need separate datasets for training, validation, and
+testing, which are split from the base dataset.  We may also need roulette
+simulations to use a ground truth for validation.  We generate these datasets
+with the `droulette` package.
 ```sh
 python -m droulette.split problem.toml
 ```
@@ -30,14 +35,17 @@ with open( "problem.toml", 'rb') as f:
             toml = tl.load(f)
 print( json.dumps( toml, indent=4 ) )
 ```
+Observe that file and directory names are specified in the config file.
 
-**Step 3.** Download models.
-It is generally a good idea to pre-download the neural networks to be trained.
+::: {note} Optional: Download models.
+It is possible, but not required to pre-download the torch models to be used.
 ```sh
 python -m droulette.predownload
 ```
+This may be excessive when we only want to train one model.
+:::
 
-**Step 4.** Train models.
+**Step 3.** Train models.
 Finally we can train the models.
 The configuration for machine learning should be placed in a subdirectory
 and called `ml.toml`.  This could look like this
