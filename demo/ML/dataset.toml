@@ -1,7 +1,7 @@
 # (C) 2026: Hans Georg Schaathun <georg@schaathun.net> 
 [simulator]
-configs = [ "raysie" ]
-size = 24000
+config = [ "raysie" ]
+size = 20000
 nterms = 4
 imagesize = 512
 cropsize = 256
