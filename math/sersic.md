@@ -124,16 +124,13 @@ luminosity normalisation consistent with the spherical case.
 [**TODO** Do we need this section HG?] If the ellipse is rotated by a position angle $\lambda$ relative to the
 $x$-axis (same convention as $\lambda_L$/$\theta$ in the
 [SIE lens](SIE.md)), first rotate into the ellipse's own frame:
-$$
 \begin{equation*}
   x' = (x-x_0)\cos\lambda + (y-y_0)\sin\lambda
 \end{equation*}
-$$
-$$
+
 \begin{equation*}
   y' = -(x-x_0)\sin\lambda + (y-y_0)\cos\lambda
 \end{equation*}
-$$
 If the source is always axis-aligned, as in the current implementation,
 this step is skipped and $(x',y')=(x-x_0,y-y_0)$.
 
