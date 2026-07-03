@@ -51,7 +51,7 @@ complete, and at least the GUI is not stable.
 To understand the software, it will be necessary to have at least
 a superficial understanding of the [](math/math.md).
 
-## Dokumentation
+## Documentation
 
 + [](math/math).
 + [](/docs/user)
