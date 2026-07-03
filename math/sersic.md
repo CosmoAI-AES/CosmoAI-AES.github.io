@@ -138,22 +138,18 @@ this step is skipped and $(x',y')=(x-x_0,y-y_0)$.
 
 Replace the circular radius $r=\sqrt{x'^2+y'^2}$ with an *elliptical
 radius*, using the axis ratio $q=\sigma_2/\sigma_1\le 1$:
-$$
 \begin{equation}
   \tilde r = \sqrt{x'^2+(y'/q)^2}.
 \end{equation}
-$$
 This is exactly what the hard-coded code above already does for the
 axis-aligned case (with $y'=y$ playing the role of the unscaled axis).
 The pixel value is then given by the *same* 1D formula as the
 spherical case, with $r\to\tilde r$ and general $n_s$:
-$$
 \begin{equation}
   v(x,y) = I_{\mathrm{eff}}\cdot
   \text{e}^{-b_{n_s}\left(\left(\tilde r/r_{\textrm{eff}}\right)^{1/n_s}-1\right)},
   \qquad b_{n_s}=1.992\,n_s-0.3271.
 \end{equation}
-$$
 
 
 :::{note}Proof that $r_{\textrm{eff}}$ is still the half-light radius, for any axis ratio
