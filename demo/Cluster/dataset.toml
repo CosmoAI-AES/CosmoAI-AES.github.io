@@ -1,7 +1,7 @@
 # (C) 2026: Hans Georg Schaathun <georg@schaathun.net> 
 [simulator]
 model = "Raytrace"
-size = 18000
+size = 20000
 nterms = 4
 imagesize = 512
 cropsize = 256
@@ -32,7 +32,7 @@ luminosity-lambda = 2.0
 # sigma (source size) 0.04"..0.2"
 sigma-min = 1
 sigma-max = 4
-position = "relative"
+position = "critical"
 
 [position]
 # (phi,r) is the source position in polar co-ordinates, angle in degrees

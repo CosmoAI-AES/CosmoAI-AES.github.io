@@ -75,7 +75,7 @@ display( json.dumps( cfg ) )
 ```
 
 ::: {tip}
-Download [cluster.toml](./dataset.toml).
+Download [dataset.toml](./dataset.toml).
 :::
 
 ::: {note} Remark
