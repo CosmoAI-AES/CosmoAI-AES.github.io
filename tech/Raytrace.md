@@ -2,7 +2,7 @@
 # Implementation of Raytrace Support
 
 The `Lens` class provides three functions to represent the
-lens potential $\psi^$.
+lens potential $\psi^R$.
 + `psiValue( double, double )` evaluates $\psi^R(\theta_1,\theta_2)$
 + `psiXvalue( double, double )` evaluates 
    $\frac{\partial\psi^R}{\partial \theta_1}(\theta_1,\theta_2)$

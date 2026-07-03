@@ -124,16 +124,13 @@ luminosity normalisation consistent with the spherical case.
 [**TODO** Do we need this section HG?] If the ellipse is rotated by a position angle $\lambda$ relative to the
 $x$-axis (same convention as $\lambda_L$/$\theta$ in the
 [SIE lens](SIE.md)), first rotate into the ellipse's own frame:
-$$
 \begin{equation*}
   x' = (x-x_0)\cos\lambda + (y-y_0)\sin\lambda
 \end{equation*}
-$$
-$$
+
 \begin{equation*}
   y' = -(x-x_0)\sin\lambda + (y-y_0)\cos\lambda
 \end{equation*}
-$$
 If the source is always axis-aligned, as in the current implementation,
 this step is skipped and $(x',y')=(x-x_0,y-y_0)$.
 
@@ -141,22 +138,18 @@ this step is skipped and $(x',y')=(x-x_0,y-y_0)$.
 
 Replace the circular radius $r=\sqrt{x'^2+y'^2}$ with an *elliptical
 radius*, using the axis ratio $q=\sigma_2/\sigma_1\le 1$:
-$$
 \begin{equation}
   \tilde r = \sqrt{x'^2+(y'/q)^2}.
 \end{equation}
-$$
 This is exactly what the hard-coded code above already does for the
 axis-aligned case (with $y'=y$ playing the role of the unscaled axis).
 The pixel value is then given by the *same* 1D formula as the
 spherical case, with $r\to\tilde r$ and general $n_s$:
-$$
 \begin{equation}
   v(x,y) = I_{\mathrm{eff}}\cdot
   \text{e}^{-b_{n_s}\left(\left(\tilde r/r_{\textrm{eff}}\right)^{1/n_s}-1\right)},
   \qquad b_{n_s}=1.992\,n_s-0.3271.
 \end{equation}
-$$
 
 
 :::{note}Proof that $r_{\textrm{eff}}$ is still the half-light radius, for any axis ratio

@@ -1,3 +1,4 @@
+(roulette-original)=
 # Original definition of roulette amplitudes
 
 Using angular coordinates $\theta_i$ in the lens plane, such that 
