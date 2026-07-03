@@ -13,13 +13,20 @@ kernelspec:
   language: python
 ---
 
-# Cluster Lenses (Demo n° 1)
+# Cluster Lenses (Demo n° 2)
 
-This demo will demonstrate the basics of cluster lenses as of CosmoSim
-v3.1.
-We follow the pattern from [](/demo/Demo01.ipynb) 
-and [](/demo/Dataset.ipynb),
-and we will not take up space to explain constructs known therefrom.
+In this demo we show the generation of a dataset for machine
+learning sporting two SIE lenses.
+We assume that the principles are known from [](/demo/Cluster01.ipynb).
+
+::: {warning} 
+This demo uses a feature from CosmoSim v3.2, taking the Critical Curve
+into account when placing the sources.  This will not work in v3.1.
+:::
+
+::: {warning}
+Work in progress
+:::
 
 ## Preparation
 
