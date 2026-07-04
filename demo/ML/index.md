@@ -14,7 +14,7 @@ The datasets used in the demo are the following.
 | Validation  | [validation.csv](validation.csv) | [val.csv](experiment001/val.csv) |
 | Testing  | [testing.csv](testing.csv) | [test.csv](experiment001/test.csv) |
 
-The ground truth datasets where created from the following.
+The ground truth datasets were created from the following.
 
 + [dataset.csv](dataset.csv) which provides the lens parameters
   for simulation and calcuation of roulette parameters.

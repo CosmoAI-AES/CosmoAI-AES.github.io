@@ -100,11 +100,7 @@ project:
         - file: demo/ML/Dataset.ipynb
         - file: demo/ML/Training.ipynb
         - file: demo/ML/experiment001/Testing.ipynb
-      - file: demo/Cluster/index.md
-        children:
-        - file: demo/Cluster/Cluster01.ipynb
-        - file: demo/Cluster/Training.ipynb
-        - file: demo/Cluster/experiment001/Testing.ipynb
+      - file: demo/Cluster/Cluster01.ipynb
       - file: demo/amplitudes/index.md
         children:
         - file: demo/amplitudes/AmplitudeFiles.ipynb
