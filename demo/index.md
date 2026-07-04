@@ -25,7 +25,7 @@ pip install CosmoSim>=3.0.1b1 --upgrade
   of machine learning models.
 + [](Cluster/Cluster01.ipynb) discusses cluster lenses
 + [](amplitudes/index.md)
-+ [](http://cosmoai-aes.github.io/experiment2026july/)
-  reports on a series of experiments conducted in July 2026, using
-  the tecniques explained above.
++ [Experiments 2026](http://cosmoai-aes.github.io/experiment2026july/).
+  Showcase of a series of experiments, including both tutorial demonstrations
+  and reports on the results.
 
