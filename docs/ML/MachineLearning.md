@@ -45,4 +45,4 @@ The columns we want to estimate in this scenario are
 Source information, including the position (`x`, `y`) are copied
 from the original dataset.
 Other colums of the CSV file are described under
-[Roulette Formalism](/docs/model/Roulette).
+[Roulette Formalism](/tech/simlib/Roulette).

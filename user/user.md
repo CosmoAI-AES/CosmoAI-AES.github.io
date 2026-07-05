@@ -2,12 +2,17 @@
 
 The easiest tool to get started with is the [](GUI.md).
 
+The [](/demo/index) provide an introduction to the API and how
+to set up a pipeline for machine learning.
+
 The proposed pipeline for [](/docs/ML/MachineLearning) is probably the best
 starting point for using the command line interface and batch simulation.
 
-Version 3.0 provides an API to use the simulator from Jupyter
-Notebook or custom scripts.
-See [](/demo/index).
+## Scripts
+
++ Dataset generation
++ Roulette amplitude calculation
++ [](droulette.md)
 
 ## Physical interpretation
 

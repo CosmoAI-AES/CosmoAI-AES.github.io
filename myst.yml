@@ -45,7 +45,7 @@ project:
           children:
             - file: docs/scripts/datagen.md
             - file: docs/scripts/Resimulation.md
-        - file: docs/droulette.md
+        - file: user/droulette.md
           children:
             - file: docs/ML/MachineLearning.md
             - file: docs/ML/Pipeline.md
