@@ -1,3 +1,4 @@
+(getXi)=
 # Apparent position
 
 Roulette amplitudes are normally calculated in the apparent

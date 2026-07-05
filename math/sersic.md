@@ -6,6 +6,7 @@ title: Source Models
 
 CosmoSim implements spherical and ellipsoid sources with 
 sersic light profiles [@10.1071/as05001].
+This is the most important source model for realistic scenarios.
 
 ## The Sersic index
 
@@ -165,11 +166,9 @@ The factor $\sigma_1\sigma_2$ is common to $L(\le R)$ and to the total
 $L_{\mathrm{tot}}=\sigma_1\sigma_2\cdot L_{\mathrm{circ}}(\le\infty)$,
 so it cancels in the ratio:
 
-$$
 \begin{equation}
   \frac{L(\le R)}{L_{\mathrm{tot}}} = \frac{L_{\mathrm{circ}}(\le R)}{L_{\mathrm{circ}}(\le\infty)}.
 \end{equation}
-$$
 This is exactly the same enclosed-flux fraction as in the spherical
 case at the same $R$ -- and since $b_{n_s}$ is defined so that this
 fraction is $1/2$ at $R=r_{\textrm{eff}}$ in the circular case, it is also $1/2$ at
@@ -195,12 +194,10 @@ ellipse, not $(\sigma_1,\sigma_2)$.
 An ellipse with semi-axes $\sigma_1,\sigma_2$ has area
 $\pi\sigma_1\sigma_2$, in place of the circle's $\pi\sigma^2$. The
 $I_{\mathrm{eff}}$ normalisation therefore becomes
-$$
 \begin{equation}
   I_{\mathrm{eff}} = L\cdot\frac{b_{n_s}^{2n_s}}
     {2\pi\,\sigma_1\sigma_2\, n_s\, \text{e}^{b_{n_s}}\,\Gamma(2n_s)},
 \end{equation}
-$$
 i.e. literally the spherical-case formula with $\sigma^2\to
 \sigma_1\sigma_2 = r_{\textrm{eff,circ}}^2$. This is the `I_eff` used in
 the code above.
