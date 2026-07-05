@@ -1,8 +1,8 @@
 # User Documentation
 
-The easiest tool to get started with is the [](scripts/GUI).
+The easiest tool to get started with is the [](GUI.md).
 
-The proposed pipeline for [](ML/MachineLearning) is probably the best
+The proposed pipeline for [](/docs/ML/MachineLearning) is probably the best
 starting point for using the command line interface and batch simulation.
 
 Version 3.0 provides an API to use the simulator from Jupyter

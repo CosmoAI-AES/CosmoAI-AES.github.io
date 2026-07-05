@@ -1,38 +1,28 @@
 ---
-title: CosmoSim Software Model
+title: Software Model
 theme: minima
 permalink: /docs/Software
 usemathjax: true
 ---
 
-# CosmoSim Software Model
+# Software Model
 
-CosmoSim is written in C++ and Python.  
-It has evolved over quite some time and there is some technical debt.
-We will try to explain the architecure as 
+CosmoSim consists of a backend written in C++ and multiple
+frontends written in Python.  
+These components are documented separately.
 
-## Architecture
+1.  The [simulator library](/tech/simlib/Overview.md), *simlib*,
+    implements the [mathematical models](/math/math.md) and
+    makes up the backend.
+1.  [](GUI.md)
+1.  The API.
+1.  The command line interface
+1.  `CosmoSim.Roulettes` makes symbolic calculation of roulette amplitudes.
 
-The CosmoSim software suite consists of three layers.
-1.  The [simulator library](model/Overview.md), *simlib*,
-    implemented in C++
-1.  The python wrapper, [CosmoSimPy](CosmoSimPy),
-    implemented in C++ and python.
-1.  The python module which several [scripts](scripts/Overview), 
-    [GUI](scripts/GUI) and an API.
-
-![CosmoSim Modules](software-v2-5-1.svg)
-
-The mathematical model is implemented in the simulator library, which
+The mathematical model is implemented in *simlib*, which
 is consequently the most important part to document properly.
 
-## Python modules
-
-Most of the code is packaged as a python module.
-The only exception is the scripts to generate the formulæ for roulette
-amplitudes (directory `python`).  
-
-### Calculation of roulette amplitudes
+## Calculation of roulette amplitudes
 
 For the SIS and SIE lenses, we have analytic formulas for the roulette
 amplitudes.  The python scripts under the `python` directory compute

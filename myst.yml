@@ -39,7 +39,7 @@ project:
         - title: Legacy Notes
           children:
           - file: math/Legacy Notes on SIE.md
-    - file: docs/user.md
+    - file: user/user.md
       children:
         - file: docs/scripts/Overview.md
           children:
@@ -50,19 +50,19 @@ project:
             - file: docs/ML/MachineLearning.md
             - file: docs/ML/Pipeline.md
             - file: docs/Dataset.md
-        - file: docs/scripts/GUI.md
+        - file: user/GUI.md
     - file: docs/Software.md
       children:
-        - file: docs/CosmoSimPy.md
-        - file: docs/Lens API.md
-        - file: docs/model/Overview.md
+        - file: docs/GUI.md
+        - file: tech/simlib/Overview.md
           children:
-            - file: docs/model/Constellation.md
-            - file: docs/model/Lens.md
-            - file: docs/model/Raytrace.md
-            - file: docs/model/Roulette.md
-            - file: docs/model/Simulator.md
-            - file: docs/model/Source.md
+            - file: tech/simlib/Constellation.md
+            - file: tech/simlib/Lens.md
+            - file: tech/simlib/Lens API.md
+            - file: tech/simlib/Raytrace.md
+            - file: tech/simlib/Roulette.md
+            - file: tech/simlib/Simulator.md
+            - file: tech/simlib/Source.md
         - file: tech/Roulette Implementation.md
         - file: docs/test/Test.md
           children:
@@ -76,6 +76,9 @@ project:
             - file: docs/test/Source Constellation Test.md
         - title: Legacy documentation
           children:
+          - file: docs/v3.1/Software.md
+            children:
+            - file: docs/v3.1/CosmoSimPy.md
           - file: docs/Software v2.5.0.md
           - file: docs/History.md
     - file: tech/Notation.md

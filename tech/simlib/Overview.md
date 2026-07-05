@@ -25,7 +25,7 @@ never changed.
 
 ## Modelling the Lens 
 
-![Class diagram](../lensmodel.svg)
+![Class diagram](lensmodel.svg)
 
 The software aims to separate the simulation model (LensModel)
 and the actual lens (Lens), as is seen in the class diagram above.
