@@ -44,32 +44,63 @@ We will try to define the mapping between the two systems of notation.
 ## Coordinate system
 
 Applying machine learning, it is important to view the coordinate 
-system as arbitrary.  If, say, the lens is fixed at origin, information
+system as arbitrary.  If the lens is fixed, say, at origin, information
 is leaked.  For this reason, the images are translated to have the origin
 at the centre of visible light.
 
 As a consequence, `CosmoSim` has to consider at least two co-ordinate 
 systems: one for calculation and one for presentation.
 
-+ The critical points in the simulator are
-    + $\xi=\nu$, $\eta$
-    + `referenceXi` which is the reference point for the roulett formalism.
-      This is normally equal to $\xi=\nu$, but may be set arbitrarily.
-    + The lens position which defaults to the origin
-+ The CSV outfile gives
-    + `centreX`, `centreY`   ($\xi'$)
-    + `reletaX`, `reletaY`   ($\xi' \mapsto \eta - \xi'$)
-    + `xiX`, `xiY`  (`xioffset` internally): $\xi'\mapsto\nu-\xi'$
-    + `offsetX`, `offsetY`   ($\xi' \mapsto \xi' - \nabla\psi(\xi') - \eta$)
+The critical points in the simulation are
++ Lens position $O_{\textrm{lens}}$ 
++ Centre of light $O_[\textrm{light}}$
++ Reference point $\xi_{\textrm{ref}}$ for the roulette expansion
++ Apparent source position $\nu$
+
+::: {note} Internal representation
+Internally in the simulator, `referenceXi` is the reference point, and
+`nu` is the apparent position $\nu$.
+These can be retrieved from any simulator object as `getXi()` and `getNu()`
+respectively.
+The lens position $O_{\textrm{lens}}$  is the origin
+The centre of light is computed only when reporting, and never used.
+:::
+
+The output CSV file reports the following points:
++ (`lensX`,`lensY`) is $O_[\textrm{lens}}$ 
++ (`reletaX`,`reletaY`) is $\eta$
++ (`xiX`,`xiY`) is $\nu$
+These are reported relative to the centre of the image. 
+Hence, if the image has not been centred, (`lensX`,`lensY`) is zero.
+
+In the default mode (when `referencexi` is true), we have
+$\xi_{\textrm{ref}}=\nu$.
+
+
+The (`centreX`,`centreY`) columns are deprecated.  They represent
+the centre of light in the original coordinate system, i.e.
+$-O_[\textrm{lens}}$ in the new system.
+
+### Custom reference point
+
+The simulator can be set to make the roulettes expansion in an
+arbitrary point.  The output CSV file does not give the actual
+$\xi_{\mathrm{ref}}$.  Instead it gives the source offset
+(`offsetX`, `offsetY`) which suffices to do resimulation in the
+roulette formalism.
+
+The source offset is defined as 
+$\xi_{\mathrm{ref}} - \nabla\psi(\xi_{\mathrm{ref}}) - \eta$.
+In other words, it is the difference between the actual source position $\eta$ 
+and the source position deflected at the reference point $\xi_{\mathrm{ref}}$
+(`relativeXi`).
+This is used in the `distort()` function in the simulator to get light
+from the right pixel in the source image.
 
 Here $\xi'$ is the origin of the new co-ordinate system, so that
 `xi?` and `releta?` are $\nu$ and $\eta$ in the the new frame.
 
 The (`offsetX`,`offsetY`) pair places `referenceXi`.
-It is the difference between the actual source position $\eta$ and the
-source position corresponding to observed position $\xi'$ (`relativeXi`).
-This is used in the `distort()` function in the simulator to get light
-from the right pixel in the source image.
 
 ## Image coordinates
 
