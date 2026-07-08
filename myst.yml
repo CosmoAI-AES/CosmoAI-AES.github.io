@@ -98,9 +98,11 @@ project:
         children:
         - file: demo/ResimulationTemplate.ipynb
       - file: demo/Pointmass.ipynb
-      - file: demo/SIS.ipynb
-      - file: demo/SIE.ipynb
-      - file: demo/ML/index.md
+      - title: Lens models
+        children:
+        - file: demo/SIS.ipynb
+        - file: demo/SIE.ipynb
+        - file: demo/ML/index.md
         children:
         - file: demo/ML/Dataset.ipynb
         - file: demo/ML/Training.ipynb
