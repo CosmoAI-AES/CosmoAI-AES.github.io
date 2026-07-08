@@ -111,6 +111,7 @@ project:
         - file: demo/amplitudes/AmplitudeFiles.ipynb
         - file: demo/amplitudes/SIS.ipynb
         - file: demo/amplitudes/Pointmass.ipynb
+      - file: demo/RouletteStatistics.ipynb
     - title: Development
       children:
       - file: docs/devel/Release.md
