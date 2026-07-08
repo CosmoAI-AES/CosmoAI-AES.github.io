@@ -1,5 +1,5 @@
 # Tests of roulettes calculations
 
-+ [](AmplitudeFile.ipynb)
++ [](AmplitudeFiles.ipynb)
 + [](Pointmass.ipynb)
 + [](SIS.ipynb)
