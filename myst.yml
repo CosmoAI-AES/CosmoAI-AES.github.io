@@ -102,7 +102,7 @@ project:
         children:
         - file: demo/SIS.ipynb
         - file: demo/SIE.ipynb
-        - file: demo/ML/index.md
+      - file: demo/ML/index.md
         children:
         - file: demo/ML/Dataset.ipynb
         - file: demo/ML/Training.ipynb
