@@ -51,7 +51,7 @@ while TOML is more convenient for individual samples. The notation is not always
 
 | GUI Name |         Parameter | CSV name | TOML Name                 |
 | :-       |         :-        | :-       | :-                        |
-| Einstein Radius |  $R_E= 46$ | `einsteinR` | `lens.einsteinR`       |
+| Einstein Radius |  $R_E= 46$ | `einsteinradius` | `lens.einsteinR`       |
 | Ellipticity |      $0.34$    | `ellipseratio` | `lens.ellipseratio` |
 | Lens Orientation | 107       | `orientation` | `lens.orientation`   |
 | Distance Ratio (chi) | $\chi=50\%$ | `chi` | `lens.chi` |
