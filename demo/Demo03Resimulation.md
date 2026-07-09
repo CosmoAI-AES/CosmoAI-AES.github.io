@@ -98,6 +98,23 @@ display( row )
 
 Here we see that we have roulette amplitudes up to order 5, which is the maximum implemented for analytical SIE.
 
+::: {note} Column definition
+Apart from the roulette amplitudes, the other new columns are
++ (`lensX`,`lensY`) is the lens position.  This is zero if the image has not been
+  centred.
++ (`reletaX`,`reletaY`) is the actual source position $\eta$
++ (`xiX`,`xiY`) is the apparent source position $\nu$
+
+All of these points are relative to the centre of the image.
+
+If $\nu$ is not the reference point for roulette expansion, we also need
+the offset
++ (`offsetX`, `offsetY`) which is the difference between the actual source 
+  position and the inverse image of the reference point.
+
+See also [](/tech/Notation.md).
+:::
+
 ```{code-cell} ipython3
 rsim = Resim( row )
 resimImage = rsim.getImage()
