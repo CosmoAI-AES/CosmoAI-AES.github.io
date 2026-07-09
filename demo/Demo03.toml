@@ -3,7 +3,7 @@ config="raysie"
 nterms=5
 
 [lens]
-einsteinR=50
+einsteinradius=50
 ellipseratio=0.4
 orientation=105
 

@@ -25,7 +25,6 @@ import numpy as np
 from PIL import Image
 import tomllib as tl
 
-from CosmoSim import CosmoSim
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
 from CosmoSim import Parameters
