@@ -1,9 +1,10 @@
 [simulator]
-config="raysie"
+model="Raytrace"
 cropsize=256
 
 [lens]
-einsteinR=46
+mode="SIE"
+einsteinradius=46
 ellipseratio=0.34
 orientation=107
 

@@ -38,7 +38,6 @@ From CosmoSim, we will use the main simulator `CosmoSim` and
 the data generator `datagen`.
 
 ```{code-cell} ipython3
-from CosmoSim import CosmoSim
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
 from CosmoSim import Parameters
@@ -75,7 +74,7 @@ We can define the configuration as a dict using the nested (TOML) structure.
 
 ```{code-cell} ipython3
 cfg = { 'lens': { 
-            'einsteinR': 46,
+            'einsteinradius': 46,
             'ellipseratio': 0.34,
             'orientation': 107 }
       , 'source': {
