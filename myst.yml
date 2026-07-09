@@ -114,6 +114,9 @@ project:
         - file: demo/amplitudes/SIS.ipynb
         - file: demo/amplitudes/Pointmass.ipynb
       - file: demo/RouletteStatistics.ipynb
+    - file: val/Validation.md
+      children:
+        - file: val/v3.1/PointMass.ipynb
     - title: Development
       children:
       - file: docs/devel/Release.md
