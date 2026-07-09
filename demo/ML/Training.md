@@ -19,8 +19,13 @@ but I would not recommend it.  It takes a long time, and it is
 generally better to run it in the background, from the command line.
 here, I will outline the process as I have used it.
 
-**Requirement**
-This demo requires CosmoSim v3.1 and droulette v0.1.
+
+::: {note} Requirement
+This demo assumes droulette v0.1.1 which in turn requires CosmoSim v3.2.
+```
+pip install droulette==0.1.1
+```
+:::
 
 **Step 1.** Generate a dataset
 This is discussed in detail in [](Dataset.ipynb).
@@ -66,7 +71,7 @@ Finally we can train the models.
 
 The default format trains the model in a subdirectory, to allow multiple models
 of the same data.  Here we assume a subdirectory `experiment001`, containing
-a configuration file `ml.toml`.  The file may look like this:
+a configuration file [ml.toml](experiment001/ml.toml).  The file may look like this:
 
 ```{code-cell} ipython3
 import tomllib as tl

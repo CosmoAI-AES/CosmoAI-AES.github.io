@@ -104,6 +104,10 @@ defined in a TOML file, similar to those used in other CosmoSim modules.
 However, the `dataset` submodule does not use the `Parameters` class for
 its parameters at present.
 
+::: {tip}
+Download [dataset.toml](./dataset.toml).
+:::
+
 ```{code-cell} ipython3
 cfg = csd.readtoml( "dataset.toml" )
 display( cfg )
@@ -114,10 +118,6 @@ We can see the paremeter ranges for the lens and for the source, which is a sphe
 As of CosmoSim v3.1 we can still use the config parameter for both the simulation model and the lens;
 "raysie" is raytrace simualation of a SIE lens.
 This will change in v3.2, to require separate settings for `simulator.model` and `lens.mode`.
-
-::: {tip}
-Download [dataset.toml](./dataset.toml).
-:::
 
 ::: {note} Remark
 For the most part, this TOML file allows the same settings as the TOML file
@@ -161,7 +161,7 @@ param.setRow( ob )
 ```
 
 Now we can run the simulator as we have done in previous demos
-(e.g. [](../Demo01.ipynb).
+(e.g. [](../Demo01.ipynb)).
 
 ```{code-cell} ipython3
 imsim = csg.SimImage( param, verbose=0 )

@@ -1,4 +1,4 @@
-# CosmoSim demoes
+# CosmoSim demos
 
 These demoes are written in Jupyter notebook and demonstrate the
 use of the CosmoSim API.
