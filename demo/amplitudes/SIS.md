@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -88,11 +88,11 @@ The default is 64 digits at present.
 This computation is slow, so do not worry if you do not see the results immediately.
 
 ```{code-cell} ipython3
-df02 = sim.getRoulette(precision=64,verbose=0)
+df02 = sim.getData(precision=64,verbose=0)
 ```
 
 ```{code-cell} ipython3
-df = pd.DataFrame( [ df01, df02, df02.drop("source")-df01 ], index=[ "C++", "Python", "Difference" ] ).transpose()
+df = pd.DataFrame( [ df01, df02, df02.drop(["source","filename"])-df01 ], index=[ "C++", "Python", "Difference" ] ).transpose()
 display(df)
 ```
 

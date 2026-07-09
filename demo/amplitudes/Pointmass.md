@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -92,7 +92,7 @@ df02 = sim.getData(precision=64,verbose=0)
 ```
 
 ```{code-cell} ipython3
-df = pd.DataFrame( [ df01, df02, df02.drop("source")-df01 ], index=[ "C++", "Python", "Difference" ] ).transpose()
+df = pd.DataFrame( [ df01, df02, df02.drop(["filename","source"])-df01 ], index=[ "C++", "Python", "Difference" ] ).transpose()
 display(df)
 ```
 
@@ -143,7 +143,7 @@ csimg.imageCompare( im02, im01, "Resimulation high precision", "Resimulation dou
 
 ```{code-cell} ipython3
 rparam = deepcopy( param )
-rparam["simulator"]["model"] = "Point Mass (roulettes)"
+rparam["simulator"]["model"] = "Roulette"
 rsim = SimImage( rparam, verbose=0 )
 rou = rsim.getImage()
 csimg.imageCompare( rou, im01, "Original Roulette", "Resimulation" )
