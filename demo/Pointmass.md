@@ -69,7 +69,7 @@ csimg.imshow( rayim, title="Raytrace Point Mass")
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Roulette"
 
-rousim = SimImage( param, verbose=0 )
+rousim = SimImage( param, verbose=2 )
 rouim = rousim.getImage()
 csimg.imageCompare( rouim, rayim, "Roulette model", 'Raytrace')
 ```

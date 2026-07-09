@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -48,7 +48,7 @@ cfg = { 'simulator' : { "model" : "Raytrace", "nterms" : 10, "cropsize" : 256 }
             'mode': 'SersicSphere',
             'sigma': 20,
             'theta': 45,
-            'luminosity' : 70,
+            'luminosity' : 20,
             'position': 'cartesian'}
       , 'position': {'x': 11.01, 'y': 0.31}
       }
@@ -61,30 +61,14 @@ rayim = raysim.getImage()
 csimg.imshow( rayim, title="Raytrace SIS")
 ```
 
-```{code-cell} ipython3
-cfg1 = deepcopy( cfg )
-cfg1['simulator']["config"] = "rs"
-del cfg1['lens']["mode"]
-param1 = Parameters(cfg)
-```
-
-```{code-cell} ipython3
-raysim1 = SimImage( param1, verbose=0 )
-rayim1 = raysim1.getImage()
-csimg.imageCompare( rayim1, rayim, "Config setting", "Model setting" )
-```
-
 ## Roulette
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Roulette"
-param1["simulator"]["config"] = "fs"
 
 rousim = SimImage( param, verbose=0 )
 rouim = rousim.getImage()
-rousim1 = SimImage( param1, verbose=0 )
-rouim1 = rousim1.getImage()
-csimg.imageCompare( rouim, rouim1, "Roulette model", 'Roulette config')
+csimg.imageCompare( rouim, rayim, "Roulette model", 'Roulette config')
 ```
 
 This looks perfect inside the convergence ring, as it should.
