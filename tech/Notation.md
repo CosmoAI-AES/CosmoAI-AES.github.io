@@ -11,7 +11,6 @@ raytrace model and the roulette model.
 + [](#raytrace-implementation)
 + [](#roulette-implementation)
 
-
 (notation)=
 ## Notation in the Implementation
 
@@ -70,12 +69,12 @@ The output CSV file reports the following points:
 + (`lensX`,`lensY`) is $O_[\textrm{lens}}$ 
 + (`reletaX`,`reletaY`) is $\eta$
 + (`xiX`,`xiY`) is $\nu$
-These are reported relative to the centre of the image. 
-Hence, if the image has not been centred, (`lensX`,`lensY`) is zero.
+These are reported relative to the centre of the image as simulated.
+Hence, they depend on the `simulator.centred` setting.
+If the image has not been centred, (`lensX`,`lensY`) is zero.
 
 In the default mode (when `referencexi` is true), we have
 $\xi_{\textrm{ref}}=\nu$.
-
 
 The (`centreX`,`centreY`) columns are deprecated.  They represent
 the centre of light in the original coordinate system, i.e.
