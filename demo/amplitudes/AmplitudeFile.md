@@ -37,7 +37,7 @@ import toml
 from copy import deepcopy
 
 import CosmoSim as cs
-from CosmoSim import CosmoSim, Parameters
+from CosmoSim import Parameters
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
 

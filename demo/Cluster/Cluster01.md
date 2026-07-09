@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -32,7 +32,7 @@ import json
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
 import CosmoSim.dataset as csd
-from CosmoSim import CosmoSim, Parameters
+from CosmoSim import Parameters
 ```
 
 ## First test of Cluster Lenses

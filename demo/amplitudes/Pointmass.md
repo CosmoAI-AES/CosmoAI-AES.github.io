@@ -30,7 +30,7 @@ import toml
 from copy import deepcopy
 
 import CosmoSim as cs
-from CosmoSim import CosmoSim, Parameters
+from CosmoSim import Parameters
 from CosmoSim.datagen import SimImage
 from CosmoSim.roulettegen import Resim
 import CosmoSim.Image as csimg
@@ -88,7 +88,7 @@ The default is 64 digits at present.
 This computation is slow, so do not worry if you do not see the results immediately.
 
 ```{code-cell} ipython3
-df02 = sim.getRoulette(precision=64,verbose=0)
+df02 = sim.getData(precision=64,verbose=0)
 ```
 
 ```{code-cell} ipython3

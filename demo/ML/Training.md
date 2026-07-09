@@ -5,11 +5,11 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
-  display_name: Python 3 (ipykernel)
+  display_name: dataprog
   language: python
-  name: python3
+  name: dataprog
 ---
 
 # Training and testing a single model.
