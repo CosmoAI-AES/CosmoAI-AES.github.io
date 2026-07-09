@@ -54,7 +54,7 @@ cfg = { 'simulator' : {
       , 'source': {
             'mode': 'SersicSphere',
             'sigma': 20,
-            'luminosity' : 70,
+            'luminosity' : 20,
             'position': 'cartesian'}
       , 'position': {'x': 10, 'y': 5 }
       }
@@ -82,7 +82,7 @@ As we have shown in previous demos, we can retrieve all the amplitudes as a pand
 df01 = sim.getData()
 ```
 
-This calculation is made in double precision in the C+= library.
+This calculation is made in double precision in the C++ library.
 The python code also offers a calculation in arbidtrary precision.
 The default is 64 digits at present.
 This computation is slow, so do not worry if you do not see the results immediately.
@@ -91,8 +91,11 @@ This computation is slow, so do not worry if you do not see the results immediat
 df02 = sim.getData(precision=64,verbose=0)
 ```
 
+We can compare the two, but we need a little trick to disregard non-numeric entries.
+
 ```{code-cell} ipython3
-df = pd.DataFrame( [ df01, df02, df02.drop(["source","filename"])-df01 ], index=[ "C++", "Python", "Difference" ] ).transpose()
+df = pd.DataFrame( [ df01, df02, df02.drop(["source","filename"])-df01 ],
+                   index=[ "C++", "Python", "Difference" ] ).transpose()
 display(df)
 ```
 

@@ -49,17 +49,21 @@ cfg = { 'simulator' : {
              "cropsize" : 256 }
       , 'lens': { 
             'mode' : "PM",
-            "amplitudefile" : "sis50.txt",
+            "amplitudefile" : "pm50v3.2.txt",
             'einsteinradius': 46 }
       , 'source': {
             'mode': 'SersicSphere',
             'sigma': 20,
-            'luminosity' : 70,
+            'luminosity' : 20,
             'position': 'cartesian'}
       , 'position': {'x': 10, 'y': 5 }
       }
 param = Parameters(cfg)
 ```
+
+::: {note} File source
+The amplitudes file `pm50v3.2.txt` is the one taken from v3.2 of CosmoSim.
+:::
 
 We set up two simulators. We show only the raytrace simulation for now.
 This will be used as a reference to assess the fidelity of other simulations.
@@ -91,8 +95,11 @@ This computation is slow, so do not worry if you do not see the results immediat
 df02 = sim.getData(precision=64,verbose=0)
 ```
 
+We can compare the two, but we need a little trick to disregard non-numeric entries.
+
 ```{code-cell} ipython3
-df = pd.DataFrame( [ df01, df02, df02.drop(["filename","source"])-df01 ], index=[ "C++", "Python", "Difference" ] ).transpose()
+df = pd.DataFrame( [ df01, df02, df02.drop(["filename","source"])-df01 ],
+                   index=[ "C++", "Python", "Difference" ] ).transpose()
 display(df)
 ```
 
@@ -147,13 +154,6 @@ rparam["simulator"]["model"] = "Roulette"
 rsim = SimImage( rparam, verbose=0 )
 rou = rsim.getImage()
 csimg.imageCompare( rou, im01, "Original Roulette", "Resimulation" )
-```
-
-```{code-cell} ipython3
-rparam["simulator"]["model"] = "Roulette"
-rsim = SimImage( rparam, verbose=0 )
-rou = rsim.getImage()
-csimg.imageCompare( rou, im01, "Modular Roulette", "Resimulation" )
 ```
 
 ## Further inspection

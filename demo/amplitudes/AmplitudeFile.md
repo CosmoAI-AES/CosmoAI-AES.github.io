@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -55,12 +55,12 @@ We start with the default.
 cfg = { 'simulator' : { "model" : "Roulette", "nterms" : 10, "cropsize" : 256 }
       , 'lens': { 
             'mode' : "SIS",
-            'einsteinR': 46 }
+            'einsteinradius': 46 }
       , 'source': {
             'mode': 'SersicSphere',
             'sigma': 20,
             'theta': 45,
-            'luminosity' : 70,
+            'luminosity' : 20,
             'position': 'cartesian'}
       , 'position': {'x': 11.01, 'y': 0.31}
       }
@@ -136,12 +136,11 @@ We use the same configuration as for the SIS lens, changing only the lens mode.
 pmcfg = { 'simulator' : { "model" : "Roulette", "nterms" : 8, "cropsize" : 256 }
       , 'lens': { 
             'mode' : "PM",
-            'einsteinR': 46 }
+            'einsteinradius' : 46 }
       , 'source': {
             'mode': 'SersicSphere',
             'sigma': 20,
-            'theta': 45,
-            'luminosity' : 70,
+            'luminosity' : 20,
             'position': 'cartesian'}
       , 'position': {'x': 11.01, 'y': 0.31}
       }
