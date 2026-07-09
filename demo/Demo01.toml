@@ -15,7 +15,7 @@ sigma2=10
 theta=45
 position="cartesian"
 n_sersic=4
-luminosity=50
+luminosity=16
 
 [position]
 x=11.01
