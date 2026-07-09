@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -99,8 +99,7 @@ display( row )
 Here we see that we have roulette amplitudes up to order 5, which is the maximum implemented for analytical SIE.
 
 ```{code-cell} ipython3
-param = Parameters()
-rsim = Resim( param, row )
+rsim = Resim( row )
 resimImage = rsim.getImage()
 csimg.imshow( resimImage, "Resimulation" )
 ```
