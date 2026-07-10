@@ -35,7 +35,7 @@ project:
         - title: Cluster Lenses
           children:
           - file: math/PointMassCloud.md
-        - file: math/Mass
+        - file: math/Mass.md
         - title: Legacy Notes
           children:
           - file: math/Legacy Notes on SIE.md

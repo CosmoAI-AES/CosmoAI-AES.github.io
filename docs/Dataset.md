@@ -6,7 +6,7 @@ title: Sample Datasets
 
 ::: {warning}
 This is old sketches presenting the initial considerations that
-led to the demo on [](/demo/Dataset.ipynb).
+led to the demo on [](/demo/ML/Dataset.ipynb).
 :::
 
 Hezaveh uses $192\times192$ image size with a pixel size of 0.04"

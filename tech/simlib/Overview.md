@@ -8,15 +8,15 @@ usemathjax: true
 # Simulator Library
 
 At the highest level, the simulator consists of three components.
-1.  [lens model](Lens) (Lens) which implements a mathematical description
+1.  [lens model](Lens.md) (Lens) which implements a mathematical description
     of the lens.
-2.  [source model](Source) (Source) which gives the mathematical description
+2.  [source model](Source.md) (Source) which gives the mathematical description
     of the source and produce undistorted images of it.
-3.  [simulation model](Simulator) (SimulatorModel) which calculates distorted images
+3.  [simulation model](Simulator.md) (SimulatorModel) which calculates distorted images
     by using the lens and source models.
     Two generic simulation models are supported.
-    + [](./Raytrace) 
-    + [](./Roulette)
+    + [](./Raytrace.md) 
+    + [](./Roulette.md)
 
 For pointmass lenses, the lens model is coupled with the simulator model.
 This is due to early implementation based on special cases of the mathematical

@@ -16,10 +16,10 @@ Natural Sciences at NTNU in Ålesund, working on gravitational lensing.
 
 These pages present prototypes for two pieces of software.
 
-+ [CosmoSim](https://github.com/CosmoAI-AES/CosmoSim) is a simulator of 
++ [CosmoSim](https://github.com/CosmoAI-AES/CosmoSim.md) is a simulator of 
   gravitational lensing, supporting both an interactive and graphical 
   user interface, and a command line interface for bulk generation of images.
-+ [droulette](https://github.com/CosmoAI-AES/droulette) is not yet open source,
++ [droulette](https://github.com/CosmoAI-AES/droulette.md) is not yet open source,
   but v0.1 has been released on PyPI.  It will become Open Source in the future.
   It provides the plumbing code to apply machine learning to 
   images from CosmoSim.
@@ -38,11 +38,11 @@ complete, and at least the GUI is not stable.
 ## Using CosmoSim 
 
 + **Installation**  CosmoSim is a 
-  [Python Package](https://pypi.org/project/CosmoSim)
+  [Python Package](https://pypi.org/project/CosmoSim.md)
   and can be installed with `pip install CosmoSim`.
-+ [CosmoSim GUI](/docs/scripts/GUI),
++ [CosmoSim GUI](/docs/scripts/GUI.md),
   which is run as `python -m CosmoSim.GUI`.
-+ [CosmoSim Demos](/demo/index) exemplify intended workflows for
++ [CosmoSim Demos](/demo/index.md) exemplify intended workflows for
   testing the simulator, comparing simulation and lens models, and
   training and testing of machine learning models.
   Most of the demos use the API in  Jupyter Notebook.  Some depend
@@ -53,8 +53,8 @@ a superficial understanding of the [](math/math.md).
 
 ## Documentation
 
-+ [](math/math).
-+ [](/docs/user)
++ [](math/math.md)
++ [](/user/user.md)
 
 ## Publications
 

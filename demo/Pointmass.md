@@ -17,7 +17,7 @@ kernelspec:
 
 This demo will demonstrate that the different simulation modes for Point Mass
 lenses are consistent.
-It may be useful also to look at [](/v3.1/PointMass.ipynb) which also includes
+It may be useful also to look at [](/val/v3.1/Pointmass.ipynb) which also includes
 the closed form simulators in CosmoSim v3.1.
 
 ## Preparation

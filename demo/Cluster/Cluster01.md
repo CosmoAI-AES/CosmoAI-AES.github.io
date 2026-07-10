@@ -18,7 +18,7 @@ kernelspec:
 This demo will demonstrate the basics of cluster lenses as of CosmoSim
 v3.1.
 We follow the pattern from [](/demo/Demo01.ipynb) 
-and [](/demo/Dataset.ipynb),
+and [](/demo/ML/Dataset.ipynb),
 and we will not take up space to explain constructs known therefrom.
 
 ## Preparation
@@ -81,7 +81,7 @@ Download [cluster.toml](./cluster.toml).
 :::
 
 ::: {note} Remark
-The TOML file is similar to the one used in [](/demo/Dataset.ipynb).
+The TOML file is similar to the one used in [](/demo/ML/Dataset.ipynb).
 The most notable difference is the `[cluster]`.
 We also have to specify the lens model for the constuent lenses with the
 `lens.model` parameter.

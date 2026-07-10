@@ -35,7 +35,7 @@ CosmoSim, but the hyperparameters are arbitrarily chosen.
 The training set used is 16000 images.
 
 The specification of the distribution is discussed in
-[](Dataset.ipynb) and
+[](../Dataset.ipynb) and
 can be downloaded ([dataset.toml](dataset.toml)).
 
 +++

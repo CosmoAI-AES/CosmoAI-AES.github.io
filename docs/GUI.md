@@ -2,6 +2,7 @@
 title: GUI control flow 
 ---
 
+(GUI-architecture)=
 # The GUI architecture
 
 The `CosmoSim` class from `CosmoSim.GUI.CosmoSim` sets up
