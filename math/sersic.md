@@ -43,14 +43,7 @@ This image is then rotated for the desired orientation $\lambda_S$.
     + Elliptic ratio $q = \sigma_2/\sigma_1$ 
     + $b = b_0 + b_1\cdot n$ (`bn`)
     + Polar radius $r = \sqrt{(x/q)^2+y^2}$ 
-    + Effective radius $r_{\textrm{eff}} = 10\sigma_1$ (`re`)
-
-::: {note} Scaling
-The input parameters $\sigma_1$ and $\sigma_2$ are a tenth of the effective
-raditus $r_{\textrm{eff}}$.
-This scaling is quite arbitrary, but at present it is necessary in the implementation
-to make different source models compatible in the GUI.
-:::
+    + Effective radius $r_{\textrm{eff}} = \sigma_1$ (`re`)
 
 The pixel value $(x,y)$ is then given as
 \begin{equation}
