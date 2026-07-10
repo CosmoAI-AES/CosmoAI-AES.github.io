@@ -26,8 +26,8 @@ maxrelativelocation = 1.2
 mode = "SersicSphere"
 n_sersic-min = 1
 n_sersic-max = 5
-luminosity-min = 20
-luminosity-max = 100
+luminosity-min = 10
+luminosity-max = 20
 luminosity-lambda = 2.0
 # sigma (source size) 0.04"..0.2"
 sigma-min = 1

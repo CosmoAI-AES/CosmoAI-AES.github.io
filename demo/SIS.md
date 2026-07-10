@@ -85,6 +85,10 @@ csimg.imageCompare( rayim, im05, "Raytrace", 'Sampled Roulette')
 csimg.imageCompare( rouim, im05, "Roulette", 'Sampled Roulette')
 ```
 
+## Conclusion
+
+We can see that the different simulation models give consistent results.
+
 ```{code-cell} ipython3
 
 ```

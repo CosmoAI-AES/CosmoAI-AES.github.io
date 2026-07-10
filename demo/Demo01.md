@@ -16,7 +16,7 @@ kernelspec:
 # CosmoSim Demo I
 
 ::: {warning} Requirements
-This tutorial uses CosmoSim v3.1.  It will break in v3.2.
+This tutorial uses CosmoSim v3.2.
 :::
 
 ## Preparation
@@ -434,32 +434,10 @@ Finally, lets look at elliptic sources.  We reset the simulator to
 Raytrace and SIE, and change the source to `SersicEllipsoid`.
 
 ```{code-cell} ipython3
-param["simulator"]["config"] = "raysie"
+param["simulator"]["model"] = "Raytrace"
 param["source"]["mode"] = "SersicEllipsoid"
-(im1,im2,im3,im4) = quadSim( param )
-```
-
-We also compute the diff images
-
-```{code-cell} ipython3
-fig = plt.figure(figsize=(14,7))
-fig.tight_layout(pad=0.0)
-plt.subplots_adjust(hspace=0.1, wspace=0.1) 
-
-fig.add_subplot(1, 3, 1)
-plt.imshow( imageDiff( im1, im3 ), cmap='gray')
-plt.title( "Raytrace Simulation" )
-plt.axis("off")
-
-fig.add_subplot(1, 3, 2)
-plt.imshow( imageDiff( im2, im3 ), cmap='gray')
-plt.title( "Roulette Simulation" )
-plt.axis("off")
-    
-fig.add_subplot(1, 3, 3)
-plt.imshow( imageDiff( im4, im3 ), cmap='gray')
-plt.title( "Sampled Roulette Simulation" )
-plt.axis("off")
+im1 = SimImage( param, verbose=0 ).getImage()
+csimg.imshow( im1 )
 ```
 
 It may also be interesting to rotate the source differently
@@ -467,31 +445,8 @@ It may also be interesting to rotate the source differently
 ```{code-cell} ipython3
 print( param.get( ("source","theta") ) )
 param["source"]["theta"] = 90
-(im1,im2,im3,im4) = quadSim( param )
-```
-
-We observe that the original rotation of the source was 45°.
-We changed it to 90°.
-
-```{code-cell} ipython3
-fig = plt.figure(figsize=(14,7))
-fig.tight_layout(pad=0.0)
-plt.subplots_adjust(hspace=0.1, wspace=0.1) 
-
-fig.add_subplot(1, 3, 1)
-plt.imshow( imageDiff( im1, im3 ), cmap='gray')
-plt.title( "Raytrace Simulation" )
-plt.axis("off")
-
-fig.add_subplot(1, 3, 2)
-plt.imshow( imageDiff( im2, im3 ), cmap='gray')
-plt.title( "Roulette Simulation" )
-plt.axis("off")
-    
-fig.add_subplot(1, 3, 3)
-plt.imshow( imageDiff( im4, im3 ), cmap='gray')
-plt.title( "Sampled Roulette Simulation" )
-plt.axis("off")
+im2 = SimImage( param, verbose=0 ).getImage()
+csimg.imshow( im2 )
 ```
 
 As we can see, different rotations make a massive difference to the observed

@@ -137,3 +137,7 @@ print( obs[1]["cluster"] )
 ```
 
 ## Closure
+
+```{code-cell} ipython3
+
+```

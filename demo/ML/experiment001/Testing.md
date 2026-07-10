@@ -288,3 +288,7 @@ Interestingly, the best images do not perform any better than the worst in terms
 We see that this machine learning model make accurate prediction as far as optical perception goes, but there are limitations to the roulette representations.
 
 This means that there is nothing to gain from further research on machine learning models at this stage.
+
+```{code-cell} ipython3
+
+```

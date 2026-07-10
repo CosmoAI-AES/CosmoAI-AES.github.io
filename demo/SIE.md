@@ -61,30 +61,14 @@ rayim = raysim.getImage()
 csimg.imshow( rayim, title="Raytrace SIE")
 ```
 
-```{code-cell} ipython3
-cfg1 = deepcopy( cfg )
-cfg1['simulator']["config"] = "raysie"
-del cfg1['lens']["mode"]
-param1 = Parameters(cfg)
-```
-
-```{code-cell} ipython3
-raysim1 = SimImage( param1, verbose=0 )
-rayim1 = raysim1.getImage()
-csimg.imageCompare( rayim1, rayim, "Config setting", "Model setting" )
-```
-
 ## Roulette
 
 ```{code-cell} ipython3
 param["simulator"]["model"] = "Roulette"
-param1["simulator"]["config"] = "rousie"
 
 rousim = SimImage( param, verbose=0 )
 rouim = rousim.getImage()
-rousim1 = SimImage( param1, verbose=0 )
-rouim1 = rousim1.getImage()
-csimg.imageCompare( rouim, rouim1, "Roulette model", 'Roulette config')
+csimg.imageCompare( rouim, rayim, "Roulette model", 'Raytrace')
 ```
 
 This looks perfect inside the convergence ring, as it should.
@@ -100,6 +84,11 @@ im05 = imsim05.getImage()
 csimg.imageCompare( rayim, im05, "Raytrace", 'Sampled Roulette')
 csimg.imageCompare( rouim, im05, "Roulette", 'Sampled Roulette')
 ```
+
+
+## Conclusion
+
+We can see that the different simulation models give consistent results.
 
 ```{code-cell} ipython3
 

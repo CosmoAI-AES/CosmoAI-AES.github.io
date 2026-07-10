@@ -87,3 +87,7 @@ im05 = imsim05.getImage()
 csimg.imageCompare( rayim, im05, "Raytrace", 'Sampled Roulette')
 csimg.imageCompare( rouim, im05, "Roulette", 'Sampled Roulette')
 ```
+
+```{code-cell} ipython3
+
+```
