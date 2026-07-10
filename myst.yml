@@ -110,13 +110,13 @@ project:
       - file: demo/Cluster/Cluster01.ipynb
       - file: demo/amplitudes/index.md
         children:
-        - file: demo/amplitudes/AmplitudeFiles.ipynb
+        - file: demo/amplitudes/AmplitudeFile.ipynb
         - file: demo/amplitudes/SIS.ipynb
         - file: demo/amplitudes/Pointmass.ipynb
       - file: demo/RouletteStatistics.ipynb
     - file: val/Validation.md
       children:
-        - file: val/v3.1/PointMass.ipynb
+        - file: val/v3.1/Pointmass.ipynb
     - title: Development
       children:
       - file: docs/devel/Release.md

@@ -52,7 +52,7 @@ systems: one for calculation and one for presentation.
 
 The critical points in the simulation are
 + Lens position $O_{\textrm{lens}}$ 
-+ Centre of light $O_[\textrm{light}}$
++ Centre of light $O_{\textrm{light}}$
 + Reference point $\xi_{\textrm{ref}}$ for the roulette expansion
 + Apparent source position $\nu$
 
@@ -66,7 +66,7 @@ The centre of light is computed only when reporting, and never used.
 :::
 
 The output CSV file reports the following points:
-+ (`lensX`,`lensY`) is $O_[\textrm{lens}}$ 
++ (`lensX`,`lensY`) is $O_{\textrm{lens}}$ 
 + (`reletaX`,`reletaY`) is $\eta$
 + (`xiX`,`xiY`) is $\nu$
 These are reported relative to the centre of the image as simulated.
@@ -78,7 +78,7 @@ $\xi_{\textrm{ref}}=\nu$.
 
 The (`centreX`,`centreY`) columns are deprecated.  They represent
 the centre of light in the original coordinate system, i.e.
-$-O_[\textrm{lens}}$ in the new system.
+$-O_{\textrm{lens}}$ in the new system.
 
 ### Custom reference point
 

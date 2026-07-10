@@ -13,7 +13,7 @@ the lens.
 
 ## Architecture
 
-![CosmoSim Modules](software-2.5.1.svg)
+![CosmoSim Modules](/docs/v3.1/software-v2-5-1.svg)
 
 The CosmoSim software suite consists of three layers.
 1.  The simulator library, *simlib*
