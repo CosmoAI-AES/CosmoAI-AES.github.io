@@ -23,6 +23,11 @@ simulated.
 Default files are included in the package, but it is possible to supply
 custom file, as we will demonstrate below.
 
+This demo was very important to debugging of the amplitudes calculation,
+and many of the files referenced herein are flawed.  The demo is retained
+to show how the debugging can be done, but has not been updated to show
+the final results in current versions of CosmoSim.
+
 See [](/tech/Roulette%20Implementation.md) for more information about the
 calculation.
 

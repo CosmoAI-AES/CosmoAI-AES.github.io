@@ -24,7 +24,7 @@ pip install CosmoSim>=3.0.1b1 --upgrade
 + [](ML/index.md) covers the generation of datasets and training and testing
   of machine learning models.
 + [](Cluster/Cluster01.ipynb) discusses cluster lenses
-+ [](amplitudes/index.md)
++ [](amplitudes/AmplitudeFile.md)
 + [](RouletteStatistics.ipynb)
 + [Experiments 2026](http://cosmoai-aes.github.io/experiment2026july/).
   Showcase of a series of experiments, including both tutorial demonstrations
