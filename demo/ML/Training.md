@@ -7,9 +7,9 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.19.4
 kernelspec:
-  display_name: dataprog
+  name: python3
+  display_name: Python 3 (ipykernel)
   language: python
-  name: dataprog
 ---
 
 # Training and testing a single model.
