@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -22,7 +22,6 @@ This Demo assumes that you are familiar with the principles from
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from PIL import Image
 import tomllib as tl
 
 from CosmoSim.datagen import SimImage
@@ -51,6 +50,10 @@ We have just rounded some of the parameters to get neater numbers.
 We will use the simulation from `SimImage` to get roulette amplitudes
 for resimulation.
 
+::: {tip}
+Download [Demo03.toml](./Demo03.toml).
+:::
+
 ```{code-cell} ipython3
 with open( "Demo03.toml", 'rb' ) as f:
             toml = tl.load(f)
@@ -60,16 +63,6 @@ imsim = SimImage( param, verbose=0 )
 im = imsim.getImage()
 csimg.imshow( im, "Baseline simulation" )
 ```
-
-::: {tip}
-Download [Demo03.toml](./Demo03.toml).
-:::
-
-::: {tip}
-Here we use convenience functions from the `CosmoSim.Image` module (`csimg`),
-instead of using matplotlib directly.
-The code in [](./Demo01) was more cumbersome code on this point.
-:::
 
 ::: {tip} 
 For debugging, it may be useful to change the verbosity level on the fly.
@@ -116,7 +109,7 @@ See also [](/tech/Notation.md).
 :::
 
 ```{code-cell} ipython3
-rsim = Resim( row )
+rsim = Resim( row, verbose=0 )
 resimImage = rsim.getImage()
 csimg.imshow( resimImage, "Resimulation" )
 ```
@@ -128,7 +121,7 @@ For reference, we can do the original roulette simulation, using a
 param["simulator"]["model"] = "Roulette"
 roulette = SimImage( param, verbose=0 )
 rouletteImage = roulette.getImage()
-csimg.imshow( rouletteImage, "Roulette simulation" )
+csimg.imageCompare( rouletteImage, resimImage, "Roulette simulation", "Resimulation" )
 ```
 
 The two roulette simulations look similar but displaced compared to each other.

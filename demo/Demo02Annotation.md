@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -33,7 +33,6 @@ import tomllib as tl
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
 from CosmoSim import Parameters
-
 
 with open( "Demo01.toml", 'rb') as f:
             toml = tl.load(f)
@@ -67,17 +66,24 @@ and hence also of the lens.
 
 ```{code-cell} ipython3
 csimg.drawAxes( im )
-plt.imshow( im, cmap='gray')
-plt.title( "With axis cross" )
-plt.axis("off")
+csimg.imshow( im, "With axis cross" )
 ```
 
 Note that the convergence ring passes through the centre of the lens, as
 it always should.
 
-::: {note} Remark
-Annotations obviously clutters the image, and it is an ongoing project to make the annotations as flexible and unobtrusive as possible.
-:::
+## Fine-tuning the annotations
+
+We can select which annotations to include, and also choose their colour.
+
+```{code-cell} ipython3
+im = imsim.getAnnotated(critical=(255,0,0),centrePoint=None,xiOffset=None,convergenceRing=(0,255,0))
+csimg.imshow( im,  "Annotated image" )
+```
+
+Each annotation has an argument which can be assigned an RGB colour or `None`.
+
++++
 
 ## The source
 

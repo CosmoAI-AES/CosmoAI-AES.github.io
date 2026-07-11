@@ -79,17 +79,20 @@ This looks perfect inside the convergence ring, as it should.
 
 ```{code-cell} ipython3
 param["simulator"]["sampled"] = True
-imsim05 = SimImage( param, verbose=0 )
-im05 = imsim05.getImage()
-csimg.imageCompare( rayim, im05, "Raytrace", 'Sampled Roulette')
+im05 = SimImage( param, verbose=0 ).getImage()
+param["simulator"]["model"] = "Raytrace"
+im06 = SimImage( param, verbose=0 ).getImage()
+
+csimg.imageCompare( rayim, im06, "Raytrace", 'Sampled Raytrace')
 csimg.imageCompare( rouim, im05, "Roulette", 'Sampled Roulette')
 ```
 
 
+As for SIS, we see minor discrepancy in the sampled roulette.
+The sampled raytrace, in contrast, looks perfect.
+
 ## Conclusion
 
-We can see that the different simulation models give consistent results.
-
-```{code-cell} ipython3
-
-```
+We can see that the different simulation models give consistent results. 
+The minor discrepancy in the sampled roulette simulation may be due
+to numeric approximation.

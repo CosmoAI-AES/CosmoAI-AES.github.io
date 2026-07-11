@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -16,7 +16,7 @@ kernelspec:
 # CosmoSim Demo I
 
 ::: {warning} Requirements
-This tutorial uses CosmoSim v3.2.
+This tutorial uses CosmoSim v3.2. It should work with newer versions, but will not work with older ones.
 :::
 
 ## Preparation
@@ -41,6 +41,13 @@ the data generator `datagen`.
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
 from CosmoSim import Parameters
+```
+
+Given that `CosmoSim` is under continued development, it is useful to check the version.
+
+```{code-cell} ipython3
+from CosmoSim import __version__
+print( "CosmoSim version", __version__ )
 ```
 
 ## Simulating an image
@@ -94,8 +101,10 @@ print( param )
 ```
 
 ::: {note} Parameters
-The `Parameter` print-out looks like a mess.  It is a cascading set of of dictionaries ([CascaDict](https://cascadict.readthedocs.io/en/latest/)), which makes it easy to process parameters from multiple sources and applying defaults. 
-The idea is to be able to replace a few settings in the top layer without affecting other permanent settings in the other layers, but we have not yet developed this idea fully.
+The `Parameter` print-out looks like a mess.  It is a cascading set of of dictionaries ([CascaDict](https://cascadict.readthedocs.io/en/latest/)), where our dict `cfg` is overlaid a set of defaults.
+
+The purpose of the `Parameter` objects is to process parameters from multiple sources, and allow swapping user settings while keeping the defaults.
+This idea is not fully developed yet.
 :::
 
 ::: {note} Remark
@@ -153,9 +162,8 @@ Note the use of the `json` library to pretty-print a dictionary.
 
 +++
 
-Most importantly, we are now defining `simulator.config=raysie`, which
-says raytrace simulation with a SIE lens, and `source.mode=SersicSphere`
-which says a spherical source with Sersic light profile.
+Most importantly, we are now defining `simulator.model`, `lens.mode` and `source.mode` which make the lens, source, and simulation models explicit.
+Specifically, we do raytrace simulation with a SIE lens lensing a spherical source with sersic light profile.
 The sersic parameters (`n_sersic` and `luminosity`) match the current
 defaults in the GUI.
 
@@ -201,6 +209,12 @@ to distinguish the simulation models, but the critical point with Roulette
 is that it only provides a local description of the primary image.  The
 secondary image on the far side of the lens will never appear in a roulette
 simulation.
+
+We also see two spurious images, which are artifacts of the roulette formalism. There should be more, but they may be invisible because the source is faint. There should be a total of $n\pm1$ spurious images when $n$ roulette terms are used in the sum (`nterms`), forming a ring around the actual image and going through the centre of the lens.
+
+::: {warning}
+The SIE lens only supports `nterms` $\le5$.  We have not been able to compute higher orders due to computational complexity. Point mass and SIS support `nterms` up to 50.
+:::
 
 Before we tamper with the source description, we will run sampled simulations 
 as follows.
@@ -317,7 +331,8 @@ function does this
 
 ```{code-cell} ipython3
 def imageDiff(im1,im2):
-    return ( (im1.astype(float) - im2.astype(float) + 256)/2 ).astype(np.uint8)
+    im = (im1.astype(float) - im2.astype(float) + 256)/2 
+    return im.astype(np.uint8)
 ```
 
 ::: {tip}
@@ -361,72 +376,40 @@ for the unsampled roulette simulation.  This does look wrong.
 
 ## The number of Roulette terms
 
-The roulette simulation is based on a truncated series, but we did
-not pay attention to the number of terms retained above.
-A potential problem is that only five terms have been analytically
-computed for the SIE lens.  This may explain the poor performance.
-Since numerical differentiation is fast, there is no issue in using many terms
-in the sampled version.
-We can set the number of terms as follows.
+As mentioned, we cannot use more than five roulette terms with the SIE
+lens, but it is possible with sampled lenses.
+It is quite instructive to see how the image changes with the number of terms,
+so let's try this.
 
 ```{code-cell} ipython3
-param["simulator"]["nterms"] = 5
+param["simulator"]["nterms"] = 20
 param["simulator"]["model"] = "Roulette"
-param["simulator"]["sampled"] = False
-imsim = SimImage( param, verbose=0 )
-imr = imsim.getImage()
-plt.imshow( imr, cmap='gray')
-plt.title( "Roulette with five terms" )
-plt.axis("off")
+param["simulator"]["sampled"] = True
+im20 = SimImage( param, verbose=0 ).getImage()
+csimg.imageCompare( im4, im20, "$n=5$", "$n=20$" )
 ```
 
-This looks a great deal better.  The small triangles are obviously the spurious images forming around the convergence ring.
-To see better, we can add an axis cross, which also tells us exactly where the lens is, at the origin.:::
+Here we compare five terms and twenty terms. We see that the few and large spurious images for $n=5$ are replaced by many small ones for $n=20$.  In this case, the spurious images only form a ragged half-ring, and not the smooth circle that we would have expected.  This is probably due to numerical approximation.
 
-::: {tip} imshow
-It takes a cumbersome few line to show an image neatly with `pyplot`.
-Let's switch to a convenience function from `CosmoSim` in the next block.
+::: {tip} `imageCompare`
+It takes a cumbersome few line to show images neatly with `pyplot`.
+In the above example we have used a convenience function from `CosmoSim` 
+instead, to plot two images and their difference.
 :::
 
-```{code-cell} ipython3
-import CosmoSim.Image as csimg
-csimg.drawAxes( imr )
-csimg.imshow( imr )
-```
-
-To see it all, we can plot all the four simulations.
+Let's compare with $n=10$ too, and add the axis cross so that we see the location of the lens.
 
 ```{code-cell} ipython3
-param["source"]["mode"] = "Triangle"
-(im1,im2,im3,im4) = quadSim( param )
+param["simulator"]["nterms"] = 10
+im10 = SimImage( param, verbose=0 ).getImage()
+csimg.imageCompare( im4, im10, "$n=5$", "$n=10$", axiscross=True )
 ```
 
-The difference images are as follows (compared against sampled raytrace).
+For $n=10$ we can clearly see the spurious images forming a ring.
 
-```{code-cell} ipython3
-fig = plt.figure(figsize=(14,7))
-fig.tight_layout(pad=0.0)
-plt.subplots_adjust(hspace=0.1, wspace=0.1) 
-
-fig.add_subplot(1, 3, 1)
-plt.imshow( imageDiff( im1, im3 ), cmap='gray')
-plt.title( "Raytrace Simulation" )
-plt.axis("off")
-
-fig.add_subplot(1, 3, 2)
-plt.imshow( imageDiff( im2, im3 ), cmap='gray')
-plt.title( "Roulette Simulation" )
-plt.axis("off")
-    
-fig.add_subplot(1, 3, 3)
-plt.imshow( imageDiff( im4, im3 ), cmap='gray')
-plt.title( "Sampled Roulette Simulation" )
-plt.axis("off")
-```
-
-This gives a much better match.  The sampled roulette has a little
-noise compared to the unsampled versions, but this may just be due
-to sampling and numerical error.
+::: {note} Definition
+The spurious images align with the so-called *convergence ring* which bounds the area where the roulette formalism is defined.  Close to the ring, the roulette formalism may be inaccurate, and outside it shows nothing.
+:::
 
 ## Elliptic source
 
@@ -437,8 +420,13 @@ Raytrace and SIE, and change the source to `SersicEllipsoid`.
 param["simulator"]["model"] = "Raytrace"
 param["source"]["mode"] = "SersicEllipsoid"
 im1 = SimImage( param, verbose=0 ).getImage()
-csimg.imshow( im1 )
+csimg.imshow( im1, "Elliptic Source" )
 ```
+
+::: {tip} `imageCompare`
+Here we have introduced another convenience function from `CosmoSim`,
+to plot a single image with title in a single line.
+:::
 
 It may also be interesting to rotate the source differently
 
