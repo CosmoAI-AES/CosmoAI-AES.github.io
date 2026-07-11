@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -28,6 +28,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
+
 import tomllib as tl
 
 from CosmoSim.datagen import SimImage
@@ -83,7 +84,12 @@ csimg.imshow( im,  "Annotated image" )
 
 Each annotation has an argument which can be assigned an RGB colour or `None`.
 
-+++
+We can also mark the actual source position, like this, with the centre of light in green and the actual source position in red.
+
+```{code-cell} ipython3
+im = imsim.getAnnotated(critical=(255,0,0),centrePoint=(0,255,0),xiOffset=None,convergenceRing=None,actualPosition=(0,0,255))
+csimg.imshow( im,  "Annotated image" )
+```
 
 ## The source
 
