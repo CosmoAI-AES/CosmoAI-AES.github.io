@@ -1,8 +1,9 @@
 [simulator]
-config="raysie"
+model="Raytrace"
 nterms=5
 
 [lens]
+mode="SIE"
 einsteinradius=50
 ellipseratio=0.4
 orientation=105
@@ -10,12 +11,12 @@ orientation=105
 
 [source]
 mode="SersicEllipsoid"
-sigma=10
-sigma2=30
+sigma=15
+sigma2=35
 theta=45
 position="cartesian"
 n_sersic=4
-luminosity=10
+luminosity=70
 
 [position]
 x=12
