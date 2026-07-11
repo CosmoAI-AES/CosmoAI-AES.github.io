@@ -245,8 +245,12 @@ a2 = SimImage( pmparam, verbose=0 ).getImage()
 csimg.imageCompare( a2, a1, "SIE style", 'Raytrace')
 ```
 
-## Conclusion
+## Closure
 
-```{code-cell} ipython3
+The main problem with the point mass lens was a faulty formula for the lens
+potential in `CosmoSim.Roulettes.libamplitudes`.  Many of the samples above
+were generated with the same flaw, and this explains most of the errors.
 
-```
+The final validation that the roulette computation is correct is the comparison
+with raytrace for each lens model: 
+[](../Pointmass.ipynb), [](../SIS.ipynb), and [](../SIE.ipynb),
