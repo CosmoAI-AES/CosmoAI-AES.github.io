@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -79,15 +79,21 @@ This looks perfect inside the convergence ring, as it should.
 
 ```{code-cell} ipython3
 param["simulator"]["sampled"] = True
-imsim05 = SimImage( param, verbose=0 )
-im05 = imsim05.getImage()
-csimg.imageCompare( rayim, im05, "Raytrace", 'Sampled Roulette')
+im05 = SimImage( param, verbose=0 ).getImage()
+param["simulator"]["model"] = "Raytrace"
+im06 = SimImage( param, verbose=0 ).getImage()
+
+csimg.imageCompare( rayim, im06, "Raytrace", 'Sampled Raytrace')
 csimg.imageCompare( rouim, im05, "Roulette", 'Sampled Roulette')
 ```
 
+There is a minor discrepancy in the sampled simulations, but this may be due to numeric errors.
+It could be tested with higher sampling rates.
+
 ## Conclusion
 
-We can see that the different simulation models give consistent results.
+We can see that the different simulation models give consistent results. 
+The minor discrepancy in the sampled simulation may be due to numeric approximation.
 
 ```{code-cell} ipython3
 

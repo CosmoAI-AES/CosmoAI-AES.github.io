@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -87,6 +87,10 @@ im05 = imsim05.getImage()
 csimg.imageCompare( rayim, im05, "Raytrace", 'Sampled Roulette')
 csimg.imageCompare( rouim, im05, "Roulette", 'Sampled Roulette')
 ```
+
+## Closure
+
+Each lens model can be simulated in four different ways.  We can use raytrace, which is exact, or the roulette formalism.  In addition to the direct implementation of analytic derivation of the lens potential, it is also possible to use a sampled model, where the lens potential is sampled and the distortion and roulette amplitudes are computed by numeric differentiation. The present demo show that these are consistent for point mass lenses.
 
 ```{code-cell} ipython3
 
