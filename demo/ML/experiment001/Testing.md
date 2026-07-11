@@ -20,6 +20,15 @@ see details below.
 We use both conventional metrics and comparison with a 
 resimulated image.
 
+::: {warning} 
+
+This is a rudimentary version and the underlying data may be inconsistent.
+It is work in progress.
+
+:::
+
+
+
 We use three datafiles, which must be downloaded if this
 document is to be executed.
 + [testing.csv](../testing.csv) is ground truth for model training

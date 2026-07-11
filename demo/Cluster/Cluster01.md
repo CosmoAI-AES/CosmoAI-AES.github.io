@@ -21,26 +21,18 @@ We follow the pattern from [](/demo/Demo01.ipynb)
 and [](/demo/ML/Dataset.ipynb),
 and we will not take up space to explain constructs known therefrom.
 
-::: {note} Cluster lenses
-For cluster lenses, each constituent lens is placed in the same way as 
-the source, relative to the origin, in polar co-ordinates $(R_L,\phi_L)$.
-+ select random distance $R_L\le2\theta_E$, where $\theta_E$ is the
-  Einstein radius of the constituent lens
-+ select random angle $\phi_L$ 
-:::
-
 ## Preparation
 
 ```{code-cell} ipython3
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from PIL import Image
 import json
 from CosmoSim.datagen import SimImage
 import CosmoSim.Image as csimg
 import CosmoSim.dataset as csd
-from CosmoSim import Parameters
+from CosmoSim import Parameters, __version__
+print( "CosmoSim version", __version__ )
 ```
 
 ## First test of Cluster Lenses
@@ -78,15 +70,16 @@ csimg.imshow( im, title="First example of a cluster lens" )
 ## Random dataset
 
 We can also generate random datasets.
-
-::: {tip}
-Download [cluster.toml](./cluster.toml).
-:::
+The specification is given in the [cluster.toml](./cluster.toml).
 
 ```{code-cell} ipython3
 cfg = csd.readtoml( "cluster.toml" )
 display( json.dumps( cfg ) )
 ```
+
+Each constituent lens is placed in a random direction from the origin,
+at a random distance upper bounded as $c\theta_E$ where $\theta_E$ is
+the Einstein radius and $c$ is the constant given as `cluster.maxrelativelocation`.
 
 ::: {note} Remark
 The TOML file is similar to the one used in [](/demo/ML/Dataset.ipynb).
@@ -95,11 +88,21 @@ We also have a new variant for source position, `source.critical`,
 which places the source at a maximum distance relative to the critical curve.
 :::
 
-Each constituent lens is placed in a random direction from the origin,
-at a random distance upper bounded as $c\theta_E$ where $\theta_E$ is
-the Einstein radius and $c$ is the constant given as `cluster.maxrelativelocation`.
+::: {note} Parameter selection
+For cluster lenses, each constituent lens is placed in the same way as 
+the source, relative to the origin, in polar co-ordinates $(R_L,\phi_L)$.
++ select random distance $R_L\le1.2\theta_E$, where $\theta_E$ is the
+  Einstein radius of the constituent lens
++ select random angle $\phi_L$ 
 
-We can draw a random object as before.
+The source is positioned at polar co-ordinates $(R_S,\phi_S)$ with a similar logic.
++ select random angle $\phi_S$ 
++ compute the distance $\theta_C$ to the critical curve in the direction
+  $\phi_L$ and select $R_S$ uniformly at random so that 
+  $R_S^{\textrm{min}}\le R_S\le 1.2\theta_C$.
+:::
+
+We can draw a random object as in [](/demo/ML/Dataset.ipynb).
 
 ```{code-cell} ipython3
 ob = csd.getline( cfg, fn="test.png" )
