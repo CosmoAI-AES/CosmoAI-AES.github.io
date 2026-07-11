@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.3
+    jupytext_version: 1.19.4
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -52,9 +52,9 @@ examples of strong lensing, erring on the side of wider ranges.
 | Lens orientation | | `orientation`  | Uniform | $0\ldots180$ |
 | Source orientation | |  | Uniform | $0\ldots180$ |
 | Lens ellipticity | $f$ | `ellipseratio` | Uniform | $0.1\le f\le 0.9$ |
-| Source size | $\sigma$ | `sigma` | Uniform | $0.04"\le f\le 0.2"$ |
+| Source size | $\sigma$ | `sigma` | Uniform | $0.2"\le f\le 2"$ |
 | Sersic index | $n_s$ | `n_sersic` | Uniform |  $1\le n_s\le 5$ |
-| Luminosity  | $l$ | `luminosity` | Exponential |  $10\le l\le 20$, $\lambda=2.0$ |
+| Luminosity  | $l$ | `luminosity` | Exponential |  $20\le l\le 80$, $\lambda=2.0$ |
 
 1.  The source position is given in polar co-ordinates $(R,\phi)$.
     + The distance $R$ is chosen to be inside or around the critical curve,
@@ -246,7 +246,3 @@ python -m CosmoSim --rnd --toml config.toml --csvfile dataset.csv \
 This generates the random dataset (dataset.csv) and the images in
 the images directory, as well as a dataset of corresponding
 roulettes amplitudes (roulette.csv).
-
-```{code-cell} ipython3
-
-```
