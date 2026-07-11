@@ -47,8 +47,7 @@ project:
             - file: docs/scripts/Resimulation.md
         - file: user/droulette.md
           children:
-            - file: docs/ML/MachineLearning.md
-            - file: docs/ML/Pipeline.md
+            - file: user/ML/MachineLearning.md
             - file: docs/Dataset.md
         - file: user/GUI.md
     - file: docs/Software.md
@@ -104,8 +103,8 @@ project:
         - file: demo/SIE.ipynb
       - file: demo/ML/index.md
         children:
+        - file: demo/ML/Pipeline.md
         - file: demo/ML/Dataset.ipynb
-        - file: demo/ML/Training.ipynb
         - file: demo/ML/experiment001/Testing.ipynb
       - file: demo/Cluster/Cluster01.ipynb
       - file: demo/amplitudes/index.md

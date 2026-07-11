@@ -10,15 +10,17 @@ kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
   language: python
+title: Machine Learning Pipeline 
 ---
 
-# Training and testing a single model.
+# Machine Learning Pipeline
 
-It is possible to run machine learning through Jupyter Notebook,
-but I would not recommend it.  It takes a long time, and it is
-generally better to run it in the background, from the command line.
-here, I will outline the process as I have used it.
+The purpose of the CosmoSim project is to use machine learning
+[Machine Learning](/user/MachineLearning.md) to do lens mass reconstruction
+from images of lensed objects..
 
+The `droulette` packages provides the tools for a pipeline for experiments
+using `CosmoSim` data.  The codebase has not been made public yet.
 
 ::: {note} Requirement
 This demo assumes droulette v0.1.1 which in turn requires CosmoSim v3.2.
@@ -26,6 +28,14 @@ This demo assumes droulette v0.1.1 which in turn requires CosmoSim v3.2.
 pip install droulette==0.1.1
 ```
 :::
+
+The main principle for the pipeline is to use a TOML file for each
+step, to define the data and parameters used.
+The following pipeline trains and compares machine learning
+models on the roulette amplitudes.  It can be adapted to
+train for prediction of lens parameters.
+
+## Training and testing a single model
 
 **Step 1.** Generate a dataset
 This is discussed in detail in [](Dataset.ipynb).
@@ -37,6 +47,14 @@ time python -m CosmoSim --toml dataset.toml --rnd \
          --directory images 
 ```
 This is the sample data dataset configuration: [dataset.toml](./dataset.toml).
+
+The images are written to the directory specified.
+Two CSV files are produced.
++ dataset.csv gives lens and source parameters
++ roulette.csv gives roulette parameters
+
+**See also** discussion of
+[Parameter ranges](../Dataset).
 
 **Step 2.** Prepare the dataset for machine learning.
 
@@ -88,21 +106,53 @@ python -m droulette.model --config experiment001/ml.toml
 All the results will be placed in this subdirectory.
 Evaluation of these results is discussed further in [](experiment001/Testing.ipynb).
 
-::: {tip}
+## Batch training
+
 The droulette package also has support for batch traning multiple models
 and comparing them.
 
-This command will generate subdirectories with individual TOML files from
-the given master configuration.
+**Step 2bis.** Generate machine learning configurations.
+
+When the problem has been configured (Step 2), we can generate a batch
+of different model configurations.
+A sample master configuration is in [experimentbatch.toml](experimentbatch.toml).
+
+The following command will generate subdirectories with individual TOML files 
+from the given master configuration.
 ```sh
 python -m droulette.batch experimentbatch.toml
 ```
-Following this `droulette.model` can be run for each subdirectory.
+Following this `droulette.model` (Step 3) can be run for each subdirectory,
+e.g.
+```sh
+python -m droulette.batch Test/experimentbatch.toml
+for cfg in _test/experiment???/ml.toml
+do
+   python -m droulette.model --config $cfg
+done
+```
 
-To evaluate all the models and compare them, this command does the job:
+**Step 3bis.** When all the models have been trained and tested,
+we can make a joint evaluation with the following command.
 ```sh
 time python -m droulette.eval -o eval.csv experiment??? 
 ```
+This collects performance heuristics for the models in each of
+the directories given, and writes them to the given CSV file.
 
-This will be better documented in the future.
-:::
+Currently, the statistics computed are
++ Loss function (MSE on scaled data)
++ $R^2$
++ MAE, averaged over the images
+
+Additionally other files are created in each indivual directory.
++ the loss function is evaluated for each item and
+  written to separate files in each experiment directory.
++ A plot file `training.svg` plots the loss as a function of epoch,
+  as derived from `training_log.csv`.
++ MAE (mean average error) between the resimulated and original images
+
+For MAE calculation, all the images are resimulated in the roulette
+formalism, and the resulting images are stored in the resimulation
+subdirectory.
+

@@ -2,9 +2,8 @@
 # Dataset Generation and Machine Learning
 
 + [](Dataset.ipynb)
-+ [](Training.ipynb)
++ [](Pipeline.md)
 + [](experiment001/Testing.ipynb)
-+ See also [](/docs/ML/Pipeline).
 
 The datasets used in the demo are the following.
 
