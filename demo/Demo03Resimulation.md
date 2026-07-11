@@ -59,7 +59,6 @@ with open( "Demo03.toml", 'rb' ) as f:
             toml = tl.load(f)
 
 param = Parameters( toml )
-param["source"]["luminosity"] = 1000
 imsim = SimImage( param, verbose=0 )
 im = imsim.getImage()
 csimg.imshow( im, "Baseline simulation" )
@@ -110,7 +109,7 @@ See also [](/tech/Notation.md).
 :::
 
 ```{code-cell} ipython3
-rsim = Resim( row )
+rsim = Resim( row, verbose=0 )
 resimImage = rsim.getImage()
 csimg.imshow( resimImage, "Resimulation" )
 ```
@@ -122,7 +121,7 @@ For reference, we can do the original roulette simulation, using a
 param["simulator"]["model"] = "Roulette"
 roulette = SimImage( param, verbose=0 )
 rouletteImage = roulette.getImage()
-csimg.imshow( rouletteImage, "Roulette simulation" )
+csimg.imageCompare( rouletteImage, resimImage, "Roulette simulation", "Resimulation" )
 ```
 
 The two roulette simulations look similar but displaced compared to each other.
