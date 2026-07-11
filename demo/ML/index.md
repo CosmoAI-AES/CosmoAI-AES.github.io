@@ -1,26 +1,13 @@
 
 # Dataset Generation and Machine Learning
 
-+ [](Dataset.ipynb)
-+ [](Pipeline.md)
-+ [](experiment001/Testing.ipynb)
+Machine learning comprises many steps, each worth some depth.
 
-The datasets used in the demo are the following.
++ [](Pipeline.md) gives an overview of the steps, and how they can 
+  be run on the command line.
++ [](Dataset.ipynb) discusses the design and generation of datasets
++ [](experiment001/Testing.ipynb) is a preliminary demo of evaluation
+  of a machine learning model.
 
-| Datasets | Ground Truth | Prediction |
-| :-       | :-           | :-         |
-| Training  | [training.csv](training.csv) | [train.csv](experiment001/train.csv) |
-| Validation  | [validation.csv](validation.csv) | [val.csv](experiment001/val.csv) |
-| Testing  | [testing.csv](testing.csv) | [test.csv](experiment001/test.csv) |
-
-The ground truth datasets were created from the following.
-
-+ [dataset.csv](dataset.csv) which provides the lens parameters
-  for simulation and calcuation of roulette parameters.
-+ [roulette.csv](roulette.csv) is the complete simulator output,
-  including some columns ommitted in the data for machine learning.
-
-+ [experiment001/training_log.csv](experiment001/training_log.csv)
-  gives the evolution log from training.
-  This should be commented and analysed, but this has to wait for now.
-
+For a more complete treatise, we have publised reports from real experiments.
++ [Experiments July 2026](https://cosmoai-aes.github.io/experiment2026july)
