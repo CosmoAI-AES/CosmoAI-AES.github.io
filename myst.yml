@@ -96,9 +96,9 @@ project:
       - file: demo/Demo03Resimulation.ipynb
         children:
         - file: demo/ResimulationTemplate.ipynb
-      - file: demo/Pointmass.ipynb
       - title: Lens models
         children:
+        - file: demo/Pointmass.ipynb
         - file: demo/SIS.ipynb
         - file: demo/SIE.ipynb
       - file: demo/ML/index.md
