@@ -88,6 +88,7 @@ project:
       - file: math/Differentiating SIE Approach 1.md
       - file: math/Implementation of SIE.md
       - file: math/Roulette Amplitudes in SIE.md
+      - file: math/CriticalCurve.md
     - title: Demos
       file: demo/index.md
       children:
