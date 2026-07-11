@@ -27,7 +27,7 @@ is the Jacobian of the lens mapping.
     \frac{\partial v}{\partial \theta_2}
   \end{bmatrix}
 \end{equation}
-where $\boldsymbol{\beta}=(u,v)$ and $\boldsymbol{\theta}=(\theta_1,y)$.
+where $\boldsymbol{\beta}=(u,v)$ and $\boldsymbol{\theta}=(\theta_1,\theta_2)$.
 
 The raytrace equation is given as
 \begin{equation}
@@ -79,11 +79,11 @@ where this **convergence** (or mass distribution) is
   \frac12( \psi_{\theta_1\theta_1} + \psi_{\theta_2\theta_2} )
 \end{equation}
 and
-\begin{aligned}
-  \gamma_+(\theta) &=
+\begin{equation}
+  \gamma_+(\theta) =
   \frac12( \psi_{\theta_1\theta_1} - \psi_{\theta_2\theta_2} ) \\
   \gamma_\times(\theta) &= \psi_{\theta_1\theta_2} 
-\end{aligned}
+\end{equation}
 We can then write
 \begin{equation}
   \mathcal{A}(\boldsymbol{\theta}) 
