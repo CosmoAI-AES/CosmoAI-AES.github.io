@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -20,6 +20,14 @@ v3.1.
 We follow the pattern from [](/demo/Demo01.ipynb) 
 and [](/demo/ML/Dataset.ipynb),
 and we will not take up space to explain constructs known therefrom.
+
+::: {note} Cluster lenses
+For cluster lenses, each constituent lens is placed in the same way as 
+the source, relative to the origin, in polar co-ordinates $(R_L,\phi_L)$.
++ select random distance $R_L\le2\theta_E$, where $\theta_E$ is the
+  Einstein radius of the constituent lens
++ select random angle $\phi_L$ 
+:::
 
 ## Preparation
 
@@ -71,21 +79,20 @@ csimg.imshow( im, title="First example of a cluster lens" )
 
 We can also generate random datasets.
 
+::: {tip}
+Download [cluster.toml](./cluster.toml).
+:::
+
 ```{code-cell} ipython3
 cfg = csd.readtoml( "cluster.toml" )
 display( json.dumps( cfg ) )
 ```
 
-::: {tip}
-Download [cluster.toml](./cluster.toml).
-:::
-
 ::: {note} Remark
 The TOML file is similar to the one used in [](/demo/ML/Dataset.ipynb).
 The most notable difference is the `[cluster]`.
-We also have to specify the lens model for the constuent lenses with the
-`lens.model` parameter.
-It cannot be inferred from `simulator.config`.
+We also have a new variant for source position, `source.critical`, 
+which places the source at a maximum distance relative to the critical curve.
 :::
 
 Each constituent lens is placed in a random direction from the origin,
@@ -137,6 +144,10 @@ print( obs[1]["cluster"] )
 ```
 
 ## Closure
+
++++
+
+Parameter design for random sets of cluster lenses is still a concern for further research.
 
 ```{code-cell} ipython3
 

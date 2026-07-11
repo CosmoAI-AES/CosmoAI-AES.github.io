@@ -6,7 +6,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.3
 kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
@@ -17,6 +17,7 @@ kernelspec:
 
 The purpose of this demonstration is to explore reasonable parameters
 for dataset generation.
+We restrict ourselves to singleton lenses for now.
 We aim to follow established custom in the literature, as far as possible. 
 
 ::: {note} Image scale
@@ -70,14 +71,6 @@ density function
 $$f(x;\lambda) = \lambda e^{-\lambda x}$$
 for positive $x$.
 This $u$ is scaled to within the given range.
-:::
-
-::: {note} Cluster lenses
-For cluster lenses, each constituent lens is placed in the same way as 
-the source, relative to the origin, in polar co-ordinates $(R_L,\phi_L)$.
-+ select random distance $R_L\le2\theta_E$, where $\theta_E$ is the
-  Einstein radius of the constituent lens
-+ select random angle $\phi_L$ 
 :::
 
 +++
@@ -253,3 +246,7 @@ python -m CosmoSim --rnd --toml config.toml --csvfile dataset.csv \
 This generates the random dataset (dataset.csv) and the images in
 the images directory, as well as a dataset of corresponding
 roulettes amplitudes (roulette.csv).
+
+```{code-cell} ipython3
+
+```
