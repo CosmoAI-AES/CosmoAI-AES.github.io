@@ -22,7 +22,7 @@ is the Jacobian of the lens mapping.
   = 
   \begin{bmatrix}
     \frac{\partial u}{\partial \theta_1} &
-    \frac{\partial u}{\partial \theta_2} \\\\\\\\
+    \frac{\partial u}{\partial \theta_2} \\
     \frac{\partial v}{\partial \theta_1} &
     \frac{\partial v}{\partial \theta_2}
   \end{bmatrix}
@@ -38,7 +38,7 @@ which gives
   \mathcal{A}(\boldsymbol{\theta}) 
   = 
   \begin{bmatrix}
-    1 - \psi_{\theta_1\theta_1} & -\psi_{\theta_1\theta_2} \\\\\\\\
+    1 - \psi_{\theta_1\theta_1} & -\psi_{\theta_1\theta_2} \\
     -\psi_{\theta_1\theta_2} & 1 - \psi_{\theta_2\theta_2} 
   \end{bmatrix}
 \end{equation}
@@ -47,7 +47,7 @@ We can equivalently write it in normalised screen space co-cordinates
   \mathcal{A}(\mathbf{x}) 
   = 
   \begin{bmatrix}
-    1 - \psi_{x_1x_1} & -\psi_{x_1y_2} \\\\\\\\
+    1 - \psi_{x_1x_1} & -\psi_{x_1y_2} \\
     -\psi_{x_1y_2} & 1 - \psi_{y_2y_2} 
   \end{bmatrix}
 \end{equation}
@@ -59,12 +59,12 @@ and the Pauli spin matrices
 \begin{equation}
    R_- = 
   \begin{bmatrix}
-    1 & 0 \\\\  0 & -1
+    1 & 0 \\  0 & -1
   \end{bmatrix}
   \quad
    R_/ = 
   \begin{bmatrix}
-    0 & 1  \\\\  1 & 0
+    0 & 1  \\  1 & 0
   \end{bmatrix}
 \end{equation}
 We get
@@ -81,7 +81,7 @@ where this **convergence** (or mass distribution) is
 and
 \begin{aligned}
   \gamma_+(\theta) &=
-  \frac12( \psi_{\theta_1\theta_1} - \psi_{\theta_2\theta_2} ) \\\\\\\\
+  \frac12( \psi_{\theta_1\theta_1} - \psi_{\theta_2\theta_2} ) \\
   \gamma_\times(\theta) &= \psi_{\theta_1\theta_2} 
 \end{aligned}
 We can then write
@@ -89,7 +89,7 @@ We can then write
   \mathcal{A}(\boldsymbol{\theta}) 
   = 
   \begin{bmatrix}
-    1 - \kappa - \gamma_+ & - \gamma_\times \\\\\\\\
+    1 - \kappa - \gamma_+ & - \gamma_\times \\
     - \gamma_\times & 1 - \kappa + \gamma_+
   \end{bmatrix}
 \end{equation}
@@ -105,7 +105,7 @@ and we can verify that the inverse is given as
   = 
   \frac1{(1-\kappa)^2 - \gamma_+^2 - \gamma_\times^2}
   \begin{bmatrix}
-    1 - \kappa + \gamma_+ & \gamma_\times \\\\\\\\
+    1 - \kappa + \gamma_+ & \gamma_\times \\
     \gamma_\times & 1 - \kappa - \gamma_+
   \end{bmatrix}
 \end{equation}
@@ -138,6 +138,6 @@ Thus the critical curve is the solution of the equation $\det\mathcal{A}=0$, or
   0 = \lambda_-\lambda_+ = (1-\kappa)^2 - \gamma_+^2 - \gamma_\times^2
 \end{equation}
 
-+ Example: [Critical Curves for SIE](Critical Curves for SIE)
++ Example: [](#critical-sie)
 
 **TODO** Define **caustic**

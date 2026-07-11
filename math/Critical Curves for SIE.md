@@ -2,7 +2,7 @@
 title: Critical Curves for The SIE Lens
 ---
 
-
+(critical-sie)=
 # Critical Curves for The SIE Lens
 
 The [SIE](./SIE) lens is defined by the convergence
