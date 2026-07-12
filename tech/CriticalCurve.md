@@ -53,5 +53,6 @@ polar coordinates $(r,\phi)$ where
 \begin{equation}
   r = \frac{\sqrt{f}\theta_E}{\sqrt{ \cos^2\phi + f^2\sin^2\phi}}
 \end{equation}
+where $f$ is the elliptic ratio.
 This is impemented in `SIE::criticalXi()`.
   
