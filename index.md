@@ -62,4 +62,4 @@ We presented the first prototype at ECMS in 2023 [@hgs2023ecms], and a white pap
 on the overall approach later the same year, in Norwegian [@schaathun2023].
 More recently we have made a survey on gravitational lensing [@normann2025short].
 
-MSc theses publicly available by @hanssen2026msc, @enoksen2026msc
+MSc theses publicly available by @hanssen2024msc, @enoksen2026msc
