@@ -17,7 +17,7 @@ and
   \det\mathcal{A}(\boldsymbol{\theta}) = 
     1 - \psi_{\theta_1\theta_1} - \psi_{\theta_2\theta_2} 
       + \psi_{\theta_1\theta_1}\psi_{\theta_2\theta_2}  
-    + 2\psi_{\theta_1\theta_2} 
+    + \psi_{\theta_1\theta_2}^2
 \end{equation}
 It is straight forward to compute this given the second
 derivatives.
