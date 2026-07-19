@@ -43,7 +43,7 @@ $(x,y)$.  Since the lens is located at the global
 origin, the $(x,y)$-system is obtained by rotating
 the $(x',y')$-system by an angle $\theta$.
 Hence
-\begin{aligned}
+\begin{align}
    \begin{bmatrix} x' \\ y' \end{bmatrix}
    &=
    \begin{bmatrix}
@@ -51,16 +51,16 @@ Hence
      -\sin\theta & \cos\theta 
    \end{bmatrix}
    \cdot
-   \begin{bmatrix} x \\\\\\\\ y \end{bmatrix}
-\end{aligned}
+   \begin{bmatrix} x \\ y \end{bmatrix}
+\end{align}
 We can differentiate the coordinates, so that
 \begin{align}
    \frac{dx'}{dx} & = \cos\theta
-   \\\\\\\\
+   \\
    \frac{dx'}{dy} & = \sin\theta
-   \\\\\\\\
+   \\
    \frac{dy'}{dx} & = -\sin\theta
-   \\\\\\\\
+   \\
    \frac{dy'}{dy} & = \cos\theta
 \end{align}
 Note that all of these derivatives are constants, so that all
