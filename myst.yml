@@ -14,7 +14,7 @@ project:
     - Hans Georg Schaathun
     - Ben David Normann
   references:
-    - july2026: https://CosmoAI-AES.github.io/experiment2026july/
+    july2026: https://CosmoAI-AES.github.io/experiment2026july/
   github: https://github.com/CosmoAI-AES/CosmoAI-AES.github.io
   toc:
     - file: index.md

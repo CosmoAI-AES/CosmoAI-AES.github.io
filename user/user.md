@@ -5,7 +5,7 @@ The easiest tool to get started with is the [](GUI.md).
 The [](/demo/index) provide an introduction to the API and how
 to set up a pipeline for machine learning.
 
-The proposed pipeline for [](/docs/ML/MachineLearning) is probably the best
+The proposed pipeline for [](MachineLearning.md) is probably the best
 starting point for using the command line interface and batch simulation.
 
 ## Scripts
