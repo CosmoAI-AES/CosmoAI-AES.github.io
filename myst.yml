@@ -49,7 +49,7 @@ project:
             - file: docs/scripts/Resimulation.md
         - file: user/droulette.md
           children:
-            - file: user/ML/MachineLearning.md
+            - file: user/MachineLearning.md
             - file: docs/Dataset.md
         - file: user/GUI.md
     - file: docs/Software.md
