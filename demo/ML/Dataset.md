@@ -182,6 +182,13 @@ df = pd.DataFrame( obs )
 display(df)
 ```
 
+::: {note} Index and filename
+In this example, all the rows get `index` 0 and the same filename,
+which is fine because we do not use them here.
+The `getline()` function takes an index argument which sets the index.
+The filename includes the index number.
+:::
+
 To create the images we make a quick function to generate a each one.
 
 ```{code-cell} ipython3
