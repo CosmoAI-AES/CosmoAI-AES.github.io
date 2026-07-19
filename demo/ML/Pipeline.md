@@ -13,6 +13,7 @@ kernelspec:
 title: Machine Learning Pipeline 
 ---
 
+(ml-pipeline)=
 # Machine Learning Pipeline
 
 The purpose of the CosmoSim project is to use machine learning
