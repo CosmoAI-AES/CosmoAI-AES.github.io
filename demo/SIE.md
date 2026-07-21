@@ -87,7 +87,6 @@ csimg.imageCompare( rayim, im06, "Raytrace", 'Sampled Raytrace')
 csimg.imageCompare( rouim, im05, "Roulette", 'Sampled Roulette')
 ```
 
-
 As for SIS, we see minor discrepancy in the sampled roulette.
 The sampled raytrace, in contrast, looks perfect.
 

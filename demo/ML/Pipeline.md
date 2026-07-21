@@ -10,7 +10,6 @@ kernelspec:
   name: python3
   display_name: Python 3 (ipykernel)
   language: python
-title: Machine Learning Pipeline 
 ---
 
 (ml-pipeline)=
@@ -156,4 +155,3 @@ Additionally other files are created in each indivual directory.
 For MAE calculation, all the images are resimulated in the roulette
 formalism, and the resulting images are stored in the resimulation
 subdirectory.
-

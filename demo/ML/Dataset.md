@@ -13,11 +13,10 @@ kernelspec:
   language: python
 ---
 
-# Sample Datasets
+# Datasets Generration
 
-The purpose of this demonstration is to explore reasonable parameters
-for dataset generation.
-We restrict ourselves to singleton lenses for now.
+The purpose of this demonstration is to demonstrate random dataset
+generation and to explore reasonable parameters for dataset generation.
 We aim to follow established custom in the literature, as far as possible. 
 
 ::: {note} Image scale
@@ -52,7 +51,7 @@ examples of strong lensing, erring on the side of wider ranges.
 | Lens orientation | | `orientation`  | Uniform | $0\ldots180$ |
 | Source orientation | |  | Uniform | $0\ldots180$ |
 | Lens ellipticity | $f$ | `ellipseratio` | Uniform | $0.1\le f\le 0.9$ |
-| Source size | $\sigma$ | `sigma` | Uniform | $0.2"\le f\le 2"$ |
+| Source size | $\sigma$ | `sigma` | Uniform | $0.2"\le f\le 2.0"$ |
 | Sersic index | $n_s$ | `n_sersic` | Uniform |  $1\le n_s\le 5$ |
 | Luminosity  | $l$ | `luminosity` | Exponential |  $20\le l\le 80$, $\lambda=2.0$ |
 
@@ -71,6 +70,14 @@ density function
 $$f(x;\lambda) = \lambda e^{-\lambda x}$$
 for positive $x$.
 This $u$ is scaled to within the given range.
+:::
+
+::: {note} Cluster lenses
+For cluster lenses, each constituent lens is placed in the same way as 
+the source, relative to the origin, in polar co-ordinates $(R_L,\phi_L)$.
++ select random distance $R_L\le2\theta_E$, where $\theta_E$ is the
+  Einstein radius of the constituent lens
++ select random angle $\phi_L$ 
 :::
 
 +++
@@ -106,11 +113,12 @@ cfg = csd.readtoml( "dataset.toml" )
 display( cfg )
 ```
 
-We see that this configuration is set up to generate 24000 images in 256$\times$256 format.
-We can see the paremeter ranges for the lens and for the source, which is a sphere with sersic profile.
-As of CosmoSim v3.1 we can still use the config parameter for both the simulation model and the lens;
-"raysie" is raytrace simualation of a SIE lens.
-This will change in v3.2, to require separate settings for `simulator.model` and `lens.mode`.
+We see that this configuration is set up to generate 15000 images in
+256$\times$256 format.
+We can see the parameter ranges for the lens and for the source,
+which is a sphere with sersic profile.
+It is set up to do raytrace simulation with a SIE lens.
+
 
 ::: {note} Remark
 For the most part, this TOML file allows the same settings as the TOML file
@@ -154,7 +162,7 @@ param.setRow( ob )
 ```
 
 Now we can run the simulator as we have done in previous demos
-(e.g. [](../Demo01.ipynb)).
+(e.g. [](../Demo01.ipynb).
 
 ```{code-cell} ipython3
 imsim = csg.SimImage( param, verbose=0 )
@@ -181,13 +189,6 @@ obs = [ csd.getline( cfg ) for ob in range(8) ]
 df = pd.DataFrame( obs )
 display(df)
 ```
-
-::: {note} Index and filename
-In this example, all the rows get `index` 0 and the same filename,
-which is fine because we do not use them here.
-The `getline()` function takes an index argument which sets the index.
-The filename includes the index number.
-:::
 
 To create the images we make a quick function to generate a each one.
 

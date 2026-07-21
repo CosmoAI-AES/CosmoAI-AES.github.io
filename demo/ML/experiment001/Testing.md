@@ -13,27 +13,18 @@ kernelspec:
   name: python3
 ---
 
-# Evaluation on the test set
+# Demo: Evaluation of machine learning 
 
 This document evaluates one trained machine learning model,
 see details below.
 We use both conventional metrics and comparison with a 
 resimulated image.
 
-::: {warning} 
-
-This is a rudimentary version and the underlying data may be inconsistent.
-It is work in progress.
-
-:::
-
-
-
 We use three datafiles, which must be downloaded if this
 document is to be executed.
-+ [testing.csv](../testing.csv) is ground truth for model training
-+ [test.csv](test.csv) is the predicted amplitudes from machine learning.
-+ [dataset.csv](../dataset.csv) is the original lens parameters used to generate
++ [sie-testing.csv](../sie-testing.csv) is ground truth for model training
++ [pred-sie-testing.csv](pred-sie-testing.csv) is the predicted amplitudes from machine learning.
++ [sie-dataset.csv](../sie-dataset.csv) is the original lens parameters used to generate
   the training, testing, and validation data, i.e. it has more
   rows than the other two sets.
 
@@ -45,7 +36,7 @@ The training set used is 16000 images.
 
 The specification of the distribution is discussed in
 [](../Dataset.ipynb) and
-can be downloaded ([dataset.toml](../dataset.toml)).
+can be downloaded ([sie-dataset.toml](../sie-dataset.toml)).
 
 +++
 
@@ -80,8 +71,8 @@ print( json.dumps( cfg["hyperparameters"], indent=4 ) )
 Let's load the test set, both the ground truth (`gt`) and the predictions (`df`).
 
 ```{code-cell} ipython3
-gt = pd.read_csv( "../testing.csv", index_col="filename" )
-df = pd.read_csv( "test.csv", index_col="filename" )
+gt = pd.read_csv( "../sie-testing.csv", index_col="filename" )
+df = pd.read_csv( "pred-sie-testing.csv", index_col="filename" )
 display( gt.head() )
 display( df.head() )
 ```
@@ -149,7 +140,9 @@ sse.nsmallest(3)
 ```
 
 We note that the errors are small, but there is also a huge span between the best and the worst.
-For the purpose of this test, we do not assume that we have access to the original images, but we can resimulate them from the roulette amplitudes.
+For the purpose of this test, we do not assume that we have access
+to the original images, but we do have access to the lens parameters
+so that we can regenerate the images.
 First we record the filenames.
 
 ```{code-cell} ipython3
@@ -243,7 +236,7 @@ We can also load the original lens parameters, from which
 the ground truth was computed.
 
 ```{code-cell} ipython3
-orig = pd.read_csv( "../dataset.csv", index_col="filename" )
+orig = pd.read_csv( "../sie-dataset.csv", index_col="filename" )
 display( orig.head() )
 ```
 
@@ -259,7 +252,7 @@ To avoid interference, we make a copy of `params`.
 
 ```{code-cell} ipython3
 cfg["simulator"]["model"] = "Raytrace"
-cfg["simulator"]["centred"] = False
+cfg["simulator"]["centred"] = True
 cfg["lens"] = { "mode" : "SIE" }
 p2 = cs.Parameters( cfg )
 for fn in worst:
@@ -297,7 +290,3 @@ Interestingly, the best images do not perform any better than the worst in terms
 We see that this machine learning model make accurate prediction as far as optical perception goes, but there are limitations to the roulette representations.
 
 This means that there is nothing to gain from further research on machine learning models at this stage.
-
-```{code-cell} ipython3
-
-```
