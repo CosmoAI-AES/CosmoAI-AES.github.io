@@ -190,6 +190,13 @@ df = pd.DataFrame( obs )
 display(df)
 ```
 
+::: {note} Indices
+All the items in the sample have the same number and filename.
+It is possible to pass an index number to `getline()`, but because
+we will not need it here, we have not bothered.
+The index number is also used in the default filename.
+:::
+
 To create the images we make a quick function to generate a each one.
 
 ```{code-cell} ipython3
