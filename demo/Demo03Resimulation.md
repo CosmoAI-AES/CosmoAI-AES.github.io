@@ -16,7 +16,7 @@ kernelspec:
 # CosmoSim Demo III Roulette Resimulation 
 
 This Demo assumes that you are familiar with the principles from
-[](./Demo01.md).  We start with the same imports
+[](./Demo01.ipynb).  We start with the same imports
 
 ```{code-cell} ipython3
 import pandas as pd
@@ -39,7 +39,7 @@ from CosmoSim.roulettegen import Resim
 ```
 
 The `Resim` class shares the `GenericSim` superclass with `SimImage`,
-which we used in [](./Demo01.md) but simulates from precomputed roulette
+which we used in [](./Demo01.ipynb) but simulates from precomputed roulette
 parameters and not from a regular lens model. 
 
 ## Basic Configuration
