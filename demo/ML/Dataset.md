@@ -13,7 +13,7 @@ kernelspec:
   language: python
 ---
 
-# Datasets Generration
+# Datasets Generation
 
 The purpose of this demonstration is to demonstrate random dataset
 generation and to explore reasonable parameters for dataset generation.

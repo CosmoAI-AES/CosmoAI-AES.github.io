@@ -38,6 +38,15 @@ The specification of the distribution is discussed in
 [](../Dataset.ipynb) and
 can be downloaded ([sie-dataset.toml](../sie-dataset.toml)).
 
+::: {note} Reuse of the notebook
+It should be fairly straight-forward to rerun this notebook locally,
+but you have to Be careful with the path names of the datafiles.
+Data relating to the particular solution are in the current directory,
+while those relating to the problem are in the parent directory.
+This is because the notebook is coded for use with experiments where
+many models are trained and compared.
+:::
+
 +++
 
 ## Configuration
@@ -157,7 +166,9 @@ print( "Worst:", worst )
 Before we can simulate, we need to set up some basic parameters.
 
 ```{code-cell} ipython3
-cfg = { "simulator" : { "imagesize" : 512, "cropsize" : 256, "xireference" : True }
+cfg = { "simulator" : { "imagesize" : 512
+                    , "cropsize" : 256
+                    , "xireference" : True }
       , "source" : { "mode" : "SersicSphere" } }
 param = cs.Parameters( cfg )
 ```

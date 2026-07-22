@@ -23,9 +23,9 @@ The `droulette` packages provides the tools for a pipeline for experiments
 using `CosmoSim` data.  The codebase has not been made public yet.
 
 ::: {note} Requirement
-This demo assumes droulette v0.1.1 which in turn requires CosmoSim v3.2.
+This demo assumes droulette v0.2 which in turn requires CosmoSim v3.2.4.
 ```
-pip install droulette==0.1.1
+pip install droulette==0.2
 ```
 :::
 
@@ -104,7 +104,10 @@ python -m droulette.model --config experiment001/ml.toml
 ```
 
 All the results will be placed in this subdirectory.
-Evaluation of these results is discussed further in [](experiment001/Testing.ipynb).
+
+**Step 4.**
+Evaluation of these results is discussed further in 
+[](experiment001/Testing.ipynb).
 
 ## Batch training
 
