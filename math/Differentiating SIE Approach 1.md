@@ -1,14 +1,14 @@
 ---
-title: Differenting SIE APproach 1
+title: Differenting SIE Approach 1
 usemathjax: true
 ---
-
 
 This is one of several approaches suggested for
 differentiation of the lens potential for [](#sie).
 
 (sie-approach-1)=
 # Approach 1. Rotation of the Coordinate System
+
 
 The deflection is given as the vector $\nabla\psi^{\mathrm{R}}$,
 in a Cartesian co-ordinate system with axes aligned with the

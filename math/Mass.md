@@ -1,6 +1,10 @@
 
 # Surface Mass Density
 
+::: {warning}
+Needs review.
+:::
+
 A final, very central concept in lensing, is the convergence $\kappa$.
 This is the dimensionless,
 projected surface-mass density, which is related to $\psi$ through the Poisson equation. In our 
