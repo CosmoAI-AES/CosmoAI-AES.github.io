@@ -87,7 +87,7 @@ $$
 $$ (raytraceAng)
 
 Under the [flat sky assumption](#flat-sky),
-Eq.~{eq}`raytracePhys` and Eq.~{eq}`raytraceAng` are equivalent.
+Eq. {eq}`raytracePhys` and Eq. {eq}`raytraceAng` are equivalent.
 It is this latter equation that we shall take to be our constitutive relation. But before
 we get there, let us also introduce the standard way of normalizing. 
 
@@ -123,7 +123,7 @@ $$
 $$
 
 In addition to the previously mentioned (cosmological) distances $D_L$, $D_S$ and $D_{LS}$ we must thus
-find a proper length scale $\xi_0$ from which we normalize everything else. In SEF, 
+find a proper length scale $\xi_0$ from which we normalize everything else. In @bok:SEF1999, 
 @kormann1994isothermal, and other standard sources one typically takes $\xi_0$
 to be the so-called Einstein radius. This is the radius at which
 a spherically symmetric lens will produce a ring (so-called Einstein ring)
@@ -131,7 +131,7 @@ whenever the source is directly behind
 the lens, along the optical axis.
 
 In normalised coordinates the ray-trace equation 
-Eq.~{eq}`raytracePhys` reads 
+Eq. {eq}`raytracePhys` reads 
 
 $$
 \mathbf{y}=\mathbf{x}-\mathbf{a},
@@ -140,7 +140,7 @@ which also explains the particular definition of $\boldsymbol{\alpha}$: it makes
 version of the ray-trace equation look very nice and tidy. The normalisation presented above is however
 somewhat different from the one we shall prefer in this work,
 **where we shall prefer to work in angular coordinates,** 
-such as the ones given in Eq.~{eq}`raytraceAng`.
+such as the ones given in Eq. {eq}`raytraceAng`.
 In the sections to follow, such coordinates will therefore be our focus.
 
 ::: {note} Definition: Einstein Radius 
@@ -163,7 +163,7 @@ Considering a thin lens, it is customary to define the lens potential as the pro
 potential down on the lens plane. Such a simplification is typically warranted,
 due to $D_L \gg \xi_0$.
 
-To connect with SEF and other standard literature we will start by defining the lensing potential so that its gradient is the so-called reduced 
+To connect with @SEF1999 and other standard literature we will start by defining the lensing potential so that its gradient is the so-called reduced 
 deflection angle $\mathbf{a}$ 
 the gradient of $\psi$, i.e.
 \begin{equation}
