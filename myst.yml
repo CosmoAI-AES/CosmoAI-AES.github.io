@@ -21,8 +21,9 @@ project:
     july2026: https://CosmoAI-AES.github.io/experiment2026july/
   exports:
     - format: pdf
+      template: lapreprint-typst
       # template: plain_latex_book
-      template: arxiv_nips
+      # template: arxiv_nips
       output: cosmosim.pdf
   github: https://github.com/CosmoAI-AES/CosmoAI-AES.github.io
   toc:
