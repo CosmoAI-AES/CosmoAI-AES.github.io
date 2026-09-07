@@ -17,6 +17,9 @@ project:
       affiliation: NTNU---Norwegian University of Science and Technology
     - name: Ben David Normann
       affiliation: NTNU---Norwegian University of Science and Technology
+  bibliography:
+    - bib.bib
+    - myst.doi.bib
   references:
     july2026: https://CosmoAI-AES.github.io/experiment2026july/
   exports:
