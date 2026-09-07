@@ -6,9 +6,17 @@ usemathjax: true
 
 # The Roulette Formalism
 
+The roulette formalism describes the lens potential locally in a point,
+by a process similar to Taylor expansion.
+The description is given by a number of *roulette amplitudes* $\alpha^m_s$ and $\beta^m_s$,
+which can be calculated in (at least) two different ways:
 + [](#roulette-recursive)
 + [](#roulette-original)
 
+Given the roulette amplitudes, it is also possible to simulate the distorted image
+in a neighbourhood of the reference point.
+
+## Simulation in the roulette formalism
 
 
 ```{figure} Model_2Db.svg
@@ -19,7 +27,6 @@ The figure shows the set-up for the flat-sky approximation,
 with the source plane (the lens plane) a distance $D_{\mathrm{S}}$
 ($D_{\mathrm{L}}$) from the observer.
 ```
-
 
 The observed lensing is decomposed into two steps, as shown by the figure.
 The first step is a translation (deflection), corresponding to the difference between apparent ($\boldsymbol{\theta}$)
@@ -35,7 +42,9 @@ where $(\alpha_1^0,\beta_1^0)$ is a vector of roulette amplitudes, as
 defined above. 
 
 The second step is the actual, non-linear distortion, and may be expresed through higher-order derivatives of the lensing potential. The distorted image is drawn in a local co-ordinate system in the lens
-plane, centred at $\boldsymbol{\theta}=(\theta_1,\theta_2)$. Following Clarkson, we use polar co-ordinates for the distorted image. While Clarkson used $(r,\phi)$ we will use $(\tilde{\theta},\phi)$, since we use angular units.
+plane, centred at $\boldsymbol{\theta}=(\theta_1,\theta_2)$. 
+Following Clarkson, we use polar co-ordinates for the distorted image. 
+While Clarkson used $(r,\phi)$ we will use $(\tilde{\theta},\phi)$, since we use angular units.
 
 The source image is described in Cartesian co-ordinates $(\tilde{\beta}_1,\tilde{\beta}_2)^\textrm{T}$ centered
 at $\boldsymbol{\beta}$ in the source plane.
@@ -108,4 +117,5 @@ $\psi^\textrm{R}(\theta_1,\theta_2)$, from which one may derive the physical pro
 In practice the sum has to be truncated by limiting $m\le m_0$ for some $m_0$.
 
 The roulette amplitudes are always calculated in a specific 
-[Reference Point](ReferencePoint.md). In the next section we will give expressions for calculating the roulette amoplitudes.
+[Reference Point](#roulette-reference-point).
+In the next section we will give expressions for calculating the roulette amoplitudes.

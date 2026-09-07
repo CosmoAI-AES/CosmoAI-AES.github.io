@@ -3,6 +3,7 @@ title: Reference Point for Roulettes
 usemathjax: true
 ---
 
+(roulette-reference-point)=
 # Reference Point for Roulettes
 
 In the basic setup, the roulette amplitudes are calculated only
