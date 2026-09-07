@@ -41,7 +41,6 @@ plane, centred at $\boldsymbol{\theta}=(\theta_1,\theta_2)$. Following Clarkson,
 The source image is described in Cartesian co-ordinates $(\tilde{\beta}_1,\tilde{\beta}_2)^\textrm{T}$ centered
 at $\boldsymbol{\beta}$ in the source plane.
 
-::::{grid} 1 1 2 2
 
 :::{figure} Model_LocalPolar.svg
 :label: fig-local-polar
@@ -69,7 +68,7 @@ $\beta_1,\beta_2$, centred on the optical axis, are shown for
 reference.
 :::
 
-::::
+
 Thus the light observed at a position (pixel) $(\tilde{\theta},\phi)$ is drawn from
 a different position (pixel) $(\tilde{\beta}_1,\tilde{\beta}_2)=\mathcal{D}(\tilde{\theta},\phi)$ in the source image.
 From Eq. (48) in [](doi:10.1088/0264-9381/33/24/245003)

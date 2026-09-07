@@ -11,10 +11,15 @@ project:
       - roulette formalism 
       - gravitational lensing
   authors: 
-    - Hans Georg Schaathun
-    - Ben David Normann
+    - name: Hans Georg Schaathun
+      affiliation: NTNU---Norwegian University of Science and Technology
+    - name: Ben David Normann
+      affiliation: NTNU---Norwegian University of Science and Technology
   references:
     july2026: https://CosmoAI-AES.github.io/experiment2026july/
+  exports:
+    - format: pdf
+      template: plain_latex_book
   github: https://github.com/CosmoAI-AES/CosmoAI-AES.github.io
   toc:
     - file: index.md

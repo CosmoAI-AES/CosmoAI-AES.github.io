@@ -82,7 +82,7 @@ and
 \begin{equation}
   \gamma_+(\theta) =
   \frac12( \psi_{\theta_1\theta_1} - \psi_{\theta_2\theta_2} ) \\
-  \gamma_\times(\theta) &= \psi_{\theta_1\theta_2} 
+  \gamma_\times(\theta) = \psi_{\theta_1\theta_2} 
 \end{equation}
 We can then write
 \begin{equation}

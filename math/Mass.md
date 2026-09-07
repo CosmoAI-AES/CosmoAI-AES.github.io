@@ -26,7 +26,7 @@ The dimensionless projected surface-mass density $\kappa$ is given as
 \begin{equation}
   \kappa(\xi_1,\xi_2)=\frac{\sqrt{f}\xi_0}{2\sqrt{\xi_1^2+f^2\xi_2^2}},
 \end{equation}
-where the axis ratio $f$ obeys $0\lt f\le1$ and $\xi_0$ is a constant parameter related to the total
+where the axis ratio $f$ obeys $0< f\le1$ and $\xi_0$ is a constant parameter related to the total
 mass (analogous to the Einstein radius $R_E$).
 
 ::: {note} Remark
