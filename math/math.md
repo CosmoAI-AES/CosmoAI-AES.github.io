@@ -26,4 +26,3 @@ we use throughout the project.
 + [Critical Curves](/math/CriticalCurve)
 + [Roulette](/math/Roulette) formulæ
 + [Lens Models](/math/Lens)
-+ [PointMassCloud](/math/PointMassCloud) (in progress)

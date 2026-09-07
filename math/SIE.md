@@ -34,63 +34,9 @@ $$
 \end{aligned}
 $$
 
-### Normalisation of the Lens Potential
+## Derivation at canonical orientation
 
-Recall from [Lens Potential](LensPotential) that the lens potential 
-$\psi^{\mathrm{R}}$
-used in the Roulette formalism differs from the more standard normalisation by a
-factor of $\xi_0^2/D_L^2$ or $C_0\xi_0$.
-If we also mormalise $R$, and write $R=\xi_0r$, we can rewrite $\psi$ as
-$$
-\begin{aligned}
-\begin{split}
-  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(r,\phi) &=
-  \frac{\xi_0^2}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}\cdot r
-  \\&\cdot
-  \Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
-  \\&
-  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
-\end{split}
-\end{aligned}
-$$
-Now the standard normalisation reads
-```{math}
-\begin{aligned}
-\begin{split}
-  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(r,\phi) =
-  \frac{\xi_0^2}{D_\textrm{L}^2}\sqrt{\frac{f}{1-f^2}}\cdot r\cdot
-  &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
-  \\&
-  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
-\end{split}
-\end{aligned}
-```
-Now the standard normalisation reads
-```{math}
-\begin{split}
-  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(r,\phi) =
-  \sqrt{\frac{f}{1-f^2}}\cdot r\cdot
-  &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
-  \\\\&
-  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
-\end{split}
-```
-
-```{math}
-\begin{aligned}
-\begin{split}
-  \psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE}(r,\phi) =
-  \sqrt{\frac{f}{1-f^2}}\cdot r\cdot
-  &\Bigg([\sin(\phi-\theta)]\cdot\sin^{-1}\left(\sqrt{1-f^2}\cdot \sin{(\phi-\theta)}\right)
-  \\\\&
-  +[\cos(\phi-\theta)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\theta)\right)\Bigg).
-\end{split}
-\end{aligned}
-```
-
-## Derivation with $\theta=0$ 
-
-In this section we assume $\theta=0$, aligning the elliptical lens with the
+In this section we assume $\lambda_L=0$, aligning the elliptical lens with the
 primary axis. Then $\psi^{\mathrm{R}}$ becomes
 \begin{equation}
   \psi^{\mathrm{R}}(r,\phi) =
@@ -248,13 +194,9 @@ A possible . Approach 3 would differentiate the general formula for
 $\psi^{\mathrm{R}}$, but believing this to be computationally intractible,
 we have not developed this any further.
 
-## Other properties 
-
-+ [Critical Curves for SIE](Critical%20Curves%20for%20SIE.md)
+::: {note} Implementation of SIE
+The documentation of the SIE lens is still under construction.
+Two points will need to be written:
 + [Implementation of SIE](Implementation%20of%20SIE.md)
-
-## Calculations
-
-+ [Calculation of the SIE Deflection](/math/SIE)
 + [](/math/Roulette%20Amplitudes%20in%20SIE)
-+ [](/math/Legacy%20Notes%20on%20SIE)
+:::
