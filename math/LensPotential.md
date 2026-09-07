@@ -6,6 +6,7 @@ title: Basic Notation
 
 ```{figure} observer.png
 :width: 350
+:name: fig-observer
 Geometric model as described in the text
 ```
 
@@ -18,11 +19,17 @@ The distances to the lens and source planes are denoted
 $D_L$ and $D_S$ respectively.
 The optical axis is the line from the observer through the lens.
 
-::: {note} Justified assumptions
+(flay-sky)=
+::: {note} Flat sky assumption
 The flat sky assumption comes from a local approxation of a sphere
 as a plane.  The visible sky is really a sphere, but considering a 
 sufficiently small section, it can be treated as a plane.
+This is equivalent to $\sin\theta\approx\theta$ for any relevant angle
+$\theta$.
+:::
 
+(thin-lens)=
+::: {note} Thin lens assumption
 The thin lens assumption comes from the sparsity of mass in the universe.
 The extent of the lens in depth is assumed to be negligible compared to
 the distance $D_L$.
@@ -34,7 +41,7 @@ $$\Delta\boldsymbol{\eta} = \boldsymbol{\nu} - \boldsymbol{\eta}$$
 The apparent position in the lens plane $L$ is called
 $$\boldsymbol{\xi} = \frac{D_L}{D_S} \boldsymbol{\nu}.$$
 
-::: {note} Cosmological distances depend on time (/redshift)
+::: {note} Cosmological distances depend on time (redshift)
 As a note to the side, the distancees $D_L$ and $D_S$ are cosmological,
 meaning that they depend on time. This is due to the expansion of the fabric of the 
 cosmos (space).
@@ -49,10 +56,11 @@ We come back to this in due time.
 :::
 
 The deflection is most easily described in terms of angles, so 
-we define $\beta$ and $\theta$ as the angles between 
+we define $\boldsymbol{\beta}$ and $\boldsymbol{\theta}$ as the angles between 
 the optical axis and respectively 
-$\boldsymbol{\eta}$ and $\boldsymbol{\nu}$.
-The deflection angle $\hat\alpha$ is the angle between 
+$\boldsymbol{\eta}$ and $\boldsymbol{\nu}$
+(cf. [figure](#fig-observer)).
+The deflection angle $\boldsymbol{\hat\alpha}$ is the angle between 
 the actual and apparent source in the source plane as seen
 from the apparent image in the lens plane.
 
@@ -60,8 +68,7 @@ With the flat sky approximation, the angles are related to
 lengths  in the lens plane by a factor of $D_L$, so that
 $$\boldsymbol{\xi} = D_L\theta$$
 Similarly, in the source plane[^hatalpha], we find 
-
-$$\boldsymbol{\eta} = D_S\beta,$$
+$$\boldsymbol{\eta} = D_S\boldsymbol{\beta},$$
 but also
 $$ \boldsymbol{\Delta\eta}= D_{LS}\hat{\boldsymbol{\alpha}}.$$
 
@@ -79,12 +86,8 @@ $$
 \boldsymbol{\beta}=\boldsymbol{\theta}-\boldsymbol{\alpha}
 $$ (raytraceAng)
 
-Considering small angles,
-$$
-\sin\theta\approx\theta
-$$
-
-it may readily be shown that Eq.~{eq}`raytracePhys` and Eq.~{eq}`raytraceAng` are the same.
+Under the [flat sky assumption](#flat-sky),
+Eq.~{eq}`raytracePhys` and Eq.~{eq}`raytraceAng` are equivalent.
 It is this latter equation that we shall take to be our constitutive relation. But before
 we get there, let us also introduce the standard way of normalizing. 
 
@@ -103,24 +106,32 @@ See [](/tech/Notation.md)
 
 ## Normalisation
 
-It is customary to normalise using a constant factor $\xi_0$.
-This gives the following entities, following Kormann 1994
+Leaving the angular co-ordinates for a bit,
+it is customary to normalise the raytrace equation
+{eq}`raytracePhys`,
+using a constant factor $\xi_0$.
+This gives the following entities, following @kormann1994isothermal,
 
-\begin{align}
+$$
+\begin{aligned}
   \mathbf{x} &= \frac{\boldsymbol{\xi}}{\xi_0}\\
   \mathbf{y} &= \frac{\boldsymbol{\eta}}{\eta_0}
      \quad\text{where } \eta_0 = \frac{D_S}{D_L}\xi_0
 \\
-  \mathbf{a} &= \frac{D_L}{\xi_0}\alpha=\frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
-\end{align}
+  \mathbf{a} &= \frac{D_L}{\xi_0}\boldsymbol{\alpha}=\frac{D_LD_{LS}}{D_S\xi_0}\hat{\boldsymbol{\alpha}}
+\end{aligned}
+$$
 
 In addition to the previously mentioned (cosmological) distances $D_L$, $D_S$ and $D_{LS}$ we must thus
-find a proper length scale $\xi_0$ from which we normalize everything else. In SEF, Kormann1994 and other
-standard sources one typically takes $\xi_0$ to be the so-called Einstein radius. This is the radius at which
-a spherically symmetric lens will produce a ring (so-called Einstein ring) whenever the source is directly behind
+find a proper length scale $\xi_0$ from which we normalize everything else. In SEF, 
+@kormann1994isothermal, and other standard sources one typically takes $\xi_0$
+to be the so-called Einstein radius. This is the radius at which
+a spherically symmetric lens will produce a ring (so-called Einstein ring)
+whenever the source is directly behind
 the lens, along the optical axis.
 
-In normalised coordinates the ray-trace equation reads 
+In normalised coordinates the ray-trace equation 
+Eq.~{eq}`raytracePhys` reads 
 
 $$
 \mathbf{y}=\mathbf{x}-\mathbf{a},
@@ -193,21 +204,33 @@ ever so slightly. Let $\psi$ be the usual lensing potential. Then we define
 
 In this notation, we find the following pleasing expression for the 
 angular version of the ray-trace equation:
+
+(def-raytrace)=
+:::{note} Definition: Raytrace Equation
+The Raytrace Equation, as used in the roulette formalism,
+is defined as
 ```{math}
 :label: raytraceeq
-\boxed{\boldsymbol{\beta} = \theta - \nabla_{\theta}\psi^R(\theta).}
+\boldsymbol{\beta} = \theta - \nabla_{\theta}\psi^R(\theta).
 ```
-It follows that 
-$$\boxed{\boldsymbol{\alpha}=\theta_E\mathbf{a}=\nabla_\theta\psi^R}$$
+where $\psi^R$ is the lens potential, normalised for the roulette
+formalism.
+:::
 
-::: {note} Implementation
+It follows that 
+```{math}
+:label: eq-deflection
+\boxed{\boldsymbol{\alpha}=\theta_E\mathbf{a}=\nabla_\theta\psi^R}
+```
+
+::: {note} Implementation: Raytrace Equation
 The raytrace equation {eq}`raytraceeq` is implemented as 
 `RaytraceModel::calculateEta()` in CosmoSim.
 :::
 
 ::: {warning}
 The model may give the impression that the distortion is independent
-of the distances $D_S$ and $D_L$.  
+of the distances $D_S$ and $D_L$.
 In fact, the Einstein radius $\theta_E$ depends on the relative distance
 $\frac{D_L}{D_S}$, as can be verified by studying the geometry
 and the angles $\alpha$ and $\hat\alpha$.
@@ -224,7 +247,7 @@ see [](/tech/Notation.md).
 ## Polar and Cartesian Coordinates
 
 Refering to two-dimensional points we will need both Cartesian
-and Polar co-ordinates.  
+and Polar co-ordinates.
 For the apparent position $\theta$ we will write $(\theta_1,\theta_2)$ 
 for the Cartesian co-ordinates, and $(\theta,\phi)$ for the polar
 co-ordinates.

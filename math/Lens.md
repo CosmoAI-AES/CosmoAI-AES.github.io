@@ -6,22 +6,24 @@ title: Lens Models
 
 At present, CosmoSim provides three analytic lens models:
 Point Mass, SIS, and SIE.
-The critical point is to provide the lens potential $\psi$
+The critical point is to provide the lens potential $\psi^R$
+(see [](#def-raytrace))
 and compute derivatives so that the roulette amplitudes can
 be computed.
 
 ::: {note} Implementasjon
 Lens models with a known computable and algebraic expression for $\psi$,
-are implemented as subclasses of `PsiFunctionLens`.  
+are implemented as subclasses of `PsiFunctionLens`.
 Each such lens also need algebraic formulæ for the roulette amplitudes
 and for the derivatives.
 :::
 
+(def-pm)=
 ## Point Mass
 
 Stars and other celestial objects may sometimes be modelled as
 so-called point-masses.
-The gravitational potential is in this case  
+The gravitational potential is in this case
 \begin{equation}
 \psi_{\mathrm{PM}}^R(\theta_1,\theta_2)  = \theta_E^2\ln\theta
   = \theta_E^2\cdot\ln\sqrt{\theta_1^2+\theta_2^2},
@@ -39,30 +41,35 @@ $$
 But the latter term is a constant, and the potential is always defined only up to a constant term, which shows that these two expressions are the same, as far as physics is concerned.
 :::
 
+(def-sis)=
 ## SIS (Singular isothermal sphere)
 
 It is often necessary to model the lens as an extended object.
 The simplest such model,
 useful for instance in the modelling of a galaxy surrounded by dark amtter,
 is the so-called _Singular isothermal sphere_, or SIS-model for short.
-The following expression for $\psi^R$ is implemented in `amplitudes.py`
+In the roulette formalism, the lens potential is given as,
 
 $$
   \psi^R_\mathrm{SIS}(\theta_1,\theta_2) = \theta_E\cdot\theta
   = \theta_E\cdot\sqrt{\theta_1^2+\theta_2^2},
 $$
 
-where notation is as for the point-mass case. In the code, we are working in angular variables. Hence what is called `einsteinR` 
-in the code, is the *angular Einstein radius* $\theta_E$. Note that the partial derivatives are readily calculated as
+where notation is as for the point-mass case. 
+The partial derivatives are readily calculated as
 
 $$
-  \frac{\partial\psi}{\partial \theta_1} = \theta_E\cdot\frac{\theta_1}{\sqrt{\theta_1^2+\theta_1^2}}=\theta_E\frac{\theta_1}{\theta}\quad\textrm{and}\quad
-  \frac{\partial\psi}{\partial \theta_2} = \theta_E\cdot\frac{\theta_2}{\sqrt{\theta_1^2+\theta_2^2}}=\theta_E\frac{\theta_2}{\theta}
+  \frac{\partial\psi^R}{\partial \theta_i} = \theta_E\cdot\frac{\theta_i}{\sqrt{\theta_1^2+\theta_1^2}}=\theta_E\frac{\theta_i}{\theta}\quad\text{for}\quad i=1,2.
 $$
-Thus the reduced deflection angle is in the SIS case given as
-
-$$\boldsymbol{\alpha}=\frac{\theta_E}{\theta}\left(\theta_1,\theta_2\right).$$
+Thus the reduced deflection angle (see {eq}`eq-deflection`) is in the SIS case given as
+$$\boldsymbol{\alpha}=\nabla_\theta\psi^R
+=\frac{\theta_E}{\theta}\left(\theta_1,\theta_2\right).$$
 Note that the norm of this vector is constant; $\alpha=|\boldsymbol{\alpha}|=\theta_E.$
+
+::: {note} Implementation
+In the code, we are working in angular variables. Hence what is called `einsteinR` 
+in the code, is the *angular Einstein radius* $\theta_E$. 
+:::
 
 (sie)=
 ## SIE
