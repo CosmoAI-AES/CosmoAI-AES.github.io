@@ -1,6 +1,7 @@
 .*.swp
 _site
 Gemfile.lock
+/*.pdf
 
 # MyST build outputs
 _build
