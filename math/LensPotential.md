@@ -4,9 +4,12 @@ title: Basic Notation
 
 # Basic Notation
 
-![Geometric model as described in the text](observer.png)
+```{figure} observer.png
+:width: 350
+Geometric model as described in the text
+```
 
-we assume a flat sky and a thin lens, which means the lens is 
+We assume a flat sky and a thin lens, which means the lens is 
 concentrated in one plane, orthogonal on the line of sight, with
 no extension in depth. We call this the lens plane $L$.
 Similarly, the source that we observe through the lens, is concentrated 

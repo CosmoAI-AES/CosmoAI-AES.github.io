@@ -12,10 +12,9 @@ usemathjax: true
 
 
 ```{figure} Model_2Db.svg
----
-scale: 50%
-float: right
----
+:scale: 50%
+:float: right
+
 The figure shows the set-up for the flat-sky approximation,
 with the source plane (the lens plane) a distance $D_{\mathrm{S}}$
 ($D_{\mathrm{L}}$) from the observer.
