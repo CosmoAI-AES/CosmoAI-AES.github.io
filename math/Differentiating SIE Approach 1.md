@@ -7,6 +7,7 @@ usemathjax: true
 This is one of several approaches suggested for
 differentiation of the lens potential for [](#sie).
 
+(sie-approach-1)=
 # Approach 1. Rotation of the Coordinate System
 
 The deflection is given as the vector $\nabla\psi^{\mathrm{R}}$,

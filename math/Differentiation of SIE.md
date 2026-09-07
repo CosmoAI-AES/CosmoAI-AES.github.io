@@ -13,6 +13,7 @@ differentiating $\psi$ many times.
 
 **Under Construction**
 
+(sie-approach-2)=
 # Differentiation of SIE
 
 Using a Cartesian coordinate system aligned with the lens,

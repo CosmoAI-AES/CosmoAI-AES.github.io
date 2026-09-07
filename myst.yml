@@ -37,6 +37,8 @@ project:
         - file: math/Lens.md
           children:
           - file: math/SIE.md
+          - file: math/Differentiation of SIE.md
+          - file: math/Differentiating SIE Approach 1.md
         - file: math/CosmologicalDistances.md
         - file: math/Roulette.md
           children:
@@ -99,8 +101,6 @@ project:
       children:
       - file: tech/Raytrace.md
       - file: tech/Roulette.md
-      - file: math/Differentiation of SIE.md
-      - file: math/Differentiating SIE Approach 1.md
       - file: math/Implementation of SIE.md
       - file: math/Roulette Amplitudes in SIE.md
       - file: tech/CriticalCurve.md

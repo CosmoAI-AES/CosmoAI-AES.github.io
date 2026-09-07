@@ -177,7 +177,7 @@ For Raytrace simulation, we only require the first order derivatives.
 We find it easiest to calculate the deflection vector in a local
 co-ordinate system where $\theta=0$, and then rotate the deflection
 vector to get the deflectio in the global co-ordinate system.
-This is derived as [Approach 1](Differentiating%20SIE%20Approach%201).
+This is derived as [Approach 1](#sie-approach-1).
 
 In Roulette simulation, we require higher order derivatives.
 The recursive formulæ for roulette amplitudes proved intractible,
@@ -188,9 +188,9 @@ The rotation trick which worked for first-order derivativs does not
 easily generalise to higher orders.
 We ended up using a co-ordinate substitution and chain rule
 differentiation.  This is elaborated as 
-[Approach 2](Differentiation of SIE).
+[Approach 2](#sie-approach-2).
 
-A possible . Approach 3 would differentiate the general formula for
+A possible Approach 3 would differentiate the general formula for
 $\psi^{\mathrm{R}}$, but believing this to be computationally intractible,
 we have not developed this any further.
 
