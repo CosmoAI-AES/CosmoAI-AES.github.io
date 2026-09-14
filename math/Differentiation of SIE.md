@@ -25,9 +25,12 @@ the lens potential is given as
     \right] 
 \end{equation}
 where 
-\begin{equation}
-  R=\sqrt{x'^2+y'^2}
-\end{equation}
+$$
+\begin{aligned}
+  R &= \sqrt{x'^2+y'^2}\\
+  f' & = \sqrt{1-f^2}.
+\end{aligned}
+$$
 The first order derivatives (see [SIE](./SIE)) are given as
 \begin{equation}
   \frac{d}{dx'}\psi^{\mathrm{R}}(x',y') = 

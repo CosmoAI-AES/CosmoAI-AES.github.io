@@ -20,6 +20,8 @@ project:
   bibliography:
     - bib.bib
     - myst.doi.bib
+    - hgs.bib
+    - theses.bib
   references:
     july2026: https://CosmoAI-AES.github.io/experiment2026july/
   exports:
