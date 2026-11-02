@@ -1,15 +1,15 @@
 # Mathematical model
 
+::: {figure} ./observer.png
+:name: fig-observer
+Geometric model of gravitational lensing
+:::
+
 The basic problem we study is that of gravitational lensing.
 Seen from Earth, the light from a distance galaxy (called the
 *source*) may be deflected by the gravitation of huge bodies of 
 mass (called the *lens*) located between the source and the observer.
 
-```{figure} observer.png
-:width: 350
-:float: right
-Geometric model of gravitational lensing
-```
 
 The deflective power of the lens is determined by a function
 $\psi(\xi)$ called the *lens potential*, where $\xi$ is a point
