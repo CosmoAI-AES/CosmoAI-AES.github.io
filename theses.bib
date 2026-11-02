@@ -19,3 +19,17 @@
   url = {https://api.nva.unit.no/publication/0198e9e11536-a34afca4-47ae-4fa1-af06-fe36b47f4828},
   year = {2024}
 }
+@mastersthesis{hjemli2026msc,
+  abstract = {Sterk gravitasjonslinsing gir verdifull innsikt i hvordan mørk materie og masse fordeles i og rundt galakser. Neste generasjons romteleskoper, som Euclid og CSST, forventes å samle inn et enormt datasett med nye bilder av gravitasjonslinser, noe som skaper et behov for svært skalerbare rammeverk for linsemodellering. I denne oppgaven presenteres utviklingen og testingen av et tredelt rammeverk designet for å rekonstruere og studere reelle observasjonsdata av gravitasjonslinser ved bruk av simuleringsprogramvaren CosmoSim.
+Først ble CosmoSim-simuleringen forbedret ved å implementere en Sérsic-lysprofil og gå over til vinkelenheter, noe som lar brukeren justere den fysiske størrelsen og lysstyrken til de simulerte kildegalaksene. Deretter ble et datasett bestående av 20 reelle gravitasjonslinser fra AGEL- og Euclid-kartleggingene valgt ut. Et skreddersydd grafisk brukergrensesnitt (GUI) ble utviklet for å fjerne støy fra disse bildene, hvor PyAutoLens ble brukt til å fjerne forgrunnslyset fra linsen for å isolere den linsede kilden. Til slutt ble de ferdigprosesserte bildene rekonstruert i CosmoSim for å teste både nøyaktigheten til simulatoren og ytelsen til en nylig trent maskinlæringsmodell (ML-modell).
+Rekonstruksjon av bilder ved hjelp av kjente linseparametere fra tidligere studier, spesifikt for systemet NGC 6505, ga svært nøyaktige visuelle resultater. Imidlertid fremhevet avvik mellom de prosesserte og rekonstruerte dataene behovet for parameterfrie linsemodeller, som Roulette-formalismen. For bilder uten kjente parametere klarte ML-modellen, som var trent på data simulert av CosmoSim, å estimere de nødvendige linseparameterne for en singulær isotermisk ellipsoide (SIE) direkte fra de prosesserte bildene. En sammenligning av formen på de rekonstruerte og originale linsesystemene viste at ML-modellen presterer best på multippelt linsede systemer. Linseparameterne ble konvertert til fysiske størrelser ved hjelp av teleskopoppløsningen til observasjonsdataene. I tillegg, ved å kombinere disse prediksjonene med data for rødforskyvning, ble de fysiske avstandene og den omsluttede massen (enclosed mass) til linsene beregnet med suksess.
+Oppsummert etablerer denne oppgaven et solid og fungerende fundament for å rekonstruere reelle observasjoner og estimere parametere i CosmoSim. Fremtidige oppgraderinger inkluderer en overgang til standard FITS-filer, full automatisering av bildeprosesseringen, implementering av mer komplekse lysprofiler, samt å oppdatere rammeverket til å estimere roulette-amplituder direkte fra observasjonsdata.},
+  author = {Hjemli, Oda},
+  month = {jun},
+  note = {nva type: DegreeMaster},
+  nva_api = {https://api.nva.unit.no/publication/01a0b8774651-c2c1d2cd-6a68-4462-ae77-f4bdeb72e9d9},
+  school = {Norges teknisk-naturvitenskapelige universitet},
+  title = {Simulated Reconstruction and Parameter Estimation on Observational Gravitational Lens Data},
+  url = {https://api.nva.unit.no/publication/01a0b8774651-c2c1d2cd-6a68-4462-ae77-f4bdeb72e9d9},
+  year = {2026}
+}
