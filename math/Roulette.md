@@ -20,8 +20,10 @@ in a neighbourhood of the reference point.
 
 
 ```{figure} Model_2Db.svg
-:scale: 50%
+:scale: 100%
 :float: right
+:name: roulette-fig
+:class: figwide
 
 The figure shows the set-up for the flat-sky approximation,
 with the source plane (the lens plane) a distance $D_{\mathrm{S}}$
@@ -34,7 +36,9 @@ and actual ($\boldsymbol{\beta}$) source position:
 $$\begin{equation}
    \boldsymbol{\alpha}=\boldsymbol{\theta}-\boldsymbol{\beta}.
 \end{equation}$$
-We have already seen that the deflection angle $\boldsymbol{\alpha}$ may be expressed as the gradient of the two-dimensional projected lensing potential. In the roulette formalism this translates into a set of so-called roulette amplitudes. In particular 
+We have already seen (in [](#eq-deflection))
+that the deflection angle $\boldsymbol{\alpha}$ may be expressed as the gradient of the two-dimensional projected lensing potential.
+In the roulette formalism this translates into a set of so-called roulette amplitudes. In particular 
 $$\begin{equation}
    \boldsymbol{\alpha}=\nabla_\theta\psi^\textrm{R}=-(\alpha^0_1,\beta^0_1),
 \end{equation}$$
@@ -43,39 +47,32 @@ defined above.
 
 The second step is the actual, non-linear distortion, and may be expresed through higher-order derivatives of the lensing potential. The distorted image is drawn in a local co-ordinate system in the lens
 plane, centred at $\boldsymbol{\theta}=(\theta_1,\theta_2)$. 
-Following Clarkson, we use polar co-ordinates for the distorted image. 
+Following Clarkson, we use polar co-ordinates for the distorted image
+([](#fig-local-polar)).
 While Clarkson used $(r,\phi)$ we will use $(\tilde{\theta},\phi)$, since we use angular units.
 
 The source image is described in Cartesian co-ordinates $(\tilde{\beta}_1,\tilde{\beta}_2)^\textrm{T}$ centered
-at $\boldsymbol{\beta}$ in the source plane.
+at $\boldsymbol{\beta}$ in the source plane ([](#fig-local-cartesian)).
 
+:::{figure} 
+:class: multifig
 
-:::{figure} Model_LocalPolar.svg
-:label: fig-local-polar
-:width: 100%
-The lens plane, viewed face-on. The dashed vector
-$\boldsymbol{\theta}=(\theta_1,\theta_2)$ gives the position of the
-image's light centre (the small dot) relative to the lens. The local
-polar co-ordinate system $(\tilde{\theta},\phi)$ is centred on this
-light centre, with $\tilde\theta$ the (angular) radius and $\phi$ the
-angle from the local polar axis (parallel to the global $\theta_1$
-direction). The global coordinate directions $\theta_1,\theta_2$,
-centred on the lens, are shown for reference.
+(fig-local-polar)=
+![Lens plane](Model_LocalPolar.svg)
+
+(fig-local-cartesian)=
+![Source plane](Model_LocalCartesian.svg)
+
+The lens and source planes viewed face-on.
+The dashed vectors give the position of the light centre $\boldsymbol{\beta}$
+of the source (undistorted) and the corresponding distorted point 
+$\boldsymbol{\theta}$ in the lens plane, relative to the lens.
+This is the reference point for the roulette formalism.
+
+The roulette formalism uses a local polar co-ordinate system in the lens plane,
+and a Cartesian system in the source plane, both with origin in the reference
+point.
 :::
-
-:::{figure} Model_LocalCartesian.svg
-:label: fig-local-cartesian
-:width: 100%
-The source plane, viewed face-on. The dashed vector
-$\boldsymbol{\beta}=(\beta_1,\beta_2)$ gives the position of the
-source's light centre (the small dot) relative to the optical axis.
-The local Cartesian co-ordinate system $(\tilde{\beta}_1,\tilde{\beta}_2)$
-is centred on this light centre, parallel to the global
-$\beta_1,\beta_2$ axes. The global coordinate directions
-$\beta_1,\beta_2$, centred on the optical axis, are shown for
-reference.
-:::
-
 
 Thus the light observed at a position (pixel) $(\tilde{\theta},\phi)$ is drawn from
 a different position (pixel) $(\tilde{\beta}_1,\tilde{\beta}_2)=\mathcal{D}(\tilde{\theta},\phi)$ in the source image.

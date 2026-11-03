@@ -22,3 +22,10 @@ figure.fig-figure.left {
    float: left ;
    width: 45% ;
 }
+figure.multifig {
+   width: 100% ;
+}
+figure.multifig figure {
+   width: 50% ;
+   float: left ;
+}
