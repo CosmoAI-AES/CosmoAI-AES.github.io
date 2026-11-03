@@ -85,6 +85,10 @@ inline double sersic( double n_sersic, double luminosity,
 
 ## Comments and discussion
 
+::: {warning} TODO
+This needs a review
+:::
+
 ::: {note} Proof that $r_{\textrm{eff}}$ is still the half-light radius, for any axis ratio
 
 Set $r_{\textrm{eff}}=\sigma_1$ and $q=\sigma_2/\sigma_1$ in $\tilde r$ above, so
