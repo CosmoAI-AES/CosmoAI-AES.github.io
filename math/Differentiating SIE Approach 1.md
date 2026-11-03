@@ -3,12 +3,182 @@ title: Proof of the SIE Deflection
 usemathjax: true
 ---
 
-This is one of several approaches suggested for
-differentiation of the lens potential for [](#sie).
-It proves [](#theorem-sie-deflection).
-
 (sie-approach-1)=
 # Proof of the SIE Deflection
+
+The following theorem was stated in [](#math-sie).
+Here we will give a proof.
+
+::: {prf:theorem} Derivative of SIE
+For the SIE lens at orientation $\lambda_L$, we have
+```{math}
+\begin{aligned}
+  \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
+  \theta_E\frac{\sqrt{f}}{f'}\cdot
+  & \bigg(
+    \cos\lambda_L\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\lambda_L+y\sin\lambda_L}{R}\right)
+    \\& -\sin\lambda_L\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\lambda_L+y\cos\lambda_L}{R}\right)
+  \bigg)
+\end{aligned}
+```
+and
+```{math}
+\begin{aligned}
+  \frac{d}{dy}\psi^{\mathrm{R}}(x,y) = 
+  \theta_E\frac{\sqrt{f}}{f'}\cdot
+  &\bigg(
+    \sin\lambda_L\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\lambda_L+y\sin\lambda_L}{R}\right)
+  \\&
+    +\cos\lambda_L\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\lambda_L+y\cos\lambda_L}{R}\right) 
+  \bigg)
+\end{aligned}
+```
+:::
+
+To prove this, we will first differentiate a lens at a canonical
+orientation, where $\lambda_L=0$.
+Afterwards, we will solve the general case by rotating the co-ordinate frame.
+Thus, we start with the following lemma.
+
+::: {prf:lemma}
+For the SIE lens at canonical orientation ($\lambda_L=0$), we have
+\begin{equation}
+  \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
+  \theta_E\frac{\sqrt{f}}{f'}
+    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+\end{equation}
+and
+\begin{equation}
+  \frac{d}{dy}\psi^{\mathrm{R}}(x,y) = 
+  \theta_E\frac{\sqrt{f}}{f'}
+    \sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
+\end{equation}
+:::
+
+With $\lambda_L=0$, the lens potential $\psi^{\mathrm{R}}$ becomes
+\begin{equation}
+  \psi^{\mathrm{R}}(\theta,\phi) =
+  \theta_E\cdot \frac{\sqrt{f}}{f'}\cdot \theta\cdot\left[ \sin\phi\sin^{-1}(f'\cdot\sin\phi) + \cos\phi\sinh^{-1}\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
+\end{equation}
+In Cartesian coordinates, we get
+\begin{equation}
+   \psi^{\mathrm{R}}(x,y) = \theta_E\cdot \frac{\sqrt{f}}{f'}\cdot\left[ 
+    y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
+    + x\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    \right] 
+\end{equation}
+where 
+\begin{equation}
+  R=\sqrt{x^2+y^2}
+\end{equation}
+
+The deflection is given by the gradient $\nabla\psi^{\mathrm{R}}$.
+We need the following basic rules.
+\begin{equation}
+  \frac{d}{dx}\sin^{-1} x  = \frac{1}{\sqrt{1-x^2}}
+\end{equation}
+\begin{equation}
+  \frac{d}{dx}\sinh^{-1} x = \frac{1}{\sqrt{1+x^2}}
+\end{equation}
+
+We will prove the derivative with respect to $x$.
+The derivative with respect to $y$ is analogous.
+
+::: {prf:proof} Differentiation with respect to $x$
+Firstly, we differentiate the $\sin^{-1}$-term
+$$
+\begin{aligned}
+\begin{split}
+  t_1 = \frac{d}{dx}
+    y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
+    &= \frac{y}{\sqrt{1 - (f'\frac{y}{R})^2}}(f'y)
+    \frac{d}{dx}\frac{1}{R}
+    \\\\&
+    = \frac{y}{\sqrt{1 - (f'\frac{y}{R})^2}}(f'y)
+    \frac{-1}{R^2}
+    \frac{dR}{dx}
+    \\\\&
+    = \frac{y}{\sqrt{1 - (f'\frac{y}{R})^2}}(f'y)
+    \frac{-1}{R^2}
+    \frac{x}{R}
+    \\\\&
+    = -\frac{f'xy^2}{\sqrt{1 - (f'\frac{y}{R})^2}}
+    \frac{1}{R^3}
+    \\\\&
+    = -\frac{f'xy^2}{R^3}\cdot
+    \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}}
+\end{split}
+\end{aligned}
+$$
+Secondly, we differentiate the $\sinh^{-1}$-term
+$$
+\begin{aligned}
+\begin{split}
+  \frac{d}{dx}
+     x\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    &= \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    + \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
+     \cdot \frac{d}{dx}\frac{x}{R}
+    \\&
+    = \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right) + t_2
+\end{split}
+\end{aligned}
+$$
+where 
+$$
+\begin{aligned}
+\begin{split}
+    t_2 &= \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
+     \cdot \frac{d}{dx}\frac{x}{R}
+    \\&
+    = \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
+     \cdot \left[ \frac{1}{R} - x\frac{1}{R^2}\frac{x}{R} \right] 
+    \\&
+    = \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
+     \cdot \frac{x^2+y^2 - x^2}{R^3}
+    \\&
+    = \frac{f'}{f}\cdot\frac{xy^2}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}
+     \cdot \frac{1}{R^3}
+    \\&
+    = \frac{f'xy^2}{R^3} \cdot \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
+\end{split}
+\end{aligned}
+$$
+The partial derivative of the lens potential is then
+\begin{equation}
+  \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
+  \theta_E\frac{\sqrt{f}}{f'}\cdot\left[ 
+    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    + t_1 + t_2
+    \right]
+\end{equation}
+We can prove that $t_1+t_2=0$.
+\begin{equation}
+    t_1 + t_2
+    = \frac{f'xy^2}{R^3} \cdot \left[ \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
+    - \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}} \right]
+\end{equation}
+It suffices to prove that $T=0$ where
+\begin{equation}
+    T =  \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
+    - \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}} 
+\end{equation}
+We have
+\begin{equation}
+    T =  \frac{R}{\sqrt{f^2R^2 + (1-f^2)x^2}}
+    - \frac{R}{\sqrt{R^2 - (1-f^2)y^2}} 
+\end{equation}
+Using the fact that $R^2=x^2+y^2$ we get
+\begin{equation}
+    T =
+    =  \frac{R}{\sqrt{f^2y^2+x^2}}
+    - \frac{R}{\sqrt{x^2 + f^2y^2}} = 0,
+\end{equation}
+as required.
+:::
+
+
+::: {prf:proof} Proof of the theorem
 
 The deflection is given as the vector $\nabla\psi^{\mathrm{R}}$,
 in a Cartesian co-ordinate system with axes aligned with the
@@ -63,3 +233,5 @@ This gives
   \end{bmatrix}
 \end{aligned}
 ```
+
+:::

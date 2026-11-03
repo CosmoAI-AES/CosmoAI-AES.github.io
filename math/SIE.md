@@ -3,9 +3,15 @@ title: The SIE Lens
 usemathjax: true
 ---
 
-
 (math-sie)=
 # SIE (Singular isothermal ellipsoid)
+
+For SIS it is possible to find high order derivatives by brute force
+computer algebra.  For SIE, this approach is prohibitively expensive,
+and a tailor-made algorithm is required.
+We will show the first and second order derivatives explicitly.
+At the second order, the inverse trigonometric functions disappear,
+and the problem becomes simpler, at least in some sense.
 
 The lens potential of SIE is given as (see [](#sie)):
 $$
@@ -25,159 +31,11 @@ whereas $\lambda_L$ is the orientation of the ellipse.
 That is, the major axis of the ellipse is $\theta$ from the $x$-axis,
 counter-clockwise.
 Thus $\lambda_L$ is constant across the image.
-
 In the following, we write
 $f' =\sqrt{1-f^2}$ as a shorthand.
 
-## Derivation at canonical orientation
-
-In this section we assume $\lambda_L=0$, aligning the elliptical lens with the
-primary axis. Then $\psi^{\mathrm{R}}$ becomes
-\begin{equation}
-  \psi^{\mathrm{R}}(\theta,\phi) =
-  \theta_E\cdot \frac{\sqrt{f}}{f'}\cdot \theta\cdot\left[ \sin\phi\sin^{-1}(f'\cdot\sin\phi) + \cos\phi\sinh^{-1}\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
-\end{equation}
-In Cartesian coordinates, we get
-\begin{equation}
-   \psi^{\mathrm{R}}(x,y) = \theta_E\cdot \frac{\sqrt{f}}{f'}\cdot\left[ 
-    y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
-    + x\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    \right] 
-\end{equation}
-where 
-\begin{equation}
-  R=\sqrt{x^2+y^2}
-\end{equation}
-
-The deflection is given by the gradient $\nabla\psi^{\mathrm{R}}$.
-We need the following basic rules.
-\begin{equation}
-  \frac{d}{dx}\sin^{-1} x  = \frac{1}{\sqrt{1-x^2}}
-\end{equation}
-\begin{equation}
-  \frac{d}{dx}\sinh^{-1} x = \frac{1}{\sqrt{1+x^2}}
-\end{equation}
-
-### Differentiation with respect to $x$
-
-Firstly, we differentiate the $\sin^{-1}$-term
-$$
-\begin{aligned}
-\begin{split}
-  t_1 = \frac{d}{dx}
-    y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
-    &= \frac{y}{\sqrt{1 - (f'\frac{y}{R})^2}}(f'y)
-    \frac{d}{dx}\frac{1}{R}
-    \\\\&
-    = \frac{y}{\sqrt{1 - (f'\frac{y}{R})^2}}(f'y)
-    \frac{-1}{R^2}
-    \frac{dR}{dx}
-    \\\\&
-    = \frac{y}{\sqrt{1 - (f'\frac{y}{R})^2}}(f'y)
-    \frac{-1}{R^2}
-    \frac{x}{R}
-    \\\\&
-    = -\frac{f'xy^2}{\sqrt{1 - (f'\frac{y}{R})^2}}
-    \frac{1}{R^3}
-    \\\\&
-    = -\frac{f'xy^2}{R^3}\cdot
-    \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}}
-\end{split}
-\end{aligned}
-$$
-Secondly, we differentiate the $\sinh^{-1}$-term
-$$
-\begin{aligned}
-\begin{split}
-  \frac{d}{dx}
-     x\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    &= \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    + \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
-     \cdot \frac{d}{dx}\frac{x}{R}
-    \\&
-    = \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right) + t_2
-\end{split}
-\end{aligned}
-$$
-where 
-$$
-\begin{aligned}
-\begin{split}
-    t_2 &= \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
-     \cdot \frac{d}{dx}\frac{x}{R}
-    \\&
-    = \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
-     \cdot \left[ \frac{1}{R} - x\frac{1}{R^2}\frac{x}{R} \right] 
-    \\&
-    = \frac{x}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}\frac{f'}{f}
-     \cdot \frac{x^2+y^2 - x^2}{R^3}
-    \\&
-    = \frac{f'}{f}\cdot\frac{xy^2}{\sqrt{1 + (\frac{f'}{f}\frac{x}{R})^2}}
-     \cdot \frac{1}{R^3}
-    \\&
-    = \frac{f'xy^2}{R^3} \cdot \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
-\end{split}
-\end{aligned}
-$$
-The partial derivative of the lens potential is then
-\begin{equation}
-  \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
-  \theta_E\frac{\sqrt{f}}{f'}\cdot\left[ 
-    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-    + t_1 + t_2
-    \right]
-\end{equation}
-We can prove that $t_1+t_2=0$.
-\begin{equation}
-    t_1 + t_2
-    = \frac{f'xy^2}{R^3} \cdot \left[ \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
-    - \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}} \right]
-\end{equation}
-It suffices to prove that $T=0$ where
-\begin{equation}
-    T =  \frac{1}{\sqrt{f^2 + (f'\frac{x}{R})^2}}
-    - \frac{1}{\sqrt{1 - (f'\frac{y}{R})^2}} 
-\end{equation}
-We have
-\begin{equation}
-    T =  \frac{R}{\sqrt{f^2R^2 + (1-f^2)x^2}}
-    - \frac{R}{\sqrt{R^2 - (1-f^2)y^2}} 
-\end{equation}
-Using the fact that $R^2=x^2+y^2$ we get
-\begin{equation}
-    T =
-    =  \frac{R}{\sqrt{f^2y^2+x^2}}
-    - \frac{R}{\sqrt{x^2 + f^2y^2}} = 0,
-\end{equation}
-as required.
-
-By an analogous argument, we can also differentiate with respect to
-the second co-ordinate, arriving at the following lemma.
-
-::: {prf:lemma}
-For the SIE lens at canonical orientation ($\lambda_L=0$), we have
-\begin{equation}
-  \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
-  \theta_E\frac{\sqrt{f}}{f'}
-    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
-\end{equation}
-and
-\begin{equation}
-  \frac{d}{dy}\psi^{\mathrm{R}}(x,y) = 
-  \theta_E\frac{\sqrt{f}}{f'}
-    \sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
-\end{equation}
-:::
-
-## Deflection for arbitrary orientation
-
-For Raytrace simulation, we only require the first order derivatives.
-We find it easiest to calculate the deflection vector in a local
-co-ordinate system where $\lambda_L=0$, and then rotate the deflection
-vector to get the deflectio in the global co-ordinate system.
-
 (theorem-sie-deflection)=
-::: {prf:theorem}
+::: {prf:theorem} Derivative of SIE
 For the SIE lens at orientation $\lambda_L$, we have
 ```{math}
 \begin{aligned}
