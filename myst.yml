@@ -36,6 +36,11 @@ project:
       children:
         - file: math/LensPotential.md
         - file: math/Lens.md
+          children:
+          - file: math/SIE.md
+            children:
+            - file: math/Differentiation of SIE.md
+            - file: math/Differentiating SIE Approach 1.md
         - file: math/Roulette.md
           children:
           - file: math/RouletteOriginal.md
@@ -47,10 +52,6 @@ project:
           children:
           - file: math/Critical Curves for SIE.md
         - file: math/Mass.md
-        - file: math/SIE.md
-          children:
-          - file: math/Differentiation of SIE.md
-          - file: math/Differentiating SIE Approach 1.md
     - file: user/user.md
       children:
         - file: docs/scripts/Overview.md

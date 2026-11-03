@@ -156,29 +156,64 @@ Using the fact that $R^2=x^2+y^2$ we get
     - \frac{R}{\sqrt{x^2 + f^2y^2}} = 0,
 \end{equation}
 as required.
-We conclude that
+
+By an analogous argument, we can also differentiate with respect to
+the second co-ordinate, arriving at the following lemma.
+
+::: {prf:lemma}
+For the SIE lens at canonical orientation ($\lambda_L=0$), we have
 \begin{equation}
   \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
   C_0\frac{\sqrt{f}}{f'}
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
 \end{equation}
-
-### Differentiation with respect to $y$
-
-The differentiation with respect to $y$ is similar and gives
+and
 \begin{equation}
   \frac{d}{dy}\psi^{\mathrm{R}}(x,y) = 
   C_0\frac{\sqrt{f}}{f'}
     \sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
 \end{equation}
+:::
 
 ## Deflection for arbitrary orientation
 
 For Raytrace simulation, we only require the first order derivatives.
 We find it easiest to calculate the deflection vector in a local
-co-ordinate system where $\theta=0$, and then rotate the deflection
+co-ordinate system where $\lambda_L=0$, and then rotate the deflection
 vector to get the deflectio in the global co-ordinate system.
-This is derived as [Approach 1](#sie-approach-1).
+
+(theorem-sie-deflection)=
+::: {prf:theorem}
+For the SIE lens at canonical orientation ($\lambda_L=0$), we have
+```{math}
+\begin{aligned}
+  \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
+  C_0\frac{\sqrt{f}}{f'}\cdot
+  & \bigg(
+    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
+    \\& -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right)
+  \bigg)
+\end{aligned}
+```
+and
+```{math}
+\begin{aligned}
+  \frac{d}{dy}\psi^{\mathrm{R}}(x,y) = 
+  C_0\frac{\sqrt{f}}{f'}\cdot
+  &\bigg(
+    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
+  \\&
+    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
+  \bigg)
+\end{aligned}
+```
+:::
+
+::: {prf:proof}
+See [](#sie-approach-1).
+:::
+
+## Differentiation for the roulette formalism
 
 In Roulette simulation, we require higher order derivatives.
 The recursive formulæ for roulette amplitudes proved intractible,
