@@ -26,26 +26,20 @@ That is, the major axis of the ellipse is $\theta$ from the $x$-axis,
 counter-clockwise.
 Thus $\lambda_L$ is constant across the image.
 
-In the following, we use the following shorthands:
-$$
-\begin{aligned}
-  f' & =\sqrt{1-f^2}, 
-\\
-  C_0 & = \frac{\xi_0}{D_L^2}
-\end{aligned}
-$$
+In the following, we write
+$f' =\sqrt{1-f^2}$ as a shorthand.
 
 ## Derivation at canonical orientation
 
 In this section we assume $\lambda_L=0$, aligning the elliptical lens with the
 primary axis. Then $\psi^{\mathrm{R}}$ becomes
 \begin{equation}
-  \psi^{\mathrm{R}}(r,\phi) =
-  C_0\cdot \frac{\sqrt{f}}{f'}R\cdot\left[ \sin\phi\sin^{-1}(f'\cdot\sin\phi) + \cos\phi\sinh^{-1}\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
+  \psi^{\mathrm{R}}(\theta,\phi) =
+  \theta_E\cdot \frac{\sqrt{f}}{f'}\cdot \theta\cdot\left[ \sin\phi\sin^{-1}(f'\cdot\sin\phi) + \cos\phi\sinh^{-1}\left(\frac{f'}{f}\cdot\cos\phi\right)\right] 
 \end{equation}
 In Cartesian coordinates, we get
 \begin{equation}
-   \psi^{\mathrm{R}}(x,y) = C_0\cdot \frac{\sqrt{f}}{f'}\cdot\left[ 
+   \psi^{\mathrm{R}}(x,y) = \theta_E\cdot \frac{\sqrt{f}}{f'}\cdot\left[ 
     y\sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
     + x\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     \right] 
@@ -128,7 +122,7 @@ $$
 The partial derivative of the lens potential is then
 \begin{equation}
   \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
-  C_0\frac{\sqrt{f}}{f'}\cdot\left[ 
+  \theta_E\frac{\sqrt{f}}{f'}\cdot\left[ 
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
     + t_1 + t_2
     \right]
@@ -164,13 +158,13 @@ the second co-ordinate, arriving at the following lemma.
 For the SIE lens at canonical orientation ($\lambda_L=0$), we have
 \begin{equation}
   \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
-  C_0\frac{\sqrt{f}}{f'}
+  \theta_E\frac{\sqrt{f}}{f'}
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
 \end{equation}
 and
 \begin{equation}
   \frac{d}{dy}\psi^{\mathrm{R}}(x,y) = 
-  C_0\frac{\sqrt{f}}{f'}
+  \theta_E\frac{\sqrt{f}}{f'}
     \sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
 \end{equation}
 :::
@@ -184,14 +178,14 @@ vector to get the deflectio in the global co-ordinate system.
 
 (theorem-sie-deflection)=
 ::: {prf:theorem}
-For the SIE lens at canonical orientation ($\lambda_L=0$), we have
+For the SIE lens at orientation $\lambda_L$, we have
 ```{math}
 \begin{aligned}
   \frac{d}{dx}\psi^{\mathrm{R}}(x,y) = 
-  C_0\frac{\sqrt{f}}{f'}\cdot
+  \theta_E\frac{\sqrt{f}}{f'}\cdot
   & \bigg(
-    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
-    \\& -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right)
+    \cos\lambda_L\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\lambda_L+y\sin\lambda_L}{R}\right)
+    \\& -\sin\lambda_L\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\lambda_L+y\cos\lambda_L}{R}\right)
   \bigg)
 \end{aligned}
 ```
@@ -199,11 +193,11 @@ and
 ```{math}
 \begin{aligned}
   \frac{d}{dy}\psi^{\mathrm{R}}(x,y) = 
-  C_0\frac{\sqrt{f}}{f'}\cdot
+  \theta_E\frac{\sqrt{f}}{f'}\cdot
   &\bigg(
-    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
+    \sin\lambda_L\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\lambda_L+y\sin\lambda_L}{R}\right)
   \\&
-    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
+    +\cos\lambda_L\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\lambda_L+y\cos\lambda_L}{R}\right) 
   \bigg)
 \end{aligned}
 ```
