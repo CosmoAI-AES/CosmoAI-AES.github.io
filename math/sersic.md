@@ -41,12 +41,12 @@ This image is then rotated for the desired orientation $\lambda_S$.
     + $b_1 = 1.992$
     + $b_0 = - 0.3271$
 + Derived quantities
-    + Elliptic ratio $q = \sigma_2/\sigma_1$ 
+    + Elliptic ratio $q = \frac{\sigma_2}{\sigma_1}$ (`q`)
     + $b = b_0 + b_1\cdot n$ (`bn`)
-    + Polar radius $r = \sqrt{(x/q)^2+y^2}$ 
+    + Polar radius $r = \sqrt{(x/q)^2+y^2}$  (`r`)
     + Effective radius $r_{\textrm{eff}} = \sigma_1$ (`re`)
 
-The pixel value $(x,y)$ is then given as
+The pixel value at position $(x,y)$ is then given as
 \begin{equation}
   v_{x,y} = I_{\mathrm{eff}}\cdot\exp -b_n\cdot\bigg( \big(\frac{r}{r_{\textrm{eff}}}\big)^{\frac{1}{n_s}} - 1\bigg)
 \end{equation}
@@ -58,86 +58,32 @@ I_{\mathrm{eff}} = 1000*l*\cdot \frac{b^{2n_s}}{2\pi\sigma_1\sigma_2\, n_s\cdot{
 ::: {note} Implementation
 The calculation of $v_{x,y}$ is implemented as the `sersic()` function
 in file `sersic.h`.
+```cpp
+inline double sersic( double n_sersic, double luminosity,
+               double sigma1, double sigma2,
+               double x, double y ) {
+   auto q = sigma2/sigma1;  // Ellipticity
+   auto r = std::sqrt( (x/q)*(x/q) + y*y ); // radius
+
+   auto bn = 1.992*n_sersic - 0.3271;
+   auto L = luminosity * 1000 ;
+
+   auto re = sigma1 ; // effective radius
+
+   auto I_eff = L*std::pow(bn, 2.0 * n_sersic)
+              / (2 * pi * sigma1*sigma2*n_sersic * std::exp(bn)
+              * std::tgamma(2.0*n_sersic)) ;
+
+   auto value = round(I_eff*std::exp(-bn*((std::pow(r/re, 1.0/n_sersic))-1.0)));
+
+   if (value > 255) { value = 255; }
+
+   return value ;
+}
+```
 :::
 
-## Discussion and proof
-
-### Ellipsoid Source with Sersic profile
-
-We have hardcoded an implementation of an elliptic profile,
-namely the de Vaucouleurs' profile.
-In our implementation, this individual source is defined by
-two size parameters, $\sigma_1$ and $\sigma_2$, for the minor
-and major axes of the ellipsoid.
-
-Additionally some parameters are currently hard-coded.
-+ The Sersic index $n=4$
-+ Coefficients $b_1 = 1.992$, $b_0 = - 0.3271$
-
-We define
-+ elliptic ratio $q = \frac{\sigma_2}{\sigma_1}$
-+ effective radius $r_{\textrm{eff}} = 10\sigma_1$ (see `CHECK` in the code below)
-+ $r = \sqrt{(x/q)^2+y^2}$
-+ $b = b_0 + b_1\cdot n$
-
-The pixel value is given as
-$$v = I_{\mathrm{eff}}\cdot\exp -b\cdot\bigg( \big(\frac{r}{r_{\textrm{eff}}}\big)^{\frac{1}{n}} - 1\bigg)$$
-where, as in the spherical case but with $\sigma^2\to\sigma_1\sigma_2$,
-$$I_{\mathrm{eff}} = L\cdot \frac{b^{2n}}{2\pi\sigma_1\sigma_2\, n\,\text{e}^{b}\cdot \Gamma(2n)}.$$
-See [](#sersic-elliptic-general) for the general recipe (arbitrary $n$
-and position angle), including the proof that $r_{\textrm{eff}}$ is the half-light
-radius for any axis ratio $q$ -- this holds for whatever value $r_{\textrm{eff}}$
-is actually given, including the current $r_{\textrm{eff}}=10\sigma_1$; it just
-means the half-light ellipse currently has semi-axes
-$(10\sigma_2,10\sigma_1)$ rather than $(\sigma_1,\sigma_2)$.
-
-The code is given as
-
-```cpp
-auto q = sigma2/sigma1;
-int n = 4;  // Sersic index
-auto re = 10*sigma1; // effective radius
-// CHECK: this factor of 10 means the half-light ellipse (where r==re)
-// actually has semi-axes (10*sigma2, 10*sigma1), not (sigma1, sigma2).
-// If sigma1/sigma2 are meant to *be* the half-light semi-axes, this
-// looks like a bug or a leftover unit conversion -- kept as-is for now
-// since it matches the current implementation; revisit once confirmed.
-auto r = std::sqrt(std::pow(x/q, 2)+std::pow(y, 2));
-auto bn = 1.992*n - 0.3271;
-auto F = luminosity * std::pow(10, 3);
-auto pi = 3.141592;
-auto I_eff = F*std::pow(bn, 2.0*n)
-           / (2*pi*sigma1*sigma2*n*std::exp(bn)*std::tgamma(2.0*n));
-auto value = round(I_eff*std::exp(-bn*((std::pow(r/re, 1.0/n))-1.0)));
-if (value > 255) { value = 255; }
-dst.at<uchar>(row, col) = (uchar)value;
-```
-
-(sersic-elliptic-general)=
-## General elliptical Sersic profile
-
-The hard-coded implementation above fixes $n=4$ and only handles
-ellipses aligned with the $(x,y)$ axes. This section gives the general
-recipe: arbitrary Sersic index $n_s$, an arbitrary position angle, and a
-luminosity normalisation consistent with the spherical case.
-
-### Elliptical radius
-
-Replace the circular radius $r=\sqrt{x'^2+y'^2}$ with an *elliptical
-radius*, using the axis ratio $q=\sigma_2/\sigma_1\le 1$:
-\begin{equation}
-  \tilde r = \sqrt{x'^2+(y'/q)^2}.
-\end{equation}
-This is exactly what the hard-coded code above already does for the
-axis-aligned case (with $y'=y$ playing the role of the unscaled axis).
-The pixel value is then given by the *same* 1D formula as the
-spherical case, with $r\to\tilde r$ and general $n_s$:
-\begin{equation}
-  v(x,y) = I_{\mathrm{eff}}\cdot
-  \text{e}^{-b_{n_s}\left(\left(\tilde r/r_{\textrm{eff}}\right)^{1/n_s}-1\right)},
-  \qquad b_{n_s}=1.992\,n_s-0.3271.
-\end{equation}
-
+## Comments and discussion
 
 ::: {note} Proof that $r_{\textrm{eff}}$ is still the half-light radius, for any axis ratio
 
