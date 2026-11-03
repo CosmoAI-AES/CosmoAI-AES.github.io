@@ -16,13 +16,15 @@ $\psi(\xi)$ called the *lens potential*, where $\xi$ is a point
 in the lens plane.
 Different mass distributions give rise to different lens potentials.
 
-In this chapter we will review the basic models and notation that
-we use throughout the project.
+In this chapter we will establish the [](/math/LensPotential) that we
+use, and define the [](/math/Lens) which are implemented.
+Then we define the [](#chapter-roulette) and discuss computation and
+implementation thereof.
 
+Thereafter we discusse the different [](#chapter-source) which are
+implemented.
 
-## Outline
-
-+ [](/math/LensPotential)
-+ [Critical Curves](/math/CriticalCurve)
-+ [Roulette](/math/Roulette) formulæ
-+ [Lens Models](/math/Lens)
++ **TODO** [](#chapter-distances)
++ **TODO** [](#chapter-critical)
++ **TODO** [](#chapter-mass)
++ **TODO** [](#math-sie)

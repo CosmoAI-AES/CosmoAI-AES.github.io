@@ -20,7 +20,7 @@ $D_L$ and $D_S$ respectively.
 The optical axis is the line from the observer through the lens.
 
 (flay-sky)=
-::: {note} Flat sky assumption
+::: {prf:definition} Flat sky assumption
 The flat sky assumption comes from a local approxation of a sphere
 as a plane.  The visible sky is really a sphere, but considering a 
 sufficiently small section, it can be treated as a plane.
@@ -29,7 +29,7 @@ $\theta$.
 :::
 
 (thin-lens)=
-::: {note} Thin lens assumption
+::: {prf:definition} Thin lens assumption
 The thin lens assumption comes from the sparsity of mass in the universe.
 The extent of the lens in depth is assumed to be negligible compared to
 the distance $D_L$.
@@ -143,7 +143,7 @@ somewhat different from the one we shall prefer in this work,
 such as the ones given in Eq. {eq}`raytraceAng`.
 In the sections to follow, such coordinates will therefore be our focus.
 
-::: {note} Definition: Einstein Radius 
+::: {prf:definition} Einstein Radius 
 Consider a source directly behind a spherically symmetric lens. Id est, consider a source at $\beta=0$. In that case the
 angular form of the ray-trace equation yields
 $$\beta=0\quad\rightarrow\quad \alpha\equiv\theta_E$$
@@ -206,7 +206,7 @@ In this notation, we find the following pleasing expression for the
 angular version of the ray-trace equation:
 
 (def-raytrace)=
-:::{note} Definition: Raytrace Equation
+:::{prf:definition} Raytrace Equation
 The Raytrace Equation, as used in the roulette formalism,
 is defined as
 ```{math}

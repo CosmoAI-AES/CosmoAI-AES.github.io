@@ -2,6 +2,7 @@
 title: Source Models
 ---
 
+(chapter-source)=
 # Source models
 
 CosmoSim implements spherical and ellipsoid sources with 

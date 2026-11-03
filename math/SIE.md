@@ -4,6 +4,7 @@ usemathjax: true
 ---
 
 
+(math-sie)=
 # SIE (Singular isothermal ellipsoid)
 
 The lens potential of SIE is given as (see [](#sie)):

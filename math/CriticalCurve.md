@@ -3,6 +3,7 @@ title: Critical Curves
 usemathjax: true
 ---
 
+(chapter-critical)=
 # Critical Curves
 
 We build on the notation defined in [Lens Potential](LensPotential).

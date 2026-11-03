@@ -3,8 +3,10 @@ title: Cosmological Distances
 author: Ben David Normann
 ---
 
+
+(chapter-distances)=
 # Cosmological Distances
----
+
 Measuring distance in a cosmological setting requires some fancy footwork. The goal of this section is to find expressions for $D_\text{LS}, D_\text{L}$ and $D_\text{S}$ in cosmological settings. In the following, let us assume a homogeneous and isotropic universe. Id est, let us assume the metric
 
 $$
@@ -20,7 +22,7 @@ f_k(\chi) =
 \dfrac{1}{\sqrt{-k}} \sinh(\chi \sqrt{-k}) & (k<0\quad,\quad\text{open universe}).
 \end{cases}
 $$
-is a faactor depending on the geometry of the universe. Light follows null-geodets, $ds^2=0$. Hence, assuming travel along the radial axis, we find that 
+is a factor depending on the geometry of the universe. Light follows null-geodets, $ds^2=0$. Hence, assuming travel along the radial axis, we find that 
 $$
 ds^2=0\quad\Rightarrow\quad d\chi=\frac{c}{a(t)}dt.
 $$
@@ -76,7 +78,7 @@ d(z) \approx \frac{c}{H_0} \cdot \frac{h}{3}\sum_{i=0}^{n} \frac{w_i}{E(ih)}.
 $$
 
 
-## Angular-diameter distance$
+## Angular-diameter distances
 
 The next step is to relate observed angular size to actual, comoving distance. 
 
