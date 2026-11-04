@@ -74,12 +74,14 @@ where
 
 The deflection is given by the gradient $\nabla\psi^{\mathrm{R}}$.
 We need the following basic rules.
-\begin{equation}
+```{math}
+:label: der-sinh
   \frac{d}{dx}\sin^{-1} x  = \frac{1}{\sqrt{1-x^2}}
-\end{equation}
-\begin{equation}
+```
+```{math}
+:label: der-sin
   \frac{d}{dx}\sinh^{-1} x = \frac{1}{\sqrt{1+x^2}}
-\end{equation}
+```
 
 We will prove the derivative with respect to $x$.
 The derivative with respect to $y$ is analogous.
