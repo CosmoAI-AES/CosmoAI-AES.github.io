@@ -117,19 +117,15 @@ The second derivatives of SIE are given as
 ```{math}
 \begin{aligned}
     \partial_1^2\psi(x,y)
-    & = \theta_E\sqrt{f}\cdot\frac{y^2}{\sqrt{R^4R'^2}}\quad 
+    & = \theta_E\sqrt{f}\cdot\frac{y^2}{R^2R'}
     \\
     \partial_1\partial_2\psi(x,y)
-    & = \theta_E\sqrt{f}\cdot\frac{-xy}{\sqrt{R^4R'^2}} \quad 
+    & = \theta_E\sqrt{f}\cdot\frac{-xy}{R^2R'}
     \\
     \partial^2_2\psi(x,y)
-    &= \theta_E\sqrt{f}\cdot\frac{x^2}{\sqrt{R^4R'^2}}
+    &= \theta_E\sqrt{f}\cdot\frac{x^2}{R^2R'}
 \end{aligned}
 ```
-:::
-
-::: {warning} TODO
-prove this using Martin's notes
 :::
 
 ::: {prf:proof}
@@ -230,6 +226,35 @@ Rearranging, we get
   \bigg)
 \end{aligned}
 ```
+According to [](#lem-rprime), the square roots in the denominators
+are all equal to $R'$.  Furthermore, $\cos^2\lambda+\sin^2\lambda=1$, hence
+```{math}
+\begin{aligned}
+  \frac{\partial^2}{\partial x^2}\psi^{\mathrm{R}}(x,y) = 
+  \theta_E\sqrt{f}\cdot
+  & \bigg(
+    \frac{1}{R'}
+    +
+    \frac{\sin\lambda_L\cdot y'-\cos\lambda_L\cdot x'}{R'}
+    \cdot
+    \frac{x}{R^2}
+  \bigg)
+\end{aligned}
+```
+Now 
+$$\sin\lambda_L\cdot y'-\cos\lambda_L\cdot x' = x$$ 
+because it is the inverse rotation by $\lambda_L$, 
+Thus we get
+```{math}
+\begin{aligned}
+  \frac{\partial^2}{\partial x^2}\psi^{\mathrm{R}}(x,y) 
+  = \theta_E\sqrt{f}\cdot \frac{R^2 - x^2}{R'R^2}
+  = \theta_E\sqrt{f}\cdot \frac{y^2}{R'R^2}
+\end{aligned}
+```
+q.e.d.
+The other two cases can be proved analogously.
+
 :::
 
 ## Differentiation for the roulette formalism
