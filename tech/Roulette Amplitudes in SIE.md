@@ -5,9 +5,6 @@ title: Roulette Amplitudes for the SIE Lens
 (sie-roulette)=
 # Roulette Amplitudes for the SIE Lens
 
-::: {warning} Deprecated
-:::
-
 We define a local co-ordinate system aligned with the lens, so that
 the lens orientation is $\theta=0$.  
 Let $(x',y')$ be a point in the local frame, corresponding to $(x,y)$ in 
