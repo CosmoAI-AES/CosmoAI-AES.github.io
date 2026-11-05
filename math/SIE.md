@@ -13,7 +13,7 @@ At the second order, the inverse trigonometric functions disappear,
 and the problem becomes simpler, at least in some sense.
 
 The lens potential of SIE is given as (see [](#sie)):
-$$
+```{math}
 \begin{aligned}
 \begin{split}
   \psi^R_\textrm{SIE}(\theta_E,f,\lambda_L;\theta,\phi) & =
@@ -24,7 +24,7 @@ $$
   +[\cos(\phi-\lambda_L)]\cdot\sinh^{-1}\left(\frac{\sqrt{1-f^2}}{f}\cos(\phi-\lambda_L)\right)\Bigg).
 \end{split}
 \end{aligned}
-$$
+```
 where $(\theta,\phi)$ are the polar coordinates in the lens plane,
 whereas $\lambda_L$ is the orientation of the ellipse.
 That is, the major axis of the ellipse is $\theta$ from the $x$-axis,

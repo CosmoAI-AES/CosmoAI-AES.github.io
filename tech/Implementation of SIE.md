@@ -12,7 +12,7 @@ This is implemented in the SIE class (`src/simlib/SIE.cpp`).
 To evaluate the lens potential $\psi^{\mathrm{R}}(x,y)$,
 we calculate the polar coordinates
 $R$ and $\phi$, and use the formula (see [](#math-sie)) for 
-$\psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(R,\phi)$.
+$\psi_\textrm{SIE}^R(\xi_0,f,\lambda_L;R,\phi)$.
 The deflection is given by [](#theorem-sie-deflection).
 
 ::: {note} Note
@@ -25,7 +25,7 @@ respectively, and find that $\nabla\psi$ is constant in $R$.
 ## Roulette Amplitudes for the SIE Lens
 
 We define a local co-ordinate system aligned with the lens, so that
-the lens orientation is $\theta=0$.  
+the lens orientation is $\lambda_L=0$.  
 Let $(x',y')$ be a point in the local frame, corresponding to $(x,y)$ in 
 the global frame.
 
@@ -42,7 +42,7 @@ These three steps correspond to `firstworker`, `secondworker`, and
 `thirdworker` in `CosmoSim.Roulettes.sie`.
 :::
 
-### First-order derivatives
+### Step 1: Derivatives of the lens potential
 
 The first order derivatives of $\psi$ are given in [](#theorem-sie-deflection).
 For $\lambda_L=0$, this simplifies to
@@ -59,11 +59,15 @@ $$
 $$
 
 We take the same approach as we did with the raytrace equation, 
-finding the roulette amplitudes first for $\theta=0$, and then 
+finding the roulette amplitudes first for $\lambda_L=0$, and then 
 rotating the entire system to find the amplitudes for arbitrary 
-$\theta$.
+$\lambda_L$.
 
-### Inner differentation of the co-ordinate transformation
+The `firstworker()` function relies on `sympy` to do brute force
+derivation of $\psi$ at $\lambda_L=0$.
+This is computationally expensive, and prohibitive beyond order $m=5$.
+
+#### Inner differentation of the co-ordinate transformation
 
 The local co-ordinates are given as the rotation
 ```{math}
@@ -71,8 +75,8 @@ The local co-ordinates are given as the rotation
    \begin{bmatrix} x' \\ y' \end{bmatrix}
    &=
    \begin{bmatrix}
-     \cos\theta & \sin\theta \\
-     -\sin\theta & \cos\theta 
+     \cos\lambda_L & \sin\lambda_L \\
+     -\sin\lambda_L & \cos\lambda_L 
    \end{bmatrix}
    \cdot
    \begin{bmatrix} x \\ y \end{bmatrix}
@@ -81,13 +85,13 @@ The local co-ordinates are given as the rotation
 We can differentiate the coordinates, so get
 ```{math}
 \begin{aligned}
-   \frac{dx'}{dx} & = \cos\theta
+   \frac{dx'}{dx} & = \cos\lambda_L
    &\quad
-   \frac{dx'}{dy} & = \sin\theta
+   \frac{dx'}{dy} & = \sin\lambda_L
    \\
-   \frac{dy'}{dx} & = -\sin\theta
+   \frac{dy'}{dx} & = -\sin\lambda_L
    &\quad
-   \frac{dy'}{dy} & = \cos\theta
+   \frac{dy'}{dy} & = \cos\lambda_L
 \end{aligned}
 ```
 We use this with the chain rule below.
