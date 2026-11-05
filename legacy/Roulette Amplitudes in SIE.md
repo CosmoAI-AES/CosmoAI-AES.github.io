@@ -2,7 +2,11 @@
 title: Roulette Amplitudes for the SIE Lens
 ---
 
+(sie-roulette)=
 # Roulette Amplitudes for the SIE Lens
+
+::: {warning} Deprecated
+:::
 
 We define a local co-ordinate system aligned with the lens, so that
 the lens orientation is $\theta=0$.  
@@ -24,33 +28,8 @@ These three steps correspond to `firstworker`, `secondworker`, and
 
 ## First-order derivatives
 
-In the implementation, we calculate the first order derivatives of $\psi$ as
-$$
-\begin{aligned}
-  \frac{\partial\psi^{\mathrm{R}}}{\partial x} &=
-  C_0\frac{\sqrt{f}}{f'}\cdot
-    \left(
-    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
-    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
-    \right)
-    \\
-  \frac{\partial\psi^{\mathrm{R}}}{\partial y} &=
-  C_0\frac{\sqrt{f}}{f'}\cdot
-    \left(
-    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
-    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
-    \right)
-\end{aligned}
-$$
-where $\theta$ is the orientation of the lens, and
-$$
-\begin{aligned}
-  f' & =\sqrt{1-f^2}, 
-\\
-  C_0 & = \frac{\xi_0}{D_L^2}
-\end{aligned}
-$$
-For $\theta=0$, this simplifies to
+The first order derivatives of $\psi$ are given in [](#theorem-sie-deflection).
+For $\lambda_L=0$, this simplifies to
 $$
 \begin{aligned}
   \frac{d}{dx}\psi^{\mathrm{R}}(x,y) &=
@@ -71,6 +50,7 @@ $\theta$.
 ## Inner differentation of the co-ordinate transformation
 
 The local co-ordinates are given as the rotation
+```{math}
 \begin{aligned}
    \begin{bmatrix} x' \\ y' \end{bmatrix}
    &=
@@ -81,21 +61,24 @@ The local co-ordinates are given as the rotation
    \cdot
    \begin{bmatrix} x \\ y \end{bmatrix}
 \end{aligned}
+```
 We can differentiate the coordinates, so get
-\begin{align}
+```{math}
+\begin{aligned}
    \frac{dx'}{dx} & = \cos\theta
-   \\
+   &\quad
    \frac{dx'}{dy} & = \sin\theta
    \\
    \frac{dy'}{dx} & = -\sin\theta
-   \\
+   &\quad
    \frac{dy'}{dy} & = \cos\theta
-\end{align}
+\end{aligned}
+```
 We use this with the chain rule below.
 
 ## Step 2.  Chain rule derivation.
 
-$$
+```{math}
 \begin{aligned}
    \frac{\partial^{m+n}\psi}{(\partial x)^m(\partial y)^n} =
      \sum_{i=0}^m\sum_{j=0}^n
@@ -105,7 +88,7 @@ $$
      (-1)^i\cdot
      \frac{\partial^{m+n}\psi}{(\partial x')^{m+n-i-j}(\partial y')^{i+j}} 
 \end{aligned}
-$$
+```
 
 ## Step 3.  Roulette Amplitudes
 

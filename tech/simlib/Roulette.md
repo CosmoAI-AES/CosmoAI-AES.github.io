@@ -4,8 +4,8 @@ theme: minima
 usemathjax: true
 ---
 
+(tech-roulette)=
 # The Roulette Formalism
-
 
 ## Computation of the Roulette Amplitudes
 

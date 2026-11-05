@@ -2,39 +2,18 @@
 title: Implementation of SIE
 ---
 
+(tech-sie)=
 # Implementation of SIE
 
 ## Raytrace
 
 This is implemented in the SIE class (`src/simlib/SIE.cpp`).
 
-### Evaluation of the lens potential.
-
-To evaluate the lens potential $\psi^{\mathrm{R}}(x,y)$, we calculate the polar coordinates
-$R$ and $\phi$, and use the formula (see [SIE](./SIE)) for 
+To evaluate the lens potential $\psi^{\mathrm{R}}(x,y)$,
+we calculate the polar coordinates
+$R$ and $\phi$, and use the formula (see [](#math-sie)) for 
 $\psi_{\xi_0,f,\theta,D_\mathrm{L}}^\textrm{SIE(R)}(R,\phi)$.
-
-### Evaluation of the Deflection.
-
-This uses
-$$
-\begin{aligned}
-  \frac{\partial\psi^{\mathrm{R}}}{\partial x} &=
-  C_0\frac{\sqrt{f}}{f'}\cdot
-    \left(
-    \cos\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
-    -\sin\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
-    \right)
-    \\
-  \frac{\partial\psi^{\mathrm{R}}}{\partial y} &=
-  C_0\frac{\sqrt{f}}{f'}\cdot
-    \left(
-    \sin\theta\cdot\sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x\cos\theta+y\sin\theta}{R}\right)
-    +\cos\theta\cdot\sin^{-1}\left(f'\cdot\frac{-x\sin\theta+y\cos\theta}{R}\right) 
-    \right)
-\end{aligned}
-$$
-as taken from the expression for $\vec\alpha(x,y)$ above.
+The deflection is given by [](#theorem-sie-deflection).
 
 ::: {note} Note
 In polar co-ordinates, we replace $x/R$ and $y/R$ with $\cos\phi$
@@ -78,4 +57,4 @@ and
 **TODO** $a^-$
 
 + Deprecated notes
-    + [Roulette Amplitudes in SIE](Roulette%20Amplitudes%20in%20SIE.md)
+    + [](#sie-roulette)

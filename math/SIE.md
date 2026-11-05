@@ -1,6 +1,5 @@
 ---
 title: The SIE Lens
-usemathjax: true
 ---
 
 (math-sie)=
@@ -276,7 +275,5 @@ we have not developed this any further.
 
 ::: {note} Implementation of SIE
 The documentation of the SIE lens is still under construction.
-Two points will need to be written:
-+ [Implementation of SIE](Implementation%20of%20SIE.md)
-+ [](/math/Roulette%20Amplitudes%20in%20SIE)
+See [](#tech-sie).
 :::

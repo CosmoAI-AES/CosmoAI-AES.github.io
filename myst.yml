@@ -45,7 +45,7 @@ project:
           children:
           - file: math/RouletteOriginal.md
           - file: math/RouletteRecursive.md
-          - file: math/getXi.md
+          - file: math/ReferencePoint.md
         - file: math/sersic.md
         - file: math/CosmologicalDistances.md
         - file: math/CriticalCurve.md
@@ -97,8 +97,7 @@ project:
       children:
       - file: tech/Raytrace.md
       - file: tech/Roulette.md
-      - file: math/Implementation of SIE.md
-      - file: math/Roulette Amplitudes in SIE.md
+      - file: tech/Implementation of SIE.md
       - file: tech/CriticalCurve.md
     - title: Demos
       file: demo/index.md
@@ -140,6 +139,7 @@ project:
       - title: Legacy Notes
         children:
         - file: math/Legacy Notes on SIE.md
+        - file: legacy/Roulette Amplitudes in SIE.md
     - file: about.md
     
 site:

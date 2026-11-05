@@ -20,7 +20,7 @@ the formulæ are evaluated in specific points to give numeric amplitudes.
 Two different procedures for calculation are offered by
 `CosmoSim.Roulettes` and `CosmoSim.Roulettes.sie` respectively.
 
-+ [](/math/Roulette%20Amplitudes%20in%20SIE.md) describes 
++ [](#sie-roulette) describes 
   `CosmoSim.Roulettes.sie`
 + `CosmoSim.Roulettes` uses simpler recursive formulæ
 

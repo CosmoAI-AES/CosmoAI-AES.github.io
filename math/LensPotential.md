@@ -6,7 +6,7 @@ title: Basic Notation
 
 ```{figure} observer.png
 :width: 350
-:name: fig-observer
+:name: fig-observer-duplicate
 Geometric model as described in the text
 ```
 
@@ -19,7 +19,7 @@ The distances to the lens and source planes are denoted
 $D_L$ and $D_S$ respectively.
 The optical axis is the line from the observer through the lens.
 
-(flay-sky)=
+(flat-sky)=
 ::: {prf:definition} Flat sky assumption
 The flat sky assumption comes from a local approxation of a sphere
 as a plane.  The visible sky is really a sphere, but considering a 
@@ -59,7 +59,7 @@ The deflection is most easily described in terms of angles, so
 we define $\boldsymbol{\beta}$ and $\boldsymbol{\theta}$ as the angles between 
 the optical axis and respectively 
 $\boldsymbol{\eta}$ and $\boldsymbol{\nu}$
-(cf. [figure](#fig-observer)).
+(cf. [figure](#fig-observer-duplicate)).
 The deflection angle $\boldsymbol{\hat\alpha}$ is the angle between 
 the actual and apparent source in the source plane as seen
 from the apparent image in the lens plane.
@@ -123,7 +123,8 @@ $$
 $$
 
 In addition to the previously mentioned (cosmological) distances $D_L$, $D_S$ and $D_{LS}$ we must thus
-find a proper length scale $\xi_0$ from which we normalize everything else. In @bok:SEF1999, 
+find a proper length scale $\xi_0$ from which we normalize everything else.
+In @bok:SEF1999, 
 @kormann1994isothermal, and other standard sources one typically takes $\xi_0$
 to be the so-called Einstein radius. This is the radius at which
 a spherically symmetric lens will produce a ring (so-called Einstein ring)
@@ -163,7 +164,7 @@ Considering a thin lens, it is customary to define the lens potential as the pro
 potential down on the lens plane. Such a simplification is typically warranted,
 due to $D_L \gg \xi_0$.
 
-To connect with @SEF1999 and other standard literature we will start by defining the lensing potential so that its gradient is the so-called reduced 
+To connect with @bok:SEF1999 and other standard literature we will start by defining the lensing potential so that its gradient is the so-called reduced 
 deflection angle $\mathbf{a}$ 
 the gradient of $\psi$, i.e.
 \begin{equation}
