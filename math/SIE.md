@@ -92,6 +92,22 @@ We will need the following lemma.
 ```
 :::
 
+::: {prf:proof}
+Since $(x',y')$ is a rotation of $(x,y)$, the vector norms
+are equal, and thus
+$$R^2 = x^2 + y^2 = x'^2 y'^2.$$
+
+It follows that
+$$ f^2R^2 + f'^2x'2 = f^2x'^2 + f^2y'^2 + x'^2 - f^2x'^2 
+                 = x'^2 + f^2y'^2,$$
+which proves the middle equality.
+Similarly,
+$$ R^2 - f'^2y'2 = x'^2 + y'^2 - y'^2 + f^2y'^2 
+                 = x'^2 + f^2y'^2,$$
+which proves the last equality.
+
+
+:::
 
 
 Now we can formulate the second derivatives, as follows.
