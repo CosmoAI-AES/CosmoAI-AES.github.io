@@ -98,7 +98,6 @@ project:
       - file: tech/Raytrace.md
       - file: tech/Roulette.md
       - file: tech/Implementation of SIE.md
-      - file: tech/Roulette Amplitudes in SIE.md
       - file: tech/CriticalCurve.md
     - title: Demos
       file: demo/index.md
@@ -140,6 +139,7 @@ project:
       - title: Legacy Notes
         children:
         - file: math/Legacy Notes on SIE.md
+        - file: legacy/SIE-notes.md
     - file: about.md
     
 site:
