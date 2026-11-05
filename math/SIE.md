@@ -82,6 +82,18 @@ We also define the following shorthands:
     R'&  = \sqrt{x'^2+f^2y'^2}
 \end{aligned}
 ```
+We will need the following lemma.
+
+(lem-rprime)=
+::: {prf:lemma}
+```{math}
+    R' = \sqrt{x'^2+f^2y'^2}
+    =\sqrt{f^2R^2+f'^2x'^2}=\sqrt{R^2-f'^2y'^2}
+```
+:::
+
+
+
 Now we can formulate the second derivatives, as follows.
 
 ::: {prf:theorem}
