@@ -286,7 +286,7 @@ for some function $g(x,y)$ of the form
 
 **TODO** Check claims.  The exponents may possibly be negative.
 
-We will need the following lemmataa.
+We will need the following lemmata.
 
 ::: {prf:lemma}
 If $g(x,y)$ has the form in [](#SIE_form), then so have
