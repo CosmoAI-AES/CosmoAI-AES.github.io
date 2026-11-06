@@ -274,7 +274,7 @@ For all $i,j\ge0$ and $i+j>1$, we have
   \frac{\partial^{i+j}}{\partial x^i\partial y^j}\psi^{\mathrm{R}}(x,y) 
   = \theta_E\sqrt{f}\cdot\frac{g(x,y)}{(R^2R')^{i+j-1}}
 ```
-for some function $g(x,y)$ of the form
+for some function $g(x,y)$ of the polynomial form
 ```{math}
 :label: SIE_form
     g(x,y)
@@ -285,15 +285,21 @@ with non-negative exponents $i,j,k,l,m,n,p,q$.
 
 **TODO** New page for the proof.
 
-**TODO** Check claims.  The exponents may possibly be negative.
-
 We will need the following lemmata.
 
 ::: {prf:lemma}
-If $g(x,y)$ has the form in [](#SIE_form), then so have
-$\partial g(x,y)/\partial x$ and
-$\partial g(x,y)/\partial y$.
+If $g(x,y)$ has the form in [](#SIE_form), then the
+derivatives can be written on the form
+```{math}
+\frac{\partial g(x,y)}{\partial x} = 
+\frac{g_1(x,y)}{R^2R'}
+\\
+\frac{\partial g(x,y)}{\partial y} =
+\frac{g_2(x,y)}{R^2R'}
+```
+where $g_1$ and $g_2$ have the form of [](#SIE_form).
 :::
+
 
 ::: {prf:proof}
 **TODO**
@@ -371,13 +377,23 @@ respect to $x$.
 If $i=0$, we assume that it holds for $j-1$ and differentiate with
 respect to $y$.
 
+```{math}
+\begin{aligned}
+    \frac{\partial}{\partial x}
+    \frac{g(x,y)}{R^2R'}
+    & = \frac{\frac{\partial}{\partial x}g(x,y)R^2R'
+             - \big(\frac{\partial}{\partial x} R^2R'\big)g(x,y)}
+        {(R^2R')^2}
+    \\ & = \frac{g'_1(x,y)}{(R^2R')^3}
+\end{aligned}
+```
+
 
 **TODO**
 :::
 
 And that the derivatives of this with respect to $x$ and $y$ are
 ```{math}
-:label: third_order_examples
 \begin{aligned}
     \frac{\partial}{\partial x}
     \frac{g(x,y)}{R^2R'}
