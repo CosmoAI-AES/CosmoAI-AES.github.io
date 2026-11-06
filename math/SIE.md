@@ -266,13 +266,16 @@ We see that all these derivatives have the form
  \theta_E\sqrt{f}\cdot\frac{g(x,y)}{R^2R'}
 ```
 where $g(x,y)$ is a monomial in $x$ and $y$.
-We will prove the following generalisation of this observation.
 
+The following generalisation of this observation is proved under
+[](#proof-sie-higher).
+
+(theorem-sie-higher)=
 ::: {prf:theorem}
 For all $i,j\ge0$ and $i+j>1$, we have
 ```{math}
   \frac{\partial^{i+j}}{\partial x^i\partial y^j}\psi^{\mathrm{R}}(x,y) 
-  = \theta_E\sqrt{f}\cdot\frac{g(x,y)}{(R^2R')^{i+j-1}}
+  = \theta_E\sqrt{f}\cdot\frac{g(x,y)}{(R^2R')^{2(i+j)-3}}
 ```
 for some function $g(x,y)$ of the polynomial form
 ```{math}
@@ -283,133 +286,12 @@ for some function $g(x,y)$ of the polynomial form
 with non-negative exponents $i,j,k,l,m,n,p,q$.
 :::
 
-**TODO** New page for the proof.
-
-We will need the following lemmata.
-
-::: {prf:lemma}
-If $g(x,y)$ has the form in [](#SIE_form), then the
-derivatives can be written on the form
-```{math}
-\frac{\partial g(x,y)}{\partial x} = 
-\frac{g_1(x,y)}{R^2R'}
-\\
-\frac{\partial g(x,y)}{\partial y} =
-\frac{g_2(x,y)}{R^2R'}
-```
-where $g_1$ and $g_2$ have the form of [](#SIE_form).
-:::
-
-
-::: {prf:proof}
-**TODO**
-:::
-
-::: {prf:lemma}
-If $g(x,y)$ and $h(x,y)$ have the form in [](#SIE_form), 
-then so has $f(x,y)=g(x,y)\cdot h(x,y)$.
-:::
-
-::: {prf:proof}
-Since $g$ and $h$ are polynomials, so is their product.
-:::
-
-::: {prf:lemma}
-We have
-```{math}
-\begin{aligned}
-    \frac{\partial}{\partial x} R^2R'
-    = \frac{2R^2R'^2x + R^4x}{R^2R'}
-\end{aligned}
-```
-and
-```{math}
-\begin{aligned}
-    \frac{\partial}{\partial y} R^2R'
-    = \frac{2R^2R'^2y + R^4y}{R^2R'}
-\end{aligned}
-```
-:::
-
-**TODO** Check proof
-
-::: {prf:proof}
-First we note that
-```{math}
-\begin{aligned}
-    \frac{\partial}{\partial x} R^2R'
-    & = 2RR'\frac{x}{R} 
-    + R^2\frac{x'}{R'}\frac{\partial x'}{\partial x}
-    + R^2\frac{y'}{R'}\frac{\partial y'}{\partial x}
-    \\&= 2R'x
-    + R^2\frac{x'}{R'}\cos\lambda_L
-    - R^2\frac{y'}{R'}\sin\lambda_L
-    \\&= 2R'x
-    + \frac{R^2}{R'}x
-    \\&= \frac{2R^2R'^2x + R^4x}{R^2R'}
-\end{aligned}
-```
-and
-```{math}
-\begin{aligned}
-    \frac{\partial}{\partial y} R^2R'
-    & = 2RR'\frac{y}{R} 
-    + R^2\frac{x'}{R'}\frac{\partial x'}{\partial y}
-    + R^2\frac{y'}{R'}\frac{\partial y'}{\partial y}
-    \\& = 2R'y
-    + R^2\frac{x'}{R'}\sin\lambda_L
-    + R^2\frac{y'}{R'}\cos\lambda_L
-    \\& = 2R'y
-    + \frac{R^2}{R'}y
-    \\&= \frac{2R^2R'^2y + R^4y}{R^2R'}
-\end{aligned}
-```
-which gives the lemma.
-:::
-
-::: {prf:proof}
-The proof is by mathematical induction on $i$ and $j$.
-The base case follows from [](#theorem-sie-second) as discussed
-above.
-
-If $i>0$, we assume that it holds for $i-1$ and differentiate with
-respect to $x$.
-If $i=0$, we assume that it holds for $j-1$ and differentiate with
-respect to $y$.
-
-```{math}
-\begin{aligned}
-    \frac{\partial}{\partial x}
-    \frac{g(x,y)}{R^2R'}
-    & = \frac{\frac{\partial}{\partial x}g(x,y)R^2R'
-             - \big(\frac{\partial}{\partial x} R^2R'\big)g(x,y)}
-        {(R^2R')^2}
-    \\ & = \frac{g'_1(x,y)}{(R^2R')^3}
-\end{aligned}
-```
-
-
-**TODO**
-:::
-
-And that the derivatives of this with respect to $x$ and $y$ are
-```{math}
-\begin{aligned}
-    \frac{\partial}{\partial x}
-    \frac{g(x,y)}{R^2R'}
-    & = \frac{\frac{\partial}{\partial x}g(x,y)R^4R^{\prime2}-(3xR^2R^{\prime2}+yx^\prime y^\prime f^{\prime2}R^2)g(x,y)}{(R^2R')^3}
-    \\ & = \frac{g'_1(x,y)}{(R^2R')^3}
-\end{aligned}
-```
-
-```{math}
-\begin{aligned}
-    \frac{\partial}{\partial y}
-    \frac{g(x,y)}{R^2R'}
-    & = \frac{\frac{\partial}{\partial y}g(x,y)R^4R^{\prime2}-(3yR^2R^{\prime2}-xx' y' f'^2R^2)g(x,y)}{(R^4R^{\prime2})^{\frac{3}{2}}}
-    \\ & = \frac{g'_2(x,y)}{(R^4R^{\prime2})^{\frac{3}{2}}}
-\end{aligned}
-```
+Having this carefully described form of each derivative helps speeding
+up the computer implementation.
+While computer algebra is computationally expensive in the general
+case, the transformation from $g()$ to its derivative is comparatively
+fast, and only a very few possible simplifications have to be conidered.
+The implementation is documented under [](#tech-sie-new).
 
 ## Historical notes
 
@@ -417,7 +299,7 @@ Several attempts were made to device a computationally viable
 differentiation strategy.
 CosmoSim v3.2 used `sympy` for differentiation at canonical orientation
 combined with the chain rule to map the result into the global co-ordinate
-frame.  This worked up to order 5, and is documnted under [](#tech-sie).
+frame.  This worked up to order 5, and is documented under [](#tech-sie).
 
 The approach outlined above is computationally more efficient.
 
