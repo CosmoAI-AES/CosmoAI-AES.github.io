@@ -111,6 +111,7 @@ which proves the last equality.
 
 Now we can formulate the second derivatives, as follows.
 
+(theorem-sie-second)=
 ::: {prf:theorem}
 The second derivatives of SIE are given as
 ```{math}
@@ -258,31 +259,136 @@ The other two cases can be proved analogously.
 
 ## Higher-order derivatives
 
-To find higher order derivatives we use the 2. order derivatives as a starting point. We see that all these derivatives have the form
+To find higher order derivatives we use the 2ne order derivatives
+as a starting point.
+We see that all these derivatives have the form
 ```{math}
-    \frac{\sqrt{f}}{\xi_0}\cdot\frac{g(\boldsymbol{\xi})}{\sqrt{R^4R^{\prime 2}}}
+ \theta_E\sqrt{f}\cdot\frac{g(x,y)}{R^2R'}
 ```
-with the function $g(\boldsymbol{\xi})$ being in the form.
+where $g(x,y)$ is a monomial in $x$ and $y$.
+We will prove the following generalisation of this observation.
+
+::: {prf:theorem}
+For all $i,j\ge0$ and $i+j>1$, we have
+```{math}
+  \frac{\partial^{i+j}}{\partial x^i\partial y^j}\psi^{\mathrm{R}}(x,y) 
+  = \theta_E\sqrt{f}\cdot\frac{g(x,y)}{R^2R'}
+```
+for some function $g(x,y)$ of the form
 ```{math}
 :label: SIE_form
-    g(\boldsymbol{\xi})=\sum C\xi_1^i\xi_2^jx^{\prime k}y^{\prime l}f^{ m}f^{\prime n}R^{ p}R^{\prime q}
+    g(x,y)
+    = \sum Cx^iy^jx'^ky'^lf^mf'^nR^pR'^q
 ```
+:::
 
-And that the derivatives of this with respect to $\xi_1$ and $\xi_2$ are
+**TODO** New page for the proof.
+
+**TODO** Check claims.  The exponents may possibly be negative.
+
+We will need the following lemmataa.
+
+::: {prf:lemma}
+If $g(x,y)$ has the form in [](#SIE_form), then so have
+$\partial g(x,y)/\partial x$ and
+$\partial g(x,y)/\partial y$.
+:::
+
+::: {prf:proof}
+**TODO**
+:::
+
+::: {prf:lemma}
+If $g(x,y)$ and $h(x,y)$ have the form in [](#SIE_form), 
+then so has $f(x,y)=g(x,y)\cdot h(x,y)$.
+:::
+
+::: {prf:proof}
+Since $g$ and $h$ are polynomials, so is their product.
+:::
+
+::: {prf:lemma}
+We have
+```{math}
+\begin{aligned}
+    \frac{\partial}{\partial x} R^2R'
+    &= 2R'x
+    + R^2\frac{x'}{R'}\cos\lambda_L
+    - R^2\frac{y'}{R'}\sin\lambda_L
+\end{aligned}
+```
+and
+```{math}
+\begin{aligned}
+    \frac{\partial}{\partial y} R^2R'
+    & = 2R'y
+    + R^2\frac{x'}{R'}\sin\lambda_L
+    + R^2\frac{y'}{R'}\cos\lambda_L
+\end{aligned}
+```
+In particular, the derivatives of $R^2R'$ have the
+$g$ form from [](#SIE_form).
+:::
+
+::: {prf:proof}
+First we note that
+```{math}
+\begin{aligned}
+    \frac{\partial}{\partial x} R^2R'
+    & = 2RR'\frac{x}{R} 
+    + R^2\frac{x'}{R'}\frac{\partial x'}{\partial x}
+    + R^2\frac{y'}{R'}\frac{\partial y'}{\partial x}
+    \\&= 2R'x
+    + R^2\frac{x'}{R'}\cos\lambda_L
+    - R^2\frac{y'}{R'}\sin\lambda_L
+\end{aligned}
+```
+and
+```{math}
+\begin{aligned}
+    \frac{\partial}{\partial y} R^2R'
+    & = 2RR'\frac{y}{R} 
+    + R^2\frac{x'}{R'}\frac{\partial x'}{\partial y}
+    + R^2\frac{y'}{R'}\frac{\partial y'}{\partial y}
+    \\& = 2R'y
+    + R^2\frac{x'}{R'}\sin\lambda_L
+    + R^2\frac{y'}{R'}\cos\lambda_L
+\end{aligned}
+```
+which gives the lemma.
+:::
+
+::: {prf:proof}
+The proof is by mathematical induction on $i$ and $j$.
+The base case follows from [](#theorem-sie-second) as discussed
+above.
+
+If $i>0$, we assume that it holds for $i-1$ and differentiate with
+respect to $x$.
+If $i=0$, we assume that it holds for $j-1$ and differentiate with
+respect to $y$.
+
+
+**TODO**
+:::
+
+And that the derivatives of this with respect to $x$ and $y$ are
 ```{math}
 :label: third_order_examples
 \begin{aligned}
-    \partial_1\left(\frac{\sqrt{f}}{\xi_0}\cdot\frac{g(\boldsymbol{\xi})}{\sqrt{R^4R^{\prime 2}}}\right)
-    & = \frac{\frac{\partial}{\partial \xi_1}g(\boldsymbol{\xi})R^4R^{\prime2}-(3\xi_1R^2R^{\prime2}+\xi_2x^\prime y^\prime f^{\prime2}R^2)g(\boldsymbol{\xi})}{(R^4R^{\prime2})^{\frac{3}{2}}}
-    \\ & = \frac{g'_1(\boldsymbol{\xi})}{(R^4R^{\prime2})^{\frac{3}{2}}}
+    \frac{\partial}{\partial x}
+    \frac{g(x,y)}{R^2R'}
+    & = \frac{\frac{\partial}{\partial x}g(x,y)R^4R^{\prime2}-(3xR^2R^{\prime2}+yx^\prime y^\prime f^{\prime2}R^2)g(x,y)}{(R^2R')^3}
+    \\ & = \frac{g'_1(x,y)}{(R^2R')^3}
 \end{aligned}
 ```
 
 ```{math}
 \begin{aligned}
-    \partial_2\left(\frac{\sqrt{f}}{\xi_0}\cdot\frac{g(\boldsymbol{\xi})}{\sqrt{R^4R^{\prime 2}}}\right)
-    & = \frac{\frac{\partial}{\partial \xi_2}g(\boldsymbol{\xi})R^4R^{\prime2}-(3\xi_2R^2R^{\prime2}-\xi_1x^\prime y^\prime f^{\prime2}R^2)g(\boldsymbol{\xi})}{(R^4R^{\prime2})^{\frac{3}{2}}}
-    \\ & = \frac{g'_2(\boldsymbol{\xi})}{(R^4R^{\prime2})^{\frac{3}{2}}}
+    \frac{\partial}{\partial y}
+    \frac{g(x,y)}{R^2R'}
+    & = \frac{\frac{\partial}{\partial y}g(x,y)R^4R^{\prime2}-(3yR^2R^{\prime2}-xx' y' f'^2R^2)g(x,y)}{(R^4R^{\prime2})^{\frac{3}{2}}}
+    \\ & = \frac{g'_2(x,y)}{(R^4R^{\prime2})^{\frac{3}{2}}}
 \end{aligned}
 ```
 
