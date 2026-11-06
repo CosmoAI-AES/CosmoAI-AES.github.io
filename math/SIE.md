@@ -272,7 +272,7 @@ We will prove the following generalisation of this observation.
 For all $i,j\ge0$ and $i+j>1$, we have
 ```{math}
   \frac{\partial^{i+j}}{\partial x^i\partial y^j}\psi^{\mathrm{R}}(x,y) 
-  = \theta_E\sqrt{f}\cdot\frac{g(x,y)}{R^2R'}
+  = \theta_E\sqrt{f}\cdot\frac{g(x,y)}{(R^2R')^{i+j-1}}
 ```
 for some function $g(x,y)$ of the form
 ```{math}
@@ -280,6 +280,7 @@ for some function $g(x,y)$ of the form
     g(x,y)
     = \sum Cx^iy^jx'^ky'^lf^mf'^nR^pR'^q
 ```
+with non-negative exponents $i,j,k,l,m,n,p,q$.
 :::
 
 **TODO** New page for the proof.
@@ -312,23 +313,19 @@ We have
 ```{math}
 \begin{aligned}
     \frac{\partial}{\partial x} R^2R'
-    &= 2R'x
-    + R^2\frac{x'}{R'}\cos\lambda_L
-    - R^2\frac{y'}{R'}\sin\lambda_L
+    = \frac{2R^2R'^2x + R^4x}{R^2R'}
 \end{aligned}
 ```
 and
 ```{math}
 \begin{aligned}
     \frac{\partial}{\partial y} R^2R'
-    & = 2R'y
-    + R^2\frac{x'}{R'}\sin\lambda_L
-    + R^2\frac{y'}{R'}\cos\lambda_L
+    = \frac{2R^2R'^2y + R^4y}{R^2R'}
 \end{aligned}
 ```
-In particular, the derivatives of $R^2R'$ have the
-$g$ form from [](#SIE_form).
 :::
+
+**TODO** Check proof
 
 ::: {prf:proof}
 First we note that
@@ -341,6 +338,9 @@ First we note that
     \\&= 2R'x
     + R^2\frac{x'}{R'}\cos\lambda_L
     - R^2\frac{y'}{R'}\sin\lambda_L
+    \\&= 2R'x
+    + \frac{R^2}{R'}x
+    \\&= \frac{2R^2R'^2x + R^4x}{R^2R'}
 \end{aligned}
 ```
 and
@@ -353,6 +353,9 @@ and
     \\& = 2R'y
     + R^2\frac{x'}{R'}\sin\lambda_L
     + R^2\frac{y'}{R'}\cos\lambda_L
+    \\& = 2R'y
+    + \frac{R^2}{R'}y
+    \\&= \frac{2R^2R'^2y + R^4y}{R^2R'}
 \end{aligned}
 ```
 which gives the lemma.
