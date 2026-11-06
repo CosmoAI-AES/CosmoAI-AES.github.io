@@ -45,23 +45,20 @@ These three steps correspond to `firstworker`, `secondworker`, and
 ### Step 1: Derivatives of the lens potential
 
 The first order derivatives of $\psi$ are given in [](#theorem-sie-deflection).
-For $\lambda_L=0$, this simplifies to
+By rotating the co-ordinate frame $(x,y)\mapsto(x',y')$ by an angle $\lambda_L$,
+we use an initial solution where $\lambda_L=0$, where the first derivatives
+simplify to
 $$
 \begin{aligned}
-  \frac{d}{dx}\psi^{\mathrm{R}}(x,y) &=
+  \frac{d}{dx'}\psi^{\mathrm{R}}(x',y') &=
   C_0\frac{\sqrt{f}}{f'}
-    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x}{R}\right)
+    \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x'}{R}\right)
 \\
-  \frac{d}{dy}\psi^{\mathrm{R}}(x,y) &= 
+  \frac{d}{dy'}\psi^{\mathrm{R}}(x',y') &= 
   C_0\frac{\sqrt{f}}{f'}
-    \sin^{-1}\left(f'\cdot\frac{y}{R}\right) 
+    \sin^{-1}\left(f'\cdot\frac{y'}{R}\right) 
 \end{aligned}
 $$
-
-We take the same approach as we did with the raytrace equation, 
-finding the roulette amplitudes first for $\lambda_L=0$, and then 
-rotating the entire system to find the amplitudes for arbitrary 
-$\lambda_L$.
 
 The `firstworker()` function relies on `sympy` to do brute force
 derivation of $\psi$ at $\lambda_L=0$.
@@ -98,6 +95,8 @@ We use this with the chain rule below.
 
 ### Step 2.  Chain rule derivation.
 
+In the second step, we apply the chain rule to find the derivatives
+with respect to $(x,y)$ given those for $(x',y')$, as follows
 ```{math}
 \begin{aligned}
    \frac{\partial^{m+n}\psi}{(\partial x)^m(\partial y)^n} =
@@ -109,106 +108,9 @@ We use this with the chain rule below.
      \frac{\partial^{m+n}\psi}{(\partial x')^{m+n-i-j}(\partial y')^{i+j}} 
 \end{aligned}
 ```
+This is implemented by `secondworker()`.
 
 ### Step 3.  Roulette Amplitudes
 
-Define
-$$
-\begin{aligned}
-   \Gamma^m_s &=
-\begin{cases}
-      0  \quad\text{if $m+s$ is even},\\
-      -\frac{D_L^{m+1}}{2^{m+\delta_{0s}}}\binom{m+1}{\frac{m+1-s}2} \quad \text{otherwise}
-\end{cases} \\
-   \square &=  \frac{\partial^2}{(\partial x)^2}
-      + \frac{\partial^2}{(\partial y)^2}
-\end{aligned}
-$$
-Note that $\square$ is an operator.
-Then we have
-$$
-\begin{aligned}
-   \alpha^m_s &=
-      \Gamma^m_s\square^{\frac{m+1-s}2}
-      \sum_{k=0}^{\lfloor s/2 \rfloor} (-1)^k
-      \binom{s}{2k}
-      \frac{\partial^s\psi}{(\partial x)^{s-2k}(\partial y)^{2k}}
-   \\
-   \beta^m_s &=  
-      \Gamma^m_s\square^{\frac{m+1-s}2}
-      \sum_{k=0}^{\lfloor (s-1)/2\rfloor} (-1)^k
-      \binom{s}{2k+1}
-      \frac{\partial^s\psi}{(\partial x)^{s-2k-1}(\partial y)^{2k+1}}
-\end{aligned}
-$$
-
-In practice, we omit the $D_L$ factors, because they cancel against other factors
-when the amplitudes are used in the deflection formulæ.
-
-For implementation, we need to rewrite $\alpha_s^m$ and $\beta_s^m$
-without the $\square$ operator.
-We get
-\begin{aligned}
-   \alpha^m_s(\vec{\xi}) &=
-      \Gamma^m_s
-      \sum_{k=0}^{\lfloor s/2 \rfloor} (-1)^k
-      \binom{s}{2k}
-      \sum_{h=0}^H\binom{H}{h}
-      \frac{\partial^{m+1}\psi(\vec{\xi})}
-          {(\partial x)^{m+1-2k-2h}(\partial y)^{2k+2h}}
-   \\
-   \beta^m_s(\vec{\xi}) &=  
-      \Gamma^m_s
-      \sum_{k=0}^{\lfloor (s-1)/2\rfloor} (-1)^k
-      \binom{s}{2k+1}
-      \sum_{h=0}^H\binom{H}{h}
-      \frac{\partial^{m+1}\psi(\vec{\xi})}
-          {(\partial x)^{m-2k-2h}(\partial y)^{2k+2h+1}}
-\end{aligned}
-where
-\begin{aligned}
-  H = \frac{m+1-s}{2}
-\end{aligned}
-
-### Alternative Step 3.  Roulette Amplitudes
-
-This uses the ECMS paper.
-$$
-\begin{aligned}
-   \alpha^m_s &= 
-       -\frac{1}{2^{\delta_{0s}}} D^{m+1}_{\textrm{L}}
-       \sum_{k=0}^{m}\binom{m}{k}
-       \left({ 
-           \mathcal{C}}^{m(k)}_s\partial_{\xi_1}
-           + \mathcal{C}^{m(k+1)}_s\partial_{\xi_2}
-       \right)
-       \partial^{m-k}_{\xi_1}\partial^k_{\xi_2}\psi
-   \\
-   \beta^m_s &=-D^{m+1}_\textrm{L}\sum_{k=0}^m\binom{m}{k}\left({\mathcal{S}}_s^{m(k)}\partial_{\xi_1}+{\mathcal{S}}_s^{m(k+1)}\partial_{\xi_2}\right)\partial_{\xi_1}^{m-k}\partial_{\xi_2}^k\psi
-\end{aligned}
-$$
-where
-\begin{aligned}
-   \mathcal{C}^{m(k)}_s &= \frac{1}{\pi}\int_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\cos s\phi
-   \\
-   \mathcal{S}^{m(k)}_s &= \frac{1}{\pi}\int_{-\pi}^{\pi}{\rm d}\phi\sin^k\phi\cos^{m-k+1}\phi\sin s\phi
-\end{aligned}
-Rearranging, for the sake of implementation, we can write
-$$
-\begin{aligned}
-   \alpha^m_s &= - \frac1{2^{\delta_{0s}}} D_\textrm{L}^{m+1}
-   \sum_{k=0}^m\binom{m}{k}\left({\mathcal{C}}_s^{m(k)}
-                      \partial_{\xi_1}^{m-k+1}\partial_{\xi_2}^k\psi
-                                +{\mathcal{C}}_s^{m(k+1)}
-                      \partial_{\xi_1}^{m-k}\partial_{\xi_2}^{k+1}\psi
-				\right)
-   \\
-   \beta^m_s &= -D_\textrm{L}^{m+1}\sum_{k=0}^m\binom{m}{k}\left(
-         {\mathcal{S}}_s^{m(k)}
-	 \partial_{\xi_1}^{m-k+1}\partial_{\xi_2}^k\psi
-	 +
-	 {\mathcal{S}}_s^{m(k+1)}
-	 \partial_{\xi_1}^{m-k}\partial_{\xi_2}^{k+1}\psi
-	 \right)
-\end{aligned}
-$$
+In Step 3, `thirdworker()` computes the roulette amplitudes according
+to [](#def-roulette-original).

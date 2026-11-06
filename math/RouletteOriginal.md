@@ -8,6 +8,7 @@ The two cases are combined into one by @10.1007/s10714-020-02677-z
 (Eq. (5-6)).
 Adapting their formulæ to our notation, we get the following definition.
 
+(def-roulette-original)=
 ::: {prf:definition} Roulette Formalism
 The roulette amplitudes $\alpha_s^m$ and $\beta_s^m$ are defined as
 $$
