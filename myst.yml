@@ -39,7 +39,6 @@ project:
           children:
           - file: math/SIE.md
             children:
-            - file: math/Differentiation of SIE.md
             - file: math/Differentiating SIE Approach 1.md
         - file: math/Roulette.md
           children:
@@ -140,6 +139,7 @@ project:
         children:
         - file: math/Legacy Notes on SIE.md
         - file: legacy/SIE-notes.md
+        - file: math/Differentiation of SIE.md
     - file: about.md
     
 site:

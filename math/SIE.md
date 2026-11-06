@@ -256,22 +256,45 @@ The other two cases can be proved analogously.
 
 :::
 
-## Differentiation for the roulette formalism
+## Higher-order derivatives
 
-In Roulette simulation, we require higher order derivatives.
-The recursive formulæ for roulette amplitudes proved intractible,
-but the non-recursive formulæ are straight forward if higher-order
-partial derivatives of $\psi$ can be calculated.
+To find higher order derivatives we use the 2. order derivatives as a starting point. We see that all these derivatives have the form
+```{math}
+    \frac{\sqrt{f}}{\xi_0}\cdot\frac{g(\boldsymbol{\xi})}{\sqrt{R^4R^{\prime 2}}}
+```
+with the function $g(\boldsymbol{\xi})$ being in the form.
+```{math}
+:label: SIE_form
+    g(\boldsymbol{\xi})=\sum C\xi_1^i\xi_2^jx^{\prime k}y^{\prime l}f^{ m}f^{\prime n}R^{ p}R^{\prime q}
+```
 
-The rotation trick which worked for first-order derivativs does not
-easily generalise to higher orders.
-We ended up using a co-ordinate substitution and chain rule
-differentiation.  This is elaborated as 
-[Approach 2](#sie-approach-2).
+And that the derivatives of this with respect to $\xi_1$ and $\xi_2$ are
+```{math}
+:label: third_order_examples
+\begin{aligned}
+    \partial_1\left(\frac{\sqrt{f}}{\xi_0}\cdot\frac{g(\boldsymbol{\xi})}{\sqrt{R^4R^{\prime 2}}}\right)
+    & = \frac{\frac{\partial}{\partial \xi_1}g(\boldsymbol{\xi})R^4R^{\prime2}-(3\xi_1R^2R^{\prime2}+\xi_2x^\prime y^\prime f^{\prime2}R^2)g(\boldsymbol{\xi})}{(R^4R^{\prime2})^{\frac{3}{2}}}
+    \\ & = \frac{g'_1(\boldsymbol{\xi})}{(R^4R^{\prime2})^{\frac{3}{2}}}
+\end{aligned}
+```
 
-A possible Approach 3 would differentiate the general formula for
-$\psi^{\mathrm{R}}$, but believing this to be computationally intractible,
-we have not developed this any further.
+```{math}
+\begin{aligned}
+    \partial_2\left(\frac{\sqrt{f}}{\xi_0}\cdot\frac{g(\boldsymbol{\xi})}{\sqrt{R^4R^{\prime 2}}}\right)
+    & = \frac{\frac{\partial}{\partial \xi_2}g(\boldsymbol{\xi})R^4R^{\prime2}-(3\xi_2R^2R^{\prime2}-\xi_1x^\prime y^\prime f^{\prime2}R^2)g(\boldsymbol{\xi})}{(R^4R^{\prime2})^{\frac{3}{2}}}
+    \\ & = \frac{g'_2(\boldsymbol{\xi})}{(R^4R^{\prime2})^{\frac{3}{2}}}
+\end{aligned}
+```
+
+## Historical notes
+
+Several attempts were made to device a computationally viable
+differentiation strategy.
+CosmoSim v3.2 used `sympy` for differentiation at canonical orientation
+combined with the chain rule to map the result into the global co-ordinate
+frame.  This worked up to order 5, and is documnted under [](#tech-sie).
+
+The approach outlined above is computationally more efficient.
 
 ::: {note} Implementation of SIE
 The documentation of the SIE lens is still under construction.

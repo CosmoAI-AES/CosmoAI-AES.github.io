@@ -4,6 +4,11 @@ title: Differentiation of SIE
 
 # Differentiation of SIE (Approach 2)
 
+::: {warning}
+This page is incomplete and deprecated.
+The approach is documented under [](#tech-sie).
+:::
+
 
 Calculation of the amplitudes is computationally expensive,
 and a lot of care is needed to make it tenable.
