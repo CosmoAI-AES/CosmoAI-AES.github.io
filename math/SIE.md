@@ -94,7 +94,7 @@ We will need the following lemma.
 ::: {prf:proof}
 Since $(x',y')$ is a rotation of $(x,y)$, the vector norms
 are equal, and thus
-$$R^2 = x^2 + y^2 = x'^2 y'^2.$$
+$$R^2 = x^2 + y^2 = x'^2 + y'^2.$$
 
 It follows that
 $$ f^2R^2 + f'^2x'2 = f^2x'^2 + f^2y'^2 + x'^2 - f^2x'^2 
@@ -148,9 +148,9 @@ Differentiating, we have
   \frac{\partial^2}{\partial x^2}\psi^{\mathrm{R}}(x,y) = 
   \theta_E\frac{\sqrt{f}}{f'}\cdot
   & \bigg(
-    \cos\lambda_L\cdot\frac{\partial^2}{\partial x^2}
+    \cos\lambda_L\cdot\frac{\partial}{\partial x}
     \sinh^{-1}\left(\frac{f'}{f}\cdot\frac{x'}{R}\right)
-    \\& -\sin\lambda_L\cdot\frac{\partial^2}{\partial x^2}\sin^{-1}\left(f'\cdot\frac{y'}{R}\right)
+    \\& -\sin\lambda_L\cdot\frac{\partial}{\partial x}\sin^{-1}\left(f'\cdot\frac{y'}{R}\right)
   \bigg)
 \end{aligned}
 ```
@@ -290,7 +290,7 @@ Having this carefully described form of each derivative helps speeding
 up the computer implementation.
 While computer algebra is computationally expensive in the general
 case, the transformation from $g()$ to its derivative is comparatively
-fast, and only a very few possible simplifications have to be conidered.
+fast, and only a very few possible simplifications have to be concidered.
 The implementation is documented under [](#tech-sie-new).
 
 ## Historical notes
