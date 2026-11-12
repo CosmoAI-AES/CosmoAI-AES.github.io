@@ -6,4 +6,3 @@ pandas
 jupytext
 jupyter-book
 jupyterlab-myst
-mystmd<=1.10.9
