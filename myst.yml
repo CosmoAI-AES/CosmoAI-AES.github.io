@@ -141,6 +141,7 @@ project:
         children:
         - file: math/Legacy Notes on SIE.md
         - file: legacy/SIE-notes.md
+        - file: legacy/SIE-v3.3.md
         - file: math/Differentiation of SIE.md
     - file: about.md
     
