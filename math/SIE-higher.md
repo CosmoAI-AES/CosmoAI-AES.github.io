@@ -6,7 +6,7 @@ title: Proof for the SIE derivatives
 # Proof for the SIE derivatives 
 
 
-In order to prove [](theorem-sie-higher), we 
+In order to prove [](#theorem-sie-higher), we 
 will need the following lemmata.
 
 (lemma-derg)=
