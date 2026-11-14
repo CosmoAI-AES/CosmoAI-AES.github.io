@@ -14,5 +14,7 @@ the Department of ICT and Natural Sciences at NTNU in Ålesund.
 
 ## Releases with DOI
 
-+ @10.5281/zenodo.24078837
++ @10.5281/zenodo.24224691
 + @10.5281/zenodo.24078838
+
+@10.5281/zenodo.24078837
